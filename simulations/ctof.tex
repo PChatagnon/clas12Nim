@@ -2,13 +2,15 @@
 
 \subsubsection{Geometry}
 
-The CLAS12 CTOF paddles and light guides (see \F{ctofGeometry} top) are imported from the engineering model. The STEP files are converted to tessellated STL files and imported
-directly into the GEMC simulation \cite{gemcCad}. The STL files are downloaded using the java geometry service, as the same files are used in reconstruction.
+The CLAS12 CTOF paddles and light guides (see \F{ctofGeometry} top) are imported from the engineering model.
+The STEP files are converted to tessellated STL files and imported directly into the GEMC simulation \cite{gemcCad}.
+The STL files are downloaded using the java geometry service, as the same files are used in reconstruction.
 The paddles are assigned the scintillator material and associated with the CTOF hit process routine.
-The light guides are also associated to the scintillator material, but they are treated as passive material and not associated with a sensitive detector.
+The light guides are also associated with the scintillator material, but they are treated as passive material and not
+associated with a sensitive detector.
 
-Each volume is typically tessellated by about 1,000 facets. The simulation geometry captures complicated details such as the shape of the scintillator/light guide
-junctions, see \F{ctofGeometry} bottom.
+Each volume is typically tessellated by about 1,000 facets. The simulation geometry captures complicated details
+such as the shape of the scintillator/light guide junctions, see \F{ctofGeometry} bottom.
 
 \begin{figure}
 	\centering
@@ -18,7 +20,7 @@ junctions, see \F{ctofGeometry} bottom.
 	         The paddles and light guides are imported directly from the engineering model.
 			 The black line is a 2 GeV proton leaving a hit (white circle) in one of the paddles.
 			 Bottom: a zoom-in of the implementation shows the details of downstream scintillator/light guide junctions:
-			 the scintillator bend near the junction, the light guide starting with the rectangular shape,
+			 the scintillator bends near the junction, the light guide starting with the rectangular shape,
 			 and morphing into a circular cross section.}
 	\label{fig:ctofGeometry}
 \end{figure}
