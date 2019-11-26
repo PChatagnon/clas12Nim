@@ -27,14 +27,7 @@ Detailed quality assurance procedures were developed for testing the modules dur
 
 Longer silicon strips have higher capacitance and thus a higher input noise (see Fig.~\ref{fig:encstriplength}). Noise calibration accounts for the different strip lengths and pitch adapter layouts that affect the input capacitance of the preamplifier. The mean noise values scale linearly with strip length, which confirms that the noise is dominated by the strip capacitance and not by coherent noise pickup of the system. The channel noise has a linear dependence on the strip length with the offset p$_{0}$ about 400 electrons (with shaper at 125 ns) corresponding to the ENC for the shortest strips and the slope p$_1$ of 27 electrons, consistent with FSSR2 noise measurements at comparable capacitive load taken on a single-chip test board with discrete capacitors (see Fig.~\ref{fig:fssr2-enc-c}).
 
-\begin{figure}[hbt] 
-\centering 
-\includegraphics[width=1.0\columnwidth,keepaspectratio]{occ_thr.jpg}
-\caption{Channel noise occupancy vs. DAC hit/no-hit threshold (in DAC bins, one DAC bin corresponds to 3.5~mV).}
-\label{fig:noiseocc}
-\end{figure}
-
-The noise occupancy histogram with no charge injection is used to find the noise value (see Fig.~\ref{fig:noiseocc}). This histogram probes the tail of the noise distribution, which can show effects that are masked by the higher occupancy at low thresholds and provides a cross-check of the noise value obtained from the response curve measurement. A Most Probable Value (MPV) of the signal peak from a MIP corresponds to the 100$^{th}$ DAC bin. The equivalent noise charge of the SVT channels is shown in  Fig.~\ref{fig:enc}. The peak is $\sim$1600 electrons (signal-to-noise ratio 15), the shoulder on the left side is related to the shorter strips. The channel noise allows setting a 3$\sigma$ threshold at the 30~keV level. 
+The equivalent noise charge of the SVT channels is shown in  Fig.~\ref{fig:enc}. The peak is $\sim$1600 electrons (signal-to-noise ratio 15), the shoulder on the left side is related to the shorter strips. The channel noise allows setting a 3$\sigma$ threshold at the 30~keV level. 
 
 \begin{figure}[hbt] 
 	\centering 
@@ -52,28 +45,6 @@ The detector response and full readout chain calibration was done with $\gamma$ 
 	\label{fig:signal-gamma}
 \end{figure}
 
-%
-%\begin{wrapfigure}{l}{0.5\columnwidth}
-%\includegraphics[width=1.0\columnwidth]{encstriplength.png}
-%\caption{Input noise vs. strip length.}
-%\label{fig:encstriplength}
-%\end{wrapfigure}
-%Longer silicon strips have higher capacitance and thus a higher expected value for the input noise. 
-%(see Fig.~\ref{fig:encstriplength}).
-%
-
-%\begin{wrapfigure}{l}{0.5\columnwidth}
-%\includegraphics[width=1.0\columnwidth]{currents.png}
-%\caption{Leakage currents}
-%\label{fig:currents}
-%\end{wrapfigure}
-%
-%\begin{wrapfigure}{l}{0.5\columnwidth}
-%\includegraphics[width=1.0\columnwidth]{signal-muons.png}
-%\caption{Signal muons}
-%\label{fig:signal-muons}
-%\end{wrapfigure}
-
 \subsection{Integration and System Checkout}
 
 To verify performance of the integrated detector, data acquisition chain, power services, and cooling system, as well as the detector control and data acquisition software, the final detector system was installed in the clean room and used at all stages of tracker integration and commissioning. The SVT was operated for several months under environmental conditions close to the ones in the experimental hall. Defects known before the integration of the system were reestablished. 99.9$\%$ of channels were operational after the detector integration. 
@@ -81,11 +52,11 @@ To verify performance of the integrated detector, data acquisition chain, power 
 \begin{figure}[hbt] 
 \centering 
 \includegraphics[width=0.8\columnwidth,keepaspectratio]{occupancy-threshold.jpg}
-\caption{Log occupancy vs. threshold squared. The results of a linear fit are shown.}
+\caption{Log occupancy vs. DAC hit/no-hit threshold (in DAC bins) squared . The results of a linear fit are shown.}
 \label{fig:occupancy-threshold}
 \end{figure}
 
-The noise behavior was found to be within expectations and well understood. The dependence of the noise on the environmental temperature and humidity is small. The noise performance in the experimental hall was comparable with the results taken in the clean room during integration. Several diagnostic tools were used to measure the common mode noise performance of the detector. Figure~\ref{fig:occupancy-threshold} shows the log occupancy vs. threshold squared plot. Purely Gaussian noise gives a straight line in the plot over much of the useful range. Occupancy refers to the normalized total number of hits in all channels in a run. The power of this plot is to show non-Gaussian noise contributions as deviations from this linear fall-off. The hit map is plotted in the plane spanned by channel number and event number. It is an important diagnostic tool to test for the presence of the correlated noise and to understand the data quality, such as dead/noisy channels, channel occupancy, uniformity across the channels and events in a run, and coherent effects on the channels in individual events.
+The noise behavior was found to be within expectations and well understood. The dependence of the noise on the environmental temperature and humidity is small. The noise performance in the experimental hall was comparable with the results taken in the clean room during integration. Several diagnostic tools were used to measure the common mode noise performance of the detector. The noise occupancy plot with no charge injection is used to find the noise value. This plot probes the tail of the noise distribution, which can show effects that are masked by the higher occupancy at low thresholds and provides a cross-check of the noise value obtained from the response curve measurement. A Most Probable Value (MPV) of the signal peak from a MIP corresponds to the 100$^{th}$ DAC bin. Figure~\ref{fig:occupancy-threshold} shows the log occupancy vs. threshold squared plot. Purely Gaussian noise gives a straight line in the plot. Occupancy refers to the normalized total number of hits in all channels in a run. The power of this plot is to show non-Gaussian noise contributions as deviations from this linear fall-off. The hit map is plotted in the plane spanned by channel number and event number. It is an important diagnostic tool to test for the presence of the correlated noise and to understand the data quality, such as dead/noisy channels, channel occupancy, uniformity across the channels and events in a run, and coherent effects on the channels in individual events.
 
 \begin{figure}[hbt] 
 \centering 
@@ -260,7 +231,7 @@ Comparison of the rates of leakage current increase with different targets is sh
 \label{fig:hit-map-rga}
 \end{figure}
 
-The surface of the silicon sensors suffers from the damage due to ionizing radiation. The damage affects the insulating properties of the SiO$_2$ layer between the strips and the aluminum electrodes that collect the charge generated by the photons and the charged particles. The trapped positive charge causes an accumulation of electrons in the Si/SiO$_2$ interface between the strips, thus decreasing the resistance between the strips and increasing the interstrip capacitance, which affects noise performance and degrades the spacial resolution. After a year of running, several sensors developed pinholes (strips with DC current through the damaged dielectric between aluminum strip and implant, resulting in a high current flowing into a channel) observed as groups of adjacent hot channels. The performance of the charge amplifying chip is deteriorated by the high current flowing into a channel. The bias voltage on these sensors has been lowered to reduce the noise and the abnormally high leakage currents (high occupancy regions on the map). The increased leakage current was reduced by decreasing the detector temperature. The sensors are kept below -10$\degree$C to freeze the reverse annealing, interleaved with short periods at room temperature for the beneficial annealing. A hit map of the SVT from a physics run is shown in Fig.~\ref{fig:hit-map-rga}. Sensors with pinholes are seen on the map as darker horizontal lines due to reduced efficiency (under-depleted sensors) with strips of masked hot channels with no hits. In absence of physics background the same sensors in Fig.~\ref{fig:cosmic-hitmap-svt} showed higher occupancy because the average hit multiplicity in the cosmic event is low. 
+The surface of the silicon sensors suffers from the damage due to ionizing radiation. The damage affects the insulating properties of the SiO$_2$ layer between the strips and the aluminum electrodes that collect the charge generated by the photons and the charged particles. The trapped positive charge causes an accumulation of electrons in the Si/SiO$_2$ interface between the strips, thus decreasing the resistance between the strips and increasing the interstrip capacitance, which affects noise performance and degrades the spacial resolution. After a year of running, several sensors developed pinholes (strips with DC current through the damaged dielectric between aluminum strip and implant, resulting in a high current flowing into a channel) observed as groups of adjacent hot channels. The performance of the charge amplifying chip is deteriorated by the high current flowing into a channel. The bias voltage on these sensors (high occupancy regions on the map) has been lowered to reduce the noise and the abnormally high strip leakage currents. High current going through the bias resistor could cause unsafe voltage on the input of the preamplifier if the coupling capacitor is damaged. The increased leakage current was reduced by decreasing the detector temperature. The sensors are kept below -10$\degree$C to freeze the reverse annealing, interleaved with short periods at room temperature for the beneficial annealing. A hit map of the SVT from a physics run is shown in Fig.~\ref{fig:hit-map-rga}. Sensors with pinholes are seen on the map as darker horizontal lines due to reduced efficiency (under-depleted sensors) with strips of masked hot channels with no hits. In absence of physics background the same sensors in Fig.~\ref{fig:cosmic-hitmap-svt} showed higher occupancy because the average hit multiplicity in the cosmic event is low. 
 
 \begin{figure}[hbt] 
 \centering 

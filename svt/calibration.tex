@@ -13,16 +13,14 @@ The output signals from the FSSR2 chip can be converted to charge using either i
 
 The noise occupancy plots are produced by setting the pulser amplitude at fixed values and changing the comparator thresholds. Each point of an occupancy plot for a fixed value of injected charge represents the percentage of times that the comparator fires for a certain value of the threshold settings. In Fig.~\ref{fig:threshold-scan} three occupancy plots taken at different pulser amplitudes for a single channel are presented. The noise occupancy as a function of threshold in case of Gaussian noise is fit by the complementary error function and the probability $p$ of surpassing a threshold $\tau$ is given by Eq. (\ref{eq:erfc}). 
 
-\begin{equation} p(\tau)=\frac{1}{2} erfc(\frac{\tau - \tau_{0}}{\sqrt{2}\sigma})  \label{eq:erfc},
+\begin{equation} p(\tau)=\frac{1}{2} erfc(\frac{\tau}{\sqrt{2}\sigma})  \label{eq:erfc},
 \end{equation}
-where $\sigma$ is the standard deviation of the Gaussian distribution, and $\tau_{0}$ is the mean value, corresponding to the threshold at 50$\%$ occupancy.
+where $\sigma$ is the standard deviation of the Gaussian distribution. In presence of the calibration signal the occupancy plot is shifting to the higher threshold values proportionally to the calibration amplitude.
 
 In between the high and low threshold regions, the occupancy histogram for each SVT channel is well described by an error function, or S-curve, producing a mean value (discriminator threshold) and standard deviation (noise). The parameters for the mean and $\sigma$ of the $erfc$ fits are shown. The conversion to mV is performed considering the width of one DAC bin (3.5 mV). The injected charge is calculated using the nominal value for the FSSR2 injection capacitance of 40~fF. The threshold at 50$\%$ occupancy is plotted against the input charge, resulting in a response curve, of which the slope is called the gain $G$, measured in mV/fC. The response plot shows the linear dependence of the output pulse height on the input charge in the operation region of the preamplifier. The middle point corresponds to a charge deposited in the sensor by a Minimum Ionizing Particle (MIP). The slope and the offset parameters of the linear fit are shown. The input noise is obtained by dividing the output noise by the gain using the formula:
 
 \begin{equation} ENC[e^{-}]=6242[e^{-}/fC]\frac{\sigma[mV]}{G[mV/fC]}  \label{eq:enc}
 \end{equation}
-
-
 
 \begin{figure}[hbt] 
 	\centering 
