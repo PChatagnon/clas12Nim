@@ -18,14 +18,15 @@ Finally, the LTCC box, mirror support structure, and additional support hardware
 	\caption{Top: a 6 GeV pion passing through the LTCC gas volume and emitting Cherenkov photons. The light cone
             bounces from the elliptical to the hyperbolic mirrors to the Winston cone, and finally reaches the PMT.
             Bottom: details of the hardware inside the LTCC simulation system: the box frame and the WC are
-            imported from CAD. The mirrors, shields, and PMTs are made with Geant4 volumes. One of the PMT shields
+            imported from CAD. The mirrors, magnetic shields, and PMTs are made with Geant4 volumes.
+            One of the PMT magnetic shields
             in this picture was removed to show the WC. The PMT is simulated as a disk attached to the WC. }
 	\label{fig:ltccGeometry}
 \end{figure}
 
-The refractive index of the $C_4F_{10}$ radiator gas and its transparency is included in the material optical properties and taken
-into account during the Geant4 transportation of the photons.
-Similarly for the reflectivity of the mirrors and Winston cones.
+The refractive index of the $C_4F_{10}$ radiator gas and its transparency is included in the material
+optical properties and taken into account during the Geant4 transportation of the photons,
+as is the reflectivity of the mirrors and Winston cones.
 The quantum efficiency associated with the PMT photo-cathodes is taken into account in
 the digitization routine.
 
@@ -43,18 +44,20 @@ The digitized output bank variables are summarized in Table \ref{tab:ltccBank}.
 			\hline \hline
 			Variable & Description                                         \\
 			\hline
-             sector  &                                     CLAS12 sector   \\
-               side  &                               left or right index   \\
-            segment  &                                           segment   \\
-                ADC  &                                               ADC   \\
-               time  &                           average time of the hit   \\
-               nphe  &                  number of photo-electrons arrived   \\
-              npheD  &                 number of photo-electrons detected   \\
-               hitn  &                                        hit number   \\
+             sector  &                                     CLAS12 sector     \\
+               side  &                               left or right index     \\
+            segment  &                                           segment     \\
+                ADC  &                                               ADC     \\
+               time  &                           average time of the hit     \\
+               nphe  &                  number of photons at the PMT face    \\
+              npheD  &                 number of photons at the electronics  \\
+               hitn  &                                        hit number     \\
 			\hline \hline
 		\end{tabular}
 	\end{center}
-	\caption{The digitized LTCC bank.}\label{tab:ltccBank}
+	\caption{The digitized LTCC bank. The digitization takes into account the PMT quantum efficiency
+             to derive the number of photons at the electronics from the photon energies
+             at the face of the PMT.}\label{tab:ltccBank}
 \end{table}
 
 The time window  of the LTCC is set to 5 ns: all Geant4 steps within the same PMT and time window are collected in one hit.
