@@ -67,8 +67,9 @@ Similar agreements were found with the rates in the other CLAS12 detectors. In p
 
 \begin{itemize}
 	\item FTOF: good agreement with data for the PMT currents \cite{ftof-nim};
-	\item CTOF good agreement with data for the upstream PMT counter rates, while the downstream counter rates;
-		  are about a factor of three lower, probably due to not handling light signals produced in the light guides \cite{ctof-nim};
+	\item CTOF good agreement with data for the upstream PMT counter rates, while the downstream counter rates
+		  are about a factor of three lower in the simulation than they are in the data, probably due to the simulation
+          not taking into account the light signals produced in the light guides \cite{ctof-nim};
 	\item FT: good agreement with data for PMT currents and radiation doses \cite{ft-nim}.
 \end{itemize}
 
@@ -129,8 +130,8 @@ CLAS12   &  588.1 & 100 \\
 \label{tab:benchmarks}
 \end{table}
 
-\noindent Simulations that include the complete beam-target interactions using the full nominal luminosity
-of \cLuminosity are made using 124,000 electrons per event. In this case the time to complete one event varies
+\noindent Simulations that include the complete beam-target interactions using the nominal luminosity
+of \cLuminosity\ are made using 124,000 electrons per event. In this case the time to complete one event varies
 between one and two minutes depending on the CPU type and available memory.
 
 
