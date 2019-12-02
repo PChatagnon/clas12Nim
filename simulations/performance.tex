@@ -101,7 +101,7 @@ complete CLAS12 setup is 1.7 Hz.
 	\begin{center}
 		\begin{tabular}{ c | c | c | c }
 			 \hline \hline
-System	 & ms / event &  $\%$ of total\\
+System	 & event rate (ms)   &  $\%$ of total\\
 			\hline
 Target   &  1.2   & 0.20  \\
 SVT      &  0.9   & 0.16  \\
@@ -123,8 +123,13 @@ CLAS12   &  588.1 & 100 \\
 		\hline \hline
 		\end{tabular}
 	\end{center}
-	\caption{GEMC simulation benchmarks in each CLAS12 detector. The calorimeters are responsible for more than
-             half the computing time, due to shower simulations. Swimming in the magnetic fields accounts for about 13.5$\%$ of the total CPU time.
+	\caption{GEMC simulation benchmarks in each CLAS12 detector and magnet.
+             The time spent (by swimming and digitization)
+             within each system by 3 particles
+             (2 in the Forward Detector, one in the Central Detector) is tabulated.
+             The calorimeters are responsible for more than
+             half the computing time, due to shower simulations.
+             Swimming in the magnetic fields accounts for about 13.5$\%$ of the total CPU time.
 			 The overall rate for the full CLAS12 detector is 1.7 Hz.
 }
 \label{tab:benchmarks}

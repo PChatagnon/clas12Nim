@@ -4,7 +4,7 @@ The CEBAF Large Acceptance Spectrometer for operation at 12 GeV beam energy (CLA
 the Thomas Jefferson National Accelerator Facility (Jefferson Lab) was designed to study
 electro-induced nuclear and hadronic reactions by providing efficient detection of charged and neutral particles over a large
 fraction of the full solid angle. The spectrometer has met the performance criteria of instantaneous luminosity up
-to \cLuminosity and momentum resolution $\sigma_p / p$ in the forward direction using the drift chambers and in the central
+to \cLuminosity and momentum resolution $\sigma_p/p$ in the forward direction using the drift chambers and in the central
 direction using the vertex tracker of $< 1\%$ and $< 3\%$, respectively.
 
 The CLAS Collaboration has implemented a detector simulation within the GEMC software framework \cite{GEMC}.
@@ -23,8 +23,8 @@ and tracking efficiency needed for the physics results and science goals.
 GEMC is a c++ framework that uses Geant4 \cite{geant4} to simulate the passage of particles through matter. It provides:
 \begin{itemize}
 	\item an application-independent geometry description;
-	\item an easy interface to build / run experiments;
-	\item CAD / GDML imports.
+	\item an easy interface to build/run experiments;
+	\item CAD/GDML imports.
 \end{itemize}
 
 The simulation parameters are stored in external databases and are used to define the Geant4 objects at run time. This includes:
@@ -34,7 +34,7 @@ The simulation parameters are stored in external databases and are used to defin
 	\item mirrors;
 	\item physics list;
 	\item database constants;
-	\item digitization;
+	\item digitization to match the data numerical format;
 	\item electromagnetic fields.
 \end{itemize}
 
