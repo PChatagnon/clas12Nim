@@ -5,7 +5,7 @@
 The DC geometry is implemented through the java geometry service.
 The service provides the Geant4 definitions that are read by the GEMC perl API to build the geometry database.
 
-For each of the six sectors of the CLAS12 Forward Detector, there are three drift chambers: one in front of the torus,
+For each of the six sectors of the CLAS12 Forward Detector, there are three drift chambers: one in front of the torus magnet,
 one between the torus coils, and one after the torus.  These three chambers are referred to as different ``regions''.
 The chambers are strung with the wires arranged in 12 internal layers.
 Each layer is a generic G4Trapezoid, tilted by +6\mdeg \ or -6\mdeg \ depending if they are in the first or second
@@ -19,7 +19,7 @@ The hit wire identification is performed in the Process ID routine.
 	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/dcGeometry.png}
 %	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/dcDetail.png}
 	\caption{The GEMC implementation of the DC geometry (longitudinal cut-view).
-	         Beam is incident from the left. The solenoid volume, CTOF, CND, and HTCC are also visible.
+	         Beam is incident from the left. The solenoid magnet volume, CTOF, CND, and HTCC are also visible.
              Geant4 trapezoids are the mother volumes corresponding to DC regions 1, 2, and 3.
              The track is a negative pion, hitting the various layers inside each region.
              The hits are indicated by the white markers. Due to the high DC
