@@ -2,7 +2,7 @@
 
 
 \subsubsection{Geometry}
-The solenoid geometry is produced with the GEMC perl API. The solenoid is a single Geant4 polycone volume, shown in \F{solenoid}.
+The solenoid magnet geometry is produced with the GEMC perl API. The solenoid is a single Geant4 polycone volume, shown in \F{solenoid}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/solenoid.png}
@@ -10,7 +10,7 @@ The solenoid geometry is produced with the GEMC perl API. The solenoid is a sing
 	\label{fig:solenoid}
 \end{figure}
 
-The torus geometry is imported from the engineering CAD model through 54 tessellated volumes. Among the volumes are:
+The torus magnet geometry is imported from the engineering CAD model through 54 tessellated volumes. Among the volumes are:
 
 \begin{itemize}
 	\item the bore heat shield and hub components;
@@ -37,17 +37,19 @@ The torus geometry is shown in \F{torus}.
 
 \subsubsection{Magnetic Field Maps} \label{sec:clas12FieldMaps}
 
-The CLAS12 torus and solenoid field maps are imported into the simulation using ascii files. Both fields can be scaled by an arbitrary factor.
+The CLAS12 torus and solenoid field maps are imported into the simulation using ascii files.
+Both fields can be scaled by an arbitrary factor.
 Both fields are defined in the Hall-B coordinate system and both can be shifted and tilted by additional small amounts.
 
 \subsubsection{Solenoid}
 The solenoid field map has cylindrical symmetry around the $z$-axis (beamline), so the map used in the simulation is defined
-in the transverse / longitudinal plane and then rotated when requested by the Geant4 navigation.
+in the transverse/longitudinal plane and then rotated when requested by the Geant4 navigation.
 The integration method used in the simulation is the fourth-order Runge-Kutta technique \cite{rungeKutta}.
 
-The solenoid field near the target is parallel to the $z$-axis and its uniformity was measured to be 318~ppm over a 25~mm
-diameter and 40~mm long cylindrical volume. The field map grid is made by 600 points in the transverse coordinate,
-from 0 to 3 m and by 1200 points along the $z$-axis, from \mbox{-3 m} to 3 m.
+%The solenoid field near the target is parallel to the $z$-axis and its uniformity was measured to be 318~ppm over a 25~mm
+%diameter and 40~mm long cylindrical volume.
+The field map grid size is based on measured field variations and uniformity. The grid is made by 600 points
+in the transverse coordinate, from 0 to 3 m and by 1200 points along the $z$-axis, from \mbox{-3 m} to 3 m.
 The field grid values are linearly interpolated to the $(x,y,z)$ coordinate requested by Geant4.
 Table \ref{tab:solMap} shows the field map ascii data structure. The simulation of one event in a 250~ns time window at
 the CLAS12 luminosity with and without solenoid magnetic field is presented in \F{solenoidONOFF}, showing the effectiveness
@@ -70,8 +72,11 @@ of the solenoid in providing electromagnetic shielding of M\o ller electrons.
 		\hline \hline
 		\end{tabular}
 	\end{center}
-\caption{Solenoid ascii field map values around the target. T is the transverse coordinate$\sqrt{(x^2+y^2)}$ and $z$ is the longitudinal coordinate.
-		 The solenoid field is centered at $z=0$, the location of the center of the target.}\label{tab:solMap}
+\caption{Solenoid ascii field map values around the target. T is the transverse coordinate$\sqrt{(x^2+y^2)}$ and
+         $z$ is the longitudinal coordinate.
+		 The solenoid field is centered at $z=0$, the location of the center of the target.
+         These values refers to the target location, where the field is designed to be constant.
+         The map includes all the complex geometric fallof of the fringe field in the exit to the bore.}\label{tab:solMap}
 \end{table}
 
 \begin{figure}
@@ -79,7 +84,7 @@ of the solenoid in providing electromagnetic shielding of M\o ller electrons.
 	\includegraphics[width=0.98\columnwidth,keepaspectratio]{img/solenoidOFF.png}
 	\includegraphics[width=0.98\columnwidth,keepaspectratio]{img/solenoidON.png}
     \caption{An 11 GeV electron beam impinging on a 5-cm long liquid-hydrogen target. The SVT detector is shown.
-             The figure shows one event at the full \cLuminosity luminosity, corresponding to 124,000 electrons in a 250 ns time window.
+             The figure shows one event at the full \cLuminosity\ luminosity, corresponding to 124,000 electrons in a 250 ns time window.
 			 Top: no solenoid field. A storm of M\o ller electrons saturates the SVT: each point is a recorded hit above the SVT threshold of 30 keV.
 			 Bottom: full solenoid field.
              The solenoid focuses the M\o ller electrons along the beamline, providing an effective electromagnetic shield for CLAS12. }
