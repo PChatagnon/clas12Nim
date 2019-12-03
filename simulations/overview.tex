@@ -7,11 +7,11 @@ fraction of the full solid angle.
 CLAS12 is based on two superconducting magnets and multiple detector subsystems that provides large
 coverage for the detection of charged and neutral particles produced by the interaction of the electron beam
 from the JLab CEBAF accelerator with a target located at the center of the spectrometer. A six-coil torus
-magnet defines the six-sector structure of the so-called Forward Detector that is outfitted with Drift
+magnet~\cite{magnets-nim} defines the six-sector structure of the so-called Forward Detector that is outfitted with Drift
 Chambers~\cite{dc-nim} for charged particle tracking and multiple detector systems for particle identification.
 These detectors include threshold Cherenkov Counters~\cite{ltcc-nim, htcc-nim} and Ring-Imaging Cherenkov
 Counters~\cite{rich-nim}, scintillator-based time-of-flight hodoscopes~\cite{ftof-nim}, and electromagnetic
-calorimeters~\cite{ec-nim}. In the target region, a 5~T superconducting solenoid surrounds a central tracker
+calorimeters~\cite{ec-nim}. In the target region, a 5~T superconducting solenoid~\cite{magnets-nim} surrounds a central tracker
 based on silicon and Micromegas detectors \cite{svt-nim,mm-nim}, and subsystems for particle identification
 that include a time-of-flight scintillation counter barrel~\cite{ctof-nim} and a neutron detector~\cite{cnd-nim},
 forming the so-called Central Detector.
@@ -49,7 +49,7 @@ Finally, GEMC is used to accurately calculate the CLAS12 acceptance, including t
 and tracking efficiency needed for the physics results and science goals.
 
 
-GEMC is a C$^{++}$ framework that uses Geant4 \cite{geant4} to simulate the passage of particles through matter. It provides:
+GEMC is a C++ framework that uses Geant4 \cite{geant4} to simulate the passage of particles through matter. It provides:
 \begin{itemize}
 	\item an application-independent geometry description;
 	\item an easy interface to build/run experiments;
@@ -124,7 +124,7 @@ mimic the MYSQL tables. The databases can be defined using the following factori
 	\item GEMC native API (Perl or Python);
 	\item JAVA algorithms used by both simulation and the CLAS12 event reconstruction software \cite{recon-nim} or ``JAVA geometry services'';
 	\item CAD (STL, PLY formats);
-	\item GDML, C$^{++}$ plugins (not used in CLAS12).
+	\item GDML, C++ plugins (not used in CLAS12).
 \end{itemize}
 
 
@@ -250,7 +250,7 @@ cases, detailed for each detector:
 
 \subsection{Detectors and Hit Process Plugin Mechanism}
 
-The detectors are associated with C$^{++}$ digitization routines at run time (see \F{pluginsAssociation}).
+The detectors are associated with C++ digitization routines at run time (see \F{pluginsAssociation}).
 This allows the routines to be developed independently from the core code. Abstract methods can be derived in
 the individual detector hit processes to define the treatment of the Geant4 steps within the detector
 time window to provide three kind of outputs:
