@@ -17,7 +17,7 @@ accordingly. The predicted rates agree quite well with the measured ones.
 	\begin{center}
 		\begin{tabular}{| c | c | c |}
 			\hline \hline
-			Region & Data (rescaled) &  GEMC \\
+			Region & Data (re-scaled) &  GEMC \\
 			\hline
 			1 &  $2.8\%$  & $2.7\%$ \\
 			2 &  $0.6\%$  & $0.8\%$ \\
@@ -32,7 +32,7 @@ accordingly. The predicted rates agree quite well with the measured ones.
 	\begin{center}
 		\begin{tabular}{| c | c | c |}
 			\hline \hline
-			Region & Data (rescaled) &  GEMC \\
+			Region & Data (re-scaled) &  GEMC \\
 			\hline
 			1 &  $1.7\%$  & $1.1\%$ \\
 			2 &  $0.3\%$  & $0.4\%$ \\
@@ -67,8 +67,9 @@ Similar agreements were found with the rates in the other CLAS12 detectors. In p
 
 \begin{itemize}
 	\item FTOF: good agreement with data for the PMT currents \cite{ftof-nim};
-	\item CTOF good agreement with data for the upstream PMT counter rates, while the downstream counter rates;
-		  are about a factor of three lower, probably due to not handling light signals produced in the light guides \cite{ctof-nim};
+	\item CTOF good agreement with data for the upstream PMT counter rates, while the downstream counter rates
+		  are about a factor of three lower in the simulation than they are in the data, probably due to the simulation
+          not taking into account the light signals produced in the light guides \cite{ctof-nim};
 	\item FT: good agreement with data for PMT currents and radiation doses \cite{ft-nim}.
 \end{itemize}
 
@@ -100,7 +101,7 @@ complete CLAS12 setup is 1.7 Hz.
 	\begin{center}
 		\begin{tabular}{ c | c | c | c }
 			 \hline \hline
-System	 & ms / event &  $\%$ of total\\
+System	 & event rate (ms)   &  $\%$ of total\\
 			\hline
 Target   &  1.2   & 0.20  \\
 SVT      &  0.9   & 0.16  \\
@@ -122,15 +123,20 @@ CLAS12   &  588.1 & 100 \\
 		\hline \hline
 		\end{tabular}
 	\end{center}
-	\caption{GEMC simulation benchmarks in each CLAS12 detector. The calorimeters are responsible for more than
-             half the computing time, due to shower simulations. Swimming in the magnetic fields accounts for about 13.5$\%$ of the total CPU time.
+	\caption{GEMC simulation benchmarks in each CLAS12 detector and magnet.
+             The time spent (by swimming and digitization)
+             within each system by 3 particles
+             (2 in the Forward Detector, one in the Central Detector) is tabulated.
+             The calorimeters are responsible for more than
+             half the computing time, due to shower simulations.
+             Swimming in the magnetic fields accounts for about 13.5$\%$ of the total CPU time.
 			 The overall rate for the full CLAS12 detector is 1.7 Hz.
 }
 \label{tab:benchmarks}
 \end{table}
 
-\noindent Simulations that include the complete beam-target interactions using the full nominal luminosity
-of \cLuminosity are made using 124,000 electrons per event. In this case the time to complete one event varies
+\noindent Simulations that include the complete beam-target interactions using the nominal luminosity
+of \cLuminosity\ are made using 124,000 electrons per event. In this case the time to complete one event varies
 between one and two minutes depending on the CPU type and available memory.
 
 

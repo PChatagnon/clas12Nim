@@ -2,11 +2,12 @@
 
 \subsubsection{Geometry}
 
-The Micromegas geometry is implemented through the native GEMC geometry API. There are two subsystems: a ``barrel'' Micromegas
-between the SVT and the CTOF, made by six concentric layers divided azimuthally in three identical sectors; and a ``forward'' Micromegas
-made six identical identical. In the BMT, three layers have their readout strips parallel
-to the beam while the other three have them perpendicular to the
-beam (see Fig. 14). In the FMT, each disk (and strip orientation in a plane perpendicular to the beam)
+The BMT and FMT geometries are implemented through the native GEMC geometry API.
+There are two subsystems: a ``barrel'' Micromegas between the SVT and the CTOF, made by six concentric layers
+divided azimuthally in three identical sectors; and a ``forward'' Micromegas
+made in six identical disks, see Fig. 14. In the BMT, three layers have their readout strips parallel
+to the beam (z strips) while the other three have them perpendicular to the
+beam (c strips). In the FMT, each disk (and strip orientation in a plane perpendicular to the beam)
 is rotated by 30\mdeg\ with respect to its upstream neighbor. Each elementary Micromegas detector contains a
 cover layer with copper ground, the printed circuit board (PCB) with the readout strips,
 the Kapton support, the mesh layer, the ionizing gas, and other layers of material, listed in order below:
@@ -25,7 +26,8 @@ the Kapton support, the mesh layer, the ionizing gas, and other layers of materi
 	\item ground
 \end{itemize}
 
-The sensitive volume contains argon/isobutane gas and is associated with the BMT and FMT hit process routines.
+The sensitive volume contains argon/isobutane gas at atmospheric pressure and is associated with the BMT and
+FMT hit process routines.
 The geometry is summarized in \F{bmtGeometry}. The strip identification is performed in the Process ID routine.
 
 \begin{figure}
