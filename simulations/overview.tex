@@ -1,4 +1,4 @@
-\section{Overview}
+\section{Overview}\label{overview}
 
 The CEBAF Large Acceptance Spectrometer for operation at 12 GeV beam energy (CLAS12) \cite{clas12-nim} in Hall B at
 the Thomas Jefferson National Accelerator Facility (Jefferson Lab) was designed to study
@@ -72,12 +72,24 @@ The following CLAS12 systems are implemented in the simulations:
 \item Superconducting Magnets \cite{magnets-nim}.
 \end{itemize}
 
-The simulation implementation is described in the sections below.
+The CLAS12 mechanical design include electronics, support structures, and additional hardware that cannot
+entirely be imported in the simulation due memory and cpu limitations: each object increases the overall
+system complexity, the time, and the memory needed to process events. Nevertheless, all the elements in
+the way of particle trjectory paths to any of the CLAS12 detectors are included in the simulation.
+In addition, the simulation incorporates selected hardware in order to reproduce beam related
+rates in the detectors to a good level of accuracy, with priority given to volumes near high background
+areas and near sensitive detectors.
+
+By omitting some materials, we limit the ability of the simulation to make predictions. However, built in the
+simulation is the ability to merge hits using random trigger events from experimental data, which include the
+real background rates, as detailed in \ref{bmerging}.
+
+The simulation implementation is detailed in the sections below.
 
 \subsection{Geometry and Materials Import}
 
-The geometry and system materials are stored in external databases that can be MYSQL tables or text files that mimic the MYSQL tables.
-The databases can be defined using the following factories:
+The geometry and system materials are stored in external databases that can be MYSQL tables or text files that
+mimic the MYSQL tables. The databases can be defined using the following factories:
 
 \begin{itemize}
 	\item GEMC native API (Perl or Python);
@@ -86,29 +98,39 @@ The databases can be defined using the following factories:
 	\item GDML, c++ plugins (not used in CLAS12).
 \end{itemize}
 
-The GEMC native API and the CLAS12 geometry code source repositories are listed on the CLAS12 tags portal \cite{clas12Tags}.
+
+
+The GEMC native API and the CLAS12 geometry code source repositories are listed on the CLAS12
+tags portal \cite{clas12Tags}.
 
 
 \subsubsection{Importing CAD volumes from the engineering model}
 
 The Hall B detectors and their supports are designed with 3D CAD software. This includes a reference system and the
-hierarchy of all detector elements, down to details like nuts and bolts. The CAD models are exported into STEP files \cite{stepFiles}.
-In order to import them into a Geant4 simulation, the volumes relevant to the simulation are selected from the engineering
-model stored in one of the CAD data exchange formats (typically a STEP file) \cite{cadExchange} (see \F{cadSelection}).
+hierarchy of all detector elements, down to details such as nuts and bolts.
+The CAD models are exported into STEP files \cite{stepFiles}.
+In order to import them into the GEMC simulation, the elements in the STEP file are ``tessellated'',
+a process in which polygonal triangular faucets are created to define a Geant4 volume that best represents
+the original CAD element.
+The software used to do this is FreeCad \cite{freeCad}. An example of tessellation showing the polygonal shapes
+is shown in \F{targetScatteringChamber}. The number of faucets depends on the object complexity, and varies between
+100 and 10,000.
+Not all the objects are imported from the enginerring model due to the following limitations:
+
+\begin{enumerate}
+\item
+\item when volumes that contains very small and pointy features are tessellated, the faucets may be too small
+      to be processed properly in geant4 and cause tracks to get stuck or produce swimming errors.
+\end{enumerate}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\columnwidth,keepaspectratio]{img/cadSelection.png}
-	\caption{The engineering model of one of the CLAS12 detectors, before importing it into GEMC.
-             The model may be composed by thousands of elements, not all of them relevant to the GEMC Geant4 simulation.
-             The import process involves filtering out unnecessary volumes that are not in the active region.}
+	\caption{The engineering model of the CLAS12 drift chambers.
+             Some hardware shown in this figure, for example the support structure outside the detector
+             fiducial volume, is not imported in the simulation as explained in \ref{overview} }
 	\label{fig:cadSelection}
 \end{figure}
-
-The elements in the STEP file are then ``tessellated'', in which polygonal shapes are created to define a Geant4 volume
-that best represents the original CAD element.
-The software used to do this is FreeCad \cite{freeCad}. An example of tessellation showing the polygonal shapes
-is shown in \F{targetScatteringChamber}.
 
 The simulated CAD import is as close to reality as the engineering model is close to reality.
 We did encounter differences between the STEP files, the drawings, and reality in a few occasions and designed
@@ -330,7 +352,7 @@ The various output banks include:
 
 The various banks are organized using a unique integer identifier.
 
-\subsection{Background Merging}
+\subsection{Background Merging}\label{bmerging}
 
 Real data can be merged with simulated events, typically from random trigger data, to emulate physics and electronic background in
 the various detectors.
