@@ -1,9 +1,7 @@
 \subsection{Drift Chambers (DC)}
 
-\subsubsection{Geometry}
-
-The DC geometry is implemented through the java geometry service.
-The service provides the Geant4 definitions that are read by the GEMC perl API to build the geometry database.
+The DC geometry is implemented through the JAVA geometry service.
+The service provides the Geant4 definitions that are read by the GEMC PERL API to build the geometry database.
 
 For each of the six sectors of the CLAS12 Forward Detector, there are three drift chambers: one in front of the torus magnet,
 one between the torus coils, and one after the torus.  These three chambers are referred to as different ``regions''.
@@ -20,7 +18,7 @@ The hit wire identification is performed in the Process ID routine.
 %	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/dcDetail.png}
 	\caption{The GEMC implementation of the DC geometry (longitudinal cut-view).
 	         Beam is incident from the left. The solenoid magnet volume, CTOF, CND, and HTCC are also visible.
-             Geant4 trapezoids are the mother volumes corresponding to DC regions 1, 2, and 3.
+             Geant4 trapezoids are the mother volumes corresponding to DC Regions 1, 2, and 3.
              The track is a negative pion, hitting the various layers inside each region.
              The hits are indicated by the white markers. Due to the high DC
              efficiency, most tracks produce at least one hit in each layer (12 hits/region).
@@ -105,7 +103,7 @@ The digitized output bank variables are summarized in Table \ref{tab:dcBank}.
 
 The simulation time window of the DC is set to 500~ns: all Geant4 steps within the same cell and time window are
 collected in one hit.
-The actual readout electronics time window is set to 250, 500, and 750~ns for regions 1, 2, and 3, respectively.
+The actual readout electronics time window is set to 250, 500, and 750~ns for Regions 1, 2, and 3, respectively.
 
 
 \subsubsection{Background Rates}
@@ -114,24 +112,24 @@ A detailed study of the background rates coming from beam interacting with the t
 the DC occupancy stays within limits that do not affect the track reconstruction efficiency, typically below $5\%$.
 
 Given the operating luminosity L=\cLuminosity and the liquid-hydrogen target length of 5 cm, the beam electron rate
-is R=4.7 $\times$ 10$^{11}$ Hz. This corresponds to around 124,000 electrons in the DC 250 ns time window of region 1.
+is R=4.7 $\times$ 10$^{11}$ Hz. This corresponds to around 124,000 electrons in the DC 250 ns time window of Region 1.
 
 Various analyses \cite{targetStudy, clas12Beamline, clas12Background}, were performed using 124,000 electrons/event
 to study the DC occupancy response to variations of hardware position and beamline configurations.
-The rates were scaled in region 2 and 3 to take into account the difference between the real and simulated time window.
-The results are summarized in \F{dcOccupancy}. The highest DC occupancy is in region 1.
+The rates were scaled in Region 2 and 3 to take into account the difference between the real and simulated time window.
+The results are summarized in \F{dcOccupancy}. The highest DC occupancy is in Region 1.
 The source is mostly electromagnetic background from the target and beamline elements.
 Regions 2 and 3 are shielded against leptons by the torus magnetic field.
 Region 3 is exposed to radiation coming from the interactions of the broadened beam
 (due to interactions in the target) with the torus components (especially the most downstream elements).
-In general, the occupancy in the DC affects the track reconstruction efficiency. A value of 3$\%$ occupancy in region 1
+In general, the occupancy in the DC affects the track reconstruction efficiency. A value of 3$\%$ occupancy in Region 1
 is considered an optimal compromise between luminosity and reconstruction efficiency \cite{recon-nim}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/dcOccupancy.png}
 	\caption{Results for DC rates for electrons out-bending in the torus field.
-		     Top: the occupancy is below $3\%$ for region 1 and $1.2\%$ for region 3. Bottom: layer
+		     Top: the occupancy is below $3\%$ for Region 1 and $1.2\%$ for Region 3. Bottom: layer
 		     versus wire hit distribution. Results for the electron in-bending polarity shows very similar distributions.}
 	\label{fig:dcOccupancy}
 \end{figure}

@@ -20,7 +20,7 @@ Finally, GEMC is used to accurately calculate the CLAS12 acceptance, including t
 and tracking efficiency needed for the physics results and science goals.
 
 
-GEMC is a c++ framework that uses Geant4 \cite{geant4} to simulate the passage of particles through matter. It provides:
+GEMC is a C$^{++}$ framework that uses Geant4 \cite{geant4} to simulate the passage of particles through matter. It provides:
 \begin{itemize}
 	\item an application-independent geometry description;
 	\item an easy interface to build/run experiments;
@@ -93,9 +93,9 @@ mimic the MYSQL tables. The databases can be defined using the following factori
 
 \begin{itemize}
 	\item GEMC native API (Perl or Python);
-	\item java algorithms used by both simulation and the CLAS12 event reconstruction software \cite{recon-nim} or ``java geometry services'';
+	\item JAVA algorithms used by both simulation and the CLAS12 event reconstruction software \cite{recon-nim} or ``JAVA geometry services'';
 	\item CAD (STL, PLY formats);
-	\item GDML, c++ plugins (not used in CLAS12).
+	\item GDML, C$^{++}$ plugins (not used in CLAS12).
 \end{itemize}
 
 
@@ -173,7 +173,7 @@ as part of the validation process is shown in \F{cadValidationExample}.
 
 
 \subsection{Magnetic Fields}
-The magnetic fields are loaded from ascii files. The following Geant4 parameters are loaded from
+The magnetic fields are loaded from ASCII files. The following Geant4 parameters are loaded from
 command line options or configuration files at run time:
 
 \begin{itemize}
@@ -221,7 +221,7 @@ cases, detailed for each detector:
 
 \subsection{Detectors and Hit Process Plugin Mechanism}
 
-The detectors are associated with c++ digitization routines at run time (see \F{pluginsAssociation}).
+The detectors are associated with C$^{++}$ digitization routines at run time (see \F{pluginsAssociation}).
 This allows the routines to be developed independently from the core code. Abstract methods can be derived in
 the individual detector hit processes to define the treatment of the Geant4 steps within the detector
 time window to provide three kind of outputs:
@@ -330,7 +330,7 @@ The digitization is detailed in each of the detector implementation sections bel
 
 \subsection{Output}
 
-The GEMC output is available in two formats, identical in content: text (ascii) and evio \cite{evio}, the Jefferson Lab
+The GEMC output is available in two formats, identical in content: text (ASCII) and evio \cite{evio}, the Jefferson Lab
 data acquisition format.
 Utilities were used to convert the evio format into ROOT \cite{root} for data analysis.
 
