@@ -1,10 +1,8 @@
 \subsection{Central Time-Of-Flight (CTOF)} \label{sec:ctof}
 
-\subsubsection{Geometry}
-
 The CLAS12 CTOF paddles and light guides (see \F{ctofGeometry} top) are imported from the engineering model.
 The STEP files are converted to tessellated STL files and imported directly into the GEMC simulation \cite{gemcCad}.
-The STL files are downloaded using the java geometry service, as the same files are used in reconstruction.
+The STL files are downloaded using the JAVA geometry service, as the same files are used in reconstruction.
 The paddles are assigned the scintillator material and associated with the CTOF hit process routine.
 The light guides are also associated with the scintillator material, but they are treated as passive material and not
 associated with a sensitive detector.
@@ -37,16 +35,17 @@ The energy deposited is reduced based on the hit position on the paddle using th
 It is then corrected by a gain factor to account for the fact that the high voltages (HV) are adjusted so that
 the average upstream/downstream ADC geometric mean is independent of hit position.
 
-The corrected energy is converted to the data derived number of photons $N_{th}$ using the constant 500 $\gamma$/MeV. A Poissonian is used to
-calculate the actual number of photons $N_{actual}$ and the resulting ``smeared`` energy is converted to ADC using the FADC conversion factor.
+The corrected energy is converted to the data derived number of photons $N_{th}$ using the constant 500 $\gamma$/MeV.
+A Poissonian distribution is used to calculate the actual number of photons $N_{actual}$ and the resulting ``smeared``
+energy is converted to ADC using the FADC conversion factor.
 
 
-The absolute hit time is corrected by:
+The absolute hit time is corrected using calibration constants estimated from data:
 
 \begin{itemize}
-	\item the effective velocity (from CCDB);
-	\item an upstream/downstream PMT time offset factor (from CCDB);
-	\item an RF correction (from CCDB).
+	\item the effective velocity;
+	\item an upstream/downstream PMT time offset factor;
+	\item an RF correction.
 \end{itemize}
 
 The time is then smeared by a resolution read from CCDB using a Gaussian function and then digitized using a TDC conversion factor.
