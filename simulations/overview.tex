@@ -149,7 +149,7 @@ Not all the objects are imported from the enginerring model due to the following
 \begin{enumerate}
 \item
 \item when volumes that contains very small and pointy features are tessellated, the faucets may be too small
-      to be processed properly in geant4 and cause tracks to get stuck or produce swimming errors.
+      to be processed properly in Geant4 and cause tracks to get stuck or produce swimming errors.
 \end{enumerate}
 
 \begin{figure}[h]
@@ -236,8 +236,8 @@ are part of the same GEMC hit. The algorithm is illustrated in \F{hitDefinition}
 
 \subsection{Process Identification}
 
-A ``Process ID'' method can be implemented by some digitization algorithm to modify or add GEMC identifiers to each Geant4 step. For CLAS12 this happens in two
-cases, detailed for each detector:
+A ``Process ID'' method can be implemented by some digitization algorithm to modify or add GEMC identifiers to
+each Geant4 step. For CLAS12 this happens in two cases, detailed for each detector:
 
 \begin{itemize}
 	\item a paddle is hit but two outputs are produced because there is one PMT at each end of the scintillator. This
@@ -247,6 +247,54 @@ cases, detailed for each detector:
           is adopted by the DC, SVT, RICH, and MM.
 \end{itemize}
 
+
+\subsection{CLAS12 Data Acquisition and Trigger Emulation}
+
+GEMC supports the emulation of the CLAS12 data acquisition system (or DAQ, see \cite{daq-nim}).
+The CLAS12 data are expressed as specific collections of numbers, or ``banks'', that keep related numbers together.
+In particular, each detector channel can be associated with banks containing:
+
+\begin{itemize}
+    \item the Flash Analog-to-Digital Counter (FADC) signal: this is the voltage signal as a function of time of the channel,
+          sampled in 4 ns intervals.
+    \item the Time-to-Digitcal Counter (TDC) value: this represents the time of the hit in the channel relative
+          to a common start time.
+    \item one single value of ADC for each hit, extrapolated from the FADC voltage distribution by considering the pedestal
+          and the channel threshold.
+    \item one single value of TDC for each hit, extrapolated from the FADC voltage distribution by considering channgel
+          signal shape and rise time.
+\end{itemize}
+
+The FADC and TDC signals are programmed into Field Programmable Gate Arrays (FPGA) that use selection and filtering
+algorithms to produce a trigger for the event \cite{trigger-nim}.
+
+The simulation is able to provide both the FADC voltage signals as a function of time using the same sampling
+as the CLAS12 DAQ, and the ADC or TDC values extrapolated using the energy deposited or hit time.
+The energy deposited in each Geant4 step is convoluted with
+a detector-defined function that describe the electronic pulse for that energy (typically a Gaussian or Landau distribution).
+These signals are then summed up to provide a voltage versus time signal, and then sampled every 4 ns to mimic
+the FADC. An example of a simulated vs data FADC signal is given in \F{fadcComparison}.
+
+The FADC simulated signal was used to program and adjusts the FPGA algorithms and improve the CLAS12 trigger system,
+see \cite{trigger-nim}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.00\columnwidth, keepaspectratio]{img/fadcData.png}
+    \includegraphics[width=0.99\columnwidth, keepaspectratio]{img/fadcGEMC.png}
+	\caption{Top: an example of FADC digitized output as a function of sample index from the CLAS12 EC PMTs
+    during the Spring 2018 data run.
+    The CLAS12 DAQ system saves a 400~ns time window (100 samples, or FADC) if at least one of the 100 signal samples is
+    above a certain threshold (horizontal line). The integral signal ADC is the sum of the output at the sample indexes
+    between the two right arrows, one placed a few samples before the signal crosses the threshold, and the other placed
+    a few samples after that. The pedestal is calculated using the average of the signal between the left arrows. The
+    absolute positions of the pedestal acquisition limits and the relative position of the signal integration
+    limits are adjusted in the DAQ parameters and loaded before each run.
+    Bottom: the simulated EC FADC signal. The shape of the signal comes from the sum of pulse functions at each Geant4 step
+    weighted by the energy deposited, with parameters estimated from the data. These signals were used to tune
+    the trigger system FPGA algorithms to optimize the CLAS12 trigger electronics. }
+	\label{fig:fadcComparison}
+\end{figure}
 
 \subsection{Detectors and Hit Process Plugin Mechanism}
 
@@ -265,9 +313,9 @@ time window to provide three kind of outputs:
 
 
 \begin{itemize}
-	\item a bank with digitized variables for each hit;
-	\item a bank with digitized variables for each Geant4 step;
-	\item a bank with an analog voltage versus time signal for each Geant4 hit.
+	\item a bank with digitized variables (such as ADC, TDC) for each hit;
+	\item a bank with digitized variables (such as ADC, TDC) for each Geant4 step;
+	\item a bank with an analog voltage versus time signal (such as FADC) for each Geant4 hit.
 \end{itemize}
 
 The digitized banks are detailed below for each detector subsystem.
