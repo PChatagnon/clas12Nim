@@ -2,7 +2,7 @@
 
 In order to calibrate the detectors and test their performance, a cosmic-ray test bench was designed and installed at Saclay
 early in the project. The goal of these tests was to determine the best operating conditions
-of the detectors and to compute their 2D efficiency maps using cosmic muons prior shipment to JLab.
+of the detectors and to compute their 2D efficiency maps using cosmic muons prior to their shipment to JLab.
 
 \begin{figure}[htb]
  \includegraphics[width=1.0\columnwidth,keepaspectratio]{images/banc_cosmique}
@@ -18,7 +18,7 @@ receive the detectors to be characterized.
 
 After alignment of the reference trackers and the detectors to be tested, the expected position of the particle in the test
 detector was provided by the reference trackers and compared with the measured signals, if any, in the test detector. If a
-signal matched the expected position within a millimeter, the test detector was considered to have seen the cosmic ray. The
+cluster, i.e. a contiguous set of fired strips, matched the expected position within a millimeter, the test detector was considered to have seen the cosmic ray. The
 efficiency was then derived by repeating this test over a cosmic ray sample collected within a few hours. All MVT detectors
 were systematically characterized before shipment to JLab. These tests included a study of the efficiency as a function of
 the amplification voltage and a two-dimensional efficiency map, which required a cosmic ray sample collected over a day.
@@ -27,10 +27,9 @@ The results were found to be similar for all detectors. The efficiency plateau s
 98.5\% and 99.5\% at 510~V. It was shown that the plateau was slightly shifted to higher strip voltages when the drift plane
 was at higher voltage because the mesh loses electron transparency. The 2D-efficiency map was useful to look for any structural
 problems. All MVT detectors that were shipped to JLab had a uniform 2D-efficiency map. Examples of the efficiency plateau
-and the 2D efficiency map are shown in Figs.~\ref{fig:mm-fig8} and \ref{fig:mm-fig9}. Figure \ref{fig:mm-fig9} shows the
-efficiency gain by removing the protection diodes in front of the front-end Dream ASICs. Since the resistive Micromegas
-technology was used, sparks are quenched and protection of the front-end electronics is no longer required (beside the chip
-packaging protection) even with high gain in beam conditions.
+and the 2D efficiency map are shown in Figs.~\ref{fig:mm-fig8} and \ref{fig:mm-fig9}. Figure \ref{fig:mm-fig9} also shows the
+efficiency gained by removing the protection diodes before the Dream ASICs,
+not required with resistive Micromegas since sparks are quenched.
 
 \begin{figure}[htb]
  \includegraphics[width=1.0\columnwidth,keepaspectratio]{images/Eff_2D}
@@ -69,12 +68,21 @@ electrons do not experience the Lorentz-angle effect. The cosmic ray trigger for
 coincidences of CTOF signals in diametrically opposed scintillator bars. This CTOF trigger provides a quasi-uniform
 illumination along the BMT axis of the barrel with cosmic rays, not achievable in beam conditions because of the forward-peaked
 distribution due to the center-of-mass boost. The hit distribution on the Z-tiles, instead, results from a convolution of the cosmic
-ray angular distribution with the trigger configuration. As is shown in Fig.~\ref{fig:mm-cosmic_occupancy}, sector~2 has about
-twice as many hits as sector~1 and 3 since it is centered at the top of the barrel.
+ray angular distribution with the trigger configuration, as is shown in Fig.~\ref{fig:mm-cosmic_occupancy}.
+
+
+
+\begin{figure}[htb]
+\centering
+ \includegraphics[width=.4\textwidth]{images/cosmic_NIM.png}
+ \caption{Event display of a cosmic ray track reconstructed in the BMT detectors. The six tiles on the top are called Sector 2, the six on the bottom right are Sector 1 and the bottom left six tiles are the Sector 3.}
+ \label{fig:mm-cosmic_ced}
+\end{figure}
+
 
 \begin{figure}[htb]
  \includegraphics[width=.45\textwidth]{images/BMT_hit_cosmics_CTOFtrigger.pdf}
- \caption{Hit occupancies of a cosmic-ray run with the trigger delivered by the CTOF for layers 3 (Z-tile) and 4 (C-tile).}
+ \caption{Hit occupancies of a cosmic-ray run with the trigger delivered by the CTOF for layers 2 (Z-tile) and 4 (C-tile). }
  \label{fig:mm-cosmic_occupancy}
 \end{figure}
 
@@ -84,7 +92,7 @@ gap onto the strip surface is longer for sectors~1 and 3 than for sector~2.
 
 \begin{figure}[htb]
  \includegraphics[width=.45\textwidth]{images/cosmic_cluster_size.pdf}
- \caption{Cluster size distributions during cosmic ray data taking for the three sectors.}
+ \caption{Cluster size distributions, i.e. the number of strips fired in a tile by a cosmic ray, during cosmic ray data taking for the three sectors for Z tiles.}
  \label{fig:mm-cosmic_cls}
 \end{figure}
 
@@ -99,11 +107,6 @@ Figure~\ref{fig:mm-cosmic_res_summary} shows the summary of the preliminary resu
 alignment procedure all residual distributions are centered around zero. Preliminary detector resolutions, defined as the standard
 deviations of Gaussian fits to the residual distributions, are improved and below 200~$\mu$m. 
 
-\begin{figure}[htb]
- \includegraphics[width=.4\textwidth]{images/cosmic_NIM.png}
- \caption{Event display of a cosmic ray track reconstructed in the BMT detectors.}
- \label{fig:mm-cosmic_ced}
-\end{figure}
 
 \begin{figure}[htb]
  \includegraphics[width=.45\textwidth]{images/cosmic_residuals.pdf}
@@ -149,7 +152,7 @@ settings used. An example of the efficiency scan for one BMT tile is shown in Fi
 
 \begin{figure}[htb]
  \includegraphics[width=1.0\columnwidth,keepaspectratio]{images/hvscan_BMTC_R1_S2.png}
- \caption{Efficiency measurement as a function of the strip high voltage for one tile in beam conditions.}
+ \caption{Efficiency measurement as a function of the strip high voltage for one BMT tile in beam conditions.}
  \label{fig:mm-eff_scan}
 \end{figure}
 
@@ -174,7 +177,7 @@ and 2.5\% for the BMT tiles at nominal luminosity, as shown in Fig.~\ref{fig:mm-
  \label{fig:mm-fig16}
 \end{figure}
 
-During the first year of operations with beam, CLAS12 took data at several electron beam energies (2.2, 6,4, 7.5, and 10.6~GeV)
+During the first year of operations with beam, CLAS12 took data at several electron beam energies (2.2, 6.4, 7.5, and 10.6~GeV)
 with a liquid-hydrogen target. An example of a rare event at 10.6~GeV with five tracks reconstructed in the CVT is 
 shown in Figure~\ref{fig:cd-tracks}. At 2.2~GeV, the large elastic cross section and the trigger configuration allowed 
 for the visualization of the recoil protons in the raw occupancies of the BMT-C tiles as seen in 
@@ -201,12 +204,12 @@ Figure~\ref{fig:mm-beam_cls} shows the distributions of the number of clusters o
 distribution. Although most of the events present a very low number of clusters with clusters of small size, the long tails are mainly
 due to knock-off electron loopers and beam induced soft photons.
 
-\begin{figure}[htb]
+\begin{figure*}[!htb]
  \includegraphics[width=.49\columnwidth,keepaspectratio]{images/beam_num_cls.pdf}
  \includegraphics[width=.49\columnwidth,keepaspectratio]{images/beam_cls_size.pdf}
  \caption{(left) Number of clusters per event and (right) cluster size distribution in the BMT layers. The beam current was 50~nA.}
  \label{fig:mm-beam_cls}
-\end{figure}
+\end{figure*}
 
 Each MVT hit has an associated timestamp that can be used to compute the time difference of the signal with respect to the
 trigger. Consequently, a minimum time T$_{min}$ can be associated with each cluster as the minimum time of the hits in the cluster.
@@ -226,11 +229,11 @@ Special data taking periods with an empty target cell have been performed for ca
 with zero magnetic field for detector alignment studies. The stand-alone straight-track algorithm used for cosmic ray
 reconstruction has been adapted and extended to use SVT hits. Using preliminary alignment corrections for both the SVT and
 BMT, a zero-field empty-target run was reconstructed in SVT-stand-alone mode and CVT (i.e. SVT$+$BMT) mode. The 
-preliminary resulsts shown in Fig.~\ref{fig:mm-zvertex}, the aluminum target walls are clearly visible in both 
-reconstruction modes. It is possible to note that there is a significant improvement from $\sim$4.5~mm to 2.5~mm of the 
-vertex position along the beam axis when the BMT information is used in the track reconstruction. Indeed the BMT-C tiles 
+preliminary results are shown in Fig.~\ref{fig:mm-zvertex}. The aluminum target walls are clearly visible in both 
+reconstruction modes. There is a significant improvement from $\sim$4.5~mm to 2.5~mm of the 
+vertex position resolution ($1\sigma$) along the beam axis when the BMT information is used in the track reconstruction. Indeed the BMT-C tiles 
 largely improve the polar angle of the particle with respect to the SVT-stand-alone mode. Concerning the azimuthal 
-angle, the resolution of the BMT-Z tiles is not as good from the SVT modules and they are further away from the beam 
+angle, the resolution of the BMT-Z tiles is not as good as that of the SVT modules since the strip pitch is larger and they are further away from the beam 
 axis. Therefore the improvement of the resolution on the azimuthal angle of the track and related quantities like the 
 vertex transverse coordinates is limited. On the other hand, the BMT-Z tiles provide an essential redundancy for tracks that 
 cross a limited number of SVT layers.

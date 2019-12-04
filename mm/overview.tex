@@ -24,14 +24,8 @@ that provide particle identification information.
 
 \subsection{Micromegas Detectors}
 
-Micromegas detectors are micro-pattern gaseous detectors \cite{GIOMATARIS199629}. A schematic representation of a
-typical Micromegas detector is shown in Fig.~\ref{fig:mm-principle}. In the few-millimeter-wide conversion gap with an
-electric field of a few kV/cm, free electrons produced by the ionization of gas molecules by charged particles drift towards
-the micro-mesh and enter the amplification gap. In the amplification gap, the electric field reaches several hundreds of
-kV/cm, accelerating the electrons arriving from the conversion gap and making them ionize the gas, consequently creating an
-electromagnetic shower. The signal is then collected by the readout strips.  
 
-\begin{figure*}[thb]
+\begin{figure*}[!thb]
 \begin{center}
 \includegraphics[width=1.8\columnwidth,keepaspectratio]{images/mm_principle}
 \end{center}
@@ -40,12 +34,20 @@ electromagnetic shower. The signal is then collected by the readout strips.
 \label{fig:mm-principle}
 \end{figure*}
 
+Micromegas detectors are micro-pattern gaseous detectors \cite{GIOMATARIS199629}. A schematic representation of a
+typical Micromegas detector is shown in Fig.~\ref{fig:mm-principle}. In the few-millimeter-wide conversion gap with an
+electric field of a few kV/cm, free electrons produced by the ionization of gas molecules by charged particles drift towards
+the micro-mesh and enter the amplification gap. In the amplification gap, the electric field reaches several hundreds of
+kV/cm, accelerating the electrons arriving from the conversion gap and making them ionize the gas, consequently creating an
+electromagnetic shower. The signal is then collected by the readout strips.  
+
+
 The MVT must sustain a high particle flux, which may induce sparks between the micromesh and the strips in its nominal
 running conditions. In order to quench these sparks and their associated temporary high voltages (HV) drops that ``blind''
 the detector, all MVT detectors are based on the resistive technology. As depicted in Fig.~\ref{fig:mm-principle}, resistive
 strips and a thin layer of insulator are deposited on top of the readout strips \cite{ALEXOPOULOS2011110}. The signals are
-transferred from the resistive to the readout strips by capacitive effects. Finally, the resistive technology allows for higher
-gains to be reached compared to regular detectors and consequently increases the signal to background ratio. In this
+transferred from the resistive to the readout strips by capacitive coupling. Finally, the resistive technology allows for higher
+gains to be reached compared to regular detectors due to a lower probabilty of sparks in the amplification region. Consequently the resistive technology allows for higher signal to background ratios. In this
 configuration the mesh is grounded and the high voltage for amplification is positive on the resistive strips. 
 
 \subsection{General}
@@ -116,6 +118,7 @@ The mechanical structure of the BMT is made of a thin (1~mm) carbon cylinder wit
 glued stainless-steel flange upstream, as shown in Fig.~\ref{fig:mm-fig3}. Since the main purpose of the barrel is to
 reconstruct protons with momentum as low as 300~MeV, the material budget must be as small as possible in order to reduce
 multiple scattering and energy loss. The stainless steel used for the tube and flanges is made of 904L (non-magnetic steel).
+The BMT structure is completed by an outer a thin carbon fiber cylinder that protects the BMT tiles during maintenance operations.   
 The detector alignment is performed using particle tracks taken during zero magnetic field data taken either with cosmic
 rays (as described in Section \ref{sec:cosmics}) or with the electron beam.
 
@@ -127,15 +130,15 @@ rays (as described in Section \ref{sec:cosmics}) or with the electron beam.
 
 \subsection{Barrel Micromegas Tracker (BMT)}
 
-The Barrel detectors are made of a thin printed circuit board (PCB) (0.2~mm) transformed into Micromegas with the bulk
+The Barrel detector tiles are made of a thin printed circuit board (PCB) (0.2~mm) transformed into Micromegas with the bulk
 process. Up to 16 MEC8 connectors are welded on the upstream end of the tile. The PCB is curved on a custom mandrel tool
 with the desired radius. The cylindrical shape is then maintained by gluing two carbon fiber arcs at each end of the active
 zone and two aluminum arcs on the MEC8 connector side. The thickness of the carbon and aluminum structure arcs (3~mm)
 was chosen to match the design drift gap of the detectors. A Kapton foil (0.25~mm) with metallic coating is then glued on top
 of the carbon-aluminum structure to seal the detector and serves as the drift electrode of the detector. A curved 3D-printed
 plastic mechanical bracket is attached above the connectors to provide rigidity for the connection of the signal cables. The high
-voltage connections and the associated protection circuit are hosted inside 4~cm $\times$ 8~cm metallic boxes on the side of
-the PCB.  Gas is introduced in the middle of the connector side and flushed out on the edges of the connector side through the
+voltage connections and the associated protection circuit are hosted inside 4~cm $\times$ 8~cm metallic boxes on the upstream side of
+the PCB, out of the active area.  Gas is introduced in the middle of the connector side and flushed out on the edges of the connector side through the
 hollow carbon-aluminum mechanical structure. The leak rate of each detector is measured below \(2\times10^{-3}\)~l/hr. Pins,
 serving both as fixation points and for alignment, are inserted and glued on both ends of each carbon tube. A geometrical survey
 was performed and the measured radii are within 1 to 2~mm of the design values. Figure~\ref{fig:mm-fig4} shows a view of the
@@ -157,7 +160,7 @@ partly compensated for by using a 5-6~kV/cm drift high voltage~\cite{KONCZYKOWSK
 field impacts the efficiency through a loss of transparency of about \(\approx5\%\). The effect is worse in the case of the
 Z-type detectors with their strips parallel to the B-field direction. Finally, the gas mixture of 90\% argon + 10\% isobutane
 offers a reasonable trade-off between a limited drift velocity to reduce the Lorentz force effects and a high number of
-electrons generated in the conversion gap. 
+electrons generated in the conversion gap. The Lorentz angle is estimated to be about 40$^\circ$ at 5kV/cm drift electric field at 5 Tesla magnetic field.
 
 \subsection{Forward Micromegas Tracker (FMT)}
 

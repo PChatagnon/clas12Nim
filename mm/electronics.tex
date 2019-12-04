@@ -1,6 +1,6 @@
 \section{Electronics}
 
-The MVT data acquisition system is designed to readout 6,000 channels of the forward station and 18,000 channels of the
+The MVT data acquisition system is designed to read out 6,000 channels of the forward station and 18,000 channels of the
 barrel station. With the physics background as high as 20~MHz, the strip hit rates are about 60~kHz and 20~kHz in the
 forward detectors and in the barrel detectors, respectively. The readout system is compliant with the CLAS12 requirements
 of a 20~kHz maximum trigger rate and provides a sufficiently long data pipeline to cope with up to 16~$\mu$s trigger decision
@@ -12,7 +12,7 @@ and to discriminate accurately minimum-ionizing particles (MIPs) from noise. Not
 
 The extremely compact and dense design of the CLAS12 Central Detector leaves a very narrow space between the MVT and
 its neighbor subsystems, as well as between the Micromegas detectors themselves.  In addition to the stringent space limitations, the
-operational conditions of the tracker are harsh in terms of radiation and the high 5~T magnetic field. The low material budget
+operational conditions of the tracker are harsh in terms of radiation and the high 5~T magnetic field. Keeping a low material budget
 is an obvious concern. Consequently, a readout architecture based on off-detector front-end electronics has been adopted.
 Lightweight micro-coaxial cable assemblies with low 40~pF/m linear capacitance carry bare, unamplified signals to the Front-End
 Units (FEU) housed in crates $\sim$1.5--2~m upstream of the detectors. 
@@ -27,7 +27,7 @@ Units (FEU) housed in crates $\sim$1.5--2~m upstream of the detectors.
 \end{figure*}
 
 The front-end electronics are responsible for the amplification and shaping of the detector signals, for holding the latter in a
-pipeline waiting for the trigger process to yield, for the digitization and compression of the selected event data, and for their
+pipeline waiting for a trigger signal, for the digitization and compression of the selected event data, and for their
 delivery to the back-end electronics. The back-end is responsible for data concentration event by event. It provides an interface
 with the CLAS12 event building system, ensures a fixed latency path between the CLAS12 trigger system~\cite{trigger-nim} 
 and the FEUs, and receives the system clock and trigger from the CLAS12 trigger supervisor and synchronously conveys 
@@ -44,11 +44,12 @@ detector development, no existing ASICs could deliver the required performance w
 rate and provide the 16$~\mu$s deep trigger pipeline required. A new 64-channel ASIC, called DREAM (for Dead-timeless
 Readout Electronics ASIC for Micromegas), has been developed~\cite{DRM}. 
 
-\begin{figure}[htb]
- \includegraphics[width=1.0\columnwidth,keepaspectratio]{images/electronics_fig2.png}
+\begin{figure*}[htb]
+\centering
+ \includegraphics[width=.8\textwidth,keepaspectratio]{images/electronics_fig2.png}
  \caption{Block diagram of the DREAM ASIC.}
  \label{fig:mm-e_2}
-\end{figure}
+\end{figure*}
 
 The DREAM ASIC block diagram is shown in Fig.~\ref{fig:mm-e_2}. Each channel includes a charge sensitive amplifier 
 (CSA) adapted to a wide spread of detector capacitances (up to 1~nF) and
@@ -108,16 +109,16 @@ power consumption or functionality.
 
 The back-end of the data acquisition system of the MVT is based on the JLab standard VME/VXS hardware including a trigger
 interface (TI), a signal distribution (SD) and a sub-system processor (SSP) board, and a crate controller single board computer
-(SBC)~\cite{daq-nim}. The flow of the trigger, data, and control messages is shown in Fig.~\ref{fig:mm-e_4}. 
+(SBC)~\cite{daq-nim}. The flow of the trigger, data, and control messages is shown in Fig.~\ref{fig:mm-e_1}. 
 
-\begin{figure*}[htb]
-\begin{center}
- \includegraphics[width=1.6\columnwidth,keepaspectratio]{images/electronics_fig4.png}
-\end{center}
-
- \caption{MVT back-end unit and dataflow.}
- \label{fig:mm-e_4}
-\end{figure*}
+% \begin{figure*}[htb]
+% \begin{center}
+%  \includegraphics[width=1.6\columnwidth,keepaspectratio]{images/electronics_fig4.png}
+% \end{center}
+% 
+%  \caption{MVT back-end unit and dataflow.}
+%  \label{fig:mm-e_4}
+% \end{figure*}
 
 The TI receives a low jitter 250~MHz system clock and fixed latency trigger signals from the CLAS12 trigger supervisor. It
 also delivers to the trigger supervisor the status information (e.g. busy) of the MVT readout system. The physical layer interface
@@ -149,4 +150,4 @@ completes the data integrity checks performed in the SSP firmware, disentangles 
 concatenating the FEU/SSP data with the corresponding TI data, and sends them to the CLAS12 Event Builder over a 10~GB/s
 Ethernet link.
 
-The MVT readout electronics is continuously surveyed by the CLAS12 detector monitoring system using the EPICS framework.
+The MVT readout electronics is continuously monitored by the CLAS12 detector monitoring system using the EPICS framework.
