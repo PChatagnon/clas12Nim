@@ -151,7 +151,7 @@ the design, construction, and performance of CLAS12.
 \section{Introduction}
 %\label{Intro}
 
-Electron scattering has been proven an effective way of probing the size and internal structure of subatomic
+Electron scattering has proven an effective way of probing the size and internal structure of subatomic
 particles such as protons, neutrons, and nuclei. Exploiting energetic electron beams led to rapid progress in our
 understanding of the internal composition of particles. The extended size of the proton was first mapped out in
 the mid-1950's~\cite{Mcallister:1956ng}, and the internal quark substructure was discovered in the late 1960's
@@ -171,7 +171,7 @@ circumference.}
 In the decades following these discoveries, it was realized that a more detailed understanding of the internal
 structure of nucleons requires the reconstruction of fully exclusive or semi-inclusive processes, and hence the
 detection and kinematical reconstruction of additional mesons and baryons in the final state was required.  Other
-constraints came from the desire of baryon spectroscopy to measure complete angular distributions, which made it
+constraints came from the need of baryon spectroscopy to measure complete angular distributions, which made it
 necessary to employ large acceptance devices to serve that purpose. The Continuous Electron Beam Accelerator
 Facility (CEBAF)~\cite{Leemann:2001dg}, the CLAS detector~\cite{Mecking:2003zu}, and other experimental
 equipment at Jefferson Laboratory (JLab) were designed and constructed in the 1990's with these goals in mind
@@ -232,15 +232,24 @@ calorimeters provide good particle identification for electrons, charged pions, 
 and high data acquisition rates allow operation in luminosities of $10^{35}~\rm{cm}^{-2}\rm{s}^{-1}$ for extended
 periods of time. These capabilities are being used in a broad scientific program to study the structure and
 interactions of baryons, mesons, and nuclei using polarized and unpolarized targets. 
-
-\begin{figure*}[htbp!]
-\centerline{\includegraphics[width=1.70\columnwidth]{clas12_desired.png}}
+\begin{figure*}[t!]
+\centerline{\includegraphics[width=0.65\columnwidth]{solenoid-magnet.png}
+\includegraphics[width=0.86\columnwidth]{Torus-assembled.pdf}}
+\caption{The CLAS12 magnet systems. Left: The torus magnet with all six coils mechanically assembled in the
+  common cryostat. The coil cryostat, which is fabricated from non-magnetic steel, has an outside width of 124~mm.
+  The cross bars provide a cold (5~K) cryogenic connection of neighboring coils, and counteract the out-of-plane
+  forces to provide mechanical stability to the full magnet. Due to the large physical size of the assembled torus
+  magnet, the final assembly of the magnet had to be completed in Hall~B. Right: The fully assembled solenoid magnet
+  including all cryogenic connections on the beamline at the beginning of cool down, before the detector installation.}
+\label{clas12-magnets}
+\end{figure*}
+\begin{figure*}[tbp!]
+\centerline{\includegraphics[width=1.50\columnwidth]{clas12_desired.png}}
 \caption{The ideal shape and dimensions of one of the torus magnet coils. All six coils are nominally identical to each
 other, and are tilted forward at a $22.2^\circ$ angle relative to the vertical. The bores at the outer two corners
 provide coil-to-coil connections.}
 \label{coil-shape}
 \end{figure*}
-
 This paper provides a general description of the design, construction, and performance of CLAS12 and how it expands
 upon the capabilities provided by the JLab 12~GeV energy upgrade. The CEBAF accelerator and experimental halls
 are shown for the energy upgraded configuration in Fig.~\ref{cebaf12}. CEBAF is designed from two parallel linear
@@ -271,12 +280,8 @@ Complementing the new equipment is the highly spin-polarized electron gun, high-
 several spin-polarized targets using NH$_3$, ND$_3$, HD, $^3$He, and $^7$Li as target materials to support a
 broad range of polarization measurements.   
 
-\begin{figure}[htbp!]
-\centerline{\includegraphics[width=1.00\columnwidth]{torus-hub-2.png}}
-\caption{The six torus coils are mounted on the cold central stainless steel hub that bears the centripetal force. The
-dark-shaded areas indicate the location of the superconducting coils, surrounded by the cryostat and vacuum jacket.}
-\label{coil-mount}
-\end{figure}
+
+
 
 \section{The CLAS12 Superconducting Magnets}
 
@@ -288,19 +293,18 @@ shielding of the detector system from low-energy electrons produced in the targe
 scattering $e^- + e^- \to e^- + e^-$ of the high-energy beam electrons on atomic electrons in the target material.
 The large majority of those electrons are prevented from reaching the sensitive detectors as they curl up in the
 strong longitudinal magnetic field, and are then guided into a shielding pipe made from bulk tungsten material where
-they dump their energy. 
+they dump their energy. The fully assembled Torus and Solenoid magnets are shown in Fig.~\ref{clas12-magnets}.
+\begin{figure}[b!]
+\centerline{\includegraphics[width=1.00\columnwidth]{torus-hub-2.png}}
+\caption{The six torus coils are mounted on the cold central stainless steel hub that bears the centripetal force. The
+dark-shaded areas indicate the location of the superconducting coils, surrounded by the cryostat and vacuum jacket.}
+\label{coil-mount}
+\end{figure}
+
 
 \subsection{The Torus Magnet}
 \label{torus}
 
-\begin{figure}[htbp!]
-\centerline{\includegraphics[width=0.9\columnwidth]{Solenoid.pdf}}
-\caption{Cut view of the upper half of the solenoid coils with the four $2 \times 2$ main coils on the inside, and the
-  shield coil (5) on the outside. The shield coil provides effective compensation for the magnetic field sensitive
-  photomultiplier tubes that are located just outside of the magnet cryostat (not shown). The nominal field in the
-  center of the magnet is 5~T.}
-\label{solenoid-coils}
-\end{figure}
 
 The contour of one of the six identical coils of the torus magnet is shown in Fig.~\ref{coil-shape}. The geometrical
 coverage as seen from the target ranges from $5^\circ$ to $40^\circ$ in polar angle. The symmetrically arranged six
@@ -312,7 +316,8 @@ cryostat is shown in Fig.~\ref{clas12-magnets}(left). The open range in azimutha
 of the particle trajectory, and ranges from 50\% of $2\pi$ at $5^\circ$ to about 90\% of $2\pi$ at $40^\circ$.
 
 Each superconducting coil is made from a two-coil ``double-pancake'' potted in an aluminum case. The number of
-windings per pancake is 117. The conductor is SSC outer dipole cable soldered into a 20~mm $\times$ 2.5~mm
+windings per pancake is 117. The conductor is Superconducting Super Collider outer dipole cable soldered into 
+a 20~mm $\times$ 2.5~mm
 copper channel with a turn-to-turn insulation of 75~$\mu$m fiber-glass tape. Operating at a nominal current of
 3770~A, the peak field is 3.58~T at the inner turns close to the warm bore. For symmetry reasons the field on
 the beam axis is ideally equal to zero, with a small remnant field present due to imperfections in the magnet
@@ -320,18 +325,15 @@ assembly and coil positions. The $\int {Bdl}$ at the nominal current is 2.78~Tm 
 $40^\circ$. The inductance of the magnet is 2.0~H and the stored energy 14.2~MJ. The magnet has liquid-N$_2$
 cooled heat shields. After assembly and cool down, the magnet reached full field immediately. For details on the
 design and operation of the torus magnet, see Ref.~\cite{clas12-magnets}.
+\begin{figure}[b!]
+\centerline{\includegraphics[width=1.0\columnwidth]{Solenoid.pdf}}
+\caption{Cut view of the upper half of the solenoid coils with the four $2 \times 2$ main coils on the inside, and the
+  shield coil (5) on the outside. The shield coil provides effective compensation for the magnetic field sensitive
+  photomultiplier tubes that are located just outside of the magnet cryostat (not shown). The nominal field in the
+  center of the magnet is 5~T.}
+\label{solenoid-coils}
+\end{figure}
 
-\begin{figure*}[ht]
-\hspace{-0.5cm}\centerline{\includegraphics[width=1.0\columnwidth]{Torus-assembled.pdf}
-\includegraphics[width=0.76\columnwidth]{solenoid-magnet.png}}
-\caption{The CLAS12 magnet systems. Left: The torus magnet with all six coils mechanically assembled in the
-  common cryostat. The coil cryostat, which is fabricated from non-magnetic steel, has an outside width of 124~mm.
-  The cross bars provide a cold (5~K) cryogenic connection of neighboring coils, and counteract the out-of-plane
-  forces to provide mechanical stability to the full magnet. Due to the large physical size of the assembled torus
-  magnet, the final assembly of the magnet had to be completed in Hall~B. Right: The fully assembled solenoid magnet
-  including all cryogenic connections on the beamline at the beginning of cool down, before the detector installation.}
-\label{clas12-magnets}
-\end{figure*}
 
 \subsection{The Solenoid Magnet}
 
@@ -343,20 +345,20 @@ shield, and (c) provide a highly uniform field at the magnet center for the oper
 proton and deuteron targets.
 
 \begin{figure}[htbp!]
-\centerline{\includegraphics[width=0.5\textwidth,height=0.40\textheight]{magfield.png}}
-\caption{Combined solenoid and torus magnetic fields, showing the total transverse magnetic field along the
-  radial distance from the solenoid center. The two magnetic fields act differently on charged particles. Only
-  the transverse components act on the charged tracks. Their effect depends on the orientation of the field
-  relative to the momentum vector of the charged particle.} 
+\centerline{\includegraphics[width=0.4\textwidth,height=0.40\textheight]{magfield.png}}
+\caption{Combined solenoid and torus magnetic fields, showing the magnetic field component perpendicular 
+to the radial distance from the solenoid center. Only
+  the transverse components act on the charged tracks. At small polar angles the particle deflecting components is small
+  in the solenoid field while it is largest in the Torus magnet. For large polar angle the transverse component is large in 
+  the solenoid field and small in the Torus field volume. } 
 \label{solenoid-torus}
 %\end{figure}
 %\begin{figure}[htbp!]
 \vspace{0.5cm}
-\centerline{\includegraphics[width=0.8\columnwidth]{magfield-2.png}}
+\centerline{\includegraphics[width=0.95\columnwidth]{magfield-2.png}}
 \caption{Combined solenoid and torus magnetic stray fields. The color code shows the total magnetic field of both
   the solenoid and torus at full current. The open boxes indicate the locations and dimensions of the active detector
-  elements. The two field volumes have very little overlap. The solenoid field is largely contained radially due to the
-  shielding coil. The torus field is widely spread out radially due to the very open geometry of the torus coils.}
+  elements.}
 \label{stray-field}
 \end{figure}
 
@@ -373,7 +375,12 @@ The distribution of the absolute magnetic field along lines of constant polar an
 shown in Fig.~\ref{solenoid-torus}. Both the torus and solenoid magnetic fields are included. The stray field of the
 solenoid magnet and of the torus magnet alone are shown in Fig.~\ref{stray-field}.  
 
-\begin{figure}[ht]
+
+
+\section{The CLAS12 Forward Detector (FD)}
+
+\subsection{Drift Chamber (DC)}
+\begin{figure}[ht!]
 \centerline{\includegraphics[width=0.60\columnwidth]{dc-view-4.png}}
 \caption{Drift chamber system in the CLAS12 forward tracking system from the design model. The small-size R1
   chambers are located just in front of the torus magnet coils (gray shade). The medium-size R2 chambers are
@@ -381,16 +388,6 @@ solenoid magnet and of the torus magnet alone are shown in Fig.~\ref{stray-field
   magnet.}
 \label{clas12-dc}
 \end{figure}
-
-\begin{figure*}[htbp!]
-\centerline{\includegraphics[width=1.65\columnwidth]{DC-R3.png}}
-\caption{Wire stringing of two R3 chambers in the Jefferson Lab clean room.}
-\label{dc-stringing}
-\end{figure*}
-
-\section{The CLAS12 Forward Detector (FD)}
-
-\subsection{Drift Chamber (DC)}
 
 The six coils of the torus magnet mechanically support the forward tracking system, which consists of three
 independent DCs in each of the six sectors of the torus magnet. Each of the six DC sectors has a total of 36
@@ -407,6 +404,11 @@ scattering angle. Figure~\ref{dc-stringing} shows the wire stringing operation f
 details of the DC construction and performance, see Ref.~\cite{DC}.
 
 \subsection{Particle Identification After Tracking}
+\begin{figure*}[htbp!]
+\centerline{\includegraphics[width=1.65\columnwidth]{DC-R3.png}}
+\caption{Wire stringing of two R3 chambers in the Jefferson Lab clean room.}
+\label{dc-stringing}
+\end{figure*}
 
 Cherenkov counters, time-of-flight detectors, and electromagnetic calorimeters are located downstream of the
 tracking system to provide particle identification and energy measurements for electrons, high-energy photons,
@@ -629,7 +631,8 @@ The CLAS12 CVT is a part of the Central Detector and is used to measure the mome
 of charged particles scattered from the production target, which is centered within the solenoid magnet. Details of
 the tracking system are shown in Fig.~\ref{CVT}. It consists of two separate detectors, a Silicon Vertex Tracker
 (SVT) and a Barrel Micromegas Tracker  (BMT). The SVT system includes 3 regions with 10, 14, and 18 sectors of
-double-sided modules of silicon sensors instrumented with digital readout ASICs and FSSR2s. The readout pitch is
+double-sided modules of silicon sensors instrumented with the digital readout ASIC Fermilab Silicon Strip Readout (FSSR2). T
+he readout pitch is
 156~$\mu$m, and the total number of channels is 33,792. See Ref.~\cite{SVT} for details on the design,
 construction, and performance of the SVT.
 
@@ -642,8 +645,8 @@ Another component of the CVT is the Forward Micromegas Tracker (FMT), consisting
 elements. It  is integrated mechanically with the CVT to provide a compact tracking system, but covers the polar
 angle range from 5$^\circ$ to 35$^\circ$ and provides improved vertex reconstruction for forward-scattered
 charged particles. The fully assembled CVT, including the FMT, are shown in Fig.~\ref{CVT-FMT}.  See
-Ref.~\cite{BMT} for details on the BMT and on the FMT.\footnote{The FMT tracker has not been implemented
-  during the experimental runs covered in this paper.}  
+Ref.~\cite{BMT} for details on the BMT and on the FMT.\footnote{The FMT tracker was not used
+ during the experimental runs covered in this paper.}  
 
 \begin{figure}[t!]
 \centerline{\includegraphics[width=1.0\columnwidth]{CVT-schematics.png}}
@@ -683,6 +686,11 @@ shows the upstream end of the CTOF installed inside the solenoid.
   three outermost rings, and the 48 PMTs of the CTOF (two inner rings).} 
 \label{ctof-cnd}
 \end{figure} 
+\begin{figure*}[htbp!]
+\centerline{\includegraphics[angle=90,width=1.5\columnwidth]{clas12-daq-1.pdf}}
+\caption{Schematic diagram of the CLAS12 data acquisition and trigger system.}
+\label{daq}
+\end{figure*}
 
 \subsection{Central Neutron Detector (CND)}
 
@@ -693,6 +701,69 @@ and the energy deposition in the scintillator layers. The detector is made of th
 the upstream end by PMTs placed outside of the high magnetic field region of the solenoid. The scintillators are
 connected to 1.5-m-long bent light guides. Figure~\ref{ctof-cnd} (right) shows the upstream readout end of the
 CND installed in the solenoid. Details of the CND are described in Ref.~\cite{cnd-nim}.
+
+\section{Data Acquisition and Trigger System} 
+
+\subsection {CLAS12 Data Flow and Monitoring} 
+
+During data taking the quality of the data is continuously monitored by displaying a very small fraction of single
+events in the CLAS12 event display ({\it ced}) that allows immediate action by the shift personnel in case of obvious
+issues. Monitoring histograms are also filled on a regular basis that include detector subsystem channel occupancies,
+as well as simple analysis plots and can be easily compared with results collected earlier during the data taking.  
+
+The CLAS12 data acquisition (DAQ) is designed for an average of 20~kHz level 1 (L1) trigger rate, pipelined for
+continuous operation. The sector-based  L1 triggers support data streaming, subsystem hit patterns, and energy
+summing with low threshold suppression.  The scalable trigger distribution scheme uses111 front-end L1
+crates. CLAS12 uses different programmable features for each detector that participates in the L1 trigger. A
+schematic diagram showing a complete overview of the DAQ system is shown in Fig.~\ref{daq}. In 2018 the DAQ
+was run at trigger rates of typically 15~kHz and data rates of up to 500~MB/s with a live time of $> 95\%$. At
+somewhat lower live time of $\sim$90\%, trigger rates of 20~kHz and data rates of up to 1~GB/s have been
+achieved. Details of the design, functionality, and performance of the CLAS12 DAQ are provided in Ref.~\cite{DAQ}. 
+ 
+\begin{figure}[t!]
+\centerline{\includegraphics[width=0.95\columnwidth]{trigger.png}}
+\caption{View of an event in CLAS12 from the {\it ced} event display. Predefined trajectories from a look-up
+  table are employed to select hit patterns in the 3 DC regions that correspond with localized energy deposition
+  in the ECAL. For the two-track trigger, the two sectors show DC hit patterns for tracks with opposite charges.
+  The upper track is an electron, shown by the hit in the HTCC that bends towards the beamline. The lower track
+  has positive charge and bends away from the beamline.}
+\label{trigger}
+\end{figure}
+\begin{figure*}[t!]
+\centerline{\includegraphics[width=1.8\columnwidth]{beamline-1.png}}
+\centerline{\includegraphics[width=1.8\columnwidth]{beamline-3.png}}
+\caption{Top: Hall~B beamline upstream of the target, showing the tagger magnet to the left, which is energized
+  during beam tuning and during polarization measurements. The doublet seen downstream of the tagger is a pair
+  of quadrupoles. The elements near the center are cavities for beam position and beam current measurements. The
+  main element on the right is the solenoid magnet nearly fully encapsulated by the HTCC. Several of the torus
+  magnet coils are visible at the far right. Bottom: Hall~B beamline downstream of CLAS12 showing a shield wall at
+  the left, a beam viewer, the beam blocker, and the Faraday cup at the right. As the Faraday cup is not cooled, a
+  cooled-copper 5-kW beam blocker is inserted for 11~GeV beam operations above currents of 15~nA.}
+\label{beamline}
+\end{figure*}
+
+\subsection{Fast and Selective Triggers} 
+
+CLAS12 uses a series of fast triggers that are tailored to a specific event pattern selection. Most of the physics
+experiments require the electron scattered on the production target to be detected as it defines the mass
+($Q^2$) and kinematics of the virtual photon as $Q^2 = -(e - e')^2$, where $e$ and $e'$ are the 4-momentum
+vectors of the beam electron and of the scattered electron, respectively. The scattered electron is uniquely identified with
+signals in the HTCC and clustered energy deposition in the ECAL. To enhance selection of specific reactions in the
+accumulated data, additional charged particles in either the FD or the CD are selected in the trigger in addition to
+the scattered electron. The CLAS12 fast trigger system makes use of the responses of the detectors to form the
+readout triggers. At the nominal design luminosity of CLAS12, the hadronic production rate is approximately
+$5 \times 10^6$/s. However, only a small fraction of the events is of interest for the science program with
+CLAS12. In particular, most physics reactions require the detection of the scattered electrons at some finite
+scattering angle, for example $\theta_{e'} > 5^\circ$.  Figure~\ref{trigger} shows one example of an electron
+triggered event with one additional positive charged track.   
+   
+In some experiments the detection of electrons in the FT is of interest if they are associated with hadronic
+event patterns of one or two additional detected hadrons. Such conditions have been implemented in the fast trigger
+decision that reduces the number of triggers to about $2 \times 10^4$~events/s, i.e. by  a factor of 250 from the
+hadronic rate. The data rate is typically 500~MB/s under such conditions and can be handled by the CLAS12 data
+acquisition system and the available computing resources. Details of the design, functionality, and performance of
+the CLAS12 trigger system are provided in Ref.~\cite{TRIG}. 
+
 
 \section{CLAS12 Offline Software}  
 
@@ -706,6 +777,17 @@ and event simulations.
 During the CLAS12 design phase a realistic simulation package based on Geant4 was developed to aid in the
 optimization of the detector hardware response to beam interactions in terms of resolution, robustness of operation
 at high luminosity, details of the beamline design, and other aspects. 
+
+\begin{figure*}[t!]
+%\centerline{\includegraphics[width=0.95\columnwidth]{neg-tracks.png}}
+\centerline{\includegraphics[width=0.95\columnwidth]{neg_phi_p.png}
+\hspace{1cm}\includegraphics[width=0.95\columnwidth]{pos_phi_p.png}}
+\caption{Particle distributions in azimuthal angle (degrees) vs momentum in the CLAS12 FD for electrons (top) and for positive
+ tracks (bottom) at a beam energy of 10.6 GeV.  The azimuthal angle is measured at the production vertex. The momentum dependence is due to
+  the solenoidal magnetic field that rotates charged tracks dependent on their transverse momentum component
+  and charge. For positive tracks the azimuthal motion is in the opposite direction from negative (electron) tracks.} 
+\label{neg-pos}
+\end{figure*}
 
 \subsection{Event Reconstruction} 
 
@@ -764,25 +846,17 @@ In the CD neutral particles are detected in the CND or in the CTOF (or both). As
 candidates are identified as clusters that do not match any charged particle track. See Ref.~\cite{Software} for
 full details on the CLAS12 offline reconstruction software architecture and design.
 
-\begin{figure}[t!]
-\centerline{\includegraphics[width=0.9\columnwidth]{neg-tracks.png}}
-\vspace{0.3cm}\centerline{\includegraphics[width=0.9\columnwidth]{pos-tracks.png}}
-\caption{Azimuthal angle acceptances (deg.) vs momentum in the CLAS12 FD for negative (top) and for positive
-  (bottom) tracks. The azimuthal angle is measured at the production vertex. The momentum dependence is due to
-  the solenoidal magnetic field that rotates charged tracks dependent on their transverse momentum component
-  and charge. For positive tracks the azimuthal motion is in the opposite direction from negative tracks.} 
-\label{neg-pos}
-\end{figure}
 
-\begin{figure} 
+
+\subsection{Monte Carlo Simulations} 
+
+\begin{figure}[ht!]
 \includegraphics[width=0.9\columnwidth]{R1-vertex.png}
 \caption{Electron vertex reconstruction (cm) in the FD vs. azimuthal angle, before tracing the electrons back
   through the solenoid field. In this view tracks entering different torus magnet sectors are not mixed. The target
   cell has a length of 50~mm.} 
 \label{vertex}
 \end{figure}
-
-\subsection{Monte Carlo Simulations} 
 
 A critical part of operating an open large-acceptance detector system at high luminosities is the simulation not
 only of hadronic events but also, and more importantly, the simulation of the beam-related accidental hits in the
@@ -793,8 +867,9 @@ through careful design of magnetic channeling, as well as a proper design of the
 pipe to minimize interaction of these electrons with high-$Z$ material. The availability of a realistic simulation
 package was essential for the optimal design of the CLAS12 integrated detector concept. The strong solenoid
 field is essential in channeling the scattered M{\o}ller electrons through the beam enclosure to avoid interactions
-with the beamline materials. Figure~\ref{gemc-event} shows a single electron track event at 1/30 of the full
-luminosity in a time window of 250~ns, corresponding to the readout time window in the R1 drift chambers. 
+with the beamline materials. Figure~\ref{gemc-event} shows a single electron track event at the full
+luminosity in a time window of 250~ns, corresponding to the time window in the R1 drift chambers used in the event 
+reconstruction. 
  
 \begin{figure*}[htbp!]
 \centerline{
@@ -823,17 +898,20 @@ account for this, data were taken at different beam currents (i.e. different lum
 events. Data from these randomly triggered events were merged with simulated physics events to study the loss
 of real tracks for different data runs. See Ref.~\cite{GEMC} for details on the CLAS12 simulation package GEMC.
 
-\begin{figure}[t!]
-{\includegraphics[width=1.0\columnwidth]{htcc-accept.jpg}}
-\caption{Distribution of electrons at the HTCC location in polar and azimuthal angle. The gaps between sectors are
-  due the scattered electrons being lost in the torus coils and not reconstructed.} 
-\label{htcc-electron-dis}
-{\includegraphics[width=0.96\columnwidth]{htcc-eff.png}}
-\caption{Distribution of HTCC efficiencies in polar and azimuthal angle. The electron detection efficiency on
-  average is greater than 98\% in the full phase space covered by the HTCC. In localized areas, in particular at
-  interfaces of different mirror facets or between mirror sectors, the efficiencies may vary from 95\% to 99\%.} 
-\label{htcc-efficiency}
-\end{figure}
+\begin{figure*}[t!]
+\centerline{\includegraphics[width=0.95\columnwidth]{e_HTCCnphe.png}
+%{\includegraphics[width=0.96\columnwidth]{htcc-eff.png}}
+\hspace{1cm}\includegraphics[width=0.95\columnwidth]{htcc-accept.jpg}}
+\caption{Distribution map of the number of photoelectrons collected in polar and azimuthal angle of the HTCC. 
+The graph is based on measurements with a trigger threshold of 2 photoelectrons.
+The averaged electron detection efficiency is estimated at greater than 98\% in the full phase space covered by the HTCC. 
+In localized areas, in particular at interfaces of different mirror facets or between mirror sectors, the efficiencies could be as low as 
+94\%. This map enables bin by bin corrections for absolute normalization. Right panel: Distribution of electrons at the HTCC 
+location in polar and azimuthal angle. The gaps between sectors are
+  due the scattered electrons being lost in the torus coils and not reconstructed. 
+\label{htcc-performance} }
+
+\end{figure*}
 
 \section{CLAS12 Operational Performance}
 
@@ -842,12 +920,12 @@ programs require the clean identification and reconstruction of the scattered el
 by a combination of signals in the HTCC and energy deposited in the combined electromagnetic calorimeters PCAL
 and EC and a negative charged track in the DC tracking system. Of critical importance is the response of the HTCC
 that operates between the CD and the entrance to the DC system. The reconstructed electron coordinates at the
-HTCC are shown in Fig.~\ref{htcc-electron-dis}, exhibiting a very uniform distribution in azimuthal angle. The
-electron detection efficiency in the 48 segments of the HTCC that cover the entire azimuthal angle range is shown
-in Fig.~\ref{htcc-efficiency}, which exhibits a uniform and high efficiency for electrons over its full acceptance.
+HTCC are shown in Fig.~\ref{htcc-performance}, exhibiting a very uniform distribution in azimuthal angle. The
+distribution of photoelectrons across the entire HTCC active region of the 48 segments of the HTCC is shown
+in Fig.~\ref{htcc-performance}, which exhibits a rather uniform and high efficiency for electrons over its full acceptance.
 
 The coordinates of the reconstructed electrons at the front face of the PCAL are displayed in
-Fig.~\ref{electrons-xy-in} for electrons bending towards the beamline, and in Fig.~\ref{electrons-xy-out} with
+Fig.~\ref{electrons-xy} for electrons bending towards the beamline, and with
 reversed torus magnetic field with electrons bending away from the beamline. The different appearance of the two
 plots is the result of the difference in optics for the two configurations. The distributions are rather uniform in all
 six sectors, showing that the detector systems and the reconstruction software are working properly. The few
@@ -856,36 +934,33 @@ outbending scattered electron show quite different features. Outbending electron
 significantly further out radially than inbending electrons do. This is a feature of the magnetic field of the torus
 magnet.  Also, the outer acceptance bounds are quite different. In the outbending case, they are defined by the
 ECAL geometry, while for the inbending case the acceptance bounds are given by the HTCC geometry, as can be
-seen in Fig.~\ref{htcc-electron-dis}.      
+seen in Fig.~\ref{htcc-performance}.      
 
 Elastic scattering  of electrons on protons allows for the establishment of any deviations from the ideal detector
 geometry and alignment. The coverage in kinematical quantities $Q^2$ and $x_B$ of the scattered electrons
 detected in the FD are shown in Fig.~\ref{electron-acceptance}. $Q^2$ is the virtuality of the photon exchanged
 from the electron to the proton target and $x_B$ is the Bjorken scaling variable (defined as $Q^2/(2 M E_\gamma)$,
-where $M$ is the target mass and $E_\gamma$ is the energy of the virtual photon exchanged with the target). For
+where $M$ is the target mass and $E_\gamma$ is the energy of the virtual photon exchanged with the target). 
+The electron kinematics also define the invariant mass $W$ defined as $W^2 = M^2 + 2M\nu - Q^2$, with
+$\nu = E_e - E_{e'}$ and $M$ the mass of the target particle. 
+For
 inbending electrons the coverage in $Q^2$ is up to 13~GeV$^2$ at $x_B \approx 1$, while for the outbending
 electrons it is limited to  $Q^2 \approx 12$GeV$^2$. 
 
-\begin{figure}[t!]
-\centerline{\includegraphics[width=1.0\columnwidth]{e-outbending.png}}
-\caption{Distribution of electron track $x$ and $y$ coordinates propagated to the ECAL front face (as seen from
-  the target). The two empty strips are due to hardware issues. For these data, electrons are bent away from the
-  beamline (outbending).} 
-\label{electrons-xy-in}
-%\end{figure}
-%\begin{figure}[ht!]
-\vspace{0.3cm}
-\centerline{\includegraphics[width=1.0\columnwidth]{e-inbending.png}}
-\caption{Distribution of electron track $x$ and $y$ coordinates propagated to the ECAL front face (as seen from
-  the target). The two empty strips are due to hardware issues. For these data, electrons are bent toward the
-  beamline (inbending).}
-\label{electrons-xy-out}
-\end{figure}
+\begin{figure*}[t!]
+\centerline{\includegraphics[width=0.95\columnwidth]{e-outbending.png}
+\hspace{1cm}\includegraphics[width=0.95\columnwidth]{e-inbending.png}}
+\caption{Left: Distribution of electron track $x$ and $y$ coordinates propagated to the ECAL front face (as seen from
+  the target). The few empty strips are due to hardware issues. For these data, electrons are bent away from the
+  beamline (outbending). Right: Distribution of electron track $x$ and $y$ coordinates propagated to the ECAL front face 
+  (as seen from the target). The few empty strips are due to hardware issues. For these data, electrons are bent toward the
+  beamline (inbending)} 
+\label{electrons-xy}
+\end{figure*}
 
-\begin{figure}[th!]
-\centerline{\includegraphics[width=0.9\columnwidth]{epX-in.jpg}}
-\vspace{0.3cm}
-\centerline{\includegraphics[width=0.9\columnwidth]{epX-out.jpg}}
+\begin{figure*}[th!]
+\centerline{\includegraphics[width=0.9\columnwidth]{epX-in.jpg}
+\hspace{1cm}\includegraphics[width=0.9\columnwidth]{epX-out.jpg}}
 \caption{Inclusive $ep \to e'X$ coverage in $Q^2$ vs. $x_B$ at a beam energy of 10.6~GeV. The full kinematics is
   measured simultaneously. The kinematic range is given by elastic scattering kinematics at $x_B = 1$, and the small
   angle acceptance at the $Q^2$ limit for scattered electrons bending towards the beamline (inbending) or away
@@ -893,15 +968,24 @@ electrons it is limited to  $Q^2 \approx 12$GeV$^2$.
   coils. Note that the minimal $Q^2$ is lower for the electron outbending configuration, and that the maximum $Q^2$
   reach is slightly higher for inbending electrons.} 
 \label{electron-acceptance}
-\end{figure}
+\end{figure*}
 
 \subsection{Charged Particle Detection in the FD}
  
-Charged particle acceptances in momentum and azimuthal angles are shown in Fig.~\ref{neg-pos} in the local sector
+Charged particle distribution in momentum and azimuthal angles are shown in Fig.~\ref{neg-pos} in the local sector
 frame for positively and negatively charged particles. The difference in the acceptance is due to two factors, the
 polarity of the torus magnet that bends negative particles away from the beamline and positive particles towards
 the beamline (or vice-versa for the opposite torus polarity), and the effects of the solenoid magnetic field that
 causes an azimuthal motion for positive and negative particles in opposite directions. 
+
+
+Identification of charged particles in CLAS12 is achieved in a number of ways. Identified electrons are used
+to determine the hadron start time at the production vertex. The start time and the path length of charged
+tracks from the production vertex to the FTOF and the FTOF hit time, enable the determination of the
+velocity ($\beta = v/c$) of the particle, shown in Fig.~\ref{pid} vs. particle momentum for positively charged
+tracks. The computed mass squared vs. momentum for these tracks is shown in Fig.~\ref{mass2-mom}. An
+overview of the detector subsystems in the CLAS12 FD used for the identification of the different charged
+particle species vs. momentum is shown in Fig.~\ref{pid1}. 
 
 \begin{figure}[t!]
 \centerline{\includegraphics[width=1.0\columnwidth]{FTOF1b_pid.png}}
@@ -916,32 +1000,29 @@ causes an azimuthal motion for positive and negative particles in opposite direc
 \begin{figure}[tbp!]
 \centerline{\includegraphics[width=1.0\columnwidth]{FTOF1b_M2-vs-p.png}}
 \caption{Reconstructed mass squared vs. momentum of positively charged particles in the CLAS12 FD. The plot
-  contains a threshold on the minimum and maximum number of events to highlight the particle profiles: $\pi^+$
-  (bottom), $K^+$ (middle), $p$ (top). The centroids of each particle distribution are independent of the
+  contains a threshold on the minimum and maximum number of events per bin to eliminate the background events 
+  between the particle bands, and to better visualize the scarce kaons in the particle samples. Bottom: $\pi^+$, middle: $K^+$, top: $p$. 
+  The centroids of each particle distribution are approximately independent of the
   momentum. Masses are computed from the particle path length and from time-of-flight. Any momentum
   dependence would indicate systematics in the timing calibration or in the path length determination.}
 \label{mass2-mom}
 \end{figure} 
 
-Identification of charged particles in CLAS12 is achieved in a number of ways. Identified electrons are used
-to determine the hadron start time at the production vertex. The start time and the path length of charged
-tracks from the production vertex to the FTOF and the FTOF hit time, enable the determination of the
-velocity ($\beta = v/c$) of the particle, shown in Fig.~\ref{pid} vs. particle momentum for positively charged
-tracks. The computed mass squared vs. momentum for these tracks is shown in Fig.~\ref{mass2-mom}. An
-overview of the detector subsystems in the CLAS12 FD used for the identification of the different charged
-particle species vs. momentum is shown in Fig.~\ref{pid1}. 
-
-\begin{figure}[tp!]
-\centerline{\includegraphics[width=1.0\columnwidth]{CLAS12-pid.png}}
-\caption{Overview of the different detector subsystems in the CLAS12 FD used for particle species separation
-  vs. momentum.}
-\label{pid1}
-\end{figure} 
 
 Figure~\ref{spectrum} shows inclusive invariant mass $W$ spectra for $ep \to e' X$ and missing mass spectra
 for $ep \to e' \pi^+ X$ with a missing neutron at four different beam energies. Figure~\ref{elastic-peak} shows
 fits to the elastic peak and to the missing neutron mass distributions in three sectors at a beam energy of 10.6~GeV.
 Figure~\ref{pip-pim-p} shows the invariant mass of $\pi^+\pi^-$.
+
+
+
+\subsection{Charged Particle Detection in the CD} 
+\begin{figure}[bhtp!]
+\centerline{\includegraphics[width=1.0\columnwidth]{CLAS12-pid.png}}
+\caption{Overview of the different detector subsystems in the CLAS12 FD used for particle species separation
+  vs. momentum.}
+\label{pid1}
+\end{figure} 
 
 \begin{figure*}[t!]
 \centerline{\includegraphics[width=2.0\columnwidth]{W-spectrum.png}}
@@ -955,6 +1036,12 @@ Figure~\ref{pip-pim-p} shows the invariant mass of $\pi^+\pi^-$.
 \label{spectrum}
 \end{figure*} 
 
+
+Momentum reconstruction in the CVT combined with the timing information from the CTOF allows for the separation 
+of charged pions from charged kaons and from protons in the momentum range from 0.25~GeV to 1.25~GeV. This
+momentum range covers a large part of the phase space allowed by the maximum beam energy for hadron
+electroproduction on hydrogen targets. Figure~\ref{CD-PID} shows the reconstructed mass squared vs. 
+particle momentum reconstructed in the CVT.
 \begin{figure}[t!]
 \centerline{\includegraphics[width=1.0\columnwidth]{elastic_pi+n.png}}
 \caption{The left panels show the elastic peak at 10.6~GeV beam energy as measured in 3 representative FD
@@ -971,14 +1058,6 @@ Figure~\ref{pip-pim-p} shows the invariant mass of $\pi^+\pi^-$.
   $\rho^0(770)$ meson. The shoulder to the right is from the $f_2(1270)$ meson.}
 \label{pip-pim-p}
 \end{figure} 
-
-\subsection{Charged Particle Detection in the CD} 
-
-Momentum reconstruction in the CVT combined with the timing information from the CTOF allows for the separation 
-of charged pions from charged kaons and from protons in the momentum range from 0.25~GeV to 1.25~GeV. This
-momentum range covers a large part of the phase space allowed by the maximum beam energy for hadron
-electroproduction on hydrogen targets. Figure~\ref{CD-PID} shows the reconstructed mass squared vs. 
-particle momentum reconstructed in the CVT.
 
 \begin{figure}[t!]
 %\centerline{\includegraphics[width=1.0\columnwidth]{CTOF-pid-new.png}}
@@ -1016,14 +1095,14 @@ Fig.~\ref{FT-en-gg}.
 \end{figure}
 
 Neutral particle detection in the CD is provided by the CND combined with the CTOF. The plastic scintillator bars
-of the two detectors have a combined 15\% radiation length, resulting approximately in a 10-12\% efficiency for
-the detection of high-energy neutrons. The plastic scintillators contribute about 29\% of a radiation length at
-$\theta$=90$^\circ$; they also detect high-energy photons through their conversion into $e^+e^-$ pairs. The
-discrimination of photons and neutrons in the CD is  accomplished by the timing resolution of 80~ps provided by the
+of the CND has an approximately 12\% nuclear interaction length, resulting in a $\approx 10\%$ efficiency for
+the detection of high-energy neutrons. The plastic scintillators contribute about 29.6\% of a radiation length at
+$\theta$=90$^\circ$; they hence also detect high-energy photons through their conversion into $e^+e^-$ pairs. The
+discrimination of photons and neutrons in the CD is accomplished by the timing resolution of 80 to 100~ps provided by the
 CTOF and the 160~ps of the CND. The separation of neutral particles from charged particle hits in the CND or in
 the CTOF is efficiently achieved by using the CVT tracker to veto against false neutral hits in the CTOF and CND.
 Figure~\ref{CND-neutrals} shows the velocity vs. the energy deposition of charged and neutral particles in the
-CND. The neutron detection efficiency is shown in Fig.~\ref{CND-neutron-efficiency}.
+CND. The measured neutron detection efficiency is shown in Fig.~\ref{CND-neutron-efficiency}.
 
 \begin{figure}[t!]
 \centerline{\includegraphics[width=0.9\columnwidth]{CND1.png}}
@@ -1037,78 +1116,13 @@ $v/c$ = 0.2 eliminates background events from accidental hits. ({\bf new graphs 
 
 \begin{figure}[htbp!]
 \centerline{\includegraphics[width=0.9\columnwidth]{cnd-neutron-efficiency.png}}
-\caption{The neutron detection efficiency in the CND vs. momentum for different polar angles.}
+\caption{The neutron detection efficiency in the CND vs. momentum for different polar angles.The  detection efficiency 
+has been measured using the reaction $e p \to e^\prime \pi^+ n$, where the neutron kinematics is given by the other 
+detected particles. The ratio of observed neutron hits in CND and predicted neutron hits in CND gives the detection efficiency. It 
+has some angle and momentum dependence.  } 
 \label{CND-neutron-efficiency}
 \end{figure} 
 
-\section{Data Acquisition and Trigger System} 
-
-\subsection {CLAS12 Data Flow and Monitoring} 
-
-During data taking the quality of the data is continuously monitored by displaying a very small fraction of single
-events in the CLAS12 event display ({\it ced}) that allows immediate action by the shift personnel in case of obvious
-issues. Monitoring histograms are also filled on a regular basis that include detector subsystem channel occupancies,
-as well as simple analysis plots and can be easily compared with results collected earlier during the data taking.  
-
-The CLAS12 data acquisition (DAQ) is designed for an average of 20~kHz level 1 (L1) trigger rate, pipelined for
-continuous operation. The sector-based  L1 triggers support data streaming, subsystem hit patterns, and energy
-summing with low threshold suppression.  The scalable trigger distribution scheme uses up to 128 front-end L1
-crates. CLAS12 uses different programmable features for each detector that participates in the L1 trigger. A
-schematic diagram showing a complete overview of the DAQ system is shown in Fig.~\ref{daq}. In 2018 the DAQ
-was run at trigger rates of typically 15~kHz and data rates of up to 500~MB/s with a live time of $> 95\%$. At
-somewhat lower live time of $\sim$90\%, trigger rates of 20~kHz and data rates of up to 1~GB/s have been
-achieved. Details of the design, functionality, and performance of the CLAS12 DAQ are provided in Ref.~\cite{DAQ}. 
- 
-\begin{figure}[htbp!]
-\centerline{\includegraphics[angle=90,width=1.0\columnwidth]{clas12-daq-1.pdf}}
-\caption{Schematic diagram of the CLAS12 data acquisition and trigger system.}
-\label{daq}
-\end{figure}
-\begin{figure}[t!]
-\centerline{\includegraphics[width=0.95\columnwidth]{trigger.png}}
-\caption{View of an event in CLAS12 from the {\it ced} event display. Predefined trajectories from a look-up
-  table are employed to select hit patterns in the 3 DC regions that correspond with localized energy deposition
-  in the ECAL. For the two-track trigger, the two sectors show DC hit patterns for tracks with opposite charges.
-  The upper track is an electron, shown by the hit in the HTCC that bends towards the beamline. The lower track
-  has positive charge and bends away from the beamline.}
-\label{trigger}
-\end{figure}
-\begin{figure*}[t!]
-\centerline{\includegraphics[width=1.8\columnwidth]{beamline-1.png}}
-\centerline{\includegraphics[width=1.8\columnwidth]{beamline-3.png}}
-\caption{Top: Hall~B beamline upstream of the target, showing the tagger magnet to the left, which is energized
-  during beam tuning and during polarization measurements. The doublet seen downstream of the tagger is a pair
-  of quadrupoles. The elements near the center are cavities for beam position and beam current measurements. The
-  main element on the right is the solenoid magnet nearly fully encapsulated by the HTCC. Several of the torus
-  magnet coils are visible at the far right. Bottom: Hall~B beamline downstream of CLAS12 showing a shield wall at
-  the left, a beam viewer, the beam blocker, and the Faraday cup at the right. As the Faraday cup is not cooled, a
-  cooled-copper 5-kW beam blocker is inserted for 11~GeV beam operations above currents of 15~nA.}
-\label{beamline}
-\end{figure*}
-
-\subsection{Fast and Selective Triggers} 
-
-CLAS12 uses a series of fast triggers that are tailored to a specific event pattern selection. Most of the physics
-experiments require the electron scattered on the production target to be detected as it defines the mass
-($Q^2$) and kinematics of the virtual photon as $Q^2 = -(e - e')^2$, where $e$ and $e'$ are the 4-momentum
-vectors of the beam electron and of the scattered electron, respectively. The electron kinematics also define
-the Bjorken scaling variable $x_B$  and the invariant mass $W$ defined as $W^2 = M^2 + 2M\nu - Q^2$, with
-$\nu = E_e - E_{e'}$ and $M$ the mass of the target particle. The scattered electron is uniquely identified with
-signals in the HTCC and clustered energy deposition in the ECAL. To enhance selection of specific reactions in the
-accumulated data, additional charged particles in either the FD or the CD are selected in the trigger in addition to
-the scattered electron. The CLAS12 fast trigger system makes use of the responses of the detectors to form the
-readout triggers. At the nominal design luminosity of CLAS12, the hadronic production rate is approximately
-$5 \times 10^6$/s. However, only a small fraction of the events is of interest for the science program with
-CLAS12. In particular, most physics reactions require the detection of the scattered electrons at some finite
-scattering angle, for example $\theta_{e'} > 5^\circ$.  Figure~\ref{trigger} shows one example of an electron
-triggered event with one additional positive charged track.   
-   
-In some experiments the detection of electrons in the FT is of interest if they are associated with hadronic
-event patterns of one or two additional detected hadrons. Such conditions have been implemented in the fast trigger
-decision that reduces the number of triggers to about $2 \times 10^4$~events/s, i.e. by  a factor of 250 from the
-hadronic rate. The data rate is typically 500~MB/s under such conditions and can be handled by the CLAS12 data
-acquisition system and the available computing resources. Details of the design, functionality, and performance of
-the CLAS12 trigger system are provided in Ref.~\cite{TRIG}. 
 
 \section{Electron Beam Operation} 
 
@@ -1124,7 +1138,7 @@ parameters, are under the accelerator operations control. Hall~B operators contr
 profile scanners, and viewers. They are also responsible for configuration and running the M{\o}ller polarimeter
 located upstream of the tagger magnet.
 
-The tagger magnet on the left of Fig.~\ref{beamline} (in red) is not energized during production data taking. The
+The tagger magnet on the left of Fig.~\ref{beamline} (in red) is not energized during production data taking. When energized the
 yoke of this magnet serves as a beam dump that is used during beam tuning before the beam is directed on the
 Hall~B production target. It is also used during specialized runs, such as polarization measurements in the upstream
 beamline, to avoid exposure of sensitive CLAS12 detectors to high background loads. For details of the beamline
@@ -1134,8 +1148,8 @@ elements and beam quality, see Ref.~\cite{beamline}.
 
 \subsubsection{Unpolarized Production Targets} 
 
-Hall~B experiments are grouped into running periods according to beam energy, detector configuration, magnet
-settings, and target material. The most often used target materials have been liquid hydrogen and liquid deuterium.
+Hall~B experiments are grouped into running periods with similar beam energy, detector configuration, magnet
+settings, and target material. The most common target materials have been liquid hydrogen and liquid deuterium.
 Other materials include solid nuclear targets of various kinds from $^{12}$C to $^{208}$Pb, depending on the physics
 requirements. For some specialized experiments high-pressure gas targets are used. All targets are positioned
 inside CLAS12 using support structures that are inserted from the upstream end, and are independent of the
@@ -1162,12 +1176,13 @@ electron beam.
 \includegraphics[width=0.3\columnwidth]{HTCC_1.png}
 \includegraphics[width=0.3\columnwidth]{HTCC_2.png}
 \includegraphics[width=0.3\columnwidth]{HTCC_3.png}}
-\caption{Acceptance distribution for scattered electrons in azimuthal angle (in deg.) for different bins in polar
+\caption{Distributions of scattered electrons in azimuthal angle (in deg.) for different bins in polar
   angle. Left: $\theta = 5^\circ-7^\circ$, middle: $\theta = 13^\circ-15^\circ$, right: $\theta = 23^\circ-25^\circ$.
-  For these polar angle ranges the azimuthal acceptances are 33\%,  66\%, and 80\%, respectively, of the full
-  sector range of $\pm 30^\circ$. Azimuthal angle coverage is symmetric around the sector mid-plane. The
-  reduced acceptance at small polar angles is due to the cryostat of the torus coils that are attached to a force
-  ring at small angles that limits the geometrical acceptance to less than 50\% in azimuthal angle. {\bf Needs
+  For these polar angle ranges, the azimuthal acceptances are 33\%,  66\%, and 80\%, respectively, of the full
+  sector range of $\pm 30^\circ$. Azimuthal angle coverage is symmetric around the sector mid-plane ay 0. The
+  reduced acceptance at small polar angles is due to the cryostat of the torus coils, which are attached to 
+  the cold central stainless steel hub at small angles, limits the geometrical acceptance to less than 
+  50\% in azimuthal angle, see Fig.~\ref{coil-mount}. Vertical axes are in arbitrary units. {\bf Requested 
     higher statistics graphs.}}
 \label{e-accept}
 \end{figure}
@@ -1182,7 +1197,7 @@ ranges depend also on the polarity of the magnetic field. Charged tracks that ar
 have acceptance functions that are different from charged tracks that are deflected toward the beamline. The
 magnetic field of the solenoid also affects the acceptance function of charged particles. For opposite charges but
 the same momentum, the azimuthal rotation of scattered charged particles is the same in magnitude but opposite in
-sign. Figure~\ref{e-accept} shows the azimuthal acceptance at different polar angles for electrons bending away
+sign. Figure~\ref{e-accept} shows accepted azimuthal range at 3 different polar angles for electrons bending away
 from the beamline. The electron acceptance of the HTCC is 360$^\circ$ in azimuth, but the acceptance for electron
 tracks is reduced due to the cryostat of the torus coils, which blocks electron transmission to the DC tracking system.
 The blockage is largest at the smallest polar angle of $5^\circ$ and smallest at the largest polar angle of $35^\circ$.
@@ -1193,11 +1208,12 @@ in full detail to precisely extract cross sections and other physics observables
 package was developed, based on the software package Geant4~\cite{GEMC}. 
 
 \begin{figure}[htbp!]
-\centerline{\includegraphics[width=1.0\columnwidth]{random-trigger-occupancies.png}}
+%\centerline{\includegraphics[width=1.0\columnwidth]{random-trigger-occupancies.png}}
+\centerline{\includegraphics[width=1.0\columnwidth]{random-occupancies.png}}
 \caption{Accidental occupancies in the three DC regions vs. the beam current, with the solenoid magnet at full field.
   The measurement was carried out with the FT in the OFF configuration (dashed lines). The dependence on the beam
   current is linear. At 75~nA beam current the measurement was also done with the FT in the ON configuration (large
-  circles), and the accidental occupancies increase on average by $\approx$62\%. The time windows during data
+  squares), and the accidental occupancies increase on average by $\approx$62\%. The time windows during data
   collection were 250~ns for R1, 500~ns for R2, and 750~ns for R3, approximately corresponding to the charge
   collection times in the DC.}
 \label{occupancies1}
@@ -1245,6 +1261,8 @@ $\Delta{v_z}$~(mm) & 60~nA & 4.6 & -  \\
 & 120~nA & 5.6 & \\ \hline
 \end{tabular}
 \caption{Impact of high current operation on the resolution of kinematic quantities in single track reconstruction.
+The resolution parameters are without the use of the FMT tracker, which should significantly improve the $v_z$-vertex 
+resolution.
   Note that the highest beam current of 120~nA is 60\% higher than the nominal operating value of 75~nA.}     
 \label{resolution}
 \end{center}
