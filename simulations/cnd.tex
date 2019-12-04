@@ -1,7 +1,5 @@
 \subsection{Central Neutron Detector (CND)}
 
-\subsubsection{Geometry}
-
 The CND geometry is implemented through the native GEMC geometry API.
 The paddles are Geant4 generic trapezoids (see \F{cndGeometry}). The u-turn light guides are Geant4 ``polycones''
 (volumes with cylindrical symmetry with varying radius along one axis).
@@ -28,14 +26,14 @@ These factors were determined during cosmic-ray tests.
 The corrected energy is converted to the theoretical number of photons $N_{th}$ using the constant 1210 $\gamma$/MeV,
 which accounts for light propagation in the 1.4 m long light guides, for losses at the junctions and for the
 quantum efficiency of the photo-multiplier.
-A Poissonian is used to calculate the actual number of photons $N_{actual}$ and the resulting ``smeared'' energy
+A Poissonian distribution is used to calculate the actual number of photons $N_{actual}$ and the resulting ``smeared'' energy
 is then converted to ADC using the FADC conversion factor.
 
-The absolute hit time is corrected by:
+The absolute hit time is corrected using calibration constants estimated from data:
 
 \begin{itemize}
-	\item the effective velocity (from CCDB);
-	\item a left/right time offset factor (from CCDB);
+	\item the effective velocity;
+	\item a left/right time offset factor;
 	\item the Birks-attenuation factor;
 	\item the position and corresponding paddle length of the direct and the indirect hit.
 \end{itemize}

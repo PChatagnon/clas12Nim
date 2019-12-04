@@ -181,7 +181,7 @@ smaller than $Dmax$.
 Figure~\ref{xvst} provides an illustration of the local-angle dependence
 of distance versus time.  When the time is equal to $Tmax$ the distance is equal to
 the largest value for the local angle; that is, $Dmax_{\alpha}$.  Also note that by
-simple geometrical reasoning, $Dmax_{\alpha} = Dmax ~\cos(30^\circ-\alpha)$.
+simple geometrical reasoning, $Dmax_{\alpha} = Dmax \cdot \cos(30^\circ-\alpha)$.
 We assume that at times less than $Tmax$ and distances less than $Dmax$, the calculated
 distances still vary linearly as $\cos(30^\circ-\alpha)$.  This angle dependence is built into
 our functional form.
@@ -238,7 +238,7 @@ entrance angle.
 \alpha_b = \alpha_0 + \cos^{-1}(1 - b_{rot} B), 
 \end{equation}
 
-where $\alpha_0$ is the actual entrance angle, $b_{rot}$ is a constant equal to $0.02$ deg/T and $B$ is the magnetic field strength in Tesla; angular
+where $\alpha_0$ is the actual entrance angle, $b_{rot}$ is a parameter equal to $0.02$ deg/T and $B$ is the magnetic field strength in Tesla; angular
 units are degrees.
 
 %%%%%%%%% Figure : TRKDOCA vs. Drift Time -- Angle and Field Dependence %%%%%%%%%%
@@ -263,7 +263,7 @@ t(B) = t(0) + b_{mag} B^2,
 \end{equation}
 
 \noindent
-where $b_{mag}$ is a constant that is determined by calibration with a
+where $b_{mag}$ is an adjustable parameter that is determined by calibration with a
 value of approximately $100~ns/Tesla^2$ and $B$ is the magnetic field strength in Tesla. In this expression, the
 first term is the time calculated assuming $B$=0, and the second term is the time increase due to the $B$
 field. For the R1 and R3 functions, no magnetic field dependence is included, as the chambers are located
@@ -309,13 +309,19 @@ This means that we:
 \begin{itemize}
 \item {\bf Fill} our time-to-distance tables for different local angles using the function, and
 \item {\bf Interpolate} between time-to-distance tables for different local angles to obtain
-the calculated distance at a particular local angle.
+the calculated distance at a particular local angle, and for R2
+\item {\bf Interpolate} between different B-field tables.
 \end{itemize}
+
+We interpolate between different local angle tables, linearly in $\cos(30^\circ-\alpha)$.
 For example if ``$X_0$'' is the distance (at a particular time) for a table filled for tracks with local
 angle of 0$^\circ$ and ``$X_{30}$'' is the corresponding quantity for a table of 30$^\circ$ tracks, then
 \begin{equation} 
 \label{eq-extrap30}
 X(t,\alpha) = X_0 + (X_{30}-X_0) (\cos(30^\circ-\alpha) - \cos(30^\circ)) / (\cos(0^\circ) - \cos(30^\circ)).
+
+We interpolate between different B-field tables linearly in $B^2$.
+
 \end{equation}
 
 \subsection{Alignment Procedures and Corrections for Geometrical Distortions}
@@ -471,7 +477,8 @@ construction of the torus (see Ref.~\cite{torus-ieee}) and in internal
 documents (see Ref.~\cite{magmapping}).
 
 We used three independent 1-dimensional Hall probes mounted in a precision-machined
-Teflon holder.  The holder was a cylindrical solid that was pushed down a precision
+Teflon holder.  The holder was a cylindrical solid that was moved in 5~cm increments
+by a precision stepper motor and screw assembly down a precision
 carbon fiber tube.  The probes were precisely spaced to be 5~cm apart in the $z$-dimension
 (along the beamline), with one oriented perpendicular to the $z$-axis, another perpendicular to
 the $y$-axis (vertical), and the third perpendicular to the $x$-axis (horizontal).  In this way, we

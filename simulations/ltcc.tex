@@ -1,13 +1,12 @@
 \subsection{Low Threshold Cherenkov Counter (LTCC)}
 
-\subsubsection{Geometry}
 The LTCC mirror geometry is implemented through the native GEMC geometry API.
 The elliptical mirrors are made through a subtraction of two ellipsoids.
 The hyperbolic mirrors are built using Geant4 ``polycones'' approximating the mathematical shape using about 30 segments.
 The cylindrical mirrors are made from cuts of cylinder volumes.
 
 The LTCC Winston cones (WC) are of three types: small, medium, and large. Three CAD models are tessellated and
-imported in the simulation, and then copied into 36 WC/sector using the perl API.
+imported in the simulation, and then copied into 36 WC/sector using the PERL API.
 
 Finally, the LTCC box, mirror support structure, and additional support hardware are imported directly from
 the engineering CAD models. \F{ltccGeometry} shows details of the geometry implementation.

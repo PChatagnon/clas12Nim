@@ -1,9 +1,7 @@
 \subsection{Forward Time-Of-Flight (FTOF)}
 
-\subsubsection{Geometry}
-
-The FTOF geometry is implemented through the java geometry service.
-The service provides the Geant4 definitions that are read by the GEMC perl API to build the geometry database.
+The FTOF geometry is implemented through the JAVA geometry service.
+The service provides the Geant4 definitions that are read by the GEMC PERL API to build the geometry database.
 
 Each scintillator is a separate Geant4 volume. The paddles are assigned the scintillator material and
 associated with the FTOF hit process routine.
@@ -36,7 +34,7 @@ the average left/right ADC geometric mean is independent of counter length and h
 
 The corrected energy is converted to the number of photons $N_{th}$ using the constant 500 photons/MeV
 which was estimated from data.
-A Poissonian is used to calculate the actual number of photons $N_{actual}$ and the resulting ``smeared'' energy
+A Poissonian distribution is used to calculate the actual number of photons $N_{actual}$ and the resulting ``smeared'' energy
 is the converted to ADC using the FADC conversion factor.
 An example of the smeared ADC for the right paddles as a function of hit position is shown in \F{ftofAtten}.
 
@@ -49,14 +47,14 @@ An example of the smeared ADC for the right paddles as a function of hit positio
 	\label{fig:ftofAtten}
 \end{figure}
 
-The hit time is processed using:
+The absolute hit time is corrected using calibration constants estimated from data:
 
 \begin{itemize}
-	\item the effective velocity (from CCDB);
+	\item the effective velocity;
 	\item the time-walk correction, calculated from the smeared energy;
-	\item a panel to panel timing offset factor (from CCDB);
-	\item a left/right time offset factor (from CCDB);
-	\item an RF correction (from CCDB).
+	\item a panel to panel timing offset factor;
+	\item a left/right time offset factor;
+	\item an RF correction.
 \end{itemize}
 
 The time is then smeared by a resolution read from CCDB using a Gaussian function and then digitized using a TDC conversion factor.
