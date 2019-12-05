@@ -59,13 +59,10 @@ The high voltage side of each chamber was tiled with 14  multi-layered printed c
 boards, (HVTB). The HVTBs were designed to distribute three
 separate voltages to the sense, field, and guard wires, respectively.  See
 Section~\ref{determine-operating-parameters} for a 
-description of how we determined the operating values of the high voltage.  
-Each high voltage line on the HVTB was connected to the 
-input high-voltage wire with a parallel RC circuit to absorb any AC noise on
-the lines.  
+description of how we determined the operating values of the high voltage.
 
 The board layout is shown in Fig.~\ref{hvtb-layout}.
-Each high voltage cable is connected to a low-pass filter to 
+Each high voltage cable is connected to a low-pass filter (with R=1M$\Ohm$ and C=1pF) to 
 eliminate any high frequency noise from the supplies.
 The filtered power is then passed to the 4-layer printed circuit
 portion for distribution to the sense, field and guard wires.
@@ -96,8 +93,11 @@ including the trace routings from the capacitively-coupled
 wire signal to the SIP and the
 placement of the SIPs into groups of 16 with the SIP outputs being
 routed to the 16-pin signal connectors.  Also shown are the low-voltage
-power traces with individual fuses for each group of 16 wires.
-The board shown is from a R1 chamber, which had the tightest wire packing.
+power traces with individual negative voltage regulators for each
+group of 16 preamplifiers.  The negative voltage regulators were connected
+in isolation mode to provide +5VDC regulated voltage to the group
+of 16 preamplifiers.  The board shown is from a R1 chamber, which
+had the tightest wire and trace density.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
