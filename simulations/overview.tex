@@ -102,9 +102,9 @@ The following CLAS12 systems are implemented in the simulations:
 \end{itemize}
 
 The CLAS12 mechanical design include electronics, support structures, and additional hardware that cannot
-entirely be imported in the simulation due memory and cpu limitations: each object increases the overall
+entirely be imported in the simulation due memory and CPU limitations: each object increases the overall
 system complexity, the time, and the memory needed to process events. Nevertheless, all the elements in
-the way of particle trjectory paths to any of the CLAS12 detectors are included in the simulation.
+the way of particle trajectory paths to any of the CLAS12 detectors are included in the simulation.
 In addition, the simulation incorporates selected hardware in order to reproduce beam related
 rates in the detectors to a good level of accuracy, with priority given to volumes near high background
 areas and near sensitive detectors.
@@ -144,7 +144,7 @@ the original CAD element.
 The software used to do this is FreeCad \cite{freeCad}. An example of tessellation showing the polygonal shapes
 is shown in \F{targetScatteringChamber}. The number of faucets depends on the object complexity, and varies between
 100 and 10,000.
-Not all the objects are imported from the enginerring model due to the following limitations:
+Not all the objects are imported from the engineering model due to the following limitations:
 
 \begin{enumerate}
 \item
@@ -257,11 +257,11 @@ In particular, each detector channel can be associated with banks containing:
 \begin{itemize}
     \item the Flash Analog-to-Digital Counter (FADC) signal: this is the voltage signal as a function of time of the channel,
           sampled in 4 ns intervals.
-    \item the Time-to-Digitcal Counter (TDC) value: this represents the time of the hit in the channel relative
+    \item the Time-to-Digital Counter (TDC) value: this represents the time of the hit in the channel relative
           to a common start time.
     \item one single value of ADC for each hit, extrapolated from the FADC voltage distribution by considering the pedestal
           and the channel threshold.
-    \item one single value of TDC for each hit, extrapolated from the FADC voltage distribution by considering channgel
+    \item one single value of TDC for each hit, extrapolated from the FADC voltage distribution by considering channel
           signal shape and rise time.
 \end{itemize}
 
