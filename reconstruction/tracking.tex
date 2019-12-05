@@ -10,10 +10,12 @@ varies from roughly 2~Tm at 5$^\circ$ to 0.5~Tm at 40$^\circ$. In the central re
 field bends charged tracks into helices. A view of the field intensities in the $(z,x)$ plane and overlap region for
 the torus and solenoid fields is shown in Fig.~\ref{fig:dcTracks}.
 
-For both systems, track reconstruction comprises algorithms for pattern recognition and track fitting. Hit objects,
-corresponding to the passage of a particle through a particular detector component, require the transformation of
-an electronic signal into a location of the track's position in the detector subsystem geometry. A hit is thus a detector element represented
-geometric object, for example, a line representing a strip in the central tracker. These objects then form the input to the pattern recognition
+For both systems, track reconstruction comprises algorithms for pattern recognition and track fitting. 
+Hit objects, corresponding to the passage of a particle through a particular detector component, 
+require the transformation of an electronic signal into a location of the track's position in the 
+detector subsystem geometry. A hit is defined as a detector element represented by a 
+geometric object, for example, a line representing a strip in the central tracker. 
+These objects then form the input to the pattern recognition
 algorithms. This first step involves the identification of clusters of hits and the determination of the spatial
 coordinates and corresponding uncertainties for the hits and clusters of hits. At the pattern recognition stage, hits
 that are consistent with belonging to a trajectory (i.e. track) are identified. This set of hits is then fit to the
