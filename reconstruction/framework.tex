@@ -1,8 +1,6 @@
 \section{Software Framework and Tools}
 \label{sec:framework}
 
-%Experimental physics data analysis in a collaborative environment has historically involved a computing model based on self-contained, monolithic software applications running in batch-processing mode. This model, if not organized properly, can result in inefficiencies in terms of deployment, maintenance, response to program errors, update propagation, scalability and fault-tolerance. Over time, experimental configurations have become more diverse and compute capacity has expanded at a rate consistent with Moore's Law. As a consequence, compute applications have become much more complex, with significant interaction between diverse program components.  This can lead to computing systems so complex and intertwined that the programs become difficult to maintain and extend. Modifying a feature in one class often involves changes in several other classes, thereby increasing the needed development time and effort. What starts small and simple, inevitably grows into a complicated scheme of interconnected algorithms. At some point, to prevent further growth in complexity, the software has to be shielded from contributors, preventing essential software evolution and optimization. The only way to bypass this highly guarded system is software fragmentation, making the physics data processing validation process quite arduous.
-
 Nuclear and particle physics data processing applications must guarantee a long lifetime.  Larger than the multi-year
 duration of the corresponding experiment. The ability to upgrade and adapt technologies is therefore essential, so
 these applications should be organized in a way that easily permits upgrades of aged software components and
@@ -14,21 +12,15 @@ Following these principles, CLAS12 reconstruction and analysis relies on a data-
 CLARA~\cite{clara-2011,clara-service,framework,clara-2016}, which provides a service-oriented architecture in which
 to build the relevant software applications.  Such applications are composed of interlocking building blocks called
 micro-services, which are linked together by data-stream pipes.  The technology (e.g. a high-level programming
-language or hardware deployment details), as well as the algorithmic solutions used to process data are encapsulated. The scope of a specific software application implemented in CLARA is determined
+language or hardware deployment details), as well as the algorithmic solutions used to process data are encapsulated. 
+The scope of a specific software application implemented in CLARA is determined
 by the micro-services that are included and by the order of their execution.
-
-%\begin{figure*}[t]
-%\centering
-%\includegraphics[width=1.0\textwidth]{pics/clara-overview.pdf}
-%\caption{Overview of the CLAS12 CLARA data processing framework.  Individual detector subsystem  reconstruction applications can be linked to form the full event reconstruction chain, including  data processing, data quality monitoring, and physics analysis applications.}
-%\label{fig:clara-overview}
-%\end{figure*}
 
 A micro-service receives input data, processes it, and produces output data, where the I/O is organized into  tabular structures called a ``banks''
 whose structure is configured by the specific service developer.  A micro-service reacts to an input data stream,
 processes it, and passes processed data to the next micro-service in the data-flow path.  As a result, the CLAS12
 data processing application is versatile and flexible, since the application building blocks can be improved individually
-and replaced with no need for structure changes in the framework. The CLAS12 micro-services are extensions of an
+and replaced with no need for structural changes in the framework. The CLAS12 micro-services are extensions of an
 abstract reconstruction engine, which includes common components such as initialization and event processing
 methods. This approach reduces and simplifies the development of an individual micro-service and enforces a common
 structure. 
@@ -48,7 +40,7 @@ Intel Xeon node (E5-2697A v4 @ 2.6~GHz). Comparison with Amdhal's law indicates 
 the 32 physical cores of the machine.
 
 The CLARA framework provides service interface implementations in Java, C++ and Python languages. 
-At present all the CLAS12 reconstruction services deployed using the CLARA framework are written in Java.
+At present, all the CLAS12 reconstruction services deployed using the CLARA framework are written in Java.
 
 \begin{figure}
 \centering
@@ -66,7 +58,8 @@ The offline software of the CLAS12 project aims to provide tools that allow desi
 to proceed in an efficient, repeatable, and understandable way. Most  software engineering details are hidden from
 users, allowing them to concentrate on the algorithms and physics. To facilitate code development for the detector
 subsystems of CLAS12, the software was designed to provide libraries that are commonly used by all of the
-reconstruction packages.  These libraries, referred to as ``common tools'',  contribute to software maintainability by avoiding code replication, which facilitates code maintainability.
+reconstruction packages.  These libraries, referred to as ``common tools'',  contribute to software maintainability 
+by avoiding code replication, which facilitates code maintainability.
 
 The common tools consist of various packages, each having a specific purpose and functionality. Below we discuss
 the main packages used in the reconstruction software.
