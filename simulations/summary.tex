@@ -1,0 +1,36 @@
+\subsection{Summary of detector parameters}
+
+The CLAS12 detectors parameters are summarized in Table \ref{tab:summary}.
+For most of the detectors the maximum step is set to a conservative 1 cm value. The actual step
+size in this case is decided by Geant4 using the cross sections tables, and will always be smaller
+than 1 cm. For the BST, MM and FT TRK the max step is forced to be smaller of what Geant4 would chose, in order
+to parameterize correctly the electron avalanches paths that produce a signal in the strips.
+Wherever the FADC is used, the time window
+is set to the experimental electronic time window of 400 ns. The BST, MM, and FT TRK use a dedicated
+readout chip with shorter time windows. The Cherenkov use 50 ns and the Drift Chamber use 500 ns.
+
+\begin{table*}
+    \begin{center}
+        \begin{tabular}{| c | c | c | c | c | c | c | }
+            \hline \hline
+Detector &  Geometry Source &           Identifier  &  Digitized Output  &  Max Step & Time Window  \\
+            \hline
+BST       &     JAVA service  & sector, layer, strip      &  ADC             & 30 $\mu$mm  & 128 ns    \\
+MM        &     PERL API      & sector, layer, strip      &  ADC             & 270 $\mu$mm & 132 ns    \\
+CTOF      &     CAD           & sector, layer, paddle     &  FADC, ADC, TDC  & 1 cm        & 400 ns    \\
+CND       &     PERL API      & sector, layer, component  &  FADC, ADC, TDC  & 1 cm        & 400 ns    \\
+HTCC      &     PERL API      & sector, ring, index       &  ADC             & 1 cm        & 50 ns     \\
+FT TRK    &     PERL API      & layer, component          &  ADC             & 300 $\mu$mm & 132 ns    \\
+FT HODO   &     PERL API      & sector, layer, component  &  FADC, ADC, TDC  & 1 cm        & 400 ns    \\
+FT CAL    &     PERL API      & component                 &  FADC, ADC, TDC  & 1 cm        & 400 ns    \\
+DC        &     JAVA service  & sector, layer, wire       &  TDC             & 1 mm        & 500 ns    \\
+LTCC      &     PERL API, CAD & sector, side, segment     &  ADC             & 1 cm        &  50 ns    \\
+RICH      &     PERL API, CAD & sector, pmt, pixel        &  TDCL, TDCL      & 1 cm        &  50 ns    \\
+FTOF      &     JAVA service  & sector, layer, paddle     &  FADC, ADC, TDC  & 1 cm        & 400 ns    \\
+EC        &     JAVA service  & sector, layer, strip      &  FADC, ADC, TDC  & 1 cm        & 400 ns    \\
+            \hline \hline
+        \end{tabular}
+    \end{center}
+    \caption{Summary of the detector parameters. For the RICH detector, two TDC are quoted that refer to
+    the leading and trailing edge times of the signal.}\label{tab:summary}
+\end{table*}
