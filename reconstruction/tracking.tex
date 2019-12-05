@@ -4,18 +4,18 @@ Charged particle tracking is the key element of the CLAS12 event reconstruction.
 reconstruction of tracks in the central tracker system (comprised of the Silicon Vertex Tracker - SVT
 \cite{svt-nim} and the Barrel Micromegas Tracker - BMT~\cite{mm-nim}; together the SVT and BMT comprise
 the Central Vertex Tracker - CVT)  and the forward tracking system (comprised of the Forward Micromegas
-Tracker - FMT~\cite{mm-nim} and the Drift Chambers - DCs~\cite{dc-nim}). The Forward Detector covers the
-polar angle range from $5^\circ$ to $40^\circ$, while the Central Detector covers the polar angle range from
-roughly $35^\circ$ to $125^\circ$. In the forward region a torus magnet bends charged particles inward, toward
+Tracker - FMT~\cite{mm-nim} and the Drift Chambers - DCs~\cite{dc-nim}). In the forward region a torus magnet bends charged particles inward, toward
 the beamline or outward away from the beamline depending on their charge. At full nominal current the $\int B dl$
 varies from roughly 2~Tm at 5$^\circ$ to 0.5~Tm at 40$^\circ$. In the central region a 5~T solenoidal magnetic
 field bends charged tracks into helices. A view of the field intensities in the $(z,x)$ plane and overlap region for
 the torus and solenoid fields is shown in Fig.~\ref{fig:dcTracks}.
 
-For both systems, track reconstruction comprises algorithms for pattern recognition and track fitting. Hit objects,
-corresponding to the passage of a particle through a particular detector component, require the transformation of
-an electronic signal into a location of the track's position in the detector subsystem geometry. A hit is thus a detector element represented
-geometric object, for example, a line representing a strip in the central tracker. These objects then form the input to the pattern recognition
+For both systems, track reconstruction comprises algorithms for pattern recognition and track fitting. 
+Hit objects, corresponding to the passage of a particle through a particular detector component, 
+require the transformation of an electronic signal into a location of the track's position in the 
+detector subsystem geometry. A hit is defined as a detector element represented by a 
+geometric object, for example, a line representing a strip in the central tracker. 
+These objects then form the input to the pattern recognition
 algorithms. This first step involves the identification of clusters of hits and the determination of the spatial
 coordinates and corresponding uncertainties for the hits and clusters of hits. At the pattern recognition stage, hits
 that are consistent with belonging to a trajectory (i.e. track) are identified. This set of hits is then fit to the
