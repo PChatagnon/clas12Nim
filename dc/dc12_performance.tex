@@ -146,25 +146,25 @@ field lines near the field wire.
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A more quantitative look at the resolution as a function of DOCA is given in Fig.~\ref{resid-vs-doca},
-for data from all six R3 drift chambers.
-The upper sub-figure is a 2-D plot of the fit residual (TRKDOCA - DOCA) vs. TRKDOCA.
-We did a Gaussian slice-fit in the x-coordinate (TRKDOCA) and plotted the resulting sigma from
-each fit versus TRKDOCA in the lower sub-figure.
+A more quantitative look at the resolution is given in Fig.~\ref{gaussian-fit-to-resids}.
+This is a plot of the residual distributions from each of the six superlayers in Sector 1; 
+all sectors have similar results.
+Because the resolution is narrow in the middle of the cell and widens considerably
+for small and large values of DOCA (see Fig.~\ref{resolution-vs-doca}), we fit the
+residual distribution to a double-Gaussian form. 
 The average single-wire resolution in the middle 
-portion of the cell is about 250~$\mu$m, with a whole cell resolution of about 400~$\mu$m. 
-Looking at similar fits for all of the chambers, we conclude that the whole-cell 
-average is about 400~$\mu$m for R1, R2, and R3, respectively.  
+portion of the cell is about 325, 395 or 310~$\mu$m for R1, R2 and R3, respectively,
+with a whole cell resolution (RMS) of about 430, 540 or 515~$\mu$m for R1, R2 and R3, respectively.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
 \vspace{8cm}
 \begin{picture}(50,50)
 \put(40,-5)
-{\hbox{\includegraphics[width=.8\textwidth,natwidth=610,natheight=642]{img/resid-vs-doca.png}}}
+{\hbox{\includegraphics[width=.8\textwidth,natwidth=610,natheight=642]{img/gaussian-fit-to-resids.png}}}
 \end{picture}
-\caption{\small{Upper figure: a plot of residual vs. TRKDOCA.  Lower figure: a plot of the Gaussian sigma of the
-upper plot (from a slice-fit) vs. TRKDOCA.}}
+\caption{\small{A plot of the residual distributions for all 6 superlayers in Sector 1.  Overplotted
+is a double-Gaussian fit to the distribution.}}
 \label{resid-vs-doca}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
