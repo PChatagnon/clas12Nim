@@ -366,7 +366,7 @@ roll ($\theta$z) degrees of freedom.
 
 Fig.~\ref{resids-vs-layer-before} plots the mean of the residuals of a straight-line
 fit to the tracks versus layer (1 - 36 layers of the chambers), for one sector (in this
-case sector 2). The misalignment is plainly visible as a noticeable shift of the residual means
+case sector 1). The misalignment is plainly visible as a noticeable shift of the residual means
 from zero. The bulk of the offsets occurs in shifts of groups of 12 layers, which
 corresponds to one physical chamber (a R1 chamber has layers 1-12, R2 from 13-24, and
 R3 from 25-36).  
@@ -378,7 +378,8 @@ R3 from 25-36).
 \put(15,-15)
 {\hbox{\includegraphics[width=0.85\textwidth,natwidth=610,natheight=642]{img/resids-vs-layer-before.png}}}
 \end{picture}
-\caption{\small{A plot of the fit residual mean versus layer, before alignment.}}
+\caption{\small{A plot of the fit residual mean versus layer, before alignment.  The displacements occur in
+correlated groups, layers (1-12, 13-24 and 25-36) which corresponds to the three physical chambers, R1, R2 and R3.}}
 \label{resids-vs-layer-before}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -397,9 +398,8 @@ distance of closest approach to the beam-target vertex.  This requirement, that 
 tracks, regardless of sector, should point to a common beam-target vertex, allowed us to
 align the chambers sector to sector.
 
-Figure~\ref{resids-vs-layer-before} is the misalignment before our aligning procedure, while
 Fig.~\ref{resids-vs-layer-after} shows the shifts of the means that remain after we have
-aligned the chambers.
+aligned the chambers; shown for all sectors.  The RMS deviations of the means from zero average to about $50/mu~m$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[bhtp]
@@ -408,7 +408,8 @@ aligned the chambers.
 \put(-5,-15)
 {\hbox{\includegraphics[width=0.9\textwidth,natwidth=610,natheight=642]{img/resids-vs-layer-after.png}}}
 \end{picture}
-\caption{\small{A plot of the fit residual mean versus layer, after alignment.}}
+\caption{\small{Plots of the fit residual mean versus layer, after alignment, for each of the six sectors.
+}}
 \label{resids-vs-layer-after}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
