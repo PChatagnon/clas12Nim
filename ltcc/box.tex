@@ -1,24 +1,30 @@
 \subsection{Box Cut and Support Relocation}
 \label{sec:mirrorRepos}
 
-In the CLAS12 design upgrade the space between the Drift Chambers and the Forward Time-Of-Flight system
-was reduced from 2~m to 1.5~m. In order to accommodate the LTCC in the new space, the original aluminum frame
-was modified with a cut, see \F{boxCut}. The mounting structure of the three mirror sets involved in the cut was
+The modification of the LTCC vessel design was necessary because all the drift chambers in the CLAS12 spectrometer
+are flat as opposed to the drift chambers in CLAS that were of cylindrical shape. Therefore the inlet
+of the LTCC vessel had to be modified from the original cylindrical to a flat profile, see \F{boxCut}. As a consequence of such
+modification the possibility of a significant increase of the radiator gas thickness in the most important
+polar angular range of particle acceptance at small angles was used and successfully implemented.
+The mounting structure of the three mirror sets involved in the cut was
 repositioned. For this work, new threaded holes were drilled in the frame and the old holes were plugged and sealed.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.0\columnwidth, height=0.75\columnwidth]{img/boxCut.png}
 	\caption{The refurbished LTCC box frame. Originally the frame walls spanned a portion of the surface of a 5~m
-          radius sphere centered on the target. The side-walls had to be cut near the top part of the frame and the mirror
+          cylindrical profile. The side-walls had to be cut near the top part of the frame and the mirror
           sets involved had to be relocated. A stainless steel nose window support was added to the original detector to
-          increase the gas volume.}
+          increase the gas volume. The radiator gas thickness was consequentially smaller near the top frame modifications,
+          however the old restriction of the window having to follow the cylindrical profile of the wall is removed and
+          the window can be inflated to follow the flat profile from the bottom of the box to the nose. This leads
+          to the gas radiator thickness increase detailed on \F{noseVolume}. }
 	\label{fig:boxCut}
 \end{figure}
 
 \subsection{Nose Addition and Window Inflation}
 
-In the original design the upstream window followed the spherical curvature of the frame sidewalls. In the new system,
+In the original design the upstream window followed the cylindrical curvature of the frame sidewalls. In the new system,
 the window is designed to inflate to enlarge the gas volume in order to increase the number of Cherenkov photons. In
 addition, a ``nose'' support (see \F{boxCut}) has been engineered to increase the gas volume. The nose dimensions have
 been optimized to provide the necessary support, while at the same time, maximizing the gas volume increase. The gas
@@ -40,9 +46,10 @@ Both the high voltage and the signal connectors that link the PMTs inside the LT
 were not hermetic during CLAS operations and epoxy was used to minimize the leaks from these connectors. As
 part of the back-wall refurbishment, the patch panel was rebuilt and hermetic connectors were used.
 
-The new back-wall design is shown in \F{backWall}. The wall is supported by stainless steel bars that enclose a panel
+The new light-weight back-wall design is shown in \F{backWall}. The wall is supported by stainless steel bars that enclose a panel
 made of foam enclosed by thin aluminum sheets to minimize the radiation length. The new patch panels provide 3
-connectors for each PMT: one for high voltage and two for an identical signal coming from the modified PMT base.
+connectors for each PMT: one for high voltage and two for the identical signals from the PMTs, due to the modifications
+detailed in \ref{sec:dividers}.
 One signal is digitized through a flash ADC and the other one through a discriminator and TDC.
 
 \begin{figure}[h]
@@ -57,10 +64,13 @@ One signal is digitized through a flash ADC and the other one through a discrimi
 \subsection{Mirror Support Spine}
 
 When the LTCC boxes were opened for refurbishment, the mirror support spine in all six Cherenkov detectors was
-found to be broken. The spine was an aluminum honeycomb designed to prevent the mirrors from breaking under their
-own weight. It was attached to the box nose and the back-wall. The spine was rigid and broke due to small (of the order
-of 0.5~cm) deformations of the box when it was transported and/or installed. A new carbon fiber spine, see \F{spine},
-was designed that is capable of floating up to 1 cm, effectively compensating for the non-rigid movements of the box.
+found to be not operational. The spine was an aluminum honeycomb designed to prevent the mirrors from deformation
+and misalignment under their
+own weight. It was attached to the box nose and the back-wall. The support spine was rigid but its attachment
+to the box failed to withstand deformations of the box (of the order of 0.5 cm) whenever the LTCC modules were moved.
+A new carbon fiber spine, see \F{spine},
+was designed that is capable of floating up to 1 cm, effectively compensating for the any box deformations due to
+the modules transportation and installation.
 The mirrors are linked to the spine through 0.127-mm thick stainless steel cables. The cables are anchored with stainless
 steel springs with tension varying from 0.5 to 1~kg.
 
