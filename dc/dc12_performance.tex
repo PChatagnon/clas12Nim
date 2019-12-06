@@ -84,9 +84,9 @@ the evidence from all other layers in the superlayer.  This is called the
 cell efficiency for the particular choice of gas mixture, high-voltage set point, and 
 discriminator level.  
 
-
-The single layer inefficiency is not uniform across the drift cell.  It is higher near the sense wire and also
-near the outer edge of the cell.  A track passing close to a sense wire leaves many ions in the cell, but the
+The single layer inefficiency is not uniform across the drift cell.  It is slightly higher near the sense 
+wire and substantially higher near the outer edge of the cell.  A track passing close to a sense wire 
+leaves many ions in the cell, but the
 ion arrival times are stretched out from near-zero to the maximum drift time $Tmax$.  The result is that
 the preamplifier's output signal has a low voltage amplitude but persists for a long time.  So, even though
 the collected charge is large the voltage put out by our transimpedance preamplifiers may not be large
@@ -94,8 +94,11 @@ enough to exceed the voltage discriminator threshold of the DCRB. For the case o
 edge of the cell (so-called `corner-clippers') they leave a very small number of ions in the cell and
 thus have a small signal.
 
-Fig.~\ref{dc-inefficiency-vs-doca} shows that a large contribution to the inefficiency comes 
-from tracks that pass close to the sense wire.  These tracks give rise to signals 
+Fig.~\ref{dc-inefficiency-vs-doca} shows that the largest contribution to the drift cell
+inefficiency is from tracks far from the wire.  These tracks may leave very few ions,
+so -called 'corner clippers'.  Even tracks that are far from the wire but leave a substantial
+number of ions can give rise to inefficiencies due to a large spread in ion arrival time.  
+These tracks produce signals 
 that have low pulse height and long duration, and thus may escape detection.
 We fit this observed DOCA-dependent inefficiency to a functional form that is
 used in our GEMC Monte Carlo hit digitization routine to randomly throw out
@@ -103,10 +106,10 @@ this percentage of hits.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-\vspace{5.7cm}
+\vspace{7cm}
 \begin{picture}(50,50)
-\put(70,0)
-{\hbox{\includegraphics[width=0.6\textwidth,natwidth=610,natheight=642]{img/dc-inefficiency-vs-doca.png}}}
+\put(0,0)
+{\hbox{\includegraphics[width=0.8\textwidth,natwidth=610,natheight=642]{img/dc-inefficiency-vs-doca.png}}}
 \end{picture}
 \caption{\small{The observed ``layer efficiency'' as a function of DOCA.  Hits from tracks
 that pass close to or far from the sense wire have the hits spread out in time, and the resulting
@@ -146,30 +149,30 @@ field lines near the field wire.
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A more quantitative look at the resolution as a function of DOCA is given in Fig.~\ref{resid-vs-doca},
-for data from all six R3 drift chambers.
-The upper sub-figure is a 2-D plot of the fit residual (TRKDOCA - DOCA) vs. TRKDOCA.
-We did a Gaussian slice-fit in the x-coordinate (TRKDOCA) and plotted the resulting sigma from
-each fit versus TRKDOCA in the lower sub-figure.
+A more quantitative look at the resolution is given in Fig.~\ref{gaussian-fit-to-resids}.
+This is a plot of the residual distributions from each of the six superlayers in Sector 1; 
+all sectors have similar results.
+Because the resolution is narrow in the middle of the cell and widens considerably
+for small and large values of DOCA (see Fig.~\ref{resolution-vs-doca}), we fit the
+residual distribution to a double-Gaussian form. 
 The average single-wire resolution in the middle 
-portion of the cell is about 250~$\mu$m, with a whole cell resolution of about 400~$\mu$m. 
-Looking at similar fits for all of the chambers, we conclude that the whole-cell 
-average is about 400~$\mu$m for R1, R2, and R3, respectively.  
+portion of the cell is about 325, 395 or 310~$\mu$m for R1, R2 and R3, respectively,
+with a whole cell resolution (RMS) of about 430, 540 or 515~$\mu$m for R1, R2 and R3, respectively.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-\vspace{8cm}
+\vspace{7cm}
 \begin{picture}(50,50)
-\put(40,-5)
-{\hbox{\includegraphics[width=.8\textwidth,natwidth=610,natheight=642]{img/resid-vs-doca.png}}}
+\put(0,-5)
+{\hbox{\includegraphics[width=.5\textwidth,natwidth=610,natheight=642]{img/gaussian-fit-to-resids.png}}}
 \end{picture}
-\caption{\small{Upper figure: a plot of residual vs. TRKDOCA.  Lower figure: a plot of the Gaussian sigma of the
-upper plot (from a slice-fit) vs. TRKDOCA.}}
-\label{resid-vs-doca}
+\caption{\small{A plot of the residual distributions for all 6 superlayers in Sector 1.  Overplotted
+is a double-Gaussian fit to the distribution.}}
+\label{gaussian-fit-to-resids}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Conclusions}
+\subsection{Summary of Design, Construction and Operation}
 
 The toroidal geometry of the CLAS spectrometer necessitated a particle-tracking 
 system of unconventional design.  Design challenges and solutions include the following:
@@ -198,6 +201,7 @@ and low-gain operation) resulted in a semi-automated calibration and monitoring 
 package.
 
 \vskip 10pt
+\subsection{Conclusions}
 The CLAS12 drift chamber system has been in routine operation since spring, 2017. 
 The system has reached its design goals of high-luminosity operations
 (1$\times$10$^{35}$~cm$^{-2}$s$^{-1}$) in a high-flux electromagnetic reaction

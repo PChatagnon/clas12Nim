@@ -1,0 +1,10 @@
+#!/bin/csh -f
+
+foreach f  (abstract overview requirements box mirrors wc pmts pmtBse windows readoutelectronics hardware calibration simulation performance conclusionsAndAcknowledgement)
+	if ( ! -f $f.tex ) then
+	        echo $f missing
+	else
+		echo $f
+		aspell --mode=tex -c $f.tex
+	endif 
+end
