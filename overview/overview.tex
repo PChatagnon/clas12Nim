@@ -246,8 +246,9 @@ interactions of baryons, mesons, and nuclei using polarized and unpolarized targ
 \begin{figure*}[tbp!]
 \centerline{\includegraphics[width=1.50\columnwidth]{clas12_desired.png}}
 \caption{The ideal shape and dimensions of one of the torus magnet coils. All six coils are nominally identical to each
-other, and are tilted forward at a $22.2^\circ$ angle relative to the vertical. The bores at the outer two corners
-provide coil-to-coil connections.}
+other, and are tilted forward at a $22^\circ$ angle relative to the vertical. The bores at the outer two corners
+provide coil-to-coil connections. The beamline is indicated as the horizontal solid line. The point where all lines cross
+is the nominal position of the production target. All dimensions are in millimeters. }
 \label{coil-shape}
 \end{figure*}
 This paper provides a general description of the design, construction, and performance of CLAS12 and how it expands
@@ -698,7 +699,16 @@ shows the upstream end of the CTOF installed inside the solenoid.
 \caption{(Color Online) Schematic diagram of the CLAS12 data acquisition and trigger system.}
 \label{daq}
 \end{figure*}
-
+\
+section{Data Acquisition and Trigger System} 
+\begin{figure}[t!]
+\centerline{\includegraphics[width=0.95\columnwidth]{CLAS12-triggers.png}}
+\caption{CLAS12 trigger control screen during specific data run with a total of 17 active triggers operating at 95.4\% L.T.  
+Near half (48.7\%) of all
+triggers are from single electrons detected in one of the 6 sectors. Over a quarter (27.81\%) of all triggers required an electron in 
+the FT with additional two charged hits detected in the FTOF and in the PCAL. Several others were taking data at the 5\% level and require charged tracks in FTOF-PCAL-ECAL in opposite sectors. Several other triggers are heavily pre-scaled. }
+\label{CLAS12-triggers}
+\end{figure}
 \subsection{Central Neutron Detector (CND)}
 
 The CLAS12 CD is also equipped with the CND positioned radially outward of the CTOF that allows the detection
@@ -709,7 +719,6 @@ the upstream end by PMTs placed outside of the high magnetic field region of the
 connected to 1.5-m-long bent light guides. Figure~\ref{ctof-cnd} (right) shows the upstream readout end of the
 CND installed in the solenoid. Details of the CND are described in Ref.~\cite{cnd-nim}.
 
-\section{Data Acquisition and Trigger System} 
 
 \subsection {CLAS12 Data Flow and Monitoring} 
 
@@ -766,8 +775,10 @@ In some experiments the detection of electrons in the FT is of interest if they 
 event patterns of one or two additional detected hadrons. Such conditions have been implemented in the fast trigger
 decision that reduces the number of triggers to about $2 \times 10^4$~events/s, i.e. by  a factor of 250 from the
 hadronic rate. The data rate is typically 500~MB/s under such conditions and can be handled by the CLAS12 data
-acquisition system and the available computing resources. Details of the design, functionality, and performance of
+acquisition system and the available computing resources. Figure~\ref{CLAS12-triggers} shows an example of specific 
+triggers configurations that have been used during the fall 2018 run period. Details of the design, functionality, and performance of
 the CLAS12 trigger system are provided in Ref.~\cite{TRIG}. 
+
 
 
 \section{CLAS12 Offline Software}  
@@ -786,20 +797,20 @@ at high luminosity, details of the beamline design, and other aspects.
 \begin{figure*}[h!]
 \vspace{0.5cm}%\centerline{\includegraphics[width=0.95\columnwidth]{neg-tracks.png}}
 \centerline{\includegraphics[width=0.85\columnwidth]{neg_phi_p.png}
-\hspace{1cm}\includegraphics[width=0.85\columnwidth]{pos_phi_p.png}}
-\caption{(Color Online) Particle distributions in azimuthal angle ($\phi$) vs momentum in the CLAS12 FD for electrons (left) and for positive
- tracks (right) at a beam energy of 10.6 GeV.  The azimuthal angle is measured at the production vertex. The azimuthal distribution of electrons 
- narrow with increasing momentum, as high momentum electrons enter CLAS12 at more froward polar angles where azimuthal acceptance is
+\hspace{1cm}\includegraphics[width=0.85\columnwidth]{neg_phi_p-out.png}}
+\caption{(Color Online) Particle distributions in azimuthal angle ($\phi$) vs momentum in the CLAS12 FD for inbending electrons  (left) and for outbending tracks (right) at a beam energy of 10.6 GeV.  The azimuthal angle is measured at the production vertex. The azimuthal distribution of electrons 
+ narrows with increasing momentum, as high momentum electrons enter CLAS12 at more forward polar angles where azimuthal acceptance is
  reduced. The p-$\phi$ correlation, most visible at low momentum, is due to
   the solenoidal magnetic field that rotates charged tracks dependent on their transverse momentum component
-  and on their charge. For positive tracks the $\phi$ motion is in the opposite direction from negative (electron) tracks.} 
+  and on their charge. For positive tracks the $\phi$ motion is in the opposite direction from negative (electron) tracks. 
+  Color axes indicated particle yields.} 
 \label{neg-pos}
 \end{figure*}
 \begin{figure*}[t!]
 \centerline{\includegraphics[width=1.8\columnwidth]{e_vz.png}}
 %\includegraphics[width=0.9\columnwidth]{e-vz-p}
 \caption{(Color online) Vertex reconstructed from electrons in the FD. Left: Reconstructed vertex versus electron momentum. 
-Right: Electron vertex in the FD vs. azimuthal angle. The vertical size of the vertex band is consistent with the target length of 50~mm. } 
+Right: Electron vertex in the FD vs. azimuthal angle. The vertical size of the vertex band is consistent with the target length of 5.0~cm. } 
 \label{vertex}
 \end{figure*}
 
@@ -980,7 +991,7 @@ electrons it is limited to  $Q^2 \approx 12$GeV$^2$.
 
 \subsection{Charged Particle Detection in the FD}
  
-Charged particle distribution in momentum and azimuthal angles are shown in Fig.~\ref{neg-pos} in the local sector
+Charged particle yields in momentum and azimuthal angles are shown in Fig.~\ref{neg-pos} in the local sector
 frame for positively and negatively charged particles. The difference in the acceptance is due to two factors, the
 polarity of the torus magnet that bends negative particles away from the beamline and positive particles towards
 the beamline (or vice-versa for the opposite torus polarity), and the effects of the solenoid magnetic field that
@@ -999,17 +1010,23 @@ particle species vs. momentum is shown in Fig.~\ref{pid1}.
 \centerline{\includegraphics[width=1.0\columnwidth]{FTOF1b_pid.png}}
 %\centerline{\includegraphics[width=1.0\columnwidth]{beta-momentum.png}}
 \caption{(Color online) $\beta = v/c $ vs. momentum of positively charged particles detected in the CLAS12 FD.
+Events were selected to have an electron identified, and the positively charged particle trajectories are reconstructed 
+and their path length and timing from the target to the FTOF 1b layer determined. The start time at the 
+target is given by identifying the corresponding beam bucket as T=0.     
   The thin black lines show the expected distributions for the respective charged tracks. Particle identification
   is limited to momenta greater than 0.8~GeV when the torus magnet is energized to maximum current. At
-  reduced current the tracking is extended to lower momenta at the expense of momentum resolution.}
+  reduced Torus current the tracking is extended to lower momenta at the expense of momentum resolution.}
 \label{pid}
 \end{figure} 
 
 \begin{figure}[hp!]
 \centerline{\includegraphics[width=1.0\columnwidth]{FTOF1b_M2-vs-p.png}}
-\caption{(Color online) Reconstructed mass squared vs. momentum of positively charged particles in the CLAS12 FD. The plot
-  contains a threshold on the minimum and maximum number of events per bin to eliminate the background events 
-  between the particle bands, and to better visualize the scarce kaons in the particle samples. Bottom: $\pi^+$, middle: $K^+$, top: $p$. 
+\caption{(Color online) Reconstructed mass squared vs. momentum of positively charged particles in 
+the CLAS12 FD. The same data are used as in Fi.~\ref{pid}. However, the plot contains a threshold on the 
+minimum and maximum number of events per bin to eliminate background events 
+  between the particle bands, and to better visualize the scarce kaons in the particle samples, which are of
+  special significance for the science program. 
+  Bottom: $\pi^+$, middle: $K^+$, top: $p$. 
   The centroids of each particle distribution are approximately independent of the
   momentum. Masses are computed from the particle path length and from time-of-flight. Any momentum
   dependence would indicate systematics in the timing calibration or in the path length determination.}
@@ -1089,17 +1106,19 @@ The energy response of the FT to 2.2~GeV electrons and the $\gamma \gamma$ mass 
 Fig.~\ref{FT-en-gg}. 
 
 \begin{figure}[tp!]
-\centerline{\includegraphics[width=0.95\columnwidth]{ECAL-2g-mass-fit.png}}
+\centerline{\includegraphics[width=0.90\columnwidth]{ECAL-2g-mass-fit.png}}
 \caption{The invariant mass of two high-energy photons in sector 4 of the ECAL from 10.6~GeV beam data. The
   background beneath the $\pi^0$ peak is due to multi-photon decays of higher mass mesons where one or more
-  photons are not detected in the angle range covered by the calorimeter. The width of the mass peak is 11.9~MeV.
-  The energy calibration of the calorimeter uses cosmic ray events.}
+  photons are not detected in the angle range covered by the calorimeter. The $\sigma$ - width of the mass peak is 11.9~MeV,
+   which is in good agreement to the MC simulations in \cite{Software}. 
+  The energy calibration of the calorimeter uses cosmic ray muons.}
 \label{gg-ecal}
-\centerline{\includegraphics[width=1.15\columnwidth]{FT-performance.png}}
+\centerline{\includegraphics[width=0.90\columnwidth]{FT-performance.png}}
 \caption{Top panel: The energy response of the FT calorimeter to elastically scattered electrons at 2.2~GeV
   beam energy. The tail at lower energies is due to radiative effects. The energy resolution is
   $\sigma_E / E \approx 3.3\%$. Bottom panel: 2$\gamma$ mass for photons detected in the FT lead-tungstate
-  crystal calorimeter. The $\pi^0$ mass resolution is $\sigma_{\gamma\gamma} = 4.4$~MeV.}
+  crystal calorimeter. The $\pi^0$ mass resolution is $\sigma_{\gamma\gamma} = 4.4$~MeV, which is somewhat 
+  larger than the MC simulation of $\approx 3.5$~MeV. }
 \label{FT-en-gg}
 \end{figure}
 
@@ -1193,15 +1212,23 @@ programs that require spin-polarized targets with the polarization axis oriented
 electron beam.        
 
 \begin{figure}[t!]
-\centerline{\includegraphics[width=0.95\columnwidth]{e_R1_phi_pub.png}}
-\caption{Distributions of scattered electrons in azimuthal angle (in deg.) for different bins in polar
-  angle. Top: Left: $\theta = 7^\circ-9^\circ$, Right: $\theta = 13^\circ-15^\circ$. Bottom: Left: $\theta = 23^\circ-25^\circ$,
+\centerline{\includegraphics[width=0.85\columnwidth]{e_R1_phi_pub.png}}
+\caption{Yields of inbending electrons in azimuthal angle (in deg.) for different bins in polar
+  angle. Top: Left: $\theta = 7^\circ-9^\circ$. Right: $\theta = 13^\circ-15^\circ$. Bottom: Left: $\theta = 23^\circ-25^\circ$,
   Right: $\theta = 33^\circ-35^\circ$. The
   reduced acceptance at small polar angles is due to the cryostat of the torus coils, which are attached to 
   the cold central stainless steel hub at small angles, limits the geometrical acceptance to less than 
-  50\% in azimuthal angle, see Fig.~\ref{coil-mount}. Vertical axes are in arbitrary units.The modulation at 
-  large scattering angles is mostly related to edge effects in other detectors than the HTCC. ({\bf to be verified}).}
-\label{e-accept}
+  50\% in azimuthal angle, see Fig.~\ref{coil-mount}. Vertical axes are in arbitrary units, and not corrected for 
+  acceptances.  }
+\label{e-accept-in}
+\end{figure}
+
+\begin{figure}[t!]
+\centerline{\includegraphics[width=0.85\columnwidth]{e_R1_phi_pub-out.png}}
+\caption{Same as in Fig.~\ref{e-accept-in} but for outbending electrons. Top: Left: $\theta = 5^\circ-7^\circ$, Right: $\theta = 11^\circ-13^\circ$. Bottom: Left: $\theta = 15^\circ-17^\circ$. Right: $\theta = 25^\circ-27^\circ$. At small polar angles the acceptance in azimuth is much larger than for inbending electrons
+  and sets in at smaller polar angles.
+  Vertical axes are in arbitrary units, and not corrected for  acceptances.  }
+\label{e-accept-out}
 \end{figure}
 
 \subsection{Forward Detector Reconstruction} 
@@ -1222,26 +1249,28 @@ a full simulation package was developed, based on the software package Geant4~\c
 %\centerline{\includegraphics[width=1.0\columnwidth]{random-trigger-occupancies.png}}
 \centerline{\includegraphics[width=1.0\columnwidth]{random-occupancies.png}}
 \caption{(Color online) Accidental occupancies in the three DC regions vs. the beam current, with the solenoid magnet at full field.
-  The measurement was carried out with the FT in the OFF configuration (dashed lines). The dependence on the beam
+  The measurement was carried out with the FT in the OFF configuration. The dependence on the beam
   current is linear. At 75~nA beam current the measurement was also done with the FT in the ON configuration (large
-  squares), and the accidental occupancies increase on average by $\approx$62\%. The time windows during data
+  squares), and the accidental occupancies increase on average by $\approx$62\% compared to the FT-OFF configuration. 
+  The time windows during data
   collection were 250~ns for R1, 500~ns for R2, and 750~ns for R3, approximately corresponding to the charge
-  collection times in the DC.}
+  collection times in the DC. For the FT-ON configuration results are consistent with the MC simulations for R1, they underestimate data by 35\% for 
+  R2, and by 25\% for R3~\cite{GEMC,GEMC-background}. }
 \label{occupancies1}
 \end{figure}
 
 \subsubsection{Luminosity Limits on CLAS12 Operations}
 
-CLAS12 is designed for operation at a significantly higher luminosity compared to CLAS. However, the high luminosity
-operation has measurable effects on the hit occupancy in the drift chambers and on the resolution in the momentum
-reconstruction. Also, the reconstruction efficiency of charged particles can be affected. Figures ~\ref{occupancies1}
+CLAS12 is designed for operation at a luminosity of $L = 10^{35}$cm$^{-2}$s$^{-1}$, which corresponds to a 
+beam current of 75nA and a liquid hydrogen target of 5~cm length. The high luminosity
+operation has measurable effects on the hit occupancy in the drift chambers and on the resolution in the reconstruction of kinematical quantities. Also, the reconstruction efficiency of charged particles can be affected. Figures ~\ref{occupancies1}
 and ~\ref{occupancies2} show the hit occupancies in the drift chambers for different beam currents and for different
 currents in the solenoid magnet, respectively. These effects can be studied in simulations when the beam conditions can
 be realistically imposed on the data. For that purpose a procedure was developed that takes randomly triggered events
 at the operating beam current and superimposes these events on the simulated events without the background. In this
 way one can study the reconstruction efficiencies as a function of luminosity of the actual experiment. With increasing
 luminosity, accidental out-of-time events can affect and alter particle tracks that come in-time. The most important
-effect is that the track quality is negatively affected, leading to track losses if stringent quality requirements are
+effect is that the track quality is negatively impacted, leading to track losses if stringent quality requirements are
 applied, or to a worsening of the angle and momentum resolution. This effect is demonstrated in Table~\ref{resolution}.   
 
 \begin{figure}[t!]
@@ -1279,25 +1308,29 @@ resolution.
 \end{center}
 \end{table}
 
-%Another way of quantifying the effect of accidental background is by studying the number of lost tracks when
-%certain quality requirements are imposed. This is shown in Fig.~\ref{efficiencies}. The process used was elastic
-%muon-proton scattering where the proton mass is inferred from the elastic muon track, and compared with the
-%known proton mass. At higher beam currents, increasingly wider tails develop on the inferred proton mass. For the 
-%first run period of CLAS12 in the spring and fall of 2018, the luminosity was limited to not exceed occupancies of
-%4\% in the R1 drift chambers. The R1 detectors are more exposed to background radiation than R2 and R3. This
-%occupancy limitation typically resulted in beam operations at about 45~nA to 60~nA of beam current, or about
-%60\% to 80\% of design luminosity.
+Another way of quantifying the effect of accidental background is by studying the percentage of tracks lost when
+certain track quality requirements are imposed. Detailed simulations must be done for specific operating conditions,
+ such as magnetic field settings, event triggers, beam current, and production targets.  As an illustration, an example of such a simulation is shown in Fig.~\ref{efficiencies}. The process simulated 
+was elastic muon-proton scattering (which, of course is not feasible at an electron accelerator), where the proton mass is inferred from the elastic muon track, and compared with the
+known proton mass. Muons were used as an ideal probe that does not require corrections for radiative effects 
+as electron scattering does. At higher beam currents, increasingly wider tails develop on the inferred proton mass. 
 
-%\begin{figure}[htbp!]
-%\centerline{\includegraphics[width=1.0\columnwidth]{efficiencies.png}}
-%\caption{Single track reconstruction efficiency for simulated muon events vs. luminosity. 
-%The different colored points show the
-%tracking efficiency when certain quality constraints are imposed. About 6-7\% of the tracks are lost at 75~nA
-%beam current corresponding to a luminosity of $10^{35}$~cm$^{-2}$s$^{-1}$ with no quality cuts (black: hit-based
-%tracking, red: time-based tracking). The other curves show increasing losses in tracking efficiency when increasingly
-%more stringent quality cuts are applied on the width of the missing mass distribution.}
-%\label{efficiencies}
-%\end{figure}
+For the first run period of CLAS12 in the spring and fall of 2018, the luminosity was limited to not exceed occupancies of
+4\% in the R1 drift chambers. The R1 detectors are more exposed to background radiation than R2 and R3. This
+occupancy limitation typically resulted in beam operations at about 45~nA to 55~nA of beam current, or about
+60\% to 75\% of design luminosity.
+
+\begin{figure}[thbp!]
+\centerline{\includegraphics[width=1.0\columnwidth]{efficiencies.png}}
+\caption{(Color online) Single track reconstruction efficiency for simulated muon events vs. luminosity. 
+The accidental background events were used from randomly triggered data runs taken at same beam current. 
+The different colored points show the
+tracking efficiency when certain quality constraints are imposed. About 6-7\% of the tracks are lost at 75~nA
+beam current corresponding to a luminosity of $10^{35}$~cm$^{-2}$s$^{-1}$ with no quality cuts (black: hit-based
+tracking, red: time-based tracking). The other curves show increasing losses in tracking efficiency when increasingly
+more stringent quality cuts are applied on the width of the missing mass distribution.}
+\label{efficiencies}
+\end{figure}
 
 \subsubsection{Performance of the RICH} 
 
@@ -1311,10 +1344,10 @@ illustrated in Fig.~\ref{rich_rec} for positively charged particles.
   event with the ring of Cherenkov photons (left) and overlaid with expected rings from a pion, kaon, and proton
   at the same momentum. The radius of the Cherenkov ring is consistent with that of a pion.}
 \label{rich-event}
-\vspace{0.3cm}\centerline{\includegraphics[width=1.0\columnwidth]{mass_PID.pdf}}
+\vspace{0.3cm}\centerline{\includegraphics[width=1.0\columnwidth]{mass_min3.pdf}}
 \caption{(Color online) Charged particle identification in the RICH detector showing the mass squared vs. momentum for positively
   charged particles. The data show bands for $\pi^+$ (bottom), $K^+$ (middle), and protons (top). The events are
-  from a single aerogel tile, and from photons that hit the MaPMT directly, without reflection from the mirrors. The
+  from a single aerogel tile, and from photons that hit the MAPMT directly, without reflection from the mirrors. The
   pion/kaon separation in the RICH sets in where it ranges out with the time-of-flight resolution in the FTOF shown
   in Fig.~\ref{pid}.}
 \label{rich_rec}
@@ -1390,11 +1423,14 @@ electrons detected in the FD sectors and protons reconstructed in the CD.
 \caption{Elastically scattered protons reconstructed in the CVT and CTOF. The proton peaks show the reflection of
   the 6 FD sectors where the electrons are detected. In addition there is a 3-fold modulation (seen in the different
   widths of 3 of the peaks) due to the 3 BMT sectors where protons are detected. The arrows indicate the physical 
-  position of the boundaries between these sectors. (vertical axes are in arbitrary units).}
+  position of support structures at the boundaries between two sectors. The azimuthal angle is the reconstructed angle 
+  at the production target. Due to the clockwise curvature of protons tracks in the solenoid magnetic field 
+  (see bottom graph in Fig.~\ref{cvt-tracks}) the support structures appear shifted by a certain $\Delta{\phi_p}$  
+  amount relative to their locations in the lab. (vertical axes are in arbitrary units).}
 \label{CVT-elastic-protons}
 \end{figure}
 
-\subsection{Operating and Maintenance Experience}
+\subsection{Operating Experience}
 
 The CLAS12 detector systems were commissioned in the period from December 2017 through February 2018, using
 beam energies of 2.2, 6.4, and 10.6~GeV. Target cells were usually filled with liquid hydrogen, except when data were taken on
@@ -1407,7 +1443,7 @@ Figure~\ref{elastic-electrons} shows the elastic electrons detected in each of t
 to illustrate that quality of the event reconstructions and detector calibrations. After this initial commissioning
 period, data taking commenced for Run Group~A~\cite{rg-details}, which required use of a liquid-hydrogen target.
 Use of hydrogen as the target material allowed for the continuation of the commissioning period, while taking
-production data at the same time. The ability to study exclusive processes played an essential role in optimizing
+production data at the same time. The ability to study exclusive processes plays an essential role in further optimizing
 the operational performance. 
 
 \begin{figure}[t!]
@@ -1485,37 +1521,37 @@ the Deutsche Forschungsgemeinschaft (DFG), and the Russian Science Foundation.
 
 \bibitem{Mcallister:1956ng} 
   R.~W.~McAllister and R.~Hofstadter,
-  %``Elastic Scattering of 188-{MeV} Electrons From the Proton and the $\alpha$ Particle,''
+  ``Elastic Scattering of 188-{MeV} Electrons From the Proton and the $\alpha$ Particle,''
   Phys.\ Rev.\  {\bf 102}, 851 (1956).
   doi:10.1103/PhysRev.102.851
 
 \bibitem{Breidenbach:1969kd} 
   M.~Breidenbach {\it et al.},
-  %``Observed Behavior of Highly Inelastic electron-Proton Scattering,''
+  ``Observed Behavior of Highly Inelastic electron-Proton Scattering,''
   Phys.\ Rev.\ Lett.\  {\bf 23}, 935 (1969).
   doi:10.1103/PhysRevLett.23.935
   
 \bibitem{Kuhn:2008sy} 
   S.~E.~Kuhn, J.-P.~Chen, and E.~Leader,
-  %``Spin Structure of the Nucleon - Status and Recent Results,''
+  ``Spin Structure of the Nucleon - Status and Recent Results,''
   Prog.\ Part.\ Nucl.\ Phys.\  {\bf 63}, 1 (2009)
   doi:10.1016/j.ppnp.2009.02.001.
  
 \bibitem{Leemann:2001dg} 
   C.~W.~Leemann, D.~R.~Douglas, and G.~A.~Krafft,
-  %``The Continuous Electron Beam Accelerator Facility: CEBAF at the Jefferson Laboratory,''
+  ``The Continuous Electron Beam Accelerator Facility: CEBAF at the Jefferson Laboratory,''
   Ann.\ Rev.\ Nucl.\ Part.\ Sci.\  {\bf 51}, 413 (2001).
   doi:10.1146/annurev.nucl.51.101701.132327
 
 \bibitem{Mecking:2003zu}
   B.~A.~Mecking {\it et al.},
-  %``The CEBAF Large Acceptance Spectrometer (CLAS),''
+  ``The CEBAF Large Acceptance Spectrometer (CLAS),''
   Nucl.\ Instrum.\ Meth.\ A {\bf 503} (2003).
   doi:10.1016/S0168-9002(03)01001-5
 
  \bibitem{Burkert:2018nvj} 
   V.~D.~Burkert,
-  %``Jefferson Lab at 12 GeV: The Science Program,''
+  ``Jefferson Lab at 12 GeV: The Science Program,''
   Ann.\ Rev.\ Nucl.\ Part.\ Sci.\  {\bf 68}, 405 (2018).
   doi:10.1146/annurev-nucl-101917-021129 
   
@@ -1533,7 +1569,7 @@ and Meth. A, (2020). (see this issue)
 
 \bibitem{Adams:2001kk} 
   G.~Adams {\it et al.},
-  %``The CLAS Cherenkov detector,''
+  ``The CLAS Cherenkov detector,''
   Nucl.\ Instrum.\ Meth.\ A {\bf 465}, 414 (2001).
   doi:10.1016/S0168-9002(00)01313-9
 
@@ -1551,7 +1587,7 @@ and Meth. A, (2020). (see this issue)
 
 \bibitem{Amarian:2001zs} 
   M.~Amarian {\it et al.},
-  %``The CLAS forward electromagnetic calorimeter,''
+  ``The CLAS forward electromagnetic calorimeter,''
   Nucl.\ Instrum.\ Meth.\ A {\bf 460}, 239 (2001).
   doi:10.1016/S0168-9002(00)00996-7
 
@@ -1573,7 +1609,7 @@ and Meth. A, (2020). (see this issue)
 
 \bibitem{Baturin:2012zz}
   V.~Baturin {\it et al.},
-  %``Dynamic magnetic shield for the CLAS12 central TOF detector photomultiplier tubes,''
+  ``Dynamic magnetic shield for the CLAS12 central TOF detector photomultiplier tubes,''
   Nucl.\ Instrum.\ Meth.\ A {\bf 664} (2012)11, doi:10.1016/j.nima.2011.10.003
 
 \bibitem{ctof-nim}
@@ -1592,6 +1628,9 @@ and Meth. A, (2020). (see this issue)
 M. Ungaro {\it et al.}, {\it ``The CLAS12 Geant4 Simulation''}, to be published in Nucl. Inst.
 and Meth. A, (2020). (see this issue)
 
+\bibitem{GEMC-background} V. Burkert, S. Stepanyan, J. A. Tan, and M. Ungaro, CLAS12 Note 2017-018, 
+https://misportal.jlab.org/mis/physics/clas12/viewFile.cfm/2017-018.pdf?documentId=54. 
+
 \bibitem{DAQ}
 S. Boyarinov {\it et al.}, {\it ``The CLAS12 Data Acquisition System''}, to be published in Nucl. Inst.
 and Meth. A, (2020). (see this issue)
@@ -1607,55 +1646,10 @@ and Meth. A, (2020). (see this issue)
 \bibitem{rg-details}
 CLAS12 Run Groups, https://www.jlab.org/Hall-B/clas12-web/Hall\_B\_experiment\_run\_groups.pdf
 
+
 \end{thebibliography}
 
 %\endinput
 %%
 %% End of file `elsarticle-template-harv.tex'.
 \end{document}
-
-\begin{table*}[ht!]
-\caption{Comparison of the current performance of CLAS12 with the specifications originally set for the project.}     
-\vspace{0.2cm}\label{clas12-performance}
-\small
-\begin{tabular}{|c|c|c|c|}
-\hline
-&&&\\
-Capability &  Quantity &Specification& Achievement\\
-&&&\\
-\hline
-Coverage&Charged particle FD & $5^\circ < \theta < 35^\circ $  & $5^\circ < \theta < 35^\circ $ \\
-&Charged particle CD& $35^\circ < \theta < 125^\circ$ & $35^\circ < \theta < 125^\circ$  \\
-&Momentum& $ p > 0.2~GeV$ & $p > 0.3~GeV$  \\
-&Photon angle (FD)& $5^\circ < \theta_\gamma < 35^\circ$ & $5^\circ < \theta_\gamma < 35^\circ$\\  
-&Photon angle (FT)& $2.5^\circ < \theta_\gamma < 4.5^\circ$ & $5^\circ < \theta_\gamma < 35^\circ$\\  
-&Neutron detection (FD) & $5^\circ < \theta < 35^\circ $ & $ 5^\circ < \theta < 35^\circ$  \\
-& Neutron detection (CD) &  $ 35^\circ < \theta < 125^\circ$ & $35^\circ < \theta < 125^\circ $\\
-\hline
-Resolution & Momentum (FD)& $\sigma_p =  0.5 - 1.5 \%$ & $\sigma_p < 1\%$  \\
-& Momentum (CD) & $\sigma_p  < 5\%$ & $\sigma_p < 3\%$  \\
- & Polar angles (FD) & $\sigma_\theta = \rm  1- 2 mrad$ & $\sigma_\theta < \rm 2 mrad$  \\
- & Polar angles (CD) & $\sigma_\theta =  \rm 10- 20 mrad$ & $\sigma_\theta < \rm 20 mrad$  \\
-& Azimuthal angles (FD) & $\sigma_\phi  < \rm 1 mrad/\sin\phi $ & $\sigma_\phi < \rm 3 mrad$  \\
-& Azimuthal angles (CD) & $\sigma_\phi  < \rm 20 \rm mrad $ & $\sigma_\phi < \rm \rm 35 mrad$  \\
- & Timing (FD) & $\sigma_T =\rm  30 - 80~ps$  & $\sigma_T = 50 - 100~ps$  \\
-& Timing (CD) & $\sigma_T = \rm 60 - 70~ps$  & $\rm \sigma_T < 100~ps$  \\
-& Energy ($\sigma_E / E$)  (FD) & $\rm 0.1 / \sqrt{E(GeV)}$ & $\rm  0.1 / \sqrt{E(GeV)}$  \\
-& Energy ($\sigma_E / E$)  (FT) & $\rm 0.03 / \sqrt{E(GeV)}$ & $ \rm 0.05 / \sqrt{E(GeV)}$  \\
-\hline
-Particle ID& $\pi/\rm K ~(3\sigma)$ & $\rm p \le3~GeV$ & $\rm p \le 2.5~GeV$  \\
-& $\rm K/p ~ 3\sigma)$  & $\rm p \le 4.0~GeV$ & $\rm p \le 3.5~GeV $\\
-& $\pi / \rm p~ (3\sigma)$  & $\rm p \le 5.0~GeV$ & $\rm p \le 4.5~GeV $\\
-\hline
-Luminosity &  &  $\rm L = 10^{35} \rm cm^{-2} s^{-1} $ & $\rm L = 10^{35} \rm cm^{-2} s^{-1} $ \\
-\hline
-Data acquisition &  Data Rate &  10~kHz,  200~MB/s  &  20~kHz,  800~MB/s \\
-\hline 
-Magnetic field & Solenoid & $\rm B_0 = 5T, B_{max} = 6.5T$& $\rm B_0 = 5T, B_{max} = 6.5T$ \\
-& Torus & 0.5 - 2.0 ~Tesla-meter& 0.5 - 2.0 ~Tesla-meter \\
-\hline 
-
-\end{tabular}
-
-\end{table*}
- 
