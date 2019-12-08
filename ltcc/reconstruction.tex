@@ -10,7 +10,7 @@ reconstruction framework~\cite{recon-nim}.
 
 \subsection{Clustering Algorithm}
 
-The Cherenkov cone associated with a charged particle is in all cases contained within a single sector of the LTCC.
+The Cherenkov cone associated with a charged particle is contained within a single, light-tight module of the LTCC.
 This allows for a relatively straightforward clustering algorithm:
 
 \begin{enumerate}
@@ -25,7 +25,9 @@ The \textit{true} cluster center can be defined as the position where the charge
 crossed the elliptical mirror of the LTCC. Due to the geometry of the LTCC, this position does not uniquely correspond
 to a single PMT, as the angle with which a particle crosses the elliptical mirrors depends on the particle momentum,
 position, charge, and the torus magnetic field and polarity. The implies that, based solely on the LTCC hits, the
-\textit{true} cluster position cannot be uniquely constrained. This is illustrated in \F{trackmatching}.
+\textit{true} cluster position cannot be uniquely constrained. This is illustrated in \F{trackmatching} where a
+two particles hitting the same mirrors at different angles emit Cherenkov light that ends up being focuse on
+two different PMTs.
 
 The track matching is performed in a stage of the reconstruction where the tracking information is available. In
 order to perform the track matching, the estimated \textit{true} cluster position is recalculated for each track,

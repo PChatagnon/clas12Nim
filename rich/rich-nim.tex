@@ -524,8 +524,8 @@ The $x$-axis is calibrated in terms of charge measured by the MAROC3 chip.
 To approximate the performance of the first amplification cascade of the MaPMTs, the probability function
 $T(n,m;{\bf t})$ was introduced in the model as a trinomial sum of three Poissonians with different average secondary
 multiplicities and the corresponding three relative probabilities for every photoelectron to generate secondary
-electrons. In the function, $m$ is the number of the electrons knocked out from the first dynode, $n$ is the number
-of electrons emitted out of the second dynode, and ${\bf t}$ is the vector of the model parameters
+electrons. 
+In the function, $m$ is the number of the photoelectrons knocked out from the photocathode, $n$ is the number of electrons emitted out of the first dynode, and $t$ is the vector of the model parameters
 (see Ref.~\cite{Pavel} for more details).
 
 In each fit, the parameter $\mu$ corresponds to the average number of photoelectrons created at the photocathode by
@@ -564,21 +564,22 @@ average anode charge collected from one photoelectron.
 	\label{fig:SPEH12700}
 \end{figure}
 
+In the single-photoelectron amplitude spectra shown in Figs.~\ref{fig:SPEH8500} and \ref{fig:SPEH12700}, the normally significant contributions of the cross-talk signals caused by the photoelectron amplification cascades in the neighboring PMT channels, have been removed by using the filter masks covering the neighbors, and leaving open only the pixel studied. The detailed discussion of the method will be given in \cite{TBP}.
 The data showed that the H12700 has, on average, a 10\% better efficiency than the H8500, likely due to the improved
 photocathode performance and collection efficiency. An example of the results for one MaPMT is shown in
 Fig.~\ref{fig:PavelPassport}. 
 The parameter $scale$ (top plot), characterizing the amplification (dynode) system, is
 virtually independent of the light radiation level, while strongly dependent on the high voltage supply, the exact behavior one would expect from the characteristic  of internal dynode system of a MaPMT. 
-The central plot shows the average number of photoelectrons $\mu$ measured with different optical filters. It indicates that all of the channels respond in the same way as the light intensity increases.
-This parameter is independent of the light intensity as expected.
+The central plot shows the average number of photoelectrons $\mu$ measured with different optical filters. 
+It indicates that all of the channels respond in the same way as the light intensity increases. This parameter is practically independent of the applied voltage, as expected.
 The parameter $\nu_{average}$
-(bottom plot) that is related to the first dynode performance,  has week dependence on the bias voltage  and independent on the level of light radiation as well. 
-\begin{figure}[h]
+(bottom plot) that is related to the first dynode performance,  has weak dependence on the bias voltage  and independent on the level of light radiation as well. 
+\begin{figure}[ht]
 \begin{center}
 %	\includegraphics[width=\linewidth]{PavelPassport.pdf}
-	\includegraphics[width=0.95\linewidth]{H12700_scale.png}
-	\includegraphics[width=0.95\linewidth]{H12700_mu.png}
-	\includegraphics[width=0.95\linewidth]{H12700_nu.png}
+	\includegraphics[width=0.9\linewidth]{H12700_scale.png}
+	\includegraphics[width=0.9\linewidth]{H12700_mu.png}
+	\includegraphics[width=0.9\linewidth]{H12700_nu.png}
 	\caption{Distributions of fit parameters measured at 2 different high
           voltage supplies  (1000V and 1100V) and 3 different  light intensities (w1:w2:w3$\sim$100:10:1) for 64  pixels of one MaPMT: the parameter $scale$   characterizing
           the dynode amplification system (top), the average number of photoelectrons $\mu$ (center) and the first dynode amplification $\nu$ (bottom).}
@@ -1541,7 +1542,7 @@ to be published in Nucl. Inst. and Meth. A, (2020). (see this issue)
 \bibitem{Pavel} 
 Pavel Degtiarenko, {\it ``Precision Analysis of the Photomultiplier Response to Ultra Low Signals''}, 
 Nucl. Inst. Meth. {\bf A872}, 1 (2017).
-
+\bibitem{TBP} P. Degtiarenko, V. Kubarovsky, A. Kim, A. Smith, to be published.
 \bibitem{Ref:RICHElectro} 
 M. Contalbrigo {\it et al.}, {\it ``Single Photon Detection with the Multi-anode CLAS12 RICH Detector''}, 
 in press in Nuc. Inst. Meth. A.,

@@ -1,7 +1,11 @@
 \section{Electronics and Readout}
 
 \F{electronicScheme} shows a schematic diagram of the electronics and readout used for the LTCC
-detector. The XP4500B Photonis PMTs are powered with positive polarity by a CAEN SY4527 high voltage
+detector. Since the magnetic shield case is near the bulb of the photo-multiplier tube, and the WC is in direct contact
+with the bulb, the electrons in the photo-multiplier tube could strike the inner bulb wall if the negative voltage
+was applied to the cathode. For this reason the signals are capacitatively coupled to positive HV, with the PMT
+cathode at ground potential,
+and the XP4500B Photonis PMTs anodes are powered with positive polarity by a CAEN SY4527 high voltage
 mainframe outfitted with 1501P boards. There are two anode signals from the PMT output. One of them is
 connected directly to flash ADC boards built at Jefferson Lab, the Flash ADC module FADC250~\cite{daq-nim}.
 The FADC250 sampling frequency is 250~MHz. The other signal is discriminated by the Jefferson Lab built

@@ -1,4 +1,4 @@
-\subsection{PMT Voltage Dividers}
+\subsection{PMT Voltage Dividers}\label{sec:dividers}
 
 In the original readout electronics for CLAS, the single output from each PMT was amplified by a factor of 10 and then
 split in two to feed the ADC and TDC boards. This amplification and splitting was performed by a dedicated electronic
@@ -17,12 +17,12 @@ current flowing through the base voltage divider. This board was developed in 20
 	\label{fig:pmtTestingSetupAndptQEResults}
 \end{figure}
 
-\noindent The new electronics provided a factor of 10 PMT signal boost, while preserving the fast PMT
+\noindent The new electronics provided a factor of 8 to 10 PMT signal boost, while preserving the fast PMT
 pulse shape. It also significantly improved the signal amplitude and the signal to noise ratio: the high voltage needed
 to detect the single photoelectron signal (SPE) was reduced on average by 374~V, see \F{pmtHVImprovement}.
 
 The amplifier board design was adapted to use the LTCC XP4500B base and a prototype, shown in \F{pmtWithDivider},
-was built to provide a factor of ten amplification and a split signal directly from the PMT base.
+was built to provide a factor of ten amplification and two identical output signals.
 
 \begin{figure}
 	\centering
@@ -42,7 +42,7 @@ was built to provide a factor of ten amplification and a split signal directly f
           designed to operate at currents from 0.7 to 1.5~mA, provides amplification in the first stage using a common
           base amplifier, made of a fast NPN transistor NE68033 by California Eastern Laboratories. In the output
           stage a PNP-NPN transistor is used. Right: the prototype module installed in the XP4500B PMT base. The
-          bottom of the base has been modified to contain the HV SHV input and two output signals.}
+          bottom of the base has been modified to contain the high voltage input and the two output signals.}
 	\label{fig:pmtWithDivider}
 \end{figure*}
 
@@ -62,5 +62,5 @@ shown in \F{dividerTests} (right).
 \end{figure}
 
 180 bases were assembled at Jefferson Lab and installed on the PMT dividers. Both signals from all of the modified
-bases were tested. The response of the PMTs, amplified by a factor of 10, was verified to be identical to the original
+bases were tested. The response of the PMTs, amplified by a factor of about 10, was verified to be identical to the original
 output.
