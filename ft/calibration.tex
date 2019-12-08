@@ -104,7 +104,7 @@ orders of magnitude larger.
 
 Similarly to the calorimeter, initial checkout of the hodoscope was performed via pulser runs to check the functionality
 of each electronics channel and to evaluate the SiPM gains by measuring the single photoelectron (SPE) signal. An external
-clock was used to trigger the data acquisition which recorded the waveform of all 232 channels in a 400~ns windows.
+clock was used to trigger the data acquisition which recorded the waveform of all 232 channels in a 400~ns window.
 The waveforms could be analyzed online by connecting the calibration suite to the data acquisition ET ring~\cite{daq}
 or offline reading from the data file. The parameters that were monitored are the pedestal values, the pedestal RMS,
 and the electronic noise. The extracted SPE values were compared to the typical ones to identify problematic channels
@@ -127,7 +127,7 @@ confirms the reliability of the waveform analysis.
 Further checkout of the detector was performed via cosmic ray data taking. The same FPGA-based trigger developed
 for the calorimeter was used to trigger the data acquisition system on events in which multiple tiles of the hodoscope
 had a signal above threshold. For such events, all hodoscope channel waveforms were recorded and analyzed offline.
-The signal charge was extracted integrating the waveform in a fixed time window and subtracting the pedestals. The
+The signal charge was extracted by integrating the waveform in a fixed time window and subtracting the pedestals. The
 resulting charge distributions were inspected to ensure a sizable signal for all tiles. In this case no attempt was made to
 extract the charge-to-energy conversion factor from these distributions because of the unfavorable orientation of
 the hodoscope in the installation position for the measurement of cosmic rays that could cross the scintillation tiles with
@@ -164,7 +164,7 @@ recorded with the CLAS12 production triggers and do not require dedicated data t
 typically employed, however, for matching the gains from all FT-Hodo SiPMs~\footnote{Having a matched gain
 from all FT-Hodo SiPMs allows for a common trigger readout threshold for all channels.}. In this dedicated run,
 average minimum-ionizing particle signals were obtained for a set of different HV settings (see
-Fig.~\ref{fig:fthodo_gainmatch}), determining two constants from which gain matching is established.
+Fig.~\ref{fig:fthodo_gainmatch}), determining slope and intercept  from which gain matching is established.
 
 \begin{figure}
 \includegraphics[width=1.0\columnwidth]{fig/fthodo_gainmatch.pdf}
@@ -194,7 +194,7 @@ function was compared to that expected based on Geant4 Monte Carlo simulations t
 charge-to-energy conversion factor used in the cluster reconstruction. Figure~\ref{fig:ftcal_elasticcal} shows an
 example of the seed energy distribution and the cluster energy distribution for a selected crystal. Using these
 constants, an energy resolution of 3.3\% at 2.2~GeV beam energy was determined by fitting the reconstructed
-elastic peak (see Fig.~\ref{fig:ftcal_elasticres}). With the same calibration constants, the $\pi^0\to\gamma\gamma$
+elastic peak (see Fig.~\ref{fig:ftcal_elasticres}). This resolution is. about 1\% larger than what expected from simulations as. discussed in Section~\ref{sec:performance}. With the same calibration constants, the $\pi^0\to\gamma\gamma$
 decay was reconstructed at 10.6~GeV beam energy selecting events with both photons detected in the FT-Cal, finding
 the width of the $\pi^0$ peak to be $\sim$4.4~MeV, i.e. $\sim 3.2\%$.
 
