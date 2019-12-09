@@ -174,7 +174,7 @@ To reduce the size of the road dictionary and improve the selection purity, we c
 vertex position, and kinematics of the tracks used to generate the roads (see
 Fig.~\ref{fig:dc_roads_electrons_data}). Multiple dictionaries can be run simultaneously based on the needs of
 the physics program. The data-based electron dictionary generator can be seen to slowly converge as more
-data-based tracks are fed into it (see Fig.~\ref{fig:dc_neg_data_efficiency_smearing}). Segment positions
+data-based tracks are fed into it (see Fig.~\ref{fig:dc_neg_data_dictionary}). Segment positions
 are smeared by $\pm$1 to fill in holes in the dictionary, which brings the efficiency to nearly 100\% with much
 less data to generate the dictionary (also at the cost of lower purity). Dictionary efficiencies for smearing vs.
 no smearing are demonstrated in Fig.~\ref{fig:dc_neg_data_efficiency_nosmearing} and
@@ -205,8 +205,7 @@ leaving space for several additional dictionaries.
 \begin{figure}[hbt]
 	\centering
 	\includegraphics[width=0.85\columnwidth,keepaspectratio]{img/dc_neg_data_dictionary.png}
-	\caption{Drift Chamber unique trigger roads for electrons. Left: new trigger roads found per 100k data
-          roads. Right: Total trigger roads as function of data-based roads.}
+	\caption{Drift Chamber unique trigger roads for electrons as a function of data-based roads.}
 	\label{fig:dc_neg_data_dictionary}
 \end{figure}
 
