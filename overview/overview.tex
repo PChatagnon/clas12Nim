@@ -912,10 +912,10 @@ at high luminosity, details of the beamline design, and other aspects.
 \vspace{0.5cm}%\centerline{\includegraphics[width=0.95\columnwidth]{neg-tracks.png}}
 \centerline{\includegraphics[width=0.85\columnwidth]{neg_phi_p.png}
 \hspace{1cm}\includegraphics[width=0.85\columnwidth]{neg_phi_p-out.jpg}}
-\caption{(Color Online) Particle distributions in azimuthal angle ($\phi$) vs momentum in the CLAS12 FD for inbending electrons  (left) and with reversed Torus field for outbending electrons (right) at a beam energy of 10.6 GeV.  The azimuthal angle is measured at the production vertex. The azimuthal distribution of electrons 
- narrows with increasing momentum, as high momentum electrons enter CLAS12 at more forward polar angles where azimuthal acceptance is
- reduced. The p-$\phi$ correlation, most visible at low momentum, is due to
-  the solenoidal magnetic field that rotates charged tracks dependent on their transverse momentum component
+\caption{(Color Online) Particle distributions in azimuthal angle ($\phi$) vs momentum in the CLAS12 FD for inbending electrons  (left) and with reversed Torus field for outbending electrons (right) at a beam energy of 10.6 GeV.  The azimuthal angle is measured at the production vertex. The azimuthal distribution of inbending electrons 
+ narrows with increasing momentum, as high momentum electrons in CLAS12 are bent towards the beamline, where detector acceptances are are reduced. This is not the case for outbending electrons that are deflected away from the beamline 
+ towards larger detector acceptances. The p-$\phi$ correlation, most visible at low momentum, is due to
+  the solenoidal magnetic field that bends charged tracks dependent on their transverse momentum component
   and on their charge. For positive tracks the $\phi$ motion is in the opposite direction from negative (electron) tracks. 
   Color axes indicated particle yields.} 
 \label{neg-pos}
@@ -1433,8 +1433,10 @@ electrons detected in the FD sectors and protons reconstructed in the CD.
 \centerline{\includegraphics[width=1.0\columnwidth]{cvt-acceptance.png}}
 \caption{CVT acceptance and tracking performance. Left panels show the tracking efficiency and acceptances
   for simulated muon tracks with no beam background (top), and the same for protons but with background
-  corresponding to a 50~nA beam current. The efficiency dips seen at 3 $\phi$ angles in the right panels are due
-  to the support structure separating the 3 BMT sectors.}
+  corresponding to a 50~nA beam current. The dips seen at 3 $\phi$ angles in the right panels are due
+  to the support structure separating the 3 BMT sectors, and are thus acceptance related. There are also 
+  small acceptance gaps between neighboring SVT modules that may account for some acceptance losses 
+  as well. }
 \label{cvt-acceptance}
 \vspace{0.3cm}
 \centerline{\includegraphics[width=0.8\columnwidth]{cvt-vertex.png}}
