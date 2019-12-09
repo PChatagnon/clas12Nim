@@ -53,15 +53,7 @@ We also expect a certain minimum 10 year time frame in which these controllers w
 	\item VXS optional: interface supporting both VITA 41.3 (Gig E) and 41.4 (PCIe) standards.
 \end{itemize}
 
-After several different boards were evaluated, we purchased VX915 Intel 4th Generation quad-core i7-based VME single board computers from Concurrent Technologies, and some number of the XVR16 Intel i7-based VME single board computers from GE (see Fig.~\ref{fig:XVR16diagram}). They were installed in the 69 crates for CLAS12 and have demonstrated excellent performance and reliability. Most of the controllers send data over their built-in 1~Gb link, while for a few of them, a 10~Gb XMC daughter board was installed to increase the output bandwidth. The maximum data rate from a single crate in CLAS12 never exceeds 130~MB/s, and with that rate quad-core controllers are able to handle the VME data polling, event processing, and sending over the network to the EB without any issues. 
-
-\begin{figure}[hbt]
-	\centering
-	\includegraphics[width=1.0\columnwidth,keepaspectratio]{img/XVR16_diagram.png}
-	\caption{Block diagram of the XVR16 VME crate controller, one of two types of the CPU units used in the CLAS12 DAQ system. All controllers have 4-core i7 Intel processors, 8~GB memory, and specialized chips to communicate with the VME bus. Built-in 1~G or add-on 10~G Ethernet connections are used to communicate with the rest of the system.}
-	\label{fig:XVR16diagram}
-\end{figure}
-
+After several different boards were evaluated, we purchased VX915 Intel 4th Generation quad-core i7-based VME single board computers from Concurrent Technologies, and some number of the XVR16 Intel i7-based VME single board computers from GE. They were installed in the 69 crates for CLAS12 and have demonstrated excellent performance and reliability. Most of the controllers send data over their built-in 1~Gb link, while for a few of them, a 10~Gb XMC daughter board was installed to increase the output bandwidth. The maximum data rate from a single crate in CLAS12 never exceeds 130~MB/s, and with that rate quad-core controllers are able to handle the VME data polling, event processing, and sending over the network to the EB without any issues. 
 
 
 \subsection{Trigger Distribution System Modules (TS, TD, TI)}
