@@ -3,17 +3,17 @@
 \subsection{The Calorimeter (FT-Cal)}
 
 The FT-Cal has to fulfill demanding requirements in terms of: radiation hardness, light yield, shower containment
-(small radiation length and Moliere radius), fast recovery time, and good energy and time resolution.
+(small radiation length and Moliere radius), scintillation decay time, and good energy and time resolution.
 
 The electron energy resolution is a crucial factor to determine precisely the photon energy and to ensure the
 exclusivity of the measured reaction via the missing mass technique. However, since we are interested in low-energy
 electrons and high-energy photons, the energy resolution on the latter is significantly better than the resolution on
 the electron\footnote {For example, an electron energy resolution of 2\% (at 1~GeV) would result in an energy
   resolution of $\sim$0.2\% for the corresponding 10~GeV photon, allowing the use of the missing mass technique
-  for most of the reactions of interest.}. The FT-Cal should have a fast recovery time ($\tau\sim$ 10~ns) to sustain
+  for most of the reactions of interest.}. The FT-Cal should have a fast scintillation decay time ($\tau\sim$ 10~ns) to sustain
 high rates with small pile-up effects and to provide the scattered electron interaction time with good accuracy
 ($<$1~ns) in order to reject background and to identify the relevant signals via coincidence with CLAS12. Due to the
-expected high rate from electromagnetic background, the calorimeter should be highly segmented in the transverse
+expected high rate from electromagnetic background ($\sim$120 MHz at the nominal luminosity of  10$^{35}$ cm$^{-2}s^{-1}$), the calorimeter should be highly segmented in the transverse
 direction. The size of each detection element should be comparable with the characteristic transverse size of the
 electromagnetic shower (Moliere radius) to contain the shower produced by incident electrons to a few readout cells,
 thus minimizing rates and pile-up. Finally, the photodetectors for the light read out should work  in a sizable magnetic
@@ -24,26 +24,25 @@ To match the necessary requirements, lead tungstate (PbWO$_4$) was chosen as the
 Large-Area APDs (LAAPDs) as the readout sensors. A similar  combination was used in the CMS-ECal~\cite{CMS-ECal},
 CLAS-IC~\cite{CLAS-IC}, and PANDA-EMC~\cite{PANDA-ECal} calorimeters. Lead tungstate has a fast scintillation
 decay time (6.5~ns), a small radiation length (0.9~cm), and small Moliere radius (2.1~cm). The drawback of limited
-light emission (about 0.3\% of NaI(Tl)) has been mitigated by using cooled PbWO$_4$ Type-II crystals (as for the
-PANDA-EMC), matched to large-area photosensors to obtain a factor of four more light per MeV of deposited energy
+light emission (about 0.3\% of NaI(Tl)) has been mitigated by using cooled PbWO$_4$ Type-II crystals (same used in
+PANDA-EMC with better performances with-respect-to the PbWO$_4$ Type I used in CMS-ECal), matched to large-area photosensors to obtain a factor of four more light per MeV of deposited energy
 than the original CMS-ECal crystals.
 
-With this design an energy resolution of the order of ($2\% /\sqrt{E\textrm{(GeV)}} \oplus 1\%$) is expected.
+With this design, based on GEANT simulations, an energy resolution of the order of ($2\% /\sqrt{E\textrm{(GeV)}} \oplus 1\%$) is expected.
 Other crystals, such as LSO/LYSO or the very recent LaBr, share almost all of the good specifications of
-PbWO$_4$ with a light yield more than 100 times larger. However, the lack of extensive studies on radiation
-hardness and the limited experience in the manufacturing procedures excluded them from consideration as an
+PbWO$_4$ with a light yield more than 100 times larger. However, the higher costs and the limited experience in the manufacturing procedures excluded them from consideration as an
 alternative.
 
 \begin{figure}[th!]
 \centering 
-\includegraphics[width=0.85\columnwidth]{fig/section.png} 
+\includegraphics[width=0.85\columnwidth]{fig/section.jpg} 
 \caption{CAD drawing of the FT-Cal showing a cross section of the detector. The crystals, in purple, are enclosed in the copper thermal shield, in orange, surrounded by the insulation, in light gray. On the downstream end of the crystals (right side of the figure), the preamplifiers are shown in green. The weight of the crystals is supported by the tungsten pipe, in dark gray, which is an integral part of the beamline.}
 \label{fig:ft-cal-geometry} 
 \end{figure}
 
 \subsubsection{Geometry and Coverage}
 
-The FT-Cal is made from 332 $15\times 15\times 200$~cm$^3$ parallelepiped PbWO$_4$ Type-II crystals
+The FT-Cal is made from 332 $15\times 15\times 200$~mm$^3$ parallelepiped PbWO$_4$ Type-II crystals
 arranged around the beamline with full azimuthal angular coverage ($0^\circ < \phi < 360^\circ$)  and small
 forward angles acceptance ($2^\circ < \theta < 5^\circ$). The crystals are placed with their long side parallel to
 the beamline to form a ring. Figure~\ref{fig:ft-cal-geometry} shows the a CAD rendering of the calorimeter. 
@@ -51,9 +50,9 @@ the beamline to form a ring. Figure~\ref{fig:ft-cal-geometry} shows the a CAD re
 \subsubsection{PbWO$_4$ Crystals}
 
 The FT-Cal PbWO$_4$ Type-II crystals were produced by the Shanghai Institute of Ceramics, Chinese Academy
-(SICCAS). Since the light yield ($LY$) increases when lowering the temperature $T$ according to 
+(SICCAS) \cite{tanja-siccas}. Since the light yield ($LY$) increases when lowering the temperature $T$ according to 
 $dLY/dT \sim 3\%/^\circ$C, the calorimeter is stabilized in temperature and operated at
-$T \sim 0^\circ$C. Lower temperatures were not considered due to significant complications in the
+$T \sim 0^\circ$C\footnote{At $T = 0^\circ$C the LY increases by a factor of two with respect to $T =25^\circ$C.}. Lower temperatures were not considered due to significant complications in the
 mechanical/thermal design, the reduced resistance to radiation,  and the decay time degradation of the cooled
 PbWO$_4$. The length of the crystals (20~cm - corresponding to $\sim$22 radiation lengths) was chosen to
 minimize the longitudinal loss and to match the available clearance.
@@ -65,15 +64,15 @@ optical properties such as the longitudinal and transverse transmission and the 
 for each of the crystals. Samples that were outside of the required specifications were rejected and replaced by the
 manufacturer. 
 
-The absolute $LY$ (number of detected photoelectrons per MeV deposited) was found to be $N_{pe}=220\pm 20$
+The absolute $LY$ (number of detected photoelectrons per MeV deposited) was found to be $N_{pe}=220\pm 20$ photoelectrons/MeV
 at $T=0^\circ\textrm{C}\pm 0.5^\circ\textrm{C}$. For this measurement the crystal was wrapped on 5 of its faces
-with 3M Vikuiti reflective film and read out by a Hamamatsu S8664-1010 LAAPD operated at a gain $G$=150
+with 3M Vikuiti$^{TM}$ reflective film and read out by a Hamamatsu S8664-1010 LAAPD operated at a gain $G$=150
 connected with optical grease on the exposed face. 
 
 The scintillation decay time is also sensitive to the temperature. The time constant was measured using the
 {\it Start-Stop} or {\it Delayed-Coincidence} method at different temperatures. As expected, an increase in the
 decay constant was observed by decreasing the temperature. At $T=0^\circ\textrm{C}\pm 0.5^\circ\textrm{C}$, we
-found $\tau=13.5\pm 0.6$~ns ($\tau_1=11.6\pm 0.5$~ns and $\tau_1=13.0\pm 0.2$~ns) when a single (double)
+found $\tau=13.5\pm 0.6$~ns ($\tau_2=11.6\pm 0.5$~ns and $\tau_1=13.0\pm 0.2$~ns) when a single (double)
 exponential form was used to fit the data.
 
 \begin{figure}[th!]
@@ -95,7 +94,7 @@ dk = \frac{1}{L}\frac{T_{bef}}{T_{irr},}
 \noindent
 where $T_{bef}$ is the light transmission at 420~nm, the peak of the PbWO$_4$ emission spectrum, measured before
 irradiation, and $T_{irr}$ is the light transmission at the same wavelength after irradiation for crystals of a given
-length $L$. Crystals exhibiting greater levels of radiation damage to light transmission have higher values of $dk$.
+length $L$\footnote{Crystals self-annealing was negligible since the two measurements were performed immediatly before and after the short irradiation. }. Crystals exhibiting greater levels of radiation damage to light transmission have higher values of $dk$.
 All 332 crystals assembled in the FT-Cal were individually characterized: on average we found 
 $T_{bef}$(420~nm) = $61.5 \pm 0.2$ ($\sigma=3.2$) and $T_{irr}$(420~nm) = $50.8 \pm 0.5$ ($\sigma=4.9$). 
 The resulting $dk$ distribution is shown in Fig.~\ref{fig:dk}. These measurements were used to optimize the position
@@ -113,7 +112,7 @@ $dk$, in the areas where the highest radiation dose is expected.
 \label{sec:ftcalread}
 
 The FT-Cal uses $10 \times 10$~mm$^2$ (model Hamamatsu S8664-1010) LAAPDs to read out the PbWO$_4$
-scintillation light. APDs are very compact devices (only a few mm thick), have a large quantum efficiency at the
+scintillation light. APDs are only a few mm thick, have a large quantum efficiency at the
 PbWO$_4$ light peak emission (420~nm), and  are insensitive to magnetic fields. The main disadvantage is that,
 due to their low intrinsic gain ($\sim$50-200), the output signal is too small to be directly acquired, and needs to
 be amplified by a suitable circuit. APDs also need to be operated at a controlled temperature to avoid variations in
@@ -139,7 +138,7 @@ of the full waveform allows for the derivation of both the charge and time of th
 \subsubsection{Light Monitoring System}
 
 Lead tungstate scintillating crystals are known as an appropriate material for use in total absorption shower
-detectors. Unfortunately, although relatively radiation tolerant, their light output is reduced when exposed to 
+detectors. Unfortunately, although relatively radiation tolerant, their light output is reduced when exposed to electromagnetic
 radiation and recovers when the radiation source is removed. Further complications arise because at the same
 irradiation intensity, changes in light output may vary from one crystal to another. In order to maintain the intrinsic
 energy resolution, the crystals have to be continuously monitored and, if necessary, re-calibrated by changing the
@@ -172,15 +171,15 @@ an internal clock or by an external signal. In both cases the trigger signal is 
 
 \begin{figure}[th!]
 \centering 
-\includegraphics[width=1.0\columnwidth]{./fig/dynamics.eps}
-\caption{Number of photoelectrons as a function of the LED driver current. The corresponding energy per crystal
+\includegraphics[width=1.0\columnwidth]{./fig/dynamics.pdf}
+\caption{Number of photoelectrons as a function of the led driver current. The corresponding energy per crystal
   ranges from 10~MeV to 10~GeV.}
 \label{fig:LEDperf1} 
 \end{figure}
 
 \begin{figure}[th!]
 \centering 
-\includegraphics[width=1.0\columnwidth]{./fig/timing.eps}
+\includegraphics[width=1.0\columnwidth]{./fig/timing.pdf}
 \caption{Time resolution (measured as the time difference of the trigger signal and the PMT pulse) as a function of
   the LED light intensity.}
 \label{fig:LEDperf2} 
@@ -194,7 +193,7 @@ number of photoelectrons are shown\footnote{The time resolution is defined as th
 the APD readout and the crystal $LY$/MeV, the equivalent energy ranges from 10~MeV (500~phe) to 10~GeV
 (500k~phe) perfectly matched to the expected energy collected by each crystal. A time resolution of 100~ps is
 reached at high light intensity. The long term stability of the system has been measured over a 100-hr run at
-$T=+18^\circ$C. The stability of each individual channel was found to be in the range of 2\%; when the ratio of
+$T=+18^\circ$C. The stability of each individual channel was found to be in the range of 2\%; when the ratio of any
 the two channels is considered, the stability is at a level of a few parts per thousand.
 
 \subsubsection{Slow Controls and Interlocks}
@@ -249,7 +248,7 @@ mounted on the upstream end. This reflects onto the mechanical design of the sin
 self-supporting element made of the crystal itself, the APD, the reflective wrapping, and the crystal support
 structure. To avoid dead volume in the detector, the mechanical support for each crystal is provided only by the
 wrapping. We chose 3M Vikuiti reflective film. This material is non-conductive, has a reflectivity higher than
-aluminized Mylar and, if properly heat-formed, can hold the weight of a crystal. The reflective film is glued on the
+aluminized Mylar and, if properly heat-formed, can keep together the different part of the assembly.   The reflective film is glued on the
 sides of a pair of front/back PEEK custom-machined blocks that hold the LAAPD and the LED, respectively.
 Figure~\ref{fig:crystalassembly} shows a CAD rendering of the single crystal assembly from the front PEEK
 support to the preamplifier.
@@ -257,7 +256,8 @@ support to the preamplifier.
 \begin{figure}[th!]
 \centering 
 \includegraphics[width=1.0\columnwidth]{./fig/raff.jpeg}
-\caption{The copper thermal/grounding shield for the FT-Cal. The right figure shows the ensemble of the copper shield with the cooling pipes shown in blue. These are located on the back plate, on the outer cylinder and on the inner shield.  The left figure shows the cooling pipe circuit inside the inner shield. FIGURE WILL BE REPLACED WITH NEW ONE AND THE CAPTION UPDATED}
+\includegraphics[width=1.0\columnwidth]{./fig/raff1.jpg}
+\caption{The copper thermal/grounding shield for the FT-Cal. The top figure shows the ensemble of the copper shield with the cooling pipes shown in red and. blue. These are located on the back plate, on the outer cylinder and on the inner shield.  The bottom figure shows the cooling pipe circuit inside the inner shield. }
 \label{fig:piping} 
 \end{figure}
 
@@ -307,16 +307,16 @@ scintillators arranged as shown in Fig.~\ref{Fig:FTHodoLayout}. The upstream and
 and 15-mm thick scintillator tiles, respectively. The upstream (thin) layer is employed to reduce photon conversion in
 the FT-Hodo, while the thicker layer provides the signal with the most accurate timing information for the event. To
 increase the number of scintillation photons collected from each tile, four WLS fibers were embedded in the P30
-tiles and 2 in the P15 tiles. In addition, the WLS fibers were glued with Bicron BC-600 glue (CHECK Epotek 301-2)
+tiles and 2 in the P15 tiles. In addition, the WLS fibers were glued with Epotek 301-2 glue
 inside diagonal holes to maximize the path length in the scintillator and to allow for the tiles to be arranged without
 any dead space between the elements. Each tile was polished and painted with two layers of Bicron BC-620 reflective
-paint for the sides and 3 layers for the scintillator faces and secured in position on the surface of a 2-mm-thick
+paint for the sides and 3 layers for the scintillator faces and secured in position on the surface of a 1-mm-thick
 plastic support board. There is a 9~mm clearance for each layer for routing the optical fibers to the readout
 electronics through a $\Delta$-shaped sheathing on the bottom end of the FT-Hodo. The front and back faces are
 covered by light-proof carbon fiber material that is screwed onto supporting structures made out of hexagonal
 plastic spacers (15-mm wide and 22- or 15-mm tall depending on the layer). This results in a total detector thickness
-of 44~mm. A 1-mm thick plastic strip traces the outer contour of the FT-Hodo and is glued on the spacer supports.
-Figure~\ref{Fig:CADFT-Hodo} shows a CAD drawing of the FT-Hodo showing half of one layer of tiles, the location
+of 42~mm. A 1-mm thick plastic strip traces the outer contour of the FT-Hodo and is glued on the spacer supports.
+Figure~\ref{Fig:CADFT-Hodo} shows a CAD drawing of the FT-Hodo showing one layer of tiles, the location
 of the plastic supports for the light-proofing structure, and the plastic strip.  
 
 \begin{figure}[th!]
@@ -405,7 +405,7 @@ The front-end electronics are responsible for signal preamplification, shaping, 
 process, data digitization, and compression. Due to the limited space available, the front-end electronics are designed
 to be placed off-detector. Micro-coaxial cable assemblies connect the detectors and the front-end boards. The
 non-amplified analog signals transit via the cable assemblies from the chambers to the front-end electronics. The
-512-channel FEUs are housed in 4U crates attached to the FT-Cal mechanical supports and  located in the shadow of
+512-channel FEUs are housed in 4U crates attached to the FT-Cal mechanical supports and  located in the geometrical shadow of
 the CLAS12 torus coils. The back-end electronics are responsible for data concentration, providing the interface to
 the CLAS12 event building system and are the same units used for the BMT~\cite{mm}.
 
