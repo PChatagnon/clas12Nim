@@ -63,10 +63,10 @@ where $t$ is the measured time response (e.g. in a scintillator), $P_L$ is the p
 interaction vertex and that response, and $\beta c$ is the speed of the particle.  We can then construct a
 correction to align this time with the closest beam bunch time at the target:
 
-\begin{eqnarray*}
+\begin{eqnarray}
 \Delta t_{RF}\!\!\!\!&=&\!\!\!\! t_v + (z_0-z_v)/c - t_{RF} - N/(2 f_{RF}),\\
-\Delta t'_{RF}\!\!\!\!&=&\!\!\!\! mod(\Delta t_{RF},1/f^{RF})-1/(2 f_{RF}), 
-\end{eqnarray*}
+\Delta t'_{RF}\!\!\!\!&=&\!\!\!\! mod(\Delta t_{RF},1/f^{RF})-1/(2 f_{RF}),  \nonumber
+\end{eqnarray}
 
 \noindent
 where $f_{RF}$ is the frequency of the accelerator, 250~MHz or 500~MHz, corresponding to 2~ns or 4~ns bunch
@@ -82,13 +82,16 @@ t'_v = t_v - \Delta t'_{RF}.
 \subsubsection{Particle Identification}
 
 The next stage is a basic particle identification scheme.  This is intended to be loose to accommodate a variety of
-physics analyses, while persisting the necessary information to easily tighten the criteria later.
+physics analyses, while persisting the necessary information to easily tighten and improve the criteria later.
 
 For charged particles, first calorimetry and Cherenkov information is used to positively identify $e^-/e^+$
 candidates in the Forward Detector. If the measured energy deposition is consistent with the expected sampling
 fraction of the ECAL, and the photoelectron response from the HTCC is consistent with $\beta\sim1$, the particle
 is assigned as an $e^-$ or $e^+$ depending on sign of the curvature of the track from forward tracking with the
-DCs through the torus magnetic field.
+DCs through the torus magnetic field. In a subsequent particle identification stage, additional information from the
+ECAL shower profile must be considered for momenta above $\sim$4.5~GeV where the HTCC becomes sensitive to
+charged pions. The basic particle identification scheme in this regime is insufficient to separate $e^-/\pi^-$ and
+$e^+/\pi^+$.
 
 The remaining charged particles are then assumed to be hadrons and assigned an identity based solely on timing
 information, where the $p/K/\pi$ candidate giving the smallest time residual is assigned. This time residual is
@@ -98,12 +101,22 @@ for forward-going positively charged hadrons using information from the FTOF and
 electron is reconstructed either in the Forward Detector (Fig.~\ref{fig:betavsp}(top)) or in the Forward Tagger
 (Fig.~\ref{fig:betavsp}(bottom)). The computed curves for the different mass hypotheses are overlaid.
 
+Due to the inherent time resolutions of the FTOF and CTOF systems, the charged particle bands seen in the
+$\beta$ vs. $p$ plots (e.g. see Fig.~\ref{fig:betavsp}) begin to overlap for $\pi/K$, $\pi/p$, and $K/p$ as
+the track momentum increases. Therefore, the basic particle identification scheme is not sufficient to rely on
+for physics analyses. The identification scheme must be supplemented by information from other detector
+subsystems where available, for example using the LTCC and RICH detectors in the forward direction. Further
+improvements in the particle identification assignments can be made using constraints from exclusive event
+reconstruction using the missing mass technique and/or event kinematic fitting. Of course it is essential for
+physics analyses that the Monte Carlo simulation of CLAS12 is matched closely to the actual detector energy and
+timing responses in order to match the particle identification responses for misidentification and purity.
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.45\textwidth]{pics/ftof_betap.png}
 \includegraphics[width=0.45\textwidth]{pics/ft_betap.png}
-\caption{Particle $\beta$ vs. momentum for positively charged tracks with their start time from an electron in
-the Forward Detector (top plot) or in the FT (bottom plot).}
+\caption{Particle $\beta$ vs. momentum from simulation data for positively charged tracks with their start time
+  from an electron in the Forward Detector (top plot) or in the FT (bottom plot).}
 \label{fig:betavsp}
 \end{figure}
 
@@ -119,8 +132,8 @@ showing separation of photons and neutrons.
 \begin{figure}
 \centering
 \includegraphics[width=0.45\textwidth]{pics/neutral_beta.png}
-\caption{$\beta$ distribution for neutral particles as measured by the ECAL, showing a sharp peak at $\beta=1$
-  from photons and a broader, slower distribution from neutrons.}
+\caption{$\beta$ distribution for neutral particles as measured by the ECAL from simulation data, showing a sharp
+  peak at $\beta=1$ from photons and a broader, slower distribution from neutrons.}
 \label{fig:neutbeta}
 \end{figure}
 
@@ -180,8 +193,8 @@ the ECAL and from the Forward Tagger.
   $n$     &       &      &      & 0.11 \\ 
  $\gamma$ &       &      &      & 0.00 \\\hline 
     \end{tabular}  
-    \caption{Particle identification matrix for the CLAS12 Central based on simulated hadrons with momentum
-      between 0.3 and 1.1 ~GeV. The diagonal elements are correctly identified, while the off-diagonal elements
+    \caption{Particle identification matrix for the CLAS12 Central Detector based on simulated hadrons with momentum
+      between 0.3 and 1.1~GeV. The diagonal elements are correctly identified, while the off-diagonal elements
       are misidentified. Detector inefficiencies are included.}
   \label{table:pidmatrix2}
   \end{center}
@@ -192,7 +205,7 @@ the ECAL and from the Forward Tagger.
 \includegraphics[width=0.45\textwidth]{pics/ecal_pi0.png}
 \includegraphics[width=0.45\textwidth]{pics/ft_pi0.png}
 \caption{Reconstructed $\pi^0 \to \gamma \gamma$ candidates using photons detected in the ECAL (top plot) and
-  the FT (bottom plot). The plots are based on simulations of semi-inclusive deep inelastic scattering (SIDIS) events
+  the FT (bottom plot). The plots are based on simulations of semi-inclusive deep inelastic scattering events
   generated based on the PYTHIA event generator~\cite{clasdis}.}
 \label{fig:pi0mass}
 \end{figure}

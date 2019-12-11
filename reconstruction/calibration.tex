@@ -10,10 +10,10 @@ software tools provide functionality for data fitting, plotting, and displaying 
 (GUI) environment.
 
 The calibration framework makes use of the other CLAS12 libraries (the geometry and plotting packages, as well
-as database utilities) and provides a uniform GUI for all calibration applications. The framework provides a data
-processing interface and a calibration constant database interface used for online and offline data analysis.
+as database utilities) and provides a uniform GUI for all calibration applications. The framework provides a
+data-processing interface and a calibration constant database interface used for online and offline data analysis.
 
-A common data-streaming interface is implemented with software level abstraction that allows the calibration and
+A common data-streaming interface is implemented with software-level abstraction that allows the calibration and
 monitoring codes to run on all of the supported data formats used in CLAS12, including data read in real-time from
 the CLAS12 DAQ system~\cite{daq-nim}.
 
@@ -26,7 +26,7 @@ Figure~\ref{suites} shows representative views of the CLAS12 subsystem calibrati
 
 \begin{figure*}
 \centering
-\includegraphics[width=0.95\textwidth]{pics/suites.png}
+\includegraphics[width=2.0\columnwidth]{pics/suites.png}
 \caption{Representative subsystem calibration GUIs for the Electromagnetic Calorimeter (ECAL)~\cite{ecal-nim}
   (upper left), Drift Chambers (DC)~\cite{dc-nim} (upper right), Forward Time-of-Flight (FTOF)~\cite{ftof-nim}
   (lower left),  and Forward Tagger (FT)~\cite{ft-nim} (lower right).}
@@ -36,13 +36,14 @@ Figure~\ref{suites} shows representative views of the CLAS12 subsystem calibrati
 The calibration applications take as input raw or reconstructed data files (from either beam data or Monte Carlo
 simulations) in either EVIO or HIPO data formats.  They display and fit the various quantities and histograms
 relevant to the extraction of the calibration constants.  The calibration analysis parameters are saved into ASCII
-files with the same structure as the tables defined in CCDB.  The constants are then reviewed and uploaded to the database using CCDB commands.
+files with the same structure as the tables defined in CCDB.  The constants are then reviewed and uploaded to the
+database using CCDB commands.
 
 \section{CLAS12 Event Display}
 \label{sec:ced}
 
 The CLAS12 Event Display ({\it ced}) is a diagnostic graphical application for displaying CLAS12 events. The
-primary element of {\it ced} is the view, i.e. a graphical representation of CLAS12 in its entirety or a subset of
+primary element of {\it ced} is the ``view'', i.e. a graphical representation of CLAS12 in its entirety or a subset of
 its detector subsystems. For a given event, the primary purpose is to display the detector components that have
 recorded a signal, and, if available, the reconstructed tracks, to provide a visualization of the particle passage
 through the detector. In addition, {\it ced} can display information about the event such as the data banks, or
@@ -53,7 +54,7 @@ An illustration of views in {\it ced} is shown in Fig.~\ref{fig:dcTracks}, where
 a cut-view with a specific focus on the Forward Detector. The colored areas in the space around the detectors
 indicate regions where a significant magnetic field intensity is present from either the solenoid or torus;
 reconstructed tracks are shown by the orange lines. Similarly, Fig.~\ref{fig:ced} shows views of the Central
-Detector and of the Forward Tagger. Fig.~\ref{fig:ced}(left) shows two tracks originating from the target as
+Detector and of the Forward Tagger. Figure~\ref{fig:ced}(left) shows two tracks originating from the target as
 reconstructed from the fit of the available central tracker hits in correlation with signals in the outer detectors.
 Here, the color scale is representative of the recorded signal intensity. Figure~\ref{fig:ced}(right) shows a
 front view of the Forward Tagger calorimeter for an event where three clusters were recorded. {\it ced} is

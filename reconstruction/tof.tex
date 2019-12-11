@@ -4,9 +4,11 @@
 The time-of-flight (TOF) detectors for CLAS12 include the Forward Time-of-Flight system (FTOF)~\cite{ftof-nim}
 and Central Time-of-Flight system (CTOF)~\cite{ctof-nim}. The FTOF consists of planes of scintillator counters
 located between the RICH/LTCC and the ECAL. Two parallel counter arrays in each Forward Detector sector are
-employed to achieve the desired time resolution. The arrays are referred to as panel-1b (closer to the target) and
-panel-1a (farther from the target). The different FTOF arrays can be seen in Fig.~\ref{fig:dcTracks}. The CTOF
-consists of a barrel of scintillator counters located just outside of the CVT within the solenoid.
+employed to achieve the desired time resolution in the polar angle range from 5$^\circ$ to 35$^\circ$. The arrays are
+referred to as panel-1b (closer to the target) and panel-1a (farther from the target). A third set of counter arrays
+referred to a panel-2 covers polar angles from 35$^\circ$ to 45$^\circ$. The different FTOF arrays can be seen in
+Fig.~\ref{fig:dcTracks}. The CTOF consists of a barrel of scintillator counters located just outside of the CVT within
+the solenoid.
 
 The raw data from the detector PMTs read out during data acquisition include an ADC charge and hit time from a
 fitted flash ADC (FADC) waveform and a TDC time. The ADC and TDC information is read out and recorded only for
@@ -23,8 +25,8 @@ coordinate, and deposited energy. The algorithms for the hit and cluster definit
 
 \subsubsection{Raw Counter Hits}
 
-Raw hits for the TOF systems are defined by matching ADC and TDC information reported for each counter. These
-are matched based on the comparison of TDC time with the time from the FADC waveform analysis. The latter is
+Raw hits for the TOF systems are defined by matching the ADC and TDC information reported for each counter. This
+matching is based on the comparison of the TDC time with the time from the FADC waveform analysis. The latter is
 derived from fitting the leading edge of the FADC pulse shape during data decoding. Due to the choice of fast timing
 PMTs for the detector readout and the use of 250~MHz FADCs, the number of samples on the leading edge of the
 PMT pulses is only 3 to 4, hence the FADC timing resolution is only $\sim$1~ns. The FADC and TDC times are then
@@ -113,7 +115,7 @@ E_{1/2} = (ADC_{1/2} - PED_{1/2}) \left [ \frac{\left( \frac{dE}{dx} \right )_{M
 \noindent
 where $(ADC-PED)$ is the measured pedestal-subtracted ADC integral, $ADC_{MIP}$ is the ADC value for
 normally incident minimum-ionizing particles (MIPs) at the center of the scintillation bar,
-$\left( \frac{dE}{dx} \right)_{MIP}$ is the energy loss for MIPs in the scintillation bars (1.956~MeV/cm), and
+$\left( \frac{dE}{dx} \right)_{MIP}$ is the energy loss for MIPs in the scintillation bars (2.001~MeV/cm), and
 $t$ is the scintillation bar thickness. The deposited energy is computed as the geometric mean of the deposited
 energy as determined from the two counter PMTs as:
 
@@ -125,11 +127,11 @@ E_{dep} = \sqrt{E_1 E_2}.
 \label{sec:tof-cluster}
 
 If there are multiple scintillation bar hits associated with a single incident charged particle track, a hit cluster
-can be defined. These clusters have associated with them a hit coordinate, deposited energy, and hit time.
-Hits are assigned as part of a cluster in either the FTOF or CTOF if their position and time falls within selected
-windows. In each of the sectors of the CLAS12 Forward Detector there are three FTOF counter arrays. In the
-polar angle range from 5$^\circ$ to 35$^\circ$ are located the parallel counter arrays called panel-1a and panel-1b.
-In the polar angle range from 35$^\circ$ to 45$^\circ$ are located the counter arrays called panel-2. The cluster
+can be defined. These clusters have associated with them a hit coordinate, deposited energy, and hit time. Hits
+are assigned as part of a cluster in either the FTOF or CTOF if their hit positions and hit times fall within selected
+matching windows. In each of the sectors of the CLAS12 Forward Detector there are three FTOF counter arrays. In
+the polar angle range from 5$^\circ$ to 35$^\circ$ are located the parallel counter arrays called panel-1a and panel-1b.
+In the polar angle range from 35$^\circ$ to 45$^\circ$ are located the counter arrays called panel-2. The clustering
 algorithm looks to define hit clusters matched to tracks separately in each of these counter arrays.
 
 With hit clusters defined, the associated cluster coordinate along the counter length is defined as the
@@ -152,11 +154,10 @@ cluster,
 \end{equation}
 
 In the FTOF when there is a defined hit or a defined cluster in both panel-1b and panel-1a, a second cluster matching
-algorithm (using timing and hit-coordinate information solely from the FTOF) is applied to determine if the hit
-or cluster in panel-1b and the hit or cluster in panel-1a are associated with the same incident track matched to
-the panel-1b hit or cluster. If they are associated, a corrected FTOF time based on the panel-1a and panel-1b
-cluster times is computed using a time resolution weighting according to the counter in each cluster with the
-largest energy deposition using:
+algorithm is applied to determine if the hit or cluster in panel-1b and the hit or cluster in panel-1a are associated with
+the same incident track matched to the panel-1b hit or cluster. If they are associated, a corrected FTOF hit time based
+on the panel-1a and panel-1b cluster times is computed using a time resolution weighting according to the counter in
+each cluster with the largest energy deposition using:
 
 \begin{equation}
   t_{corr} = \frac{\displaystyle \frac{\displaystyle t_{1b}^{cluster}}{\displaystyle \delta_{1b}} +
