@@ -128,7 +128,7 @@ targets. This article reports on the design, construction, and initial performan
 module will be identical to the first one.
 
 The idea of a RICH detector is based on the fact that when a fast particle crosses a radiator with a velocity $\beta$
-larger than the velocity of the light in that medium, it emits Cherenkov photons. The light is emitted in a cone with
+larger than the velocity of the light in that medium, it generates Cherenkov radiation. The light is emitted in a cone with
 opening angle $\theta_C$ given by $\cos(\theta_C)=[\beta n(\lambda)]^{-1}$, where $n(\lambda)$ is the refractive index
 of the radiator, which may depend on the wavelength $\lambda$. After a gap region where the cone opens up, the
 photons are detected and the ring can be reconstructed. A precision measurement of the Cherenkov angle provides
@@ -421,8 +421,8 @@ This results in a total of 25024 individual pixels, covering the $\sim$1~m$^2$ t
 RICH module.
 % and it is the first large-area detector to employ this new multi-anode photo-multipliers. 
 The production specifications included requirements on the minimum gain of $1 \times 10^6$ and a maximum total dark
-current of 5~nA. Both were fully achieved. Figure~\ref{fig:MaPMTGain} shows the distribution of the pixel gains, with
-has an average value of $2.7 \times 10^6$, corresponding to about 400~fC generated charge per SPE.
+current of 5~nA. Both were fully achieved. Figure~\ref{fig:MaPMTGain} shows the distribution of the pixel gains, which
+has an average value of $2.7 \times 10^6$, corresponding to about 430~fC generated charge per SPE.
 
 \begin{figure}[t]
 \begin{center}
@@ -452,7 +452,7 @@ has an average value of $2.7 \times 10^6$, corresponding to about 400~fC generat
 \label{fig:EleTile}
 \end{figure}
 
-The RICH front-end electronics are designed to ensure 100\% efficiency at 1/3 of the average photoelectron signal level, 1 to 4 gain spread compensation, time resolution of the order of 1~ns to distinguish direct from reflected photon hits, and a trigger rate up to 20~kHz with 8~$\mu$s trigger latency~\cite{Ref:RICHElectro}.
+The RICH front-end electronics are designed to ensure 100\% efficiency at 1/3 of the average photoelectron signal level, 1 to 4 gain spread compensation, time resolution of the order of 1~ns to distinguish direct from reflected photon hits, and a trigger rate up to 20~kHz with 8~$\mu$s trigger latency and negligible dead time~\cite{Ref:RICHElectro}.
 
 The front-end electronics are organized into compact units (called tiles, see Fig.~\ref{fig:EleTile}) mechanically designed to
 fit the MaPMT dimensions, each serving two or three MaPMTs, thus allowing the tessellation of large surfaces with
@@ -473,7 +473,7 @@ threshold). During the board production, quality assurance tests confirmed the e
 readout, able to discriminate signals down to a few percent of a single photoelectron discharge, as will be extensively
 discussed in Section~\ref{sec:Commissioning}.
 
-The third stage of the readout is made of the FPGA boards, hosting a Xilinx7 FPGA chip, responsible for configuring and reading the front-end MAROC3, distributing the trigger, and interfacing with the data acquisition system \cite{daq-nim} via optical link. The FPGA provides a TDC functionality with a 1 ns time stamp for both start and stop times. The start time is used for timing purposes, while the difference between the stop and start times, the so-called Time-Over-Threshold (ToT), provides a non-linear estimate of the amplitude of the input signal and is used for the time-walk correction, see Section~\ref{sec:TimeCalib}. Finally, the FPGAs also embed a self-trigger scaler readout that is used as a calibration and monitor tool.
+The third stage of the readout is made of the FPGA boards, hosting a Xilinx7 FPGA chip, responsible for configuring and reading the front-end MAROC3, distributing the trigger, and interfacing with the data acquisition system \cite{daq-nim} via optical link. The FPGA provides a TDC functionality with a 1 ns time stamp for both start and stop times. The start time is used for timing purposes, while the difference between the stop and start times, the so-called Time-Over-Threshold (ToT), provides a non-linear estimate of the amplitude of the input signal and is used for the time-walk correction, see Section~\ref{sec:TimeCalib}. Finally, the FPGAs also embed a scaler readout that is used as a calibration and monitor tool.
 
 %-----------------------------------------------
 \subsubsection{MaPMT Characterization}
@@ -557,7 +557,7 @@ To approximate the performance of the first amplification cascade of the MaPMTs,
  was introduced in the model as a trinomial sum of three Poissonians with different average secondary
 multiplicities and the corresponding three relative probabilities for every photoelectron to generate secondary
 electrons (see Ref.~\cite{Pavel} for more details).
-In each fit, the parameter $\mu$ corresponds to the average number of photoelectrons created at the photocathode by
+In each fit, the parameter $\mu$ corresponds to the average number of photoelectrons generated at the photocathode by
 each laser pulse, $\nu_{average}$ is the average number of secondary electrons generated at the first dynode, and $scale$ is the 
 average anode charge collected from one photoelectron. 
 \begin{figure}[ht]
@@ -598,14 +598,13 @@ readout channels.
 %\label{Fig:EfScan}
 %\end{figure}
 
-The dark noise SPE spectra allow for the study of the efficiency dependence on the working parameters, i.e. MaPMT
+The dark count spectra allow for the study of the SPE response dependence on the working parameters, i.e. MaPMT
 bias voltage, MAROC pre-amplification gain, and discriminator threshold \footnote{The programmed threshold
 levels are expressed in Digital-to-Analog Converter (DAC) units, 1 DAC unit corresponds to about 1~mV.} using the
 binary readout line. Data indicated that the efficiency reaches a plateau over a wide range of working parameter
 values~\cite{Ref:RICHElectro}. %(see Fig.~\ref{Fig:EfScan}).
 The plateau corresponds to the region where all of the MaPMT discharges  are digitized and the efficiency ultimately
-depends on the quality of the photocathode. The plateau is a consequence of the saturated mode employed in the
-MAROC binary readout and allows a flexible definition of the working point, a crucial feature when 
+depends on the quality of the photocathode. The plateau is a consequence of the saturated 
 
 
 \begin{figure}[b]
@@ -623,6 +622,8 @@ MAROC binary readout and allows a flexible definition of the working point, a cr
 \clearpage
 
 \noindent
+mode employed in the
+MAROC binary readout and allows a flexible definition of the working point, a crucial feature when 
 dealing with a large number of channels in the challenging single-photon regime.
 
 
@@ -639,7 +640,7 @@ A backup system has been realized by a stack of nitrogen bottles to allow for up
 failure of the primary distribution system.
 
 The electronics power is controlled by a CAEN SY4527 power supply with five 8-channel A2518 low voltage (LV) boards and five
-32-channel A1536 high voltage (HV) boards. Each LV channel powers 4 FPGA boards, while one HV channel drives one MaPMT. The
+32-channel A1536 high voltage (HV) boards. Each LV channel powers 4 readout units, while each HV channel drives the \MaPMTs grouped in one readout unit. The
 electronic readout is connected to the back-end by three MTP trunks of 2.5 Gbps optical fibers. One trunk groups
 several multi-core fibers, each of them connecting one of the eight ports in the VME/SSP~\cite{daq-nim} back-end
 module to four FPGA boards.
@@ -862,11 +863,11 @@ and with beam to establish the running conditions and to verify the stability of
 
 
 The basic tool to monitor the RICH front-end electronics is provided by the measurement of the MaPMT dark noise
-counting rate using the self-triggered scaler readout provided by the FPGAs. The number of counts above a programmed
+counting rate. The number of counts above a programmed
 threshold is recorded for a time on the order of a second. A fine scan of the threshold value allows for the
 reconstruction of the full SPE spectrum for each of the 25k channels. An example of one SPE spectrum is shown in
 Fig.~\ref{fig:SPEdark}. The main features of the data are: {\it{a)}} a very narrow pedestal where the threshold equals
-the baseline,  {\it{b)}} a region close to the pedestal where the rate smoothly decreases as the threshold increases
+the analog baseline,  {\it{b)}} a region close to the pedestal where the rate smoothly decreases as the threshold increases
 (corresponding to the almost linear regime of the MAROC), and  {\it{c)}} a large plateau of the saturation regime, where
 the count rate is basically insensitive to the threshold setting almost up to the edge of the SPE region. The plateau is a
 crucial feature of the front-end electronics, because it allows a flexible definition of the working point without the need
@@ -1090,7 +1091,7 @@ In the first step, the spatial and time information of each hit in the MaPMTs is
 and time calibration parameters. The hits are ordered as a function of their ToT value, as this reflects the
 corresponding amplitude (released charge). A 3$\times$3 MaPMT pixel matrix centered around a local maximum, i.e.
 the hit with the highest local ToT, is called a nonet. If more than 3 hits are found in the same nonet they are grouped
-into a RICH cluster. A cluster is typically created by a charged particle producing Cherenkov light in the MaPMT
+into a RICH cluster. A cluster is typically generated by a charged particle producing Cherenkov light in the MaPMT
 window or ionization in the sensor dynode structure. 
 %The time of the cluster is taken to be equal to the time of the local maximum, while its spatial coordinates are calculated as a weighted average over all the hits with their ToT value as weight. 
 If a sole hit is found close to a local maximum with a ToT lower than 80\% of that maximum, the hit is flagged as
