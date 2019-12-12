@@ -69,8 +69,8 @@ correction to align this time with the closest beam bunch time at the target:
 \end{eqnarray}
 
 \noindent
-where $f_{RF}$ is the frequency of the accelerator, 249.5~MHz or 499~MHz, corresponding to 2.004~ns or 4.008~ns bunch
-spacings, $t_{RF}$ is the measured, calibrated RF time for the event, and $z_0$ is the target center and enters
+where $f_{RF}$ is the frequency of the accelerator, {\color{red}249.5~MHz or 499~MHz, corresponding to 2.004~ns or 4.008~ns bunch
+spacings}, $t_{RF}$ is the measured, calibrated RF time for the event, and $z_0$ is the target center and enters
 due to its use as a position calibration reference. The resulting RF- and vertex-corrected start time for the event
 is then given as
 
@@ -88,10 +88,10 @@ For charged particles, first calorimetry and Cherenkov information is used to po
 candidates in the Forward Detector. If the measured energy deposition is consistent with the expected sampling
 fraction of the ECAL, and the photoelectron response from the HTCC is consistent with $\beta\sim1$, the particle
 is assigned as an $e^-$ or $e^+$ depending on sign of the curvature of the track from forward tracking with the
-DCs through the torus magnetic field. In a subsequent particle identification stage, additional information from the
+DCs through the torus magnetic field. {\color{red}\sout{In a subsequent particle identification stage, additional information from the
 ECAL shower profile must be considered for momenta above $\sim$4.5~GeV where the HTCC becomes sensitive to
 charged pions. The basic particle identification scheme in this regime is insufficient to separate $e^-/\pi^-$ and
-$e^+/\pi^+$.
+$e^+/\pi^+$.}}
 
 The remaining charged particles are then assumed to be hadrons and assigned an identity based solely on timing
 information, where the $p/K/\pi$ candidate giving the smallest time residual is assigned. This time residual is
@@ -101,7 +101,7 @@ for forward-going positively charged hadrons using information from the FTOF and
 electron is reconstructed either in the Forward Detector (Fig.~\ref{fig:betavsp}(top)) or in the Forward Tagger
 (Fig.~\ref{fig:betavsp}(bottom)). The computed curves for the different mass hypotheses are overlaid.
 
-Due to the inherent time resolutions of the FTOF and CTOF systems, the charged particle bands seen in the
+{\color{red}\sout{ Due to the inherent time resolutions of the FTOF and CTOF systems, the charged particle bands seen in the
 $\beta$ vs. $p$ plots (e.g. see Fig.~\ref{fig:betavsp}) begin to overlap for $\pi/K$, $\pi/p$, and $K/p$ as
 the track momentum increases. Therefore, the basic particle identification scheme is not sufficient to rely on
 for physics analyses. The identification scheme must be supplemented by information from other detector
@@ -109,7 +109,7 @@ subsystems where available, for example using the LTCC and RICH detectors in the
 improvements in the particle identification assignments can be made using constraints from exclusive event
 reconstruction using the missing mass technique and/or event kinematic fitting. Of course it is essential for
 physics analyses that the Monte Carlo simulation of CLAS12 is matched closely to the actual detector energy and
-timing responses in order to match the particle identification responses for misidentification and purity.
+timing responses in order to match the particle identification responses for misidentification and purity.}}
 
 \begin{figure}[t]
 \centering
@@ -121,9 +121,11 @@ timing responses in order to match the particle identification responses for mis
 \end{figure}
 
 For neutral particles, particle identification is assigned only for neutrons and photons, based only on timing and
-topological information. If the particle timing results in $\beta\sim$1, it is assigned as a photon, otherwise it
-is assigned as a neutron. For the Forward Detectors this is presently based on the ECAL, while for the Central
-Detector it is presently based on the CND. For photons in the Forward Detector, the momentum is then assigned
+topological information. {\color{red} For the Forward Detectors this is presently based on the ECAL, while for the Central
+Detector it is presently based on the CND. The reconstructed cluster position is used to compute the particle
+travel path from the vertex of the event, defined as the vertex of the trigger particle (an electron or charged hadron n the Forward Detector).
+If the particle timing and travel path results in $\beta\sim$1, it is assigned as a photon, otherwise it
+is assigned as a neutron. The $\beta$ threshold for the PID assignment is a parameter read from the database.} For photons in the Forward Detector, the momentum is then assigned
 using the reconstructed ECAL energy and accounting for the calorimeter sampling fraction~\cite{ecal-nim}. For
 neutrons, the momentum is assigned based on the measured $\beta$ and the neutron mass.
 Figure~\ref{fig:neutbeta} shows an example of $\beta$ reconstructed for neutrals in the Forward Detector
