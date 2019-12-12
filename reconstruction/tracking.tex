@@ -120,11 +120,11 @@ straight-line hypothesis, and those hits with acceptable residuals are kept and 
 \end{figure}
 
 Subsequent hit pruning algorithms are employed at the time-based level. Figure~\ref{fig:dcsegs} illustrates the
-selected hits belonging to a cluster (orange) and the hits rejected by the noise-finding algorithms. In this figure,
-the cluster shown on the right-most superlayer is an example of a ``looper'' and shows how this category of cluster
-has the potential to bias the track. The second cluster used to form the cross yields an incorrect slope resulting
-from a wrong hit used in the fit.  Subsequently, the looper search algorithm rejects the entire cluster and only
-the first cluster is used to fit the track. 
+selected hits belonging to a cluster (orange) and the hits rejected by the noise-finding algorithms. 
+{\color{re}In the zoomed view displayed in this figure,
+the cluster shown on the first superlayer illustrates the hit pruning algorithm and 
+the remaining segment, while the the rejected hits in the second superlayer are an example of a ``looper'' identified 
+by the the looper search algorithm.}
   
 \subsubsection{Pattern Recognition}
 
@@ -161,7 +161,7 @@ The first stage of pattern recognition consists of finding a track candidate fro
 R2, and R3) that are fit to a parabolic functional form to give a ``track candidate''. Using the parameters of the
 parabolic function between the first and the third cross and obtaining the magnetic field intensity at each step along
 this trajectory, we obtain an estimate for $\int \!\!B dl$. From the local angles of the crosses in the $x-z$ plane for
-R1 ($\theta_1$) and R3 ($\theta_3$), we estimate the track momentum ($p$) and the particle charge ($q$) as:
+R1 ($\theta_1$) and R3 ($\theta_3$), we estimate the track momentum ($p$) in GeV and the particle charge ($q$) as:
 
 \begin{equation}
   \frac{q}{p} = \frac{\theta_3 - \theta_1}{v \int \!\!B dl},
@@ -169,7 +169,7 @@ R1 ($\theta_1$) and R3 ($\theta_3$), we estimate the track momentum ($p$) and th
 
 \noindent
 where the angles are in radians, the magnetic field intensity ($B$) is in Tesla, and the path length ($dl$) is in cm.
-The conversion factor $v$ corresponds to the speed of light. The cross position and angles in DC R1, together with
+{\color{red}}The conversion factor  $v = 0.002997924580 (GeV/c) T^{-1} cm^{-1}$  corresponds to the speed of light}. The cross position and angles in DC R1, together with
 the momentum and the charge, provide all of the necessary information to define the track parameters at a given
 location in the detector, and therefore to start the track fitting.
 
@@ -192,7 +192,7 @@ measurement site to the next in the fit. The track fitting uses a Kalman Filter 
 representation ($x$, $y$, $tx$, $ty$, $Q$) called the track state vector, defined in a local coordinate system
 with the $z$-axis perpendicular to the DC wire planes. Here, $Q=q/p$ (with $q$ corresponding to the track charge),
 $tx=p_x/p_z$, $ty=p_y/p_z$, and $p_x$, $p_y$, and $p_z$ represent the $(x,y,z)$ components of the track momentum
-in the local analysis frame. In the analysis frame the state vector and the measurement are defined at each layer for
+in the {\color{red} local coordinate system.} In the analysis frame the state vector and the measurement are defined at each layer for
 which there is a hit on a track. Hence, as in Ref.~\cite{spiri}, we can express the equations of motion of the track in the
 torus field and the propagation of the state vector covariance matrix as derivatives with respect to $z$. In the DC, the
 magnetic field components are mostly along the $y$ coordinate (along the wires) in the analysis frame. The trajectory of
@@ -227,13 +227,13 @@ Cov (t_x , t_y) &=&  t_x t_y\cdot (1+{t_x}^2 + {t_y}^2 )\cdot {\theta_0}^2 ,
 \noindent
 where,
 \begin{eqnarray}
-  {\theta_0} &=& \frac{13.6}{\beta pc}\sqrt{\frac{t}{X_0}\sqrt{1+{t_x}^2+{t_y}^2}}\\
+  {\theta_0} &=& \frac{13.6}{\beta pc}\sqrt{\frac{l}{X_0}\sqrt{1+{t_x}^2+{t_y}^2}}\\
   &\times&\left[ {1+0.038~\ln \left({\frac{t}{X_0}\sqrt{1+{t_x}^2+{t_y}^2}}\right) }\right] \nonumber
 \end{eqnarray}
 \noindent
 as given by the Highland-Lynch-Dahl formula~\cite{Highland-Lynch-Dahl}. The radiation length $X_0$ is computed
 as an effective radiation length corresponding to the gas mixture in the DC wire layer. Air is assumed outside of
-the DC volumes. The term $t$ represents the path length traversed by the track.
+the DC volumes. The term $l$ represents the path length traversed by the track.
 
 At each plane the state vector is mapped onto a measurement, which corresponds to the drift distance to the
 wire in a given DC plane.  In instances where there are two hits associated with the track in a given wire layer
@@ -436,9 +436,11 @@ $10^\circ \leq \theta \leq 25^\circ$, and $\phi = 0 \pm 5^\circ$ (sample~2).
 These resolutions are obtained from a Monte Carlo sample that does not include out-of-time backgrounds or
 misalignments of the tracking volumes. A dedicated study that involves merging random background data with
 low-luminosity data is described in Ref.~\cite{clas12-nim}.
-
-The tracking efficiency for inbending and outbending tracks in the torus field calculated from sample~1 is shown in
-Fig.~\ref{fig:trkeff}. Inbending tracks suffer from a loss in tracking efficiency for momenta generated below
+{\color{red}
+The tracking efficiency for inbending (negatively charged) and outbending (positively charged) pions in the torus 
+field calculated from sample~1 is shown in Fig.~\ref{fig:trkeff} for tracks at $\theta =15^\circ \pm 5^\circ$. }
+Inbending tracks suffer from a loss in tracking 
+efficiency for momenta generated below
 1.8~GeV at the time-based level due to lack of matching with the outer detectors. These tracks miss the sensitive
 volumes of the Forward Time-of-Flight (FTOF) system, which is required to extract the time-correction information
 needed for time-based tracking. The tracks do however pass the hit-based tracking requirement. The efficiency
@@ -470,7 +472,7 @@ detectors.
 \end{figure}
 
 The vertex resolutions of reconstructed tracks from a sample of simulated semi-inclusive deep inelastic scattering
-events are shown in Fig.~\ref{fig:vtxres}. The vertex is obtained for positively and negatively tracks reconstructed
+events are shown in Fig.~\ref{fig:vtxres}. The vertex is obtained for positively and negatively charged tracks reconstructed
 in the Central and Forward Detectors, respectively. The vertex resolutions for the Central Detector (blue histogram)
 is about 3~mm and for the Forward Detector (red histogram) is about 5~mm. 
 \begin{figure}[ht]
