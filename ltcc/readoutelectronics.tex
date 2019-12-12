@@ -1,31 +1,29 @@
-\section{Electronics and Readout}
-
-\F{electronicScheme} shows a schematic diagram of the electronics and readout used for the LTCC
-detector. Since the magnetic shield case is near the bulb of the photo-multiplier tube, and the WC is in direct contact
-with the bulb, the electrons in the photo-multiplier tube could strike the inner bulb wall if the negative voltage
-was applied to the cathode. For this reason the signals are capacitatively coupled to positive HV, with the PMT
-cathode at ground potential,
-and the XP4500B Photonis PMTs anodes are powered with positive polarity by a CAEN SY4527 high voltage
-mainframe outfitted with 1501P boards. There are two anode signals from the PMT output. One of them is
-connected directly to flash ADC boards built at Jefferson Lab, the Flash ADC module FADC250~\cite{daq-nim}.
-The FADC250 sampling frequency is 250~MHz. The other signal is discriminated by the Jefferson Lab built
-discriminator scaler module DSC2~\cite{daq-nim}, and connected to CAEN v1190 TDC modules. The TDCs have a
-50~ps/channel timing resolution, and the discriminator threshold was set to 30~mV, corresponding to 15\% of the
-SPE amplitude. The LTCC FADC250 and TDC information are read out using the CLAS12 data acquisition (DAQ)
-system~\cite{daq-nim}.
-
 \begin{figure}
 	\centering
 	\includegraphics[width=0.99\columnwidth, height=0.6\columnwidth]{img/electronicScheme.png}
 	\caption{The electronics schematic of the LTCC. One HV and two readout signals are connected from each PMT
-          base to the patch panel. The patch panels then connect the HV to the CAEN SY4527 (1501P boards), one read
-          out to the FADC250 and the other to DSC2 discriminators.}
+          base to the patch panel. The patch panels then connect the HV to the CAEN SY4527 (1501P boards) and the
+          PMT signals to the FADC250s and the DSC2 discriminators.}
 	\label{fig:electronicScheme}
 \end{figure}
 
+\section{Electronics and Readout}
+
+Figure~\ref{fig:electronicScheme} shows a schematic diagram of the electronics and readout used for the LTCC
+detector. Since the magnetic shield case is near the bulb of the PMT, and the WC is in direct contact with the bulb,
+the electrons in the PMT could strike the inner bulb wall if the negative voltage was applied to the cathode. For this
+reason the signals are capacitatively coupled to positive HV, with the PMT cathode at ground potential. The
+XP4500B Photonis PMTs anodes are powered with positive polarity by a CAEN SY4527 high voltage mainframe
+outfitted with 1501P boards. There are two anode signals from the PMT output. One of them is connected directly to
+flash ADC boards built at JLab, the Flash ADC module FADC250~\cite{daq-nim}. The FADC250 sampling
+frequency is 250~MHz. The other signal is discriminated by the JLab-built discriminator scaler module DSC2
+\cite{daq-nim}, and connected to CAEN v1190 TDC modules. The TDCs have a 50~ps/channel timing resolution, and
+the discriminator threshold was set to 30~mV, corresponding to 15\% of the SPE amplitude. The LTCC FADC250 and
+TDC information are read out using the CLAS12 Data Acquisition (DAQ) system~\cite{daq-nim}.
+
 A typical signal from the FADC250 module is shown in \F{fadc}. The signal is usually contained in 3 to 5 time samples
-(each time sample is 4~ns). In order to be written to tape, at least one of the 100 signal samples in the 400~ns
-wide readout window must be above a threshold of 30 channels, corresponding to about 30\% of the SPE peak value.
+(each time sample is 4~ns). In order to be written to tape, at least one of the 100 signal samples in the 400-ns wide
+readout window must be above a threshold of 30 channels, corresponding to about 30\% of the SPE peak value.
 This is well above the typical pedestal variation of 1-5 channels. The FADC250 then integrates the FADC signal over
 a time window of 16~ns (4 samples) before the threshold crossing time, for the duration of 20 samples (80~ns). The
 final integrated charge used in the reconstruction code is the signal integral minus the electronic pedestal, as
@@ -45,9 +43,3 @@ described in \F{fadc}.
 	\label{fig:fadc}
 \end{figure}
 
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/readout.png}
-%	\caption{The electronic scheme of the LTCC.}
-%	\label{fig:readout}
-%\end{figure}
