@@ -34,7 +34,7 @@ particle tracks are reconstructed in both the Central and Forward Detector track
 of the recorded hits in the different detectors (i.e. using strip positions or wire locations). This procedure is
 referred to as ``hit-based'' tracking. In parallel, hits recorded in the other detectors are processed to reconstruct
 the energy and time of the associated particle interaction. These are matched to the reconstructed tracks by the
-Event Builder service, based {\color{red} on hit position and time information}; unmatched hits are retained as neutral particle
+Event Builder service, based on hit position and time information; unmatched hits are retained as neutral particle
 candidates. At this stage, the Event Builder can reconstruct the event ``start time'', i.e. the time of the interaction
 between the beam and target, and identify the reconstructed particles. Once the event start time is determined, a
 second iteration of forward tracking can be performed to implement the so-called ``time-based'' tracking (which
@@ -45,6 +45,6 @@ The improved particle tracks from time-based tracking are the input for a second
 leads to the final event reconstruction. Given this sequence, some services can run in parallel, while others need the
 reconstruction output provided by the preceding steps. For instance, hit-based tracking for the Central Vertex
 Tracker (CVT) using the CVT service and for the Drift Chambers using the DCHB service (``HB'' is for hit-based)
-can run in parallel, while time-based tracking for the Drift Chambers using the DCTB service {\color{red} (``TB'' is for time-based)}
+can run in parallel, while time-based tracking for the Drift Chambers using the DCTB service (``TB'' is for time-based)
 must come after the first execution of the Event Builder service. An overview of the reconstruction application service
 composition detailing these dependencies is shown in Fig.~\ref{fig:services}.
