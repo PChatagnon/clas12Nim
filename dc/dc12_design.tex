@@ -50,9 +50,9 @@ for different incoming angles (right axis) as a function of momentum.
 
 %%%%%%%%%%%%%%%%%%%%%% Figure : generic chamber sketch %%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htpb]   
-\vspace{10cm}
+\vspace{4.5cm}
 \begin{picture}(35,35)
-\put(25,-65)
+\put(10,-40)
 {\hbox{\includegraphics[width=1.5\columnwidth,natwidth=610,natheight=642]{img/simulated-resolution.png}}}
 \end{picture}
 \caption{\small{Estimated fractional momentum resolution plotted vs. momentum for different
@@ -72,8 +72,7 @@ Table~\ref{fwd-dc-physics-specifications} lists the physics goals for the main C
 and the resulting drift chamber design specifications that will allow us to achieve these goals.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\small{
-\begin{table}[ht]
+\begin{table*}[ht]
 \begin{center}
 \begin{tabular}{||c|c|c||} \hline \hline
    {\bf Goal}         & {\bf Physics Spec./Goal$^*$} & {\bf Design Specification}\\ \hline
@@ -89,18 +88,10 @@ large acceptance   & $\delta\phi = 50\%$ at $5^\circ$ & thin endplates\\ \hline
 \caption{\small{Physics goals and the resulting physics and drift chamber design specifications.}}
 \label{fwd-dc-physics-specifications}
 \end{center}
-\end{table}
-}
+\end{table*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Drift Chamber Conceptual Design}
-
-%The overall tracking requirements:
-%\begin{itemize}
-%\item sub-percent fractional momentum resolution at $7^{\circ}$ and 10~GeV, 
-%\item efficient tracking at a luminosity of 10$^{35}$~cm$^{-2}$s$^{-1}$, and
-%\item large angular acceptance 
-%\end{itemize}are the main drivers for the drift chamber design.  
 
 Because the previous CLAS drift chamber system operated 
 successfully for 15~years, we re-used many of the design concepts and 
@@ -139,8 +130,7 @@ The total material in the R1, R2 and R3 chambers (each filled with a 90/10 mixtu
 of argon/CO$_2$) and the intervening air also amounts to $\sim$0.02 radiation lengths.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\small{
-\begin{table}[hbt]
+\begin{table*}[hbt]
 \begin{center}
 \begin{tabular}{||c|c|c|c||} \hline \hline
             &{\bf Region 1}&{\bf Region 2}&{\bf Region 3}\\ \hline
@@ -154,9 +144,20 @@ Active time window   & 150~ns   & 325 - 1000~ns & 750~ns   \\ \hline
 \caption{\small{Design parameters for the CLAS12 drift chambers.}}
 \label{fwd-dc-design-parms}
 \end{center}
-\end{table}
-}
+\end{table*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%% Figure : generic chamber sketch %%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htpb]   
+\vspace{3cm}
+\begin{picture}(35,35)
+\put(15,0)
+{\hbox{\includegraphics[width=0.9\columnwidth,natwidth=610,natheight=642]{img/superlayout.png}}}
+\end{picture}
+\caption{\small{Wire layout for one superlayer; the view is a cut perpendicular to the wire direction.}}
+\label{superlayout}
+\end{figure}   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Design Elements in Common with the Previous CLAS Chambers}
 
@@ -190,18 +191,6 @@ two layers of field wires, one layer of sense wires, another two layers of field
 wires, and so on, for a total of 2 guard wire layers, 14 field wire layers and
 6 sense wire layers.  The result is an hexagonal cell layout with each sense wire
 surrounded by 6 field wires.
-
-%%%%%%%%%%%%%%%%%%%%%% Figure : generic chamber sketch %%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[htpb]   
-\vspace{7cm}
-\begin{picture}(35,35)
-\put(0,-30)
-{\hbox{\includegraphics[width=0.9\columnwidth,natwidth=610,natheight=642]{img/superlayout.png}}}
-\end{picture}
-\caption{\small{Wire layout for one superlayer; the view is a cut perpendicular to the wire direction.}}
-\label{superlayout}
-\end{figure}   
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Design Improvements Compared to the Previous CLAS Chambers}
 
@@ -242,7 +231,7 @@ of 20-$\mu$m wire;
 \item the choice of the cathode (``field'') wire is 80-$\mu$m
 gold-plated copper-beryllium, tougher and with better surface properties than our previous
 choice of 140-$\mu$m gold-plated aluminum wire;
-\item  Our choice of guard wire is 140$\mu$m diameter, gold-plated
+\item  Our choice of guard wire is 140-$\mu$m diameter, gold-plated
 copper-beryllium.  These wires were strong enough that we pre-tensioned 
 the chambers using only the guard wires; a simplification in the process.
 \end{itemize}
@@ -250,11 +239,12 @@ the chambers using only the guard wires; a simplification in the process.
 
 Table~\ref{fwd-dc-design-features} lists the advantages and disadvantages
 of the various design features.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[ht]
+\begin{table*}[ht]
  \begin{center}
   \begin{tabular} {||c|c|c||} \hline \hline
- {\bf Design Feature  }       &{\bf Advantages} &{\bf Disadvantages}\\ \hline
+ {\bf Design Feature}       &{\bf Advantages} &{\bf Disadvantages}\\ \hline
 ``All-wire design'' & Little cathode emission & \\ \hline
 Small Cells & Robust track-finding  & Many wires to string \\ \hline
 Hexagonal Cells & Minimum number of wires  & Angle-dependence of time to distance  \\ \hline
@@ -267,7 +257,7 @@ Self-supporting design & Easier maintenance & 1 - 2~mm bowing of endplates \\ \h
 \caption{\small{Design features of the CLAS12 drift chambers.}}
 \label{fwd-dc-design-features}
 \end{center}
-\end{table}
+\end{table*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Wire Diameter}

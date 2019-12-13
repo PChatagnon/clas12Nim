@@ -83,16 +83,16 @@ illustrates the necessity of knowing the entry angle of the track in order to
 determine the drift distance to the sense wire from the measured drift time.
 
 %%%%%%%%%%%%%%%%%%%%%% Figure : Garfield Picture %%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[htpb]
+\begin{figure*}[htpb]
 \vspace{6.5cm} 
-\special{psfile=img/garfield.eps hscale=70 vscale=70 hoffset=-10 voffset=-200}
+\special{psfile=img/garfield.eps hscale=70 vscale=70 hoffset=20 voffset=-200}
 \caption{\small{Plot of electric-field lines and equal-time isochrone contours
-(100 ns interval) for a 90$\%$ argon - 10$\%$ CO$_2$ gas mixture for (a) an R3
+(100~ns interval) for a 90$\%$ argon - 10$\%$ CO$_2$ gas mixture for (a) an R3
 drift cell where two rays are drawn highlighting two different track entrance 
 angles of $\alpha$ = 0$^{\circ}$ and 30$^{\circ}$, and (b) an R2 cell that 
 was assumed to be located within a uniform 1~T magnetic field pointing into the page.}}
 \label{garfield-isochrones}
-\end{figure}
+\end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Distance-to-Time Function Parameterization}
@@ -168,7 +168,8 @@ These secondary (physically meaningful) parameters are the ones that are used
 by our distance-to-time calibration program.
 
 In particular, we can compare our results for $V_0$ (the drift velocity at high electric field strength
-($\geq$1000~V/cm)) and $V_{mid}$ (the drift velocity at the point of minimum electric field strength($\approx$~250~V/cm))
+($\geq$1000~V/cm)) and $V_{mid}$ (the drift velocity at the point of minimum electric field strength
+($\approx$~250~V/cm))
 with published results \cite{drift-velocity-results}.  This is helpful in the early stages of calibration.
 
 \subsubsection{Dependence of Distance-to-Time Function on Local Angle}
@@ -242,16 +243,16 @@ where $\alpha_0$ is the actual entrance angle, $b_{rot}$ is a parameter equal to
 magnetic field strength in Tesla.
 
 %%%%%%%%% Figure : TRKDOCA vs. Drift Time -- Angle and Field Dependence %%%%%%%%%%
-\begin{figure}[htb]
+\begin{figure*}[htb]
 \vspace{10.0cm} 
-\special{psfile=img/tvsx.eps hscale=60 vscale=60 hoffset=25 voffset=0}
+\special{psfile=img/tvsx.eps hscale=60 vscale=60 hoffset=65 voffset=0}
 \caption{\small{Scatterplot of the corrected drift time vs. TRKDOCA for 
 (upper left) R1, showing curves for various local angles from 30$^{\circ}$
 (right-most curve) to 0$^{\circ}$ (left-most curve).  (Upper right) for R2; 
 additionally showing 3 bands for B-field magnitudes of 0, 1, 1.5~T.
 (Lower left) for R3 with the inflection point identified.}}
 \label{xvst}
-\end{figure}
+\end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The drift isochrones are not only rotated but are shrunk by a non-zero magnetic field.
@@ -287,12 +288,12 @@ The function does a fair job of following the shape of the data.
 
 %%%%%%%%% Figure : calcdoca and trkdoca plotted vs time %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-\vspace{9cm}
+\vspace{4.5cm}
 \begin{picture}(50,50)
 \put(0,-10)
-{\hbox{\includegraphics[width=0.8\textwidth,natwidth=610,natheight=642]{img/time-vs-doca.png}}}
+{\hbox{\includegraphics[width=0.34\textwidth,natwidth=610,natheight=642]{img/time-vs-doca.png}}}
 \end{picture}
-\caption{\small{A plot of TRKDOCA vs. time from our track fits. Over-plotted in darker symbols
+\caption{\small{A plot of time vs. TRKDOCA from our track fits. Over-plotted in darker symbols
 is the calculated distance (DOCA) vs. time.}}
 \label{time-vs-doca}
 \end{figure}
@@ -318,7 +319,7 @@ For example if ``$X_0$'' is the distance (at a particular time) for a table fill
 angle of 0$^\circ$ and ``$X_{30}$'' is the corresponding quantity for a table of 30$^\circ$ tracks, then
 \begin{equation} 
 \label{eq-extrap30}
-X(t,\alpha) = X_0 + (X_{30}-X_0) (\cos(30^\circ-\alpha) - \cos(30^\circ)) / (\cos(0^\circ) - \cos(30^\circ)).
+X(t,\alpha) = X_0 + (X_{30}-X_0) \frac{\cos(30^\circ-\alpha) - \cos(30^\circ)}{\cos(0^\circ) - \cos(30^\circ)}.
 \end{equation}
 We interpolate between different $B$-field tables linearly in $B^2$.
 
@@ -339,7 +340,7 @@ Tracks were found and fitted with our standard track reconstruction~\cite{recon-
 For various bins in the angle of the track, we measured the shifts of the
 track residual means as a function of layer number. 
 Before correcting for misalignment in software, the data showed significant 
-displacements of the means from zero, as large as 2~mm; see Fig.~\ref{resids-vs-layer-before}.
+displacements of the means from zero, as large as 2~mm; see Fig.~\ref{resids-vs-layer-after}.
 
 To analyze the data we used the concept of simulating trial residual
 distributions by deliberately misaligning the chambers.
@@ -364,26 +365,12 @@ could have had 18 free parameters, but in practice we had 12 free parameters:
 where $\theta y$ is a tilt of a chamber.  We did not vary the yaw ($\theta$x) and 
 roll ($\theta$z) degrees of freedom.
 
-Figure~\ref{resids-vs-layer-before} plots the mean of the residuals of a straight-line
-fit to the tracks vs. layer (1 - 36 layers of the chambers) for one sector (in this
-case sector 1). The misalignment is plainly visible as a noticeable shift of the residual means
-from zero. The bulk of the offsets occurs in shifts of groups of 12 layers, which
-corresponds to one physical chamber (a R1 chamber has layers 1-12, R2 from 13-24, and
-R3 from 25-36).  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[htbp]
-\vspace{8cm}
-\begin{picture}(50,50)
-\put(15,0)
-{\hbox{\includegraphics[width=1.\textwidth,natwidth=610,natheight=642]{img/resids-vs-layer-before.png}}}
-\end{picture}
-\caption{\small{A plot of the fit residual mean vs. layer for the Sector~1 drift chambers before (red squares) and
-    after (blue crosses) alignment.  The displacements occur in correlated groups, layers (1-12, 13-24, and 25-36),
-    which correspond to the three physical chambers, R1, R2, and R3.}}
-\label{resids-vs-layer-before}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Figure~\ref{resids-vs-layer-after} plots the mean of the residuals of a straight-line
+fit to the tracks vs. layer (1 - 36 layers of the chambers) for all six sectors. The
+misalignment is plainly visible as a noticeable shift of the residual means from zero. The
+bulk of the offsets occurs in shifts of groups of 12 layers, which corresponds to one
+physical chamber (a R1 chamber has layers 1-12, R2 from 13-24, and R3 from 25-36).  
+The RMS deviations of the means from zero average to about 50~$\mu$m.
 
 Because our ``unit distortions'' are not orthogonal functions, we needed to do a simultaneous
 fit over four angular ranges because two ``unit distortions'', which are highly correlated in
@@ -392,28 +379,24 @@ one angular range, were usually not in other ranges.
 The alignment procedure described so far considered only the relative alignment of the
 three drift chambers in any particular sector to each other.
 Our only inter-sector constraint was that all sectors, after alignment,
-should point to a common target vertex.
-In addition to minimizing the residuals
+should point to a common target vertex. In addition to minimizing the residuals
 from our 36 drift chamber layers, we also include a 37th term in the sum of squared residuals: the 
 distance of closest approach to the beam-target vertex.  This requirement, that all
 tracks, regardless of sector, should point to a common beam-target vertex, allowed us to
 align the chambers sector to sector.
 
-Figure~\ref{resids-vs-layer-after} shows the shifts of the means for all sectors that remain after we have
-aligned the chambers. The RMS deviations of the means from zero average to about 50~$\mu$m.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[bhtp]
-\vspace{5cm}
+\begin{figure*}[bhtp]
+\vspace{6cm}
 \begin{picture}(50,50)
-\put(-5,-15)
+\put(15,-20)
 {\hbox{\includegraphics[width=0.6\textwidth,natwidth=610,natheight=642]{img/resids-vs-layer-after.png}}}
 \end{picture}
 \caption{\small{Plots of the fit residual mean vs. layer, before alignment (red squares) and after alignment (blue
-    crosses), for each of the six sectors.
-}}
+    crosses), for each of the six sectors. The displacements occur in correlated groups, layers (1-12, 13-24, and 25-36),
+    which correspond to the three physical chambers, R1, R2, and R3.}}
 \label{resids-vs-layer-after}
-\end{figure}
+\end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The results of this procedure indicated that the best-fit position of the chambers 
@@ -460,15 +443,30 @@ for a R2 endplate, which agreed well with our direct surveys.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-\vspace{5cm}
+\vspace{4.2cm}
 \begin{picture}(50,50)
-\put(65,5)
-{\hbox{\includegraphics[width=1.\textwidth,natwidth=610,natheight=642]{img/sketch-of-distortions.png}}}
+\put(10,0)
+{\hbox{\includegraphics[width=0.65\textwidth,natwidth=610,natheight=642]{img/sketch-of-distortions.png}}}
 \end{picture}
 \caption{\small{An engineering finite element analysis showing the endplate bowing due to wire tension.}}
 \label{sketch-of-distortions}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[ht]
+\vspace{6.5cm}
+\begin{picture}(50,50)
+\put(20,-5)
+{\hbox{\includegraphics[width=.60\textwidth,natwidth=610,natheight=642]{img/bmodel-bmeasured.png}}}
+\end{picture}
+\caption{\small{A plot of Bmodel - Bmeasured (in Gauss) vs. $z$ (mm) for the 160 measurement
+points within one sector (Sector~1) of the torus magnet. Sub-figure A corresponds to measurements at a radius
+of 30~cm and a $\phi$ of 0$^\circ$ (on the midplane).  Sub-figures B, C, and D are for measurements taken at a radius
+of 46.5~cm and at $\phi$ values of -15$^\circ$, 0$^\circ$, and 15$^{\circ}$, respectively.}}
+\label{bmodel-bmeasured}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Magnetic Field Model: A Comparison to Measurement}
 
@@ -514,17 +512,3 @@ individual coil positions are adjusted to give the best agreement with the measu
 At this time, the average fractional difference between model and measurement 
 is about 0.5\%.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[htbp]
-\vspace{5.3cm}
-\begin{picture}(50,50)
-\put(20,-5)
-{\hbox{\includegraphics[width=.60\textwidth,natwidth=610,natheight=642]{img/bmodel-bmeasured.png}}}
-\end{picture}
-\caption{\small{A plot of Bmodel - Bmeasured (in Gauss) vs. $z$ (mm) for the 160 measurement
-points within one sector (Sector~1) of the torus magnet. Sub-figure A corresponds to measurements at a radius
-of 30~cm and a $\phi$ of 0$^\circ$ (on the midplane).  Sub-figures B, C, and D are for measurements taken at a radius
-of 46.5~cm and at $\phi$ values of -15$^\circ$, 0$^\circ$, and 15$^{\circ}$, respectively.}}
-\label{bmodel-bmeasured}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
