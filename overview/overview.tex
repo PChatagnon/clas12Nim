@@ -781,11 +781,10 @@ of real tracks for different data runs. See Ref.~\cite{GEMC} for details on the 
 	\includegraphics[width=1.0\columnwidth, height=1.0\columnwidth]{NoSolenoidFullTorusCut1.png}
 }
 \caption{(Color online) Geant4 representations of accidental background events occurring within a 250~ns time window at
-  different magnetic field configurations and 100\% of design luminosity. Top left: Solenoid field is OFF and
-  torus field is OFF. Top right: Solenoid field is OFF and torus field is ON. Bottom right: Close-up of top right.
-  Bottom left: Solenoid field is ON and torus field is ON at 100\% design luminosity. Color code: red lines are
-  primary electrons; red circles are hits in the detectors; blue lines are photons.({\bf New graphs with different 
-  coloration in preparation.)}}
+  different magnetic field configurations and at 50\% of design luminosity. Top left: Solenoid field is OFF and
+  torus field is OFF. Top right: Solenoid field is OFF and torus field is ON. Bottom right: Rotated view of top right.
+  Bottom left: Solenoid field is ON and torus field is ON. Color code: red lines are
+  primary electrons; red circles are hits in the detectors; blue lines are photons, including Cherenkov light..}
   
 \label{gemc-event}
 \end{figure*}
@@ -870,7 +869,11 @@ CLAS12 uses a series of fast triggers that are tailored to a specific event patt
 experiments require the electron scattered on the production target to be detected as it defines the mass
 ($Q^2$) and kinematics of the virtual photon as $Q^2 = -(e - e')^2$, where $e$ and $e'$ are the 4-momentum
 vectors of the beam electron and of the scattered electron, respectively. The scattered electron is uniquely identified with
-signals in the HTCC and clustered energy deposition in the ECAL. To enhance selection of specific reactions in the
+signals in the HTCC and clustered energy deposition in the ECAL. 
+
+To enhance selection of specific reactions in the CLAS12 trigger purity depends on the polarity of the 
+of the Torus magnet and on actual luminosity. In about 50\% of events (inbending) electrons are identified. At opposite
+Torus polarity (outbending) trigger purity is as high as 70\%.
 accumulated data, additional charged particles in either the FD or the CD are selected in the trigger in addition to
 the scattered electron. The CLAS12 fast trigger system makes use of the responses of the detectors to form the
 readout triggers. At the nominal design luminosity of CLAS12, the hadronic production rate is approximately
@@ -1483,20 +1486,9 @@ the operational performance.
 \label{elastic-electrons}
 \end{figure}
 
-\section{Summary} 
-
-The design criteria, construction details, and operational performance characteristics of the large-acceptance
-CLAS12 dual-magnet spectrometer in Hall~B at Jefferson Laboratory have been described. The spectrometer is
-now used to study electron-induced reactions at the energy-doubled CEBAF electron accelerator. The spectrometer
-was commissioned in an initial period from late 2017 to early 2018, and is now routinely operated in support of
-a diverse scientific program in the exploration of the internal quark structure of nucleons and nuclei. The major
-performance criteria, most critically, the operation at  instantaneous luminosities up to $10^{35}$~cm$^{-2}$s$^{-1}$,
-have been met. These criteria are summarized in Table~\ref{clas12-performance}. Further improvements in the
-operational performance of CLAS12 will be realized during the ongoing experimental data analysis and detector
-optimization studies.
-
+\begin{large}
 \begin{table*}[t!]
-\caption{CLAS12 approximate performance parameters.  {\bf Need to check resolutions with results from the data analysis}}    
+\caption{\large CLAS12 approximate performance parameters. }    
 \label{clas12-performance}
 \large
 \centerline{
@@ -1506,9 +1498,11 @@ Capability &  Quantity & Status\\
 &&\\ \hline
 Coverage&Tracks (FD) & $5^\circ < \theta < 35^\circ $ \\
 &Tracks (CD)& $35^\circ < \theta < 125^\circ$  \\
-&Momentum& $p > 0.2$~GeV  \\
+&Momentum (FD \& CD) & $p > 0.2$~GeV  \\
 &Photon angle (FD)& $5^\circ < \theta < 35^\circ$ \\  
 &Photon angle (FT)& $2.5^\circ < \theta < 4.5^\circ$ \\  
+&Electron detection (HTCC)& $5^\circ < \theta < 35^\circ$, $0^\circ < \phi < 360^\circ$ \\ 
+&Efficiency & $\eta > 99\%$ \\ 
 &Neutron detection (FD) & $5^\circ < \theta < 35^\circ $ \\
 &Efficiency& $\le  75\%$ \\  
 &Neutron detection (CD) &  $ 35^\circ < \theta < 125^\circ$ \\ 
@@ -1529,12 +1523,27 @@ Magnetic field & Solenoid & $B_0 = 5$~T\\
 & Torus & $\int Bdl = 0.5-2.7$~Tm at $5^\circ < \theta < 25^\circ$\\ \hline 
 \end{tabular}}
 \end{table*}
+\end{large}
+\section{Summary} 
+
+The design criteria, construction details, and operational performance characteristics of the large-acceptance
+CLAS12 dual-magnet spectrometer in Hall~B at Jefferson Laboratory have been described. The spectrometer is
+now used to study electron-induced reactions at the energy-doubled CEBAF electron accelerator. The spectrometer
+was commissioned in an initial period from late 2017 to early 2018, and is now routinely operated in support of
+a diverse scientific program in the exploration of the internal quark structure of nucleons and nuclei. The major
+performance criteria, most critically, the operation at  instantaneous luminosities up to $10^{35}$~cm$^{-2}$s$^{-1}$,
+have been met. These criteria are summarized in Table~\ref{clas12-performance}. Further improvements in the
+operational performance of CLAS12 will be realized during the ongoing experimental data analysis and detector
+optimization studies.
 
 \vspace{0.3cm}
 
 \noindent{\bf Acknowledgments}
 
-We would like to acknowledge the outstanding efforts of the staff of the Accelerator and the Nuclear Physics
+We like to thank Elton Smith for a critical reading of the manuscript and for many editorial suggestions. 
+\vspace{0.3cm}
+
+We also like to acknowledge the outstanding efforts of the staff of the Accelerator and the Nuclear Physics
 Division at JLab that have contributed to the design, construction, installation, and operation of the CLAS12
 detector. This work was supported by the United States Department of Energy under JSA/DOE Contract
 DE-AC05-06OR23177. This work was also supported in part by the U.S. National Science Foundation, the State
