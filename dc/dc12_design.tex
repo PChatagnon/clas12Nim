@@ -31,22 +31,22 @@ tracking system.
 To cover as much of the hadronic center-of-mass region as possible, the CLAS12 Forward 
 Tracker must provide tracking for charged particles emitted at polar angles 
 from 5$^\circ$ to 40$^\circ$.  This is complemented by the angular coverage of
-the central tracking system, which covers polar angles from  35$^\circ$ to approximately 120$^\circ$.
+the central tracking system, which covers polar angles from  35$^\circ$ to approximately 125$^\circ$.
 
 In addition to large acceptance, our experimental program requires
-small systematic errors.  To measure our electroproduction cross sections
+small systematic uncertainties.  To measure our electroproduction cross sections
 to an accuracy of a few percent, we must know the scattered electron's
 momentum to $1\%$ and its angle to 1~mrad.  
 
 We need even better momentum resolution on the scattered
 electron (with momentum up to 10~GeV) to be able to identify particles
 by missing mass, an important technique in exclusive reaction studies.
-We performed tracking simulations assuming perfect knowledge of drift chamber
+We performed tracking simulations assuming perfect knowledge of the drift chamber
 location (alignment) and perfect knowledge of the magnetic field, and assuming
 that the hit resolution in each of the drift chamber layers was $250~\mu$m.
 These calculations are shown in Fig.~\ref{simulated-resolution}, where we
-plot the estimated fractional momentum resolution (left axis) versus momentum
-for different incoming angles (right axis).
+plot the estimated fractional momentum resolution (left axis) vs. momentum
+for different incoming angles (right axis) as a function of momentum.
 
 %%%%%%%%%%%%%%%%%%%%%% Figure : generic chamber sketch %%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htpb]   
@@ -55,7 +55,7 @@ for different incoming angles (right axis).
 \put(25,-65)
 {\hbox{\includegraphics[width=1.5\columnwidth,natwidth=610,natheight=642]{img/simulated-resolution.png}}}
 \end{picture}
-\caption{\small{Estimated fractional momentum resolution plotted versus momentum, for different
+\caption{\small{Estimated fractional momentum resolution plotted vs. momentum for different
 track angles.}}
 \label{simulated-resolution}
 \end{figure}   
@@ -64,12 +64,12 @@ track angles.}}
 These simulations led to our goal of $dp/p \approx 0.3\%$ 
 for electrons emitted at small angles ($7^{\circ}$) and high momentum (10~GeV).
 This requires very good position resolution per hit (on the order of 250~$\mu$m),
-very good positional alignment of the chambers ($\approx$50~$\mu$m) and very good knowledge
-of $\int Bdl$ on the order of 0.2\%.  These goals drive our calibration efforts; for more
-infomation see Section~\ref{calibration}.
+very good positional alignment of the chambers ($\approx$50~$\mu$m), and very good knowledge
+of $\int \!\!Bdl$ on the order of 0.2\%.  These goals drive our calibration efforts; for more
+information see Section~\ref{calibration}.
 
 Table~\ref{fwd-dc-physics-specifications} lists the physics goals for the main CLAS12 program
-and the resulting design specifications that will allow us to achieve these goals.
+and the resulting drift chamber design specifications that will allow us to achieve these goals.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \small{
@@ -86,7 +86,7 @@ Small       & Luminosity = $10^{35}$~cm$^{-2}$s$^{-1}$  & six 6-layer superlayer
 cross sections  & high efficiency & $> 95\%$ layer efficiency \\ \hline
 large acceptance   & $\delta\phi = 50\%$ at $5^\circ$ & thin endplates\\ \hline
 \end{tabular}
-\caption{\small{Physics goals and the resulting physics and design specifications.}}
+\caption{\small{Physics goals and the resulting physics and drift chamber design specifications.}}
 \label{fwd-dc-physics-specifications}
 \end{center}
 \end{table}
@@ -105,20 +105,19 @@ large acceptance   & $\delta\phi = 50\%$ at $5^\circ$ & thin endplates\\ \hline
 Because the previous CLAS drift chamber system operated 
 successfully for 15~years, we re-used many of the design concepts and 
 most of the utility infrastructure, including
-parts of the gas mixing and handling system, the high-voltage 
-and low-voltage systems, and many of the high voltage and signal cables. 
+parts of the gas mixing and handling system, the high voltage 
+and low voltage systems, and many of the high voltage and signal cables. 
 Refer to our article on the previous CLAS detector~\cite{clasnim} and our article 
-on the previous drift chambers themselves~\cite{dcnim} for details of the 
-previous detector and chambers.  
+on the previous drift chambers themselves~\cite{dcnim} for details.
 
 We kept the same chamber layout as in CLAS:
 the forward-tracking system consists of three regions divided into six
 sectors as shown in Fig.~\ref{chambers-and-torus}; located just before, inside, 
 and just outside the torus field volume, named Regions~1, 2, 
 and 3 (and referred to as R1, R2, and R3), respectively.  
-Each chamber has its wires arranged in two superlayers (SL) of
+Each chamber has its wires arranged in two superlayers (SLs) of
 six layers each, with the wires in the two superlayers strung with 
-$\pm$6$^\circ$ stereo angles, respectively.  The cell structure is 
+$\pm$6$^\circ$ stereo angles to each other.  The cell structure is 
 hexagonal, that is, each sense wire is surrounded by six field wires.  This 
 arrangement offers good resolution with very good pattern recognition properties.  
 
@@ -134,10 +133,10 @@ Table~\ref{fwd-dc-design-parms} lists the main design parameters for each
 region of the CLAS12 drift chambers.  For the purposes of simulating 
 track resolutions, we assumed that the position resolution of the individual 
 drift cells would be 250~$\mu$m.  The material budget for multiple scattering
-consists of about 0.02 radiation lengths before the R1 chambers due to an assumed 5cm LH2
-target, the gas and low-mass mirrors in the Cerenkov counter and the remainder being air.
+consists of about 0.02 radiation lengths before the R1 chambers due to an assumed 5~cm LH$_2$
+target, the gas and low-mass mirrors in the Cherenkov counter, and the remainder of air.
 The total material in the R1, R2 and R3 chambers (each filled with a 90/10 mixture
-of argon/CO2) and the intervening air amounts to approximately 0.02 radiation lengths also.
+of argon/CO$_2$) and the intervening air also amounts to $\sim$0.02 radiation lengths.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \small{
@@ -166,26 +165,26 @@ The CLAS12 drift chambers share some design characteristics with the previous CL
 \item {\bf Wire Layout}
 \begin{itemize}
 \item ``brick-wall'' wire layout resulting in individual hexagonally shaped
-drift cells in a plane perpendicular to the wire direction
-\item sense wire layers are grouped into two ``superlayers'' of 6 layers each
+drift cells in a plane perpendicular to the wire direction;
+\item sense wire layers are grouped into two ``superlayers'' of 6 layers each;
 \item the ``endplates'' on the two sides of the chamber are tilted 
-at approximately 60$^\circ$ with respect to each other
+at $\sim$60$^\circ$ with respect to each other.
 \end{itemize}
 \item {\bf Chamber Body Design}
 \begin{itemize}
 \item to maximize the active volume of the chamber, the ``dead areas'', e.g.
-the endplates and electronics boards, are kept as thin as possible
+the endplates and electronics boards, are kept as thin as possible;
 \item because of the possibility of large eddy currents and resultant
 force on the endplates in case of the quench of our torus magnet, we again
 use non-conducting Stesalit 4411W endplates for our R2 chambers; (``Stesalit'' is 
 a trademark of STESALIT AG for a disordered epoxy-fiberglass composite product.  See
-the NIM article \cite{dcnim} on the previous CLAS drift chambers for more information.)
+Ref.~\cite{dcnim} on the previous CLAS drift chambers for more information.);
 \end{itemize}
 \item {\bf Gas Choice:} 90:10 argon:CO$_2$ mixture.  We operate at a gas gain of 
 about $5 \times 10^4$.
 \end{itemize}
 
-Figure ~\ref{superlayout} is a schematic of the cell layout for a single superlayer.
+Figure~\ref{superlayout} is a schematic of the cell layout for a single superlayer.
 The wires are arranged in a ``brick wall'' pattern with one layer of guard wires,
 two layers of field wires, one layer of sense wires, another two layers of field
 wires, and so on, for a total of 2 guard wire layers, 14 field wire layers and
@@ -204,47 +203,46 @@ surrounded by 6 field wires.
 \end{figure}   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \subsubsection{Design Improvements Compared to the Previous CLAS Chambers}
 
-To improve the chambers' peformance we made some important changes to the design:
+To improve the chambers' performance we made some important changes to the design:
 \begin{itemize}
 \item {\bf Mechanical Design}
 \begin{itemize}
-\item all chambers have the same, roughly equilateral triangular, shape
+\item all chambers have the same, roughly equilateral triangular, shape;
 \item the previous CLAS chambers were interconnected to each other (R1) or 
 connected directly to the torus (R2).  In the present chambers all of the wire tension
 is borne by the endplates and thus they can be independently mounted.
 The key to this improvement is the use of  
 ultra-stiff endplate assemblies that obtain their stiffness 
-by a flanged design
+by a flanged design;
 \item all chambers are independent and self-supporting, allowing easy
 maintenance and repair.  The chambers are attached to the torus cryostat using 6 independent
-rods arranged in a ``ball and socket'' linkage system, enabling the chambers to
+rods arranged in a ``ball-and-socket'' linkage system, enabling the chambers to
 be moved out to their maintenance position and back to the operating 
-postion by turning one precision turn-buckle assembly
+position by turning one precision turn-buckle assembly.
 \end{itemize}
 \item {\bf Cell Design and Wire Layout}
 \begin{itemize}  
 \item For the previous CLAS detector, the $\phi$ resolution times $\sin \theta$ was about two 
 times larger than the $\theta$ resolution.  To have more equal resolution in 
 the two angles, we doubled our stereo angle from 0 and 6$^\circ$ to 
-$\pm$6$^\circ$
-\item all chambers are planar, with the first ``superlayer'' (of 6 layers)
-tilted at a 6$^\circ$ stereo angle, and the second superlayer at a -6$^\circ$ stereo angle
+$\pm$6$^\circ$;
+\item all chambers are planar, with the first superlayer (of 6 layers)
+tilted at a 6$^\circ$ stereo angle, and the second superlayer at a -6$^\circ$ stereo angle;
 \item all wires within one superlayer are parallel to each other, thus
 every cell in one superlayer is identical, making it easier to model
-and fit the distance to time response
+and fit the distance-to-time response.
 \end{itemize}
 \item {\bf Wire Choice}
 \begin{itemize}
-\item all chambers are strung with 30~$\mu$m gold-plated tungsten wire,
+\item all chambers are strung with 30-$\mu$m gold-plated tungsten wire,
 considerably tougher and easier to handle than our previous choice 
-of 20~$\mu$m wire 
-\item the choice of the cathode (``field'') wire is 80~$\mu$m
+of 20-$\mu$m wire;
+\item the choice of the cathode (``field'') wire is 80-$\mu$m
 gold-plated copper-beryllium, tougher and with better surface properties than our previous
-choice of 140~$\mu$m gold-plated Aluminum wire
-\item  Our choice of guard wire is 140~$\mu$m diameter, gold-plated
+choice of 140-$\mu$m gold-plated aluminum wire;
+\item  Our choice of guard wire is 1400$\mu$m diameter, gold-plated
 copper-beryllium.  These wires were strong enough that we pre-tensioned 
 the chambers using only the guard wires; a simplification in the process.
 \end{itemize}
@@ -272,29 +270,11 @@ Self-supporting design & Easier maintenance & 1 - 2~mm bowing of endplates \\ \h
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}[htbp]
-%\vspace{14.0cm}
-%\special{psfile=img/garfield1.eps hscale=30 vscale=27 hoffset=40 voffset=165}
-%\special{psfile=img/garfield2.eps hscale=30 vscale=27 hoffset=40 voffset=-5}
-%\special{psfile=img/garfield3.eps hscale=30 vscale=27 hoffset=230 voffset=165}
-%\special{psfile=img/garfield4.eps hscale=30 vscale=27 hoffset=230 voffset=-5}
-%\caption{\small{GARFIELD calculations of the electric field lines (top)
-%and drift time vs. drift distance (bottom) for a Region~3 drift cell.  The 
-%left plots show the configuration with a 20-$\mu$m diameter sense wire and 
-%the right plots show the configuration with a 30-$\mu$m diameter sense wire.
-%The high voltages were set to provide the same gas gain for each
-%configuration.}}
-%\label{garfield-20-vs-30-micron}
-%\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \subsubsection{Wire Diameter}
 
 One of the most significant design changes was the decision 
-to use 30~$\mu$m diameter sense wire rather than the previously used 
-20~$\mu$m wire. This should make the chambers more resistant to wire 
+to use 30-$\mu$m diameter sense wire rather than the previously used 
+20-$\mu$m wire. This should make the chambers more resistant to wire 
 breakage.  The larger radius of the sense wires means that higher 
 voltages will be required to achieve the same gas gain, see
 Section~\ref{determine-operating-parameters} for more details.
@@ -304,27 +284,6 @@ and/or higher rates of cathode emission from the field wire surfaces.
 No such effects were seen.
 We discuss the wire choice in more detail in Section~\ref{construction}.
 
-%In addition to being tougher than 20-$\mu$m wire, the higher voltages 
-%(~ 250 V higher)
-%required for 30-$\mu$m wire to achieve the same gain will result in
-%higher and more constant drift velocities.
-%Fig.~\ref{garfield-20-vs-30-micron} shows GARFIELD calculations for a Region~3 drift cell
-%with both a 20-$\mu$m and a 30-$\mu$m diameter sense wire.  Here the
-%cells with the thicker sense wire will have a significantly higher drift 
-%velocity, which reduces the time window, and hence the 
-%chamber occupancy.
-
-%%%%%%%%%%%%%%%%%%%%%% Figure : garfield-20-30-micron %%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}
-%\vspace{4.5cm}
-%\begin{picture}(50,50)
-%\put(-10,10)
-%{\hbox{\includegraphics[width=0.5\columnwidth,natwidth=610,natheight=642]{garfield-20-30-micron.png}}}
-%\end{picture}
-%\caption{\small{Plots of field lines and isochrones (top) or drift time vs.
-%distance (bottom).  Calculations are for 20 $\mu m$ wire (left) or 30 $\mu m$ (right).}}
-%\end{figure}   
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
  

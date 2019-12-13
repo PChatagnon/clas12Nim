@@ -23,7 +23,7 @@ our overall time-to-distance calibration.
 First, the digitized time is corrected for a number of effects, and this corrected time is converted
 to a DOCA, by a pre-calculated time-to-distance function.  In this subsection we 
 explain the time corrections, the function used to calculate time as a 
-function of DOCA and how we calibrate the parameters of this function.
+function of DOCA, and how we calibrate the parameters of this function.
 
 \subsubsection{Time Corrections}
 
@@ -33,16 +33,16 @@ reached the sense wire.
 The drift time is given by the following expression:
 \begin{equation} 
 \label{tdrift}
-t_{drift} = t_{tdc} - t_{start} - t_{0} - t_{flight} - t_{prop} - t_{walk}
+t_{drift} = t_{tdc} - t_{start} - t_{0} - t_{flight} - t_{prop} - t_{walk},
 \end{equation}
 
 \noindent
 where $t_{tdc}$ is the raw time measured by the TDC, $t_{start}$ is the event start time (the time at which
 the triggering particle left the target),  $t_0$ is the fixed-time (cable) delay for the wire, $t_{flight}$ is the 
 flight time of the particle from the interaction vertex to the wire, $t_{prop}$ 
-is the signal propagation time along the wire and $t_{walk}$ is a 
-shift of the recorded hit time to larger values which depends on the
-ion density of the track (beta-dependent) and the distance of the track to the wire. 
+is the signal propagation time along the wire, and $t_{walk}$ is a 
+shift of the recorded hit time to larger values that depends on the
+ion density of the track (velocity or $\beta$-dependent) and the distance of the track to the wire. 
 With a trigger based on detecting an electron in the CLAS12 detector, the event start time is 
 given by the Forward Time-of-Flight system's~\cite{ftof-nim} counter time for the scattered
 electron, corrected for the calculated flight time of this electron from the beam-target vertex.
@@ -64,7 +64,7 @@ Note, we refer to two variants of DOCA: one is ``TRKDOCA'', which is the
 fit value of the track's closest approach to the wire and the other is ``DOCA'',
 which is calculated from the measured time for the wire hit.
  
-A best fit to a scatterplot of TRKDOCA versus time should define the time to
+A best fit to a scatterplot of TRKDOCA vs. time should define the time to
 distance function of the drift cells. However, several factors 
 complicate this analysis. First, the TRKDOCAs obtained from the fitted 
 tracks are biased quantities since the initial estimate of the drift-velocity function 
@@ -111,14 +111,14 @@ minimum velocity (and thus the inflection point on the $t$ vs. $x$ curve).
 This inflection point of the curve occurs at a
 definite value of distance within the cell and not at a definite value of time;
 \item the time walk due to finite ionization is
-naturally parameterized as a function of distance and not as a function of time; and
+naturally parameterized as a function of distance and not as a function of time;
 \item  a time correction for wires in a magnetic field (which
-scales like $B^2$) can simply be added to the nominal functional form.
+scales like the square of the magnetic field strength $B^2$) can simply be added to the nominal functional form.
 \end{itemize}
 
 This single functional form is used to fill two tables: 
 \begin{enumerate}
-\item a table of time indexed by distance for use in the simulation, and 
+\item a table of time indexed by distance for use in the simulation;
 \item a table of distance indexed by time for use by the track reconstruction code.
 \end{enumerate}
 
@@ -141,7 +141,7 @@ corresponding drift time is referred to as $Tmax$ and occurs when TRKDOCA is at 
 called $Dmax$.
 
 A second constraint is that the velocity near the wire is the ``saturated drift velocity'' for our gas
-mixture, 90$\%$ argon - 10$\%$ CO$_2$.  We call this parameter $V_0$.
+mixture of 90\% argon - 10\% CO$_2$.  We call this parameter $V_0$.
 
 A third constraint is imposed by the fact that there is a definite point along
 a line from the sense wire to a neighbor field wire at which the electric field 
@@ -162,25 +162,25 @@ of $\approx 0.64 ~Dmax$; and
 \end{enumerate}
 
 In this way we convert our original parameters, $a$, $b$, $c$, and $d$ to the physically meaningful
-parameters $Tmax$, $V_0$, $r$, and $V_{mid}$ where $r$ has the value 0.64 (the fractional distance
+parameters $Tmax$, $V_0$, $r$, and $V_{mid}$, where $r$ has the value 0.64 (the fractional distance
 at which the inflection point occurs), which can in principle also be varied.
 These secondary (physically meaningful) parameters are the ones that are used
-by our distance to time calibration program.
+by our distance-to-time calibration program.
 
 In particular, we can compare our results for $V_0$ (the drift velocity at high electric field strength
-($\geq 1000 V/cm$)) and $V_{mid}$ (the drift velocity at the point of minimum electric field strength($\approx$~250 V/cm))
+($\geq$1000~V/cm)) and $V_{mid}$ (the drift velocity at the point of minimum electric field strength($\approx$~250~V/cm))
 with published results \cite{drift-velocity-results}.  This is helpful in the early stages of calibration.
 
 \subsubsection{Dependence of Distance-to-Time Function on Local Angle}
 
 The preceding was the derivation of the formula for time as a function
-of drift distance for tracks with a local angle $\alpha = 30^\circ$ and for magnetic field, $B$=0.
-Tracks with local angle, $\alpha$ less than $30^\circ$ have a maximum distance that is
+of drift distance for tracks with a local angle $\alpha = 30^\circ$ and for magnetic field $B$=0.
+Tracks with local angle $\alpha$ less than $30^\circ$ have a maximum distance that is
 smaller than $Dmax$.  
 
 Figure~\ref{xvst} provides an illustration of the local-angle dependence
-of distance versus time.  When the time is equal to $Tmax$ the distance is equal to
-the largest value for the local angle; that is, $Dmax_{\alpha}$.  Also note that by
+of distance vs. time.  When the time is equal to $Tmax$ the distance is equal to
+the largest value for the local angle, namely, $Dmax_{\alpha}$.  Also note that by
 simple geometrical reasoning, $Dmax_{\alpha} = Dmax \cdot \cos(30^\circ-\alpha)$.
 We assume that at times less than $Tmax$ and distances less than $Dmax$, the calculated
 distances still vary linearly as $\cos(30^\circ-\alpha)$.  This angle dependence is built into
@@ -188,13 +188,13 @@ our functional form.
 
 Figure~\ref{garfield-isochrones} shows a 0$^\circ$ track and a 30$^\circ$ track, both at maximum
 distance from the sense wire. They will produce
-a signal hit with the same time $Tmax$ even though their distance-of-closest-approach 
+a signal hit with the same time $Tmax$ even though their DOCA
 differs by a factor of $\cos 30^\circ$.  If $Dmax$ is the distance from sense to field wire (and the maximum
 DOCA possible for a 30$^\circ$ track), then $Dmax\cdot\cos(30^\circ-\alpha)$ is the maximum
 DOCA for a track with local angle $\alpha$.  Call this distance $Dmax_{\alpha}$.  
-We derived the function for time versus distance for a particular local angle, $\alpha$, by
+We derived the function for time vs. distance for a particular local angle $\alpha$ by
 assuming the same functional form as for $\alpha = 30^\circ$ but 
-with a {\bf different coefficient, d}, which 
+with a different coefficient $d$, which 
 satisfies the constraint that  $F(Dmax_{\alpha},\alpha) = Tmax$.
 
 Using this constraint, we can solve for $d_{\alpha}$ in terms of the coefficients $a$, $b$, $c$, and $d$,
@@ -205,16 +205,16 @@ d_{\alpha} = {{Tmax - a ~Dmax_{\alpha} - b ~Dmax_{\alpha}^2 - c ~Dmax_{\alpha}^3
 \end{equation}
 
 Using this formula for $d_{\alpha}$ we can derive the time as a function of distance and local
-angle, $\alpha$ as shown in Fig.~\ref{xvst}.  See, for instance, the upper-left sub-figure, 
+angle $\alpha$ as shown in Fig.~\ref{xvst}.  See, for instance, the upper-left sub-figure, 
 which shows the time as function of distance for 5 different angles between $0^\circ$ and 
 $30^\circ$, equally spaced in $\cos (30^\circ-\alpha)$.  Note two things:
 \begin{enumerate}
-\item for each angle $\alpha$ the time is $Tmax$ at $Dmax_{\alpha}$, and
-\item the distances for a given time vary with angle, $\alpha$, as $\cos (30^\circ-\alpha)$.
+\item for each angle $\alpha$ the time is $Tmax$ at $Dmax_{\alpha}$;
+\item the distances for a given time vary with angle $\alpha$ as $\cos (30^\circ-\alpha)$.
 \end{enumerate}
 
-The general functional form for time as a function of distance and local angle, $\alpha$
-is given by
+The general functional form for time as a function of distance and local angle $\alpha$
+is given by:
 \begin{equation}
 \label{tfunctionofxandlocalangle}
 t(x,\alpha) = a x + b x^3 + c x^3 + d_{\alpha} x^4.
@@ -232,24 +232,24 @@ magnitude of the magnetic field, and not its direction, following a study
 described in Ref.~\cite{MM-IEEE}.  
 
 The rotation of the isochrones is parameterized as a shift in the effective
-entrance angle.  
+entrance angle as:  
 \begin{equation} 
 \label{eq-bcorrn-to-ang}
 \alpha_b = \alpha_0 + \cos^{-1}(1 - b_{rot} B), 
 \end{equation}
 
-where $\alpha_0$ is the actual entrance angle, $b_{rot}$ is a parameter equal to $0.02$ deg/T and $B$ is the magnetic field strength in Tesla; angular
-units are degrees.
+where $\alpha_0$ is the actual entrance angle, $b_{rot}$ is a parameter equal to 0.02$^\circ$/T, and $B$ is the
+magnetic field strength in Tesla.
 
 %%%%%%%%% Figure : TRKDOCA vs. Drift Time -- Angle and Field Dependence %%%%%%%%%%
 \begin{figure}[htb]
 \vspace{10.0cm} 
 \special{psfile=img/tvsx.eps hscale=60 vscale=60 hoffset=25 voffset=0}
-\caption{\small{Scatterplot of the corrected drift time versus TRKDOCA for 
-(upper-left) R1, showing curves for various local angles from 30$^{\circ}$
-(righmost curve) to 0$^{\circ}$ (leftmost curve).  (Upper-right) for R2; 
-additionally showing 3 bands for B-field magnitudes of 0, 1, 1.5 T.
-(Lower-left) for R3 with the inflection point identified.}}
+\caption{\small{Scatterplot of the corrected drift time vs. TRKDOCA for 
+(upper left) R1, showing curves for various local angles from 30$^{\circ}$
+(right-most curve) to 0$^{\circ}$ (left-most curve).  (Upper right) for R2; 
+additionally showing 3 bands for B-field magnitudes of 0, 1, 1.5~T.
+(Lower left) for R3 with the inflection point identified.}}
 \label{xvst}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -264,10 +264,10 @@ t(B) = t(0) + b_{mag} B^2,
 
 \noindent
 where $b_{mag}$ is an adjustable parameter that is determined by calibration with a
-value of approximately $100~ns/Tesla^2$ and $B$ is the magnetic field strength in Tesla. In this expression, the
+value of approximately 100~ns/T$^2$ and $B$ is the magnetic field strength in Tesla. In this expression, the
 first term is the time calculated assuming $B$=0, and the second term is the time increase due to the $B$
 field. For the R1 and R3 functions, no magnetic field dependence is included, as the chambers are located
-outside the torus cryostats in regions where field strengths are less than 0.2 Tesla.  
+outside the torus cryostats in regions where field strengths are less than 0.2~T.  
 See Ref.~\cite{qin96} for a related
 parameterization of the change in the distance at a particular time due to a magnetic field. 
 
@@ -278,11 +278,11 @@ time from the sense wire and the distance-of-closest-approach (TRKDOCA) to the
 sense wire.  A best fit to the dependence of time on TRKDOCA determines the
 values of the parameters of the drift-velocity function. 
 We determine the optimized values of these function parameters by fitting
-a histogram of TRKDOCA vs. time, storing the fit parameters in a data-base, re-doing
+a histogram of TRKDOCA vs. time, storing the fit parameters in a database, re-doing
 the track fitting, and iterating.
 
 To illustrate our fits, in Fig.~\ref{time-vs-doca} we show a plot of
-the data (time vs. TRKDOCA) and overplotted is the function (time vs. DOCA).
+the data (time vs. TRKDOCA) and over-plotted is the function (time vs. DOCA).
 The function does a fair job of following the shape of the data.
 
 %%%%%%%%% Figure : calcdoca and trkdoca plotted vs time %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -292,7 +292,7 @@ The function does a fair job of following the shape of the data.
 \put(0,-10)
 {\hbox{\includegraphics[width=0.8\textwidth,natwidth=610,natheight=642]{img/time-vs-doca.png}}}
 \end{picture}
-\caption{\small{A plot of TRKDOCA vs. time from our track fits; overplotted in darker symbols
+\caption{\small{A plot of TRKDOCA vs. time from our track fits. Over-plotted in darker symbols
 is the calculated distance (DOCA) vs. time.}}
 \label{time-vs-doca}
 \end{figure}
@@ -301,26 +301,26 @@ is the calculated distance (DOCA) vs. time.}}
 \subsubsection{Using the Distance-to-Time Function in Reconstruction}
 
 The track reconstruction program needs to know the expected distance as a function
-of time. However, as explained in the previous section, we will have calibrated and fitted
+of time. However, as explained in the previous section, we have calibrated and fit
 the observed time as a function of distance. So, we numerically invert the $t=f(x)$
 function in order to fill a table of $x$ (real number) as a function of the time index (integer).
 
 This means that we:
 \begin{itemize}
-\item {\bf Fill} our time-to-distance tables for different local angles using the function, and
-\item {\bf Interpolate} between time-to-distance tables for different local angles to obtain
-the calculated distance at a particular local angle, and for R2
-\item {\bf Interpolate} between different B-field tables.
+\item Fill our time-to-distance tables for different local angles using the function;
+\item Interpolate between time-to-distance tables for different local angles to obtain
+the calculated distance at a particular local angle;
+\item Interpolate for R2 between different $B$-field tables.
 \end{itemize}
 
-We interpolate between different local angle tables, linearly in $\cos(30^\circ-\alpha)$.
+We interpolate between different local angle tables linearly in $\cos(30^\circ-\alpha)$.
 For example if ``$X_0$'' is the distance (at a particular time) for a table filled for tracks with local
 angle of 0$^\circ$ and ``$X_{30}$'' is the corresponding quantity for a table of 30$^\circ$ tracks, then
 \begin{equation} 
 \label{eq-extrap30}
 X(t,\alpha) = X_0 + (X_{30}-X_0) (\cos(30^\circ-\alpha) - \cos(30^\circ)) / (\cos(0^\circ) - \cos(30^\circ)).
 \end{equation}
-We interpolate between different B-field tables linearly in $B^2$.
+We interpolate between different $B$-field tables linearly in $B^2$.
 
 \subsection{Alignment Procedures and Corrections for Geometrical Distortions}
 \label{align}
@@ -338,24 +338,24 @@ To adjust the chamber geometry parameters we analyzed
 Tracks were found and fitted with our standard track reconstruction~\cite{recon-nim} package.
 For various bins in the angle of the track, we measured the shifts of the
 track residual means as a function of layer number. 
-Before correcting for mis-alignment in software, the data showed significant 
+Before correcting for misalignment in software, the data showed significant 
 displacements of the means from zero, as large as 2~mm; see Fig.~\ref{resids-vs-layer-before}.
 
 To analyze the data we used the concept of simulating trial residual
-distributions by deliberately mis-aligning the chambers.
+distributions by deliberately misaligning the chambers.
 On a first pass through
-the data we used misaligment parameters (shifts and rotations of individual
+the data we used misalignment parameters (shifts and rotations of individual
 chambers) set to zero.  On subsequent passes, we deliberately misaligned
 a particular chamber by a particular offset in position or angle and 
 produced a second set of plots of residual mean vs. layer.  We ran 18 passes
-through the data, adjusting all combinations of region (1, 2, 3) and
+through the data, adjusting all combinations of Region (1, 2, 3) and
 of offset type $\delta$x, $\delta$y, $\delta$z, $\theta$x, 
 $\theta$y, $\theta$z, one at
 a time.  The offsets in $x$, $y$, and $z$ were 2~mm, and the angular rotations
 were 0.2$^\circ$.  These 2~mm shifts and 0.2$^\circ$ rotations were
 called ``unit distortions''.
 
-We subtracted the pass1 (nominal) residual distribution from a pass ``i'' distribution
+We subtracted the pass~1 (nominal) residual distribution from a pass ``i'' distribution
 to give a ``change of residual'' distribution caused by a given ``unit distortion''.
 We then fit the observed residual distribution from the data to a weighted
 sum of the 18 ``change of residual'' distributions.  In principle, we
@@ -364,8 +364,8 @@ could have had 18 free parameters, but in practice we had 12 free parameters:
 where $\theta y$ is a tilt of a chamber.  We did not vary the yaw ($\theta$x) and 
 roll ($\theta$z) degrees of freedom.
 
-Fig.~\ref{resids-vs-layer-before} plots the mean of the residuals of a straight-line
-fit to the tracks versus layer (1 - 36 layers of the chambers), for one sector (in this
+Figure~\ref{resids-vs-layer-before} plots the mean of the residuals of a straight-line
+fit to the tracks vs. layer (1 - 36 layers of the chambers) for one sector (in this
 case sector 1). The misalignment is plainly visible as a noticeable shift of the residual means
 from zero. The bulk of the offsets occurs in shifts of groups of 12 layers, which
 corresponds to one physical chamber (a R1 chamber has layers 1-12, R2 from 13-24, and
@@ -378,8 +378,9 @@ R3 from 25-36).
 \put(15,0)
 {\hbox{\includegraphics[width=1.\textwidth,natwidth=610,natheight=642]{img/resids-vs-layer-before.png}}}
 \end{picture}
-\caption{\small{A plot of the fit residual mean versus layer, before alignment.  The displacements occur in
-correlated groups, layers (1-12, 13-24 and 25-36) which corresponds to the three physical chambers, R1, R2 and R3.}}
+\caption{\small{A plot of the fit residual mean vs. layer for the Sector~1 drift chambers before (red squares) and
+    after (blue crosses) alignment.  The displacements occur in correlated groups, layers (1-12, 13-24, and 25-36),
+    which correspond to the three physical chambers, R1, R2, and R3.}}
 \label{resids-vs-layer-before}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -398,8 +399,8 @@ distance of closest approach to the beam-target vertex.  This requirement, that 
 tracks, regardless of sector, should point to a common beam-target vertex, allowed us to
 align the chambers sector to sector.
 
-Fig.~\ref{resids-vs-layer-after} shows the shifts of the means that remain after we have
-aligned the chambers; shown for all sectors.  The RMS deviations of the means from zero average to about 50~$\mu$m.
+Figure~\ref{resids-vs-layer-after} shows the shifts of the means for all sectors that remain after we have
+aligned the chambers. The RMS deviations of the means from zero average to about 50~$\mu$m.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[bhtp]
@@ -408,7 +409,8 @@ aligned the chambers; shown for all sectors.  The RMS deviations of the means fr
 \put(-5,-15)
 {\hbox{\includegraphics[width=0.6\textwidth,natwidth=610,natheight=642]{img/resids-vs-layer-after.png}}}
 \end{picture}
-\caption{\small{Plots of the fit residual mean versus layer, before alignment (red squares) and after alignment (blue crosses), for each of the six sectors.
+\caption{\small{Plots of the fit residual mean vs. layer, before alignment (red squares) and after alignment (blue
+    crosses), for each of the six sectors.
 }}
 \label{resids-vs-layer-after}
 \end{figure}
@@ -423,8 +425,8 @@ the chambers after alignment was approximately 65~$\mu$m.
 \label{geom_distortions}
 
 The drift chamber internal geometry (placement of wires, etc.) was checked by detailed
-surveys of the endplate, and of the endplates position with respect to the survey holes
-located on the nose- and back-plates during construction of the full chamber assembly
+surveys of the endplate, and of the endplate positions with respect to the survey holes
+located on the noseplate and backplate during construction of the full chamber assembly
 and before stringing.
 As discussed in the previous section, we surveyed the chambers into place on the
 torus and also applied a ``straight-track'' analysis to fine-tune our knowledge
@@ -432,11 +434,11 @@ of each chamber's geometrical location and orientation.
 
 In addition to these alignment procedures, which treat each chamber as a rigid, fixed
 geometrical shape, we also measured and corrected two important chamber distortions:
-wire sagging due to gravity, and bowing inward of the endplates in response to the collective wire tension.
+wire sagging due to gravity and bowing inward of the endplates in response to the collective wire tension.
 
 The wire sag can be a large as 1~mm for our 4~m long wires.  For this small
 sag, it is sufficient to describe the shape of the sag as a parabola with
-maximum deviation from a straight line occurring at the mid-plane of the chamber.
+maximum deviation from a straight line occurring at the midplane of the chamber.
 This correction to the hit position can be applied at ``event time'' when the hit position along the wire 
 has been determined.
 
@@ -444,17 +446,17 @@ The second type of geometrical distortion is due to the bowing of the endplates.
 Because we wished to keep the endplates as thin as possible and because we did
 not wish to obstruct the active area of the chamber volume with material, the
 entire tension load was borne by the endplates, which had a simple support at the
-small nose-plate and a fixed support at the back-plate.
+small noseplate and a fixed support at the backplate.
 
 We did extensive engineering analysis and also post-stringing surveys to determine the
 size and pattern of this bowing.  Because our endplate planes are not perpendicular to
-the wires, when they bow they move the wire endpoints radially outward as well as
+the wires, when they bow they move the wire endpoints radially outward and 
 along the wire direction.  The amount varies
 according to the chamber position because the weight of the endplates also plays a role,
 but the bowing in the direction perpendicular to the wire could be as large as 1.5~mm.
-This point of maximum deflection occurs about a fourth of the way between the nose- and
-back-plates.  In Fig.~\ref{sketch-of-distortions} we show the engineering analysis
-for a R2 enplate, which agreed well with our direct surveys.
+This point of maximum deflection occurs about a fourth of the way between the noseplate and
+backplate.  In Fig.~\ref{sketch-of-distortions} we show the engineering analysis
+for a R2 endplate, which agreed well with our direct surveys.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
@@ -463,7 +465,7 @@ for a R2 enplate, which agreed well with our direct surveys.
 \put(65,5)
 {\hbox{\includegraphics[width=1.\textwidth,natwidth=610,natheight=642]{img/sketch-of-distortions.png}}}
 \end{picture}
-\caption{\small{An engineering analysis showing the endplate bowing due to wire tension.}}
+\caption{\small{An engineering finite element analysis showing the endplate bowing due to wire tension.}}
 \label{sketch-of-distortions}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -473,22 +475,24 @@ for a R2 enplate, which agreed well with our direct surveys.
 In the fall of 2016, we mapped the magnetic field of the torus magnet.
 We documented the equipment and measurements in an article on the
 construction of the torus (see Ref.~\cite{torus-ieee}) and in internal
-documents (see Ref.~\cite{magmapping}).
+documents (see Ref.~\cite{magmapping}). Further details are also included
+in Ref.~\cite{magnets-nim}.
 
 We used three independent 1-dimensional Hall probes mounted in a precision-machined
-Teflon holder.  The holder was a cylindrical solid that was moved in 5~cm increments
+Teflon holder.  The holder was a cylindrical solid that was moved in 5-cm increments
 by a precision stepper motor and screw assembly down a precision
-carbon fiber tube.  The probes were precisely spaced to be 5~cm apart in the $z$-dimension
+carbon-fiber tube.  The probes were precisely spaced to be 5~cm apart in the $z$-dimension
 (along the beamline), with one oriented perpendicular to the $z$-axis, another perpendicular to
 the $y$-axis (vertical), and the third perpendicular to the $x$-axis (horizontal).  In this way, we
 measured the $x$, $y$, and $z$ components of the magnetic field at $z$-points separated by 5~cm
 along the axis of the toroid.
 
-The carbon fiber tube was positioned in $x$ and $y$ by precision-machined positioning plates at the
+The carbon-fiber tube was positioned in $x$ and $y$ by precision-machined positioning plates at the
 upstream and downstream ends of the torus.  There were 24 precise hole locations on each
 plate (4 between each pair of torus coils).  Of the 4 holes in any one of the six sectors,
-one  was midway between coils at 30~cm radius (``Hole A''), one midway at 46.5~cm radius (``Hole C''), and the two others (``Holes B and D'')
-at 46.5~cm radius but displaced azimuthally by $\pm15^\circ$ away from the sector mid-plane.  
+one  was midway between coils at 30~cm radius (``Hole A''), one midway at 46.5~cm radius (``Hole C''),
+and the two others (``Holes B and D'')
+at 46.5~cm radius but displaced azimuthally by $\pm15^\circ$ away from the sector midplane.  
 In total, we measured $B_x$, $B_y$, $B_z$ at 40 locations in $z$ at each of the 24 $(x,y)$ locations,
 resulting in 2880 measurements.
 
@@ -497,17 +501,17 @@ magnetic model to the measurements to an accuracy of $0.5\%$.  Details of this
 analysis will be available in a future publication, but in summary we
 show in Fig.~$\ref{bmodel-bmeasured}$ the difference between
 the magnetic field from our models (in Gauss) and the measured value for the 160 measurements
-taken in one of the sectors between two coils.  The measuements in sub-figure A 
+taken in one of the sectors between two coils.  The measurements in sub-figure A 
 were taken at a radius of 30 cm, which is the region of the highest magnetic field ($\sim$2~T)
-and is most important for our low-angle, high-momentum tracks.  Sub-figures B, C and D were
+and is most important for our low-angle, high-momentum tracks.  Sub-figures B, C, and D are
 measurements taken at a radius of 46.5 cm.
 
-The (measured-modelled) value is shown for 3 models: our original
+The (measured-modeled) value is shown for 3 models: our original
 model (blue squares), our first adjusted model in which the average coil shape is modified but each
 coil is in its ideal location (black X's), and
 our latest model (purple triangles) in which each coil has the same, modified shape but 
 individual coil positions are adjusted to give the best agreement with the measurements. 
-At the time of publication, the average fractional difference between model and measurement 
+At this time, the average fractional difference between model and measurement 
 is about 0.5\%.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -517,10 +521,10 @@ is about 0.5\%.
 \put(20,-5)
 {\hbox{\includegraphics[width=.60\textwidth,natwidth=610,natheight=642]{img/bmodel-bmeasured.png}}}
 \end{picture}
-\caption{\small{A plot of Bmodel - Bmeasured (in Gauss) vs. z (mm) for the 160 measurement
-points within one sector (Sec1) of the torus magnet.  Sub-figure A corresponds to measurements at a radius
-of 30 cm and a $\Phi$ of $0^{circ}$ (on the midplane).  Sub-figures B, C, and D are for measurements taken at a radius
-of 46.5 cm and at $\Phi$ values of $-15,~0~and~15^{\circ}$, respectively. }}
+\caption{\small{A plot of Bmodel - Bmeasured (in Gauss) vs. $z$ (mm) for the 160 measurement
+points within one sector (Sector~1) of the torus magnet. Sub-figure A corresponds to measurements at a radius
+of 30~cm and a $\phi$ of 0$^\circ$ (on the midplane).  Sub-figures B, C, and D are for measurements taken at a radius
+of 46.5~cm and at $\phi$ values of -15$^\circ$, 0$^\circ$, and 15$^{\circ}$, respectively.}}
 \label{bmodel-bmeasured}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

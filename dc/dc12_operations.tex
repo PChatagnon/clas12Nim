@@ -9,10 +9,10 @@ electrons and target-generated X-rays, and be inexpensive because of the
 large volume of the chambers. Also, safety considerations motivate the use of
 a non-flammable gas mixture.  Additional concerns about small gas 
 leaks and the proximity of many photomultiplier tubes argued against helium 
-mixtures.  Ultimately a 90$\%$ argon - 10$\%$ CO$_2$ mixture was employed 
+mixtures.  Ultimately, a 90\% argon - 10\% CO$_2$ mixture was employed 
 for several reasons: the gas has a fairly high saturated drift velocity 
-($>$ 5~cm/$\mu$s), and it has an operating voltage plateau of several hundred 
-volts before breakdown occurs.  The 90$\%$/10$\%$ mixture 
+($>$5~cm/$\mu$s), and it has an operating voltage plateau of several hundred 
+volts before breakdown occurs.  The 90\%/10\% mixture 
 provides good efficiency and resolution, and reasonable collection times.
 
 \subsection{Selecting the Proper Operating Voltage}
@@ -22,9 +22,9 @@ First, we discuss how we divided the total voltage between our sense, field,
 and guard wires in order to mimic a cell layout with an infinite number of
 layers, achieving a situation in which all wires, regardless of layer, have
 the same gain.  Then we discuss our choice of the total sense to field
-wire difference in voltage; including the resulting gas gain and efficiency.
+wire difference in voltage, including the resulting gas gain and efficiency.
 
-\subsubsection{Dividing the Total Voltage between Sense, Field, and Guard Wires}
+\subsubsection{Dividing the Total Voltage Between Sense, Field, and Guard Wires}
 
 We ran our chambers with a mixed voltage scheme:
 positive high voltage on the sense wires, negative voltage on the
@@ -77,29 +77,13 @@ and 45~mV, respectively, for R1, R2, and R3.
 Once we set the discriminator thresholds, we performed a high voltage efficiency scan.  
 
 We determined the layer efficiency using the ``excluded layer'' method.  In one superlayer (of six layers) we
-found track segments by our usual fitting method, but ignoring the data from a pre-selected layer (layer 3, for
-example).  We then projected the track segment through that layer and determined whether or not the indicated
+found track segments by our usual fitting method, but ignored the data from a pre-selected layer.  We then
+projected the track segment through that layer and determined whether or not the indicated
 wire (or an adjacent one) had a good hit.
 We raised the sense to field wire potential in
 steps of 75~V and analyzed the data.  We set the operating value for the high voltage at the point at which
 the layer efficiency (the probability that a track passing through a layer will fire at least one wire) equaled or
 exceeded 97\%.
-
-% Fig.~\ref{effcy-vs-voltage} shows the ``plateau curve'' of efficiency
-%plotted versus voltage for one typical chamber and superlayer.  The layer efficiency at the chosen operating high
-%voltage point was between 97\% and 98\%.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{figure}[htbp]a
-%\vspace{5cm}
-%\begin{picture}(50,50)
-%\put(-10,10)
-%{\hbox{\includegraphics[width=0.35\textwidth,natwidth=610,natheight=642]{img/trace-routing-schematic.jpg}}}
-%\end{picture}
-%\caption{\small{Layer efficiency plotted versus high voltage for a typical superlayer.}}
-%\label{effcy-vs-voltage}
-%\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Operating Voltage and Gas Gain}
 \label{operating-voltage}
@@ -115,30 +99,30 @@ respectively, for R1, R2, and R3.
 \subsection{In-Run Performance Monitoring}
 
 The CLAS12 detector records 10,000 - 20,000~events/s during a typical experiment.
-It is important that the experimenters who are running the data-taking be quickly
+It is important that the experimenters who are overseeing the data-taking be quickly
 aware of any equipment malfunctions.
 
 Our first level of monitoring comes from our hardware alarms; see Section~\ref{utilities}
 to see images of the control panels for our gas system and power
 supplies.  Should these malfunction, an alarm is instantly shown on an alarm summary
-screen with GUI-driven information on the lower-lying hardware monitoring screens.
+screen with Graphical User Interface (GUI)-driven information on the lower-lying hardware monitoring screens.
 An experimenter is thus able to detect an alarm, and in most cases, reset the
 alarming supply, within minutes.
 
-Our second level of monitoring comes from on-line accumulating histograms.
+Our second level of monitoring comes from online accumulating histograms.
 Of these, the most important are our so-called ``Occupancy Plots'', which
-are simply histograms of wire hits plotted versus wire number and wire layer (summed over
+are simply histograms of wire hits plotted vs. wire number and wire layer (summed over
 six superlayers in each sector).  Malfunctions show up
 as depleted areas on the plots.
 
 Figure~\ref{layer-vs-wire} shows a histogram of wire hits plotted as
-a function of layer (1 - 36 on the vertical scale) versus wire number for each of the six
+a function of layer (1 - 36 on the vertical scale) vs. wire number for each of the six
 sectors.  A R1 chamber contains layers 1 - 12, a R2 chamber layers 13 - 24, and a 
 R3 chamber layers 25 - 36. The horizontal axis shows the wire number in each layer (1 - 112).  
 At a glance, one can inspect our 24,000 wires and determine
-that $>99\%$ of wires are functioning properly.  A few areas of inefficiency
+that $>$99\% of wires are functioning properly.  A few areas of inefficiency
 are visible in the upper middle graph, corresponding to
-two areas in which the HV was disconnected to stop excessive current draw.
+two areas in which the high voltage was disconnected to stop excessive current draw.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[hbtp]

@@ -1,6 +1,7 @@
 \documentclass{elsart}
 \usepackage[dvips]{color,graphics}
 \usepackage[pdftex]{graphicx}
+\usepackage{listings}
 \usepackage{lineno}
 \linenumbers
 %
@@ -8,7 +9,6 @@
 
 %\setcounter{tocdepth}{1} % Show sections
 %\setcounter{secnumdepth}{0}
-
 
 %\setcounter{bottomnumber} {1}
 %
@@ -44,7 +44,7 @@
 \author[jlab]{W.M. Taylor},
 \author[odu]{L.B. Weinstein},
 \author[jlab]{V. Ziegler}
-\address[jlab]{Thomas Jefferson National Accelerator Facility, Newport News, VA 23606, USA}
+\address[jlab]{Thomas Jefferson National Accelerator Facility, Newport News, VA 23606}
 \address[odu]{Old Dominion University, Norfolk, VA 23529}
 \address[isu]{Idaho State University, Pocatello, ID 83209}
 \address[msu]{Mississippi State University, Mississippi State, MS 39762}
@@ -54,18 +54,17 @@
 
 \date{\today}
 
-
 % -------------------------------------------------
 %abstract
 % -------------------------------------------------
 
 \input{dc12_abstract}
 
-\end{frontmatter}
-%\tableofcontents
-%\listoffigures
-%\listoftables
+\begin{keyword}
+CLAS12, drift chambers, tracking system. PACS: 29.40.Cs, 29.40.Gx
+\end{keyword}
 
+\end{frontmatter}
 
 \input{dc12_overview}
 
