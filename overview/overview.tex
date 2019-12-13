@@ -189,7 +189,7 @@ measurements of the transparency of nuclei to mesons and baryons, and how it cha
 
 \begin{figure*}[t]
 \centering
-\centerline{\includegraphics[width=1.8\columnwidth]{CLAS12-side-3.png}}
+\centerline{\includegraphics[width=1.8\columnwidth]{CLAS12-side.png}}
 \caption{(Color Online) The CLAS12 detector in the Hall~B beamline. The electron beam enters from the right and impinges on
 the production target located in the center of the solenoid magnet shown at the right (upstream) end of CLAS12,
 where other detector components are also visible. Scattered electrons and forward-going particles are detected
@@ -1415,6 +1415,40 @@ in the CND using the timing information.}
 
 \subsubsection{Acceptance and Performance of the Central Detector} 
 
+\begin{figure}[t!]
+\centerline{\includegraphics[width=1.0\columnwidth]{cvt-acceptance.png}}
+\caption{CVT acceptance and tracking performance. Left panels show the tracking efficiency and acceptances
+  for simulated muon tracks with no beam background (top), and the same for protons but with background
+  corresponding to a 50~nA beam current. The dips seen at 3 $\phi$ angles in the right panels are due
+  to the support structure separating the 3 BMT sectors, and are thus acceptance related. There are also 
+  small acceptance gaps between neighboring SVT modules that may account for some acceptance losses 
+  as well. }
+\label{cvt-acceptance}
+\vspace{0.3cm}
+\centerline{\includegraphics[width=0.8\columnwidth]{cvt-vertex.png}}
+\caption{Reconstructed $z$-vertices (coordinate along the beamline) for charged tracks in the Central Detector
+  from an empty target cell. The cell walls are clearly visible. The small downstream peak is from events generated
+  in a thin thermal shielding foil.}
+\label{cvt-vertex}
+\end{figure}
+\begin{figure}[t!]
+\centerline{\includegraphics[width=0.8\columnwidth]{CVT-elastic-protons.png}}
+\caption{Elastically scattered protons reconstructed in the CVT and CTOF. The proton peaks show the reflection of
+  the 6 FD sectors where the electrons are detected. In addition there is a 3-fold modulation (seen in the different
+  widths of 3 of the peaks) due to the 3 BMT sectors where protons are detected. The arrows indicate the physical 
+  position of support structures at the boundaries between two sectors. The azimuthal angle is the reconstructed angle 
+  at the production target. Due to the clockwise curvature of protons tracks in the solenoid magnetic field 
+  (see bottom graph in Fig.~\ref{cvt-tracks}) the support structures appear shifted by a certain $\Delta{\phi_p}$  
+  amount relative to their locations in the lab. (vertical axes are in arbitrary units).}
+\label{CVT-elastic-protons}
+%\end{figure}
+%\begin{figure}[t!]
+\centerline{\includegraphics[width=0.9\columnwidth]{elastic-electrons.png}}
+\caption{Elastically scattered electrons off protons from 2.2~GeV data in all of the FD sectors showing the
+  reconstructed $W$ distributions.}
+\label{elastic-electrons}
+\end{figure}
+
 The Central Detector system covers polar angles from $35^\circ$ to $125^\circ$ and the full $360^\circ$ in azimuth.
 Figure~\ref{cvt-acceptance} shows the acceptance and reconstruction efficiency for charged tracks from
 simulations with background incorporated according to the beam current. Figure~\ref{cvt-vertex}  shows the
@@ -1434,34 +1468,7 @@ in azimuthal angle, given by  $\phi_p = \phi_e + 180^\circ$  can be exploited to
 issues between the FD and CD tracking. Figure~\ref{CVT-elastic-protons} illustrates the correlation in elastic
 electrons detected in the FD sectors and protons reconstructed in the CD. 
 
-\begin{figure}[t!]
-\centerline{\includegraphics[width=1.0\columnwidth]{cvt-acceptance.png}}
-\caption{CVT acceptance and tracking performance. Left panels show the tracking efficiency and acceptances
-  for simulated muon tracks with no beam background (top), and the same for protons but with background
-  corresponding to a 50~nA beam current. The dips seen at 3 $\phi$ angles in the right panels are due
-  to the support structure separating the 3 BMT sectors, and are thus acceptance related. There are also 
-  small acceptance gaps between neighboring SVT modules that may account for some acceptance losses 
-  as well. }
-\label{cvt-acceptance}
-\vspace{0.3cm}
-\centerline{\includegraphics[width=0.8\columnwidth]{cvt-vertex.png}}
-\caption{Reconstructed $z$-vertices (coordinate along the beamline) for charged tracks in the Central Detector
-  from an empty target cell. The cell walls are clearly visible. The small downstream peak is from events generated
-  in a thin thermal shielding foil.}
-\label{cvt-vertex}
-\end{figure}
 
-\begin{figure}[ht]
-\vspace{0.3cm}\centerline{\includegraphics[width=0.8\columnwidth]{CVT-elastic-protons.png}}
-\caption{Elastically scattered protons reconstructed in the CVT and CTOF. The proton peaks show the reflection of
-  the 6 FD sectors where the electrons are detected. In addition there is a 3-fold modulation (seen in the different
-  widths of 3 of the peaks) due to the 3 BMT sectors where protons are detected. The arrows indicate the physical 
-  position of support structures at the boundaries between two sectors. The azimuthal angle is the reconstructed angle 
-  at the production target. Due to the clockwise curvature of protons tracks in the solenoid magnetic field 
-  (see bottom graph in Fig.~\ref{cvt-tracks}) the support structures appear shifted by a certain $\Delta{\phi_p}$  
-  amount relative to their locations in the lab. (vertical axes are in arbitrary units).}
-\label{CVT-elastic-protons}
-\end{figure}
 
 \subsection{Operating Experience}
 
@@ -1479,12 +1486,19 @@ Use of hydrogen as the target material allowed for the continuation of the commi
 production data at the same time. The ability to study exclusive processes plays an essential role in further optimizing
 the operational performance. 
 
-\begin{figure}[t!]
-\centerline{\includegraphics[width=0.9\columnwidth]{elastic-electrons.png}}
-\caption{Elastically scattered electrons off protons from 2.2~GeV data in all of the FD sectors showing the
-  reconstructed $W$ distributions.}
-\label{elastic-electrons}
-\end{figure}
+\section{Summary} 
+
+The design criteria, construction details, and operational performance characteristics of the large-acceptance
+CLAS12 dual-magnet spectrometer in Hall~B at Jefferson Laboratory have been described. The spectrometer is
+now used to study electron-induced reactions at the energy-doubled CEBAF electron accelerator. The spectrometer
+was commissioned in an initial period from late 2017 to early 2018, and is now routinely operated in support of
+a diverse scientific program in the exploration of the internal quark structure of nucleons and nuclei. The major
+performance criteria, most critically, the operation at  instantaneous luminosities up to $10^{35}$~cm$^{-2}$s$^{-1}$,
+have been met. These criteria are summarized in Table~\ref{clas12-performance}. Further improvements in the
+operational performance of CLAS12 will be realized during the ongoing experimental data analysis and detector
+optimization studies.
+
+
 
 \begin{large}
 \begin{table*}[t!]
@@ -1524,19 +1538,8 @@ Magnetic field & Solenoid & $B_0 = 5$~T\\
 \end{tabular}}
 \end{table*}
 \end{large}
-\section{Summary} 
-
-The design criteria, construction details, and operational performance characteristics of the large-acceptance
-CLAS12 dual-magnet spectrometer in Hall~B at Jefferson Laboratory have been described. The spectrometer is
-now used to study electron-induced reactions at the energy-doubled CEBAF electron accelerator. The spectrometer
-was commissioned in an initial period from late 2017 to early 2018, and is now routinely operated in support of
-a diverse scientific program in the exploration of the internal quark structure of nucleons and nuclei. The major
-performance criteria, most critically, the operation at  instantaneous luminosities up to $10^{35}$~cm$^{-2}$s$^{-1}$,
-have been met. These criteria are summarized in Table~\ref{clas12-performance}. Further improvements in the
-operational performance of CLAS12 will be realized during the ongoing experimental data analysis and detector
-optimization studies.
-
-\vspace{0.3cm}
+%\vfil\eject
+%\vspace{0.3cm}
 
 \noindent{\bf Acknowledgments}
 
