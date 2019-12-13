@@ -3,15 +3,15 @@
 The CLAS12 Forward Detector includes two threshold Cherenkov detectors for particle identification. The
 High Threshold Cherenkov Counter (HTCC)~\cite{htcc-nim} is located upstream of the torus and is used for
 identification of the scattered electron in conjunction with the ECAL. The Low Threshold Cherenkov Counter
-(LTCC)~\cite{ltcc-nim} is positioned upstream of the FTOF and is used mainly to separate pions from kaons.
+(LTCC)~\cite{ltcc-nim} is positioned upstream of the FTOF and is used mainly to identify pions.
 Both the HTCC and LTCC are large gas-filled volumes (CO$_2$ for the HTCC, C$_4$F$_{10}$ for the LTCC)
 with mirrors that direct light collection to the PMTs. The goal of the HTCC and LTCC reconstruction algorithms
 is to calculate the signal strength, time, and position from the raw ADC signals (read out with flash ADC boards
 - FADCs). The algorithm takes into account the properties of the HTCC and LTCC geometries, namely, the
-possibility for the signal from the single track to split into up to four mirrors. Hence, up to four separate
+possibility for the signal from a single charged track to split into up to four mirrors. Hence, up to four separate
 signals (or hits) are produced. The final signal reconstruction is done in three steps: decoding, hit reconstruction,
 and cluster reconstruction. For each hit, the signal strength ($nphe_{hit}$ - the number of photoelectrons) is
-determined from the pedestal-subtracted integral of the FADC pulse and the associated time ($T_{hit}$) is
+determined from the pedestal-subtracted integral of the FADC pulse and the associated time ($t_{hit}$) is
 determined from a fit of the position of the FADC signal threshold crossing time.
 
 At the hit reconstruction stage, individual signals in terms of the ADC channels are converted into the number of
@@ -36,7 +36,7 @@ the cluster. The cluster quantities are defined by:
 
 \begin{eqnarray}
 nphe_c &= \frac{\sum_{i=1}^N{nphe_{hit}}}{N} \nonumber \\
-T_c &= \frac{\sum_{i=1}^N{N*T_{hit}}}{\sum_{i=1}^N{nphe_{hit}}} \nonumber \\
+t_c &= \frac{\sum_{i=1}^N{N*t_{hit}}}{\sum_{i=1}^N{nphe_{hit}}} \nonumber \\
 \theta_c &=\frac{\sum_{i=1}^N{\theta_{hit}}}{N} \nonumber \\
 \phi_c &= \frac{\sum_{i=1}^N{\phi_{hit}}}{N}.
 \end{eqnarray}

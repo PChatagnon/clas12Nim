@@ -18,9 +18,8 @@ support than ISE/Planahead.
 Vivado HLS was used to implement a variety of trigger algorithms, Event Builder logic, and general purpose
 logic. HLS components were able to be verified with C/C++ test benches on their own without anything more
 than GNU GCC and associated C/C++ header files from the HLS toolchain. This tool often allowed for faster
-FPGA implementation, but many components still were implemented in HDL where resource and/or timing
-requirements become critical. Vivado HLS generated VHDL files from the C/C++ sources that were included
-into the FPGA compilation and full simulations. Occasionally simulation of the HDL-generated files was required
+FPGA implementation, but many components were still implemented in HDL where resource and/or timing
+requirements became critical. Occasionally simulation of the HDL-generated files from HLS was required
 to debug C/C++ modules when simulation under GCC found no problem, but the HDL result did. Differences
 between the C/C++ simulation and the corresponding HDL output were primarily due to: C/C++ assumption of
 infinite length buffering while HDL buffers were finite, ambiguous C/C++ coding where GCC and HLS behaviors

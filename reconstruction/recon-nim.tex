@@ -9,7 +9,7 @@
 %\usepackage[font=normalsize,labelfont=bf]{caption}
 \usepackage[pdfpagelabels]{hyperref}
 \modulolinenumbers[5]
-%\usepackage[normalem]{ulem}
+\usepackage[normalem]{ulem}
 \usepackage[utf8]{inputenc}
 \usepackage{esvect}
 \usepackage{soul}
@@ -31,14 +31,14 @@
 %\documentclass{elsart}
 %%\setcounter{footnote}{0}
 %\setcounter{tocdepth}{5}
-%\linenumbers
+\linenumbers
 
 \begin{document}
 \begin{frontmatter}
 
 \title{The CLAS12 Software Framework and Event Reconstruction}
 
-\author[JLab]{V. Ziegler \corref{mycorrespondingauthor}}
+\author[JLab]{V. Ziegler\corref{mycorrespondingauthor}}
 \cortext[mycorrespondingauthor]{Corresponding author}
 \ead{ziegler@jlab.org}
 \author[JLab]{N.~Baltzell}
@@ -68,7 +68,7 @@
 \author[JLab]{M.~Ungaro}
 
 \address[JLab]{Thomas Jefferson National Accelerator Facility, Newport News, VA 23606, USA}
-\address[Saclay]{CEA-Saclay, Univ. Paris-Sud, Universit\'e Paris-Saclay, Gif-sur-Yvettes, France}
+\address[Saclay]{CEA-Saclay, Univ. Paris-Sud, Universit\'e Paris-Saclay, Gif-sur-Yvette, France}
 \address[IPNO]{Institut de Physique Nucl\'eaire, CNRS-IN2P3, Univ. Paris-Sud, Universit\'e Paris-Saclay,
 91406 Orsay Cedex, France}
 \address[INFNFE]{INFN, Sezione di Ferrara, 44100 Ferrara, Italy}
@@ -123,12 +123,12 @@ Electron scattering, hadronic physics, event reconstruction software. PACS: 13.6
 \input{conclusions}
 
 \section{Acknowledgments}
-We would like to thank the JLab IT Division and CODA group for their support. 
-This work was supported in part by the Chilean Comisi\'on Nacional de Investigaci\'on Cient\'ifica y Tecnol\'ogica
-(CONICYT), the Italian Istituto Nazionale di Fisica Nucleare, the French Centre National de la Recherche Scientifique,
-the French Commissariat \`{a} l'Energie Atomique, the U.S. Department of Energy, Office of Science, Office of
-Nuclear Physics under contract DE-AC05-06OR23177, the National Science Foundation, the Scottish Universities
-Physics Alliance (SUPA), the United Kingdom's Science and Technology Facilities Council, and the National Research
+We would like to thank the JLab IT Division and CODA group for their support. This work was supported in part by
+the Chilean Comisi\'on Nacional de Investigaci\'on Cient\'ifica y Tecnol\'ogica (CONICYT), the Italian Istituto
+Nazionale di Fisica Nucleare, the French Centre National de la Recherche Scientifique, the French Commissariat
+\`{a} l'Energie Atomique, the U.S. Department of Energy, Office of Science, Office of Nuclear Physics under contract
+DE-AC05-06OR23177, the National Science Foundation, the Scottish Universities Physics Alliance (SUPA), the United
+Kingdom's Science and Technology Facilities Council, and the National Research
 Foundation of Korea.
 
 \begin{thebibliography}{99}
@@ -146,7 +146,7 @@ M. Ungaro {\it et al.}, ``The CLAS12 Low Threshold Cherenkov Counter'', to be pu
 and Meth. A, (2020). (see this issue)
 
 \bibitem{htcc-nim}
-Y. Sharabian {\it et al.}, ``The CLAS12 High Threshold Cherenkov Counter'', to be published in Nucl. Inst.
+Y.G. Sharabian {\it et al.}, ``The CLAS12 High Threshold Cherenkov Counter'', to be published in Nucl. Inst.
 and Meth. A, (2020). (see this issue)
   
 \bibitem{rich-nim}
@@ -162,7 +162,7 @@ G. Asryan {\it et al.}, ``The CLAS12 Forward Electromagnetic Calorimeter'', to b
 Meth. A, (2020). (see this issue)
 
 \bibitem{svt-nim}
-A. Antonioli {\it et al.}, ``The CLAS12 Silicon Vertex Tracker'', to be published in Nucl. Inst. and
+M.A. Antonioli {\it et al.}, ``The CLAS12 Silicon Vertex Tracker'', to be published in Nucl. Inst. and
 Meth. A, (2020). (see this issue)
 
 \bibitem{mm-nim}
@@ -211,7 +211,8 @@ S. Boyarinov {\it et al.}, ``The CLAS12 Data Acquisition System'', to be publish
 Meth. A, (2020). (see this issue)
 
 \bibitem{spiri}
-Alexander Spiridonov, Optimized Integration of the Equations of Motion of a Particle in the HERA-B Magnet.
+  A. Spiridonov, ``Optimized Integration of the Equations of Motion of a Particle in the HERA-B Magnet'',
+  arXiv:physics/0511177, (2005).
 
 \bibitem{Highland-Lynch-Dahl}
 V. L. Highland, Nucl. Instr. and Meth. {\bf 129}, 497 (1975); Nucl. Instr. and Meth. {\bf 161}, 171 (1979);
@@ -224,6 +225,9 @@ HERA-B Vertex Detector'', Nucl. Inst. and Meth. A {\bf 489}, 389 (2002).
 \bibitem{ILC-Tracking}
 Rainer Mankel, Rept. Prog. Phys. {\bf 67}, 553 (2004).
 
+\bibitem{Day1984}
+W. H. E. Day and H. Edelsbrunner, Journal of Classification 1-1 (1984), 7. 
+
 \bibitem{ic}
 R. Niyazov and S. Stepanyan, ``CLAS/DVCS Inner Calorimeter Calibration'', CLAS-Note 2005-021, (2005).
 https://misportal.jlab.org/ul/Physics/Hall-B/clas/viewFile.cfm/2005-021.pdf?documentId=213
@@ -232,12 +236,12 @@ https://misportal.jlab.org/ul/Physics/Hall-B/clas/viewFile.cfm/2005-021.pdf?docu
 M. Ungaro {\it et al.},  ``The CLAS12 Geant4 Simulation'', to be published in Nucl. Inst. and Meth. A, (2020).
 (see this issue)
 
+\bibitem{jlab-batch-farm}
+Jefferson Lab Batch Farm, https://scicomp.jlab.org/docs/ExpPhyComp
+
 \bibitem{clasdis}
 T. Sjostrand, S. Mrenna and P. Z. Skands, ``A Brief Introduction to PYTHIA 8.1'', Comput. Phys. Commun. {\bf 178},
 852 (2008).
-
-\bibitem{Day1984}
-W. H. E. Day and H. Edelsbrunner, Journal of Classification 1-1 (1984), 7. 
 
 \bibitem{jlab-tape-silo}
 Jefferson Lab Tape Silo, https://scicomp.jlab.org/docs/node/9
@@ -247,9 +251,6 @@ Jefferson Lab Lustre Filesystem, https://scicomp.jlab.org/docs/node/17
 
 \bibitem{recon-github}
 CLAS12 Reconstruction Software Repository, https://github.com/jeffersonlab/clas12-offline-software
-
-\bibitem{jlab-batch-farm}
-Jefferson Lab Batch Farm, https://scicomp.jlab.org/docs/ExpPhyComp
 
 \bibitem{bdt}
 B. P. Roe, H-J. Yang, J. Zhu, Y. Liu, I. Stancu, G. McGregor, Nucl. Inst. and Meth. A {\bf 543}, 577 (2005).

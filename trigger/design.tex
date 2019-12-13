@@ -174,10 +174,10 @@ To reduce the size of the road dictionary and improve the selection purity, we c
 vertex position, and kinematics of the tracks used to generate the roads (see
 Fig.~\ref{fig:dc_roads_electrons_data}). Multiple dictionaries can be run simultaneously based on the needs of
 the physics program. The data-based electron dictionary generator can be seen to slowly converge as more
-data-based tracks are fed into it (see Fig.~\ref{fig:dc_neg_data_efficiency_smearing}). Segment positions
+data-based tracks are fed into it (see Fig.~\ref{fig:dc_neg_data_dictionary}). Segment positions
 are smeared by $\pm$1 to fill in holes in the dictionary, which brings the efficiency to nearly 100\% with much
-less data to generate the dictionary (also at the cost of lower purity). Dictionary efficiencies for smearing vs.
-no smearing are demonstrated in Fig.~\ref{fig:dc_neg_data_efficiency_nosmearing} and
+less data to generate the dictionary (also at the cost of lower purity). The dictionary efficiencies for smearing
+vs. no smearing are demonstrated in Fig.~\ref{fig:dc_neg_data_efficiency_nosmearing} and
 Fig.~\ref{fig:dc_neg_data_efficiency_smearing}, respectively. The current road dictionary uses a single FPGA
 LUT6 element for each unique road entry, allowing for roughly 200k unique entries. Using six 112-bit masks, the
 dictionary size requirement exceeded the available FPGA resources, so we reduced the bit masks to 56~bits
@@ -186,12 +186,9 @@ leaving space for several additional dictionaries.
 
 \begin{figure}[hbt]
 	\centering
-	\includegraphics[width=1.0\columnwidth,keepaspectratio]{img/dc_neg_data_efficiency_smearing.png}
-	\caption{Dictionary efficiency for electron roads with segment position smearing the data-generated road
-          dictionary shows efficiencies fully at 100\%. This saves significant time as it requires far less data to
-          converge, but does increase the acceptance of invalid roads. The top plot shows efficiency for polar angle
-          vs. momentum and the bottom plot shows efficiency for polar angle vs. azimuthal angle.}
-	\label{fig:dc_neg_data_efficiency_smearing}
+	\includegraphics[width=0.85\columnwidth,keepaspectratio]{img/dc_neg_data_dictionary.png}
+	\caption{Drift chamber unique trigger roads for electrons as a function of the number of data-based roads.}
+	\label{fig:dc_neg_data_dictionary}
 \end{figure}
 
 \begin{figure}[hbt]
@@ -204,10 +201,12 @@ leaving space for several additional dictionaries.
 
 \begin{figure}[hbt]
 	\centering
-	\includegraphics[width=0.85\columnwidth,keepaspectratio]{img/dc_neg_data_dictionary.png}
-	\caption{Drift Chamber unique trigger roads for electrons. Left: new trigger roads found per 100k data
-          roads. Right: Total trigger roads as function of data-based roads.}
-	\label{fig:dc_neg_data_dictionary}
+	\includegraphics[width=1.0\columnwidth,keepaspectratio]{img/dc_neg_data_efficiency_smearing.png}
+	\caption{Dictionary efficiency for electron roads with segment position smearing the data-generated road
+          dictionary shows efficiencies fully at 100\%. This saves significant time as it requires far less data to
+          converge, but does increase the acceptance of invalid roads. The top plot shows efficiency for polar angle
+          vs. momentum and the bottom plot shows efficiency for polar angle vs. azimuthal angle.}
+	\label{fig:dc_neg_data_efficiency_smearing}
 \end{figure}
 
 \subsubsection{Forward Time-of-Flight System}

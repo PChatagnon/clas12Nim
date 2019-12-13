@@ -22,15 +22,12 @@ and compared to the results of the two sets of measurements. The main goals of t
   the filtering algorithm.
 \end{itemize}
 
-\subsubsection{The 16-Channel Prototype}
-\label{par:proto-16}
-
-The FT-Cal Proto-16 was built assembling 16 crystals in a $4\times4$ matrix (8 provided by the BTCP and 8 from
-the RIINC company). Figure~\ref{fig:p16-whole} shows the Proto-16 components. Many mechanical and electrical
-solutions tested on Proto-16 were then adopted in the final FT-Cal design. Due to the significant size of the crystal
-matrix, the expected performance of Proto-16 in terms of energy resolution for showers generated at the center
-of the 4$\times$4 matrix is similar to what was expected for the FT-Cal. Proto-16 was tested at the Beam
-Test Facility (BTF)~\cite{btf} of LNF, using a 500~MeV electron beam. Data were taken in October 2012 to study
+The FT-Cal Proto-16 was built assembling 16 PbWO$_4$ Type-II crystals in a $4\times4$ matrix (8 provided by the
+BTCP and 8 from the RIINC company). Figure~\ref{fig:p16-whole} shows the Proto-16 components. Many mechanical
+and electrical solutions tested on Proto-16 were then adopted in the final FT-Cal design. Due to the significant size
+of the crystal matrix, the expected performance of Proto-16 in terms of energy resolution for showers generated at
+the center of the 4$\times$4 matrix is similar to what was expected for the FT-Cal. Proto-16 was tested at the Beam
+Test Facility (BTF)~\cite{btf} of LNF, using a 0.5 GeV electron beam. Data were taken in October 2012 to study
 the prototype resolution as a function of the energy deposition and the calorimeter temperature. The BTF electron
 beam is characterized by a repetition frequency of 50~Hz and a pulse duration of 10~ns. The beam intensity can be
 varied by operating different sets of slits, selecting the number of electrons per bunch at the level of a single
@@ -46,20 +43,20 @@ simultaneously hitting the crystal matrix, i.e. of the detected energy.
 \end{figure}
 
 Figure~\ref{fig:btf} shows the BTF experimental hall after the installation of Proto-16 and the associated equipment.
-The detector was placed on a movable table that could be displaced in the $x$ and $y$ direction (transverse
+The detector was placed on a movable table that could be displaced in the $x$ and $y$ directions (transverse
 plane) with a 0.1-mm accuracy. This feature was exploited to center the calorimeter with respect to the beam. A
 plastic scintillator bar, read out by two PMTs, was placed in front of the beam pipe exit window and was used to
 determine the arrival time of the electron within the 10-ns bunch duration. The data acquisition system, based on the
 JLab CODA standard~\cite{daq}, was triggered by the radio-frequency (RF) signal of the Frascati accelerator. For
 each trigger all of the signals of the Proto-16 crystal matrix and of the scintillator-bar PMTs were recorded by
 CAEN VME boards. Both the Proto-16 and scintillator signals were sent to a passive splitter whose two outputs were
-connected the 250~MHz FADCs and to leading-edge discriminators. The discriminator output was sent to pipeline
+connected to the 250~MHz FADCs and to leading-edge discriminators. The discriminator output was sent to pipeline
 TDCs. The samples recorded by the FADCs in an 800~ns window were recorded for each trigger and analyzed offline
 to evaluate the charge and time.
 
 \begin{figure}
 \includegraphics[width=1.0\columnwidth]{./fig/btf_oct12.eps}
-\caption{Experimental setup of the Proto-16 test at the LNF Beam Test Facility (BTF). Beam comes from the right.
+\caption{Experimental setup of the Proto-16 test at the LNF Beam Test Facility (BTF). The beam comes from the right.
   On the left, the detector inside its case (black) is placed on a movable table to allow for centering of the calorimeter
   with respect to the beam. In front of the calorimeter, a plastic scintillator bar wrapped in black Tedlar is used to
   determine the arrival time of the beam electrons.}
@@ -67,10 +64,10 @@ to evaluate the charge and time.
 \end{figure}
 
 The conversion between charge and energy was first determined using cosmic ray measurements and then optimized
-by studying the response of each crystal to 500~MeV electrons at the LNF-BTF. It is worth noting that the new
+by studying the response of each crystal to 0.5 GeV electrons at the LNF-BTF. It is worth noting that the new
 calibration constants were found to be within 5-10\% of the initial values determined during cosmic-ray data
 taking. The total reconstructed energy  after the full calibration is shown in Fig.~\ref{fig:btf_etot} for an electron
-multiplicity of the order of 1-2. The peaks corresponding to different bunch populations are clearly visible and well
+multiplicity on the order of 1-2. The peaks corresponding to different bunch populations are clearly visible and well
 separated. 
 
 \begin{figure}
@@ -110,22 +107,23 @@ APD gain is the preferable configuration.
 \label{fig:btf_linearity}
 \end{figure}
 
-The comparison of the resolution obtained at different temperatures shows that lower temperatures,
-corresponding to higher light yield, and therefore larger signal, gives better resolution. The best values were
+The comparison of the resolutions obtained at different temperatures shows that lower temperatures,
+corresponding to higher light yield, and therefore a larger signal, give a better resolution. The best values were
 obtained at $-20^{\circ}$C, where the experimental points are in good agreement with the simulation results. The
 dependence of the resolution on the temperature is more evident for high bunch energies, where threshold
 effects are smaller. Above 2~GeV, the resolution at room temperature seems to be systematically higher than that
 obtained at $0^\circ$C or $-20^\circ$C with a difference of about 0.5\%. The difference of the resolution obtained
 at $0^\circ$C and $-20^\circ$C is on the contrary negligible within the systematic uncertainties. Based
 on these results and considering the technical difficulties in operating the FT-Cal at the lowest temperature, we
-concluded that the optimal operating temperature of the calorimeter is $0^\circ$C.
+chose the optimal operating temperature of the calorimeter to be $0^\circ$C.
 
 \begin{figure}
-\includegraphics[width=1.0\columnwidth]{./fig/btf_resolution.eps}
+  \centering
+\includegraphics[width=0.9\columnwidth]{./fig/btf_resolution.pdf}
 \caption{Proto-16 energy resolution as a function of the beam bunch energy. The red and orange points were obtained
   at room temperature for APD gains of 150 and 75, respectively. The green points correspond to $0^\circ$C; the
-  darker points were obtained removing the passive splitter. The blue and dark-blue points, that partially overlap, correspond to
-  $-20^\circ$C  with APD gains of 150 and 75, respectively. The open black circles show the expected resolution based
-  on Monte Carlo simulations. Only statistical uncertainties are shown.}
+  darker points were obtained removing the passive splitter. The blue and dark-blue points, that partially overlap,
+  correspond to $-20^\circ$C  with APD gains of 150 and 75, respectively. The open black circles show the expected
+  resolution based on Monte Carlo simulations. Only statistical uncertainties are shown.}
 \label{fig:btf_resolution}
 \end{figure} 

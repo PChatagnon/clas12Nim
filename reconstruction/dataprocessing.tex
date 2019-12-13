@@ -12,8 +12,8 @@ populating their results into special tagged HIPO events to facilitate later ana
 $\sim$5 reduction in size and a file format optimized for I/O.
 
 The second data processing stage is a CPU-heavy reconstruction phase, including all of the tracking, clustering,
-calorimetry, time-of-flight, and event building described in the previous sections.  It runs multi-threaded in the CLARA
-framework and can be configured to output various data schema depending on the purpose, see
+calorimetry, time-of-flight, and event building described in the previous sections.  It runs multi-threaded in the
+CLARA framework and can be configured to output various data schema depending on the purpose, see
 Section~\ref{sec:dsts}, during full-scale data processing, or larger, special-purpose banks during preliminary
 calibration phases.
 
@@ -24,11 +24,15 @@ group of physics analyses. An example schematic is shown in Fig.~\ref{fig:train}
 repeatedly as selection criteria and physics analyses mature. The reduction factor of the input file size generated
 by the analysis trains depends directly on the applied filtering conditions for the specific output. Selecting events
 with an electron identified in the ECAL provides a reduction factor of $\sim$0.3, while for events with an electron
-in ECAL and a positive hadron in CLAS12, the reduction factor is $\sim$0.1.  A typical 2 GB EVIO file gets reduced to 200 MB of DST data. 
+in the ECAL and a positive hadron in CLAS12, the reduction factor is $\sim$0.1.  A typical 2~GB EVIO file gets
+reduced to a 200~MB HIPO data file with banks for physics analysis (see Sec.~\ref{sec:dsts}).
 
 \begin{figure}
     \includegraphics[width=0.45\textwidth,height=0.2\textheight]{pics/train.pdf}
-    \caption{Schematic flow of analysis trains.  The example shows a train composed by a plugin to correct the ECAL sampling fraction (SF) and several analysis filters for different final states. Events from a HIPO file are read by the IO service and processed through the analysis chain that applies the selected corrections and labels them according to the different filters. The labeled events are written to the corresponding output file.\label{fig:train}}
+    \caption{Schematic flow of analysis trains. The example shows a train composed of a plugin to correct the ECAL
+      sampling fraction (SF) and several analysis filters for different final states. Events from a HIPO file are read
+      by the IO service and processed through the analysis chain that applies the selected corrections and labels them
+      according to the different filters. The labeled events are written to the corresponding output file.\label{fig:train}}
 \end{figure}
 
 \subsection{Data Summary Tapes}
@@ -48,16 +52,17 @@ skimmed output DSTs. These include:
 \end{itemize}
 
 \noindent
-The DST banks are organized such that the large detector information banks can\footnote{Currently all DST banks are saved to file.} easily be dropped to leave only
-the data essential for a high-level physics analysis, without leaving unassociated references or unnecessary information.
+The DST banks are organized such that the large detector information banks can easily be dropped to leave only
+the data essential for a high-level physics analysis, without leaving unassociated references or unnecessary information
+\footnote{Currently all DST banks are saved to a file.}. 
 
 \subsection{Computing Resources}
 
 Reconstruction of all CLAS12 data is performed on Jefferson Lab's batch computing system~\cite{jlab-batch-farm}.
-It currently consists of about 400 compute nodes of various types, with a total of about 21,000 available jobs
+It currently consists of about 400 computing nodes of various types, with a total of about 21,000 available jobs
 slots and half as many cores.  The input raw data and analyzed output data are stored on JLab's tape silo
 \cite{jlab-tape-silo}, which provides sufficient cold storage for all of JLab's activities.  Data for physics analysis are
-also stored live on JLab's Lustre filesystems~\cite{jlab-lustre}, which is currently about 2~PB of disk, but will be
-increased to almost 7~PB in the near future. Analysis of reconstructed data is performed on the JLab batch and
-interactive farm nodes, and also exported to other institutions for final physics analysis.  
-CLAS12 currently has  450 TB available on different file systems, and a fair share computing resource of 36 M core hour per year.
+also stored live on JLab's Lustre filesystems~\cite{jlab-lustre}, which currently amounts about 2~PB of disk, but will
+be increased to almost 7~PB in the near future. Analysis of the reconstructed data is performed on the JLab batch and
+interactive farm nodes, and also exported to other institutions for final physics analysis. CLAS12 currently has 450~TB
+available on different file systems, and a fair share computing resource of 36M~core-hr/yr.

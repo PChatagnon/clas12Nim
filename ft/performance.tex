@@ -13,8 +13,8 @@ electron via the matching of the FT-Cal cluster to FT-Hodo hits, and the associa
 greater than 500~MeV, seed energy greater than 300~MeV, and size greater than or equal to 4 crystals. The resulting
 event distributions as a function of the electron energy and polar angle are shown in Fig.~\ref{fig:ft_acceptance}. 
 
-The energy coverage extends from 500~MeV, as selected in the offline analysis, up to the end-point, set by the
-beam energy, where elastic scattering dominates. Close to the energy end-point, the detector resolution is expected
+The energy coverage extends from 500~MeV, as selected in the offline analysis, up to the end-point set by the
+beam energy where elastic scattering dominates. Close to the energy end-point, the detector resolution is expected
 to worsen significantly because of saturation of the FT-Cal preamplifiers and FADCs that are optimized for the
 design energy range of 0.5-4.5~GeV. The $\theta$ range extends from the minimum angle of 2.5$^\circ$ to
 $\sim$5$^\circ$. The two-dimensional distribution shows the effect of the CLAS12 solenoid field on low-momentum
@@ -27,12 +27,12 @@ acceptance matches and partially exceeds the design specifications.
 \includegraphics[height=0.5\columnwidth]{fig/ft_acceptance_theta.png}
 \includegraphics[height=0.5\columnwidth]{fig/ft_acceptance_energytheta.png}
 \end{center}
-\caption{FT acceptance for electrons as a function of energy (top), polar angle (middle), and of both
-  variables (bottom) at 10.6~GeV beam energy. The energy range goes from 500~MeV, as selected in the offline
-  analysis, up to the end-point set by the beam energy where elastic scattering dominates. The $\theta$ range goes
-  from the minimum angle of 2.5$^\circ$ to $\sim$5$^\circ$. The two-dimensional distribution shows the effect of the
-  CLAS12 solenoid field on low-momentum electrons that start from $\theta\sim2^\circ$ and are bent into the
-  detector acceptance. TO BE REPLACED WITH HIGHER STATISTICS.}
+\caption{FT acceptance for electrons as a function of energy (top), polar angle (middle), and of both variables
+  (bottom) at 10.6~GeV beam energy. The energy range goes from 500~MeV, as selected in the offline analysis, up
+  to the end-point set by the beam energy where elastic scattering dominates. The $\theta$ range goes from the
+  minimum angle of 2.5$^\circ$ to $\sim$5$^\circ$. The two-dimensional distribution shows the effect of the CLAS12
+  solenoid field on low-momentum electrons that start from $\theta\sim2^\circ$ and are bent into the detector
+  acceptance. }
 \label{fig:ft_acceptance}
 \end{figure}
 
@@ -50,20 +50,23 @@ two photons, as discussed in Section.~\ref{sec:calibration}. The results indicat
 larger than the design value by about 1\% at 2~GeV. The reasons for this discrepancy can be multi-fold. First, the
 energy calibration of individual crystals has shown a significant spread in the energy-to-charge conversion that was
 not foreseen in the initial estimates. This spread, likely due to the non-uniformity of the crystal light yield, can
-contribute to a worsening of the resolution because it results in a non-homogeneous detector response. 
+contribute to a worsening of the resolution because it results in a non-homogeneous detector response.  Second, as a
+consequence of the crystal non-uniformity, the threshold applied in the cluster reconstruction is for some crystals
+larger than the 10~MeV used in the simulation studies and prototype analyses.
 
 The shower profile in the FT-Cal was studied and compared to Monte Carlo simulations for different particle
 species. Figure~\ref{fig:ft_shower} shows the shower radius, defined as the square root of the second moment of
-the shower, for charged particles, i.e. particles associated to a cluster in the calorimeter with matching hits in the
+the shower, for charged particles, i.e. particles associated with a cluster in the calorimeter with matching hits in the
 hodoscope. A clear peak with radius of $\sim$1~cm associated with electrons is clearly visible, overlapping a
 broader distribution associated with hadronic showers. The shower profile and, specifically the cluster radius, can
 therefore be used to discriminate between different particle types.
 
 \begin{figure}[h]
+  \centering
 \includegraphics[height=0.6\columnwidth]{fig/ft_electron_time.png}
-\caption{Time resolution for electrons detected in the FT with energy greater than 500~MeV, seed
-  energy greater than 300~MeV, and cluster size larger or equal to 4. The histogram shows the time difference
-  between the FT time projected back to the event vertex and the RF signal time. The Gaussian fit gives a resolution
+\caption{Time resolution for electrons detected in the FT with energy greater than 500~MeV, seed energy greater
+  than 300~MeV, and cluster size greater than or equal to 4. The histogram shows the time difference between the
+  FT time projected back to the event vertex and the RF signal time. The Gaussian fit gives a resolution
   $\sigma \sim$140~ps.}
 \label{fig:electron_time}
 \end{figure}
@@ -73,7 +76,7 @@ therefore be used to discriminate between different particle types.
 \begin{figure}[h]
 \includegraphics[height=0.6\columnwidth]{fig/ft_gamma_time.png}
 \caption{Time resolution for photons detected in the FT with energy greater than 500~MeV, seed
-  energy greater than 300~MeV, and cluster size greater or equal to 4. The histogram shows the time difference
+  energy greater than 300~MeV, and cluster size greater than or equal to 4. The histogram shows the time difference
   between the FT time projected back to the event vertex and the event start time derived from the CLAS12 FTOF
   detector for events where an electron is identified in the CLAS12 Forward Detector. The Gaussian fit gives a
   resolution $\sigma \sim$150~ps. }
@@ -82,33 +85,33 @@ therefore be used to discriminate between different particle types.
 
 The timing resolution for electrons and photons was evaluated from beam data by correlating the reconstructed
 cluster time from the FT-Cal to either the RF signal that is synchronous with the CEBAF accelerator beam bunches
-or the event start time derived from the CLAS12 Forward Time-of-Flight (FTOF) system~\cite{ftof}.
-Specifically, the electron time resolution was studied correlating the FT time projected back to the event vertex
-to the RF signal time. The difference of these two times for 10.6~GeV data is shown in Fig.~\ref{fig:electron_time}
-for electrons with energy greater than 500~MeV, cluster seed energy greater than 300~MeV, and cluster size
-greater than or equal to 4 crystals: a Gaussian fit to the distribution gives $\sigma \sim$140~ps. The tails of the
-distribution are due to low-energy clusters close to the applied selection threshold, and are expected to be reduced
-by improvements of the time-walk correction that are currently under study.
+or the event start time derived from the CLAS12 FTOF system~\cite{ftof}. Specifically, the electron time resolution
+was studied correlating the FT time projected back to the event vertex to the RF signal time. The difference of
+these two times for 10.6~GeV data is shown in Fig.~\ref{fig:electron_time} for electrons with energy greater than
+500~MeV, cluster seed energy greater than 300~MeV, and cluster size greater than or equal to 4 crystals: a
+Gaussian fit to the distribution gives $\sigma \sim$140~ps. The tails of the distribution are due to low-energy
+clusters close to the applied selection threshold, and are expected to be reduced by improvements of the time-walk
+correction that are currently under study.
 
-While this estimate of the resolution relies solely on the FT reconstruction, an alternative measure can be
+While this estimate of the time resolution relies solely on the FT reconstruction, an alternative measure can be
 performed by selecting photons detected in the FT and correlating their time to the event start time determined
-from other particles detected in CLAS12. This analysis was performed for events with an electron detected in
-the CLAS12 Forward Detector whose start time is determined based on the FTOF system and a photon detected in
-the FT with energy greater than 500~MeV, cluster seed energy greater than 300~MeV, and cluster size greater than
-or equal to 4 crystals. The photon FT time projected back to the event vertex was correlated with the event start time as
-shown in Fig.~\ref{fig:gamma_time}. A Gaussian fit to the distribution gives $\sigma \sim$150~ps, slightly
+from other particles detected in CLAS12. This analysis was performed for events with an electron detected in the
+CLAS12 Forward Detector whose start time is determined based on the FTOF system and a photon detected in the
+FT with energy greater than 500~MeV, cluster seed energy greater than 300~MeV, and cluster size greater than
+or equal to 4 crystals. The photon FT time projected back to the event vertex was correlated with the event start
+time as shown in Fig.~\ref{fig:gamma_time}. A Gaussian fit to the distribution gives $\sigma \sim$150~ps, slightly
 larger but consistent with the electron timing resolution.
 
 \begin{figure}[h]
   \centering
 \includegraphics[height=0.6\columnwidth]{fig/ftcalhodo_time.png}
-\caption{Time difference between the calorimeter and hodoscope clusters for reconstructed electrons: a Gaussian fit
-  to the distribution gives $\sigma \sim$0.8~ns.}
+\caption{Time difference between the calorimeter and hodoscope clusters for reconstructed electrons. The
+  Gaussian fit to the distribution gives $\sigma \sim$0.8~ns.}
 \label{fig:ftcalhodo_time}
 \end{figure}
 
-While the FT time is determined by the calorimeter since this is the component with the best timing resolution,
-the time correlation between the FT detectors is important to match the signals detected in the three
+While the FT hit time is determined by the calorimeter since this is the component with the best timing resolution,
+the time correlation between the individual FT detectors is important to match the signals detected in the three
 sub-components and minimize accidentals. Figure~\ref{fig:ftcalhodo_time} shows the time difference of the
 reconstructed calorimeter and hodoscope clusters for detected electrons with $\sigma \sim$0.8~ns,
 dominated by the hodoscope resolution. The value is consistent with the design resolution for the hodoscope of
