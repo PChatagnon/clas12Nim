@@ -106,8 +106,8 @@ for several reasons:
 \begin{itemize}
 \item the maximum drift distance is given by geometry (the distance from
 a sense wire to the nearest field wire) and so it is fixed;
-\item the drift velocity is a function of electric field strength, so the point of minimum field is the point of
-minimum velocity (and thus the inflection point on the $t$ vs. $x$ curve). 
+\item the drift velocity is a function of electric field strength, so the point of minimum velocity is located at the point of
+minimum field (and thus the inflection point on the $t$ vs. $x$ curve). 
 This inflection point of the curve occurs at a
 definite value of distance within the cell and not at a definite value of time;
 \item the time walk due to finite ionization is
@@ -149,7 +149,7 @@ is a minimum. This implies that this is the point
 of minimum velocity and is thus an inflection point. This occurs at a value
 $r = (x/Dmax) \approx 0.64$ and the drift velocity at this point is termed $V_{mid}$.
 
-The function coefficients are constrained as follows:
+In summary, the function coefficients are constrained as follows:
 \begin{enumerate}
 \item  $t(x)$ must equal $Tmax$ when $x = Dmax $;
 \item  the drift velocity near the sense wire ($x = 0$)
@@ -310,7 +310,7 @@ This means that we:
 \item Fill our time-to-distance tables for different local angles using the function;
 \item Interpolate between time-to-distance tables for different local angles to obtain
 the calculated distance at a particular local angle;
-\item Interpolate for R2 between different $B$-field tables.
+\item For R2, interpolate between different $B$-field tables.
 \end{itemize}
 
 We interpolate between different local angle tables linearly in $\cos(30^\circ-\alpha)$.
