@@ -120,14 +120,14 @@ timing responses in order to match the particle identification responses for mis
 \label{fig:betavsp}
 \end{figure}
 
-For neutral particles, particle identification is assigned only for neutrons and photons, based only on timing and
-topological information. {\color{red} For the Forward Detectors this is presently based on the ECAL, while for the Central
-Detector it is presently based on the CND. The reconstructed cluster position is used to compute the particle
-travel path from the vertex of the event, defined as the vertex of the trigger particle (an electron or charged hadron n the Forward Detector).
-If the particle timing and travel path results in $\beta\sim$1, it is assigned as a photon, otherwise it
-is assigned as a neutron. The $\beta$ threshold for the PID assignment is a parameter read from the database.} For photons in the Forward Detector, the momentum is then assigned
-using the reconstructed ECAL energy and accounting for the calorimeter sampling fraction~\cite{ecal-nim}. For
-neutrons, the momentum is assigned based on the measured $\beta$ and the neutron mass.
+{\color{red} Identification of neutral particles assumes only neutrons and photons, differentiated only by timing and
+topological information. For the Forward Detectors this is based on the ECAL, while for the Central
+Detector it is based on the CND, and their reconstructed cluster positions are used to compute the particle
+travel path from the event vertex, assuming a straight-line trajectory.
+If the resulting measured $\beta$ is close to 1, the particle is assigned as a photon, otherwise it
+is assigned as a neutron. For photons in the Forward Detector, the momentum is determined
+from its deoposited energy and ECAL sampling fraction~\cite{ecal-nim}. For
+neutrons, the momentum is assigned based on the measured $\beta$, assuming the neutron mass.}
 Figure~\ref{fig:neutbeta} shows an example of $\beta$ reconstructed for neutrals in the Forward Detector
 showing separation of photons and neutrons.
 
@@ -139,7 +139,7 @@ showing separation of photons and neutrons.
 \label{fig:neutbeta}
 \end{figure}
 
-A particle identification quality factor in the form of a signed-$\chi^2$ is assigned based on the individual
+A particle identification quality factor in the form of a {\color{red}signed-$\chi$, or pull,} is assigned based on the individual
 contributing detector subsystem responses and their resolutions. For $e^-/e^+$ identification the
 resolution-normalized distance from the expected ECAL sampling fraction is used, while for charged hadrons the
 resolution normalized time-difference is used. The resulting information is organized into standardized output
