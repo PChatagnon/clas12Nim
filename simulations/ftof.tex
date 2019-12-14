@@ -1,42 +1,39 @@
 \subsection{Forward Time-Of-Flight (FTOF)}
 
-The FTOF geometry is implemented through the JAVA geometry service.
-The service provides the Geant4 definitions that are read by the GEMC PERL API to build the geometry database.
+The FTOF geometry is implemented through the JAVA geometry service. The service provides the Geant4 definitions
+that are read by the GEMC PERL API to build the geometry database.
 
-Each scintillator is a separate Geant4 volume. The paddles are assigned the scintillator material and
-associated with the FTOF hit process routine.
-Each scintillator is a box volume embedded in a trapezoidal mother volume made of air (see \F{ftofGeometry}).
+Each scintillator is a separate Geant4 volume. The paddles are assigned the scintillator material and associated with the
+FTOF hit process routine. Each scintillator is a box volume embedded in a trapezoidal mother volume made of air (see
+\F{ftofGeometry}).
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/ftofGeometry.png}
 	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/ftofDetail.png}
-	\caption{Top: the GEMC implementation of the FTOF geometry. Beam is incident from the left.
-             The paddles are G4Boxes embedded in trapezoids
-             representing the mother volumes of each panel. A 6 GeV pion is shown, producing one hit (white circle) in each FTOF panel
-             in the CLAS12 Forward Detector sector 4.
-             Bottom: a zoom-in of the implementation shows the details of the individual paddles for panel-1b (inner,
-             in front) and panel-1a (outer). }
+	\caption{Top: the GEMC implementation of the FTOF geometry. Beam is incident from the left. The paddles are
+          G4Boxes embedded in trapezoids representing the mother volumes of each panel. A 6~GeV pion is shown,
+          producing one hit (white circle) in each FTOF panel in the CLAS12 Forward Detector Sector~4. Bottom: a zoom-in
+          of the implementation shows the details of the individual paddles for panel-1b (upstream, in front) and panel-1a
+          (downstream).}
 	\label{fig:ftofGeometry}
 \end{figure}
 
 \subsubsection{Process ID}
 
-Each hit in the paddles produces two hits with the identifier variable ``side'' set to 0
-(for the left side PMT) and 1 (for right side PMT).
-The hits are then processed independently through the FTOF hit process routine.
+Each hit in the paddles produces two hits with the identifier variable ``side'' set to 0 (for the left side PMT) and 1
+(for right side PMT). The hits are then processed independently through the FTOF hit process routine.
 
 \subsubsection{Digitization}
 
 The energy deposited is reduced based on the hit position on the paddle using the calibrated light attenuation length.
-It is then corrected by a gain factor to account for the fact that the high voltages (HV) are adjusted so that
+It is then corrected by a gain factor to account for the fact that the high voltages (HVs) are adjusted so that
 the average left/right ADC geometric mean is independent of counter length and hit position.
 
-The corrected energy is converted to the number of photons $N_{th}$ using the constant 500 photons/MeV
-which was estimated from data.
-A Poissonian distribution is used to calculate the actual number of photons $N_{actual}$ and the resulting ``smeared'' energy
-is the converted to ADC using the FADC conversion factor.
-An example of the smeared ADC for the right paddles as a function of hit position is shown in \F{ftofAtten}.
+The corrected energy is converted to the number of photons $N_{th}$ using the constant 500 photons/MeV, which was
+estimated from data. A Poissonian distribution is used to calculate the actual number of photons $N_{actual}$ and the
+resulting ``smeared'' energy is the converted to ADC using the FADC conversion factor. An example of the smeared
+ADC for the right paddles as a function of hit position is shown in \F{ftofAtten}.
 
 \begin{figure}
 	\centering
@@ -52,13 +49,13 @@ The absolute hit time is corrected using calibration constants estimated from da
 \begin{itemize}
 	\item the effective velocity;
 	\item the time-walk correction, calculated from the smeared energy;
-	\item a panel to panel timing offset factor;
+	\item a panel-to-panel timing offset factor;
 	\item a left/right time offset factor;
 	\item an RF correction.
 \end{itemize}
 
-The time is then smeared by a resolution read from CCDB using a Gaussian function and then digitized using a TDC conversion factor.
-The digitized output bank variables are summarized in Table \ref{tab:ftofBank}.
+The time is then smeared by a resolution read from CCDB using a Gaussian function and then digitized using a TDC
+conversion factor. The digitized output bank variables are summarized in Table~\ref{tab:ftofBank}.
 
 \begin{table}[h]
 	\begin{center}
@@ -67,7 +64,7 @@ The digitized output bank variables are summarized in Table \ref{tab:ftofBank}.
 			Variable  & Description                                 \\
 			\hline
               sector  &                             sector number   \\
-               layer  &               layer (1: 1A, 2: 1B, 3: 2)   \\
+               layer  &               layer (1: 1a, 2: 1b, 3: 2)   \\
               paddle  &                             paddle number   \\
                 side  &                PMT side (0 Left, 1 Right)   \\
                  ADC  &                                       ADC   \\
@@ -82,6 +79,7 @@ The digitized output bank variables are summarized in Table \ref{tab:ftofBank}.
 \end{table}
 
 
-The time window  of the FTOF is set to 400 ns: all Geant4 steps within the same paddle and time window are collected in one hit.
+The time window  of the FTOF is set to 400~ns: all Geant4 steps within the same paddle and time window are collected
+in one hit.
 
 
