@@ -1,58 +1,52 @@
 \subsection{Drift Chambers (DC)}
 
-The DC geometry is implemented through the JAVA geometry service.
-The service provides the Geant4 definitions that are read by the GEMC PERL API to build the geometry database.
+The DC geometry is implemented through the JAVA geometry service. The service provides the Geant4 definitions that
+are read by the GEMC PERL API to build the geometry database.
 
-For each of the six sectors of the CLAS12 Forward Detector, there are three drift chambers: one in front of the torus magnet,
-one between the torus coils, and one after the torus.  These three chambers are referred to as different ``regions''.
-The chambers are strung with the wires arranged in 12 internal layers.
-Each layer is a generic G4Trapezoid, tilted by +6\mdeg \ or -6\mdeg \ depending if they are in the first or second
-``superlayer'' of a region.
-The 12 layers in each region (6 per superlayer) are placed in a region mother volume made of air (see \F{dcGeometry}).
-The layers are assigned the DC gas mixture: 90$\%$ argon/10$\%$ CO$_2$. Each layer is associated with the DC hit process routine.
+For each of the six sectors of the CLAS12 Forward Detector, there are three drift chambers: one in front of the torus
+magnet, one between the torus coils, and one after the torus.  These three chambers are referred to as different
+``regions''. The chambers are strung with the wires arranged in 12 internal layers. Each layer is a generic G4Trapezoid,
+tilted by +6\mdeg \ or -6\mdeg \ depending if they are in the first or second ``superlayer'' of a region. The 12 layers
+in each region (6 per superlayer) are placed in a region mother volume made of air (see \F{dcGeometry}). The layers are
+assigned the DC gas mixture: 90\% argon/10\% CO$_2$. Each layer is associated with the DC hit process routine.
 The hit wire identification is performed in the Process ID routine.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/dcGeometry.png}
-%	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/dcDetail.png}
-	\caption{The GEMC implementation of the DC geometry (longitudinal cut-view).
-	         Beam is incident from the left. The solenoid magnet volume, CTOF, CND, and HTCC are also visible.
-             Geant4 trapezoids are the mother volumes corresponding to DC Regions 1, 2, and 3.
-             The track is a negative pion, hitting the various layers inside each region.
-             The hits are indicated by the white markers. Due to the high DC
-             efficiency, most tracks produce at least one hit in each layer (12 hits/region).
-             The wire hit inefficiencies are incorporated in the simulation parameters to match the experimental data.}
+	\caption{The GEMC implementation of the DC geometry (longitudinal cut-view). Beam is incident from the left. The
+          solenoid magnet volume, CTOF, CND, and HTCC are also visible. Geant4 trapezoids are the mother volumes
+          corresponding to DC Regions 1, 2, and 3. The track is a negative pion, hitting the various layers inside each region.
+          The hits are indicated by the white markers. Due to the high DC efficiency, most tracks produce at least one hit in
+          each layer (12 hits/region). The wire hit inefficiencies are incorporated in the simulation parameters to match the
+          experimental data.}
 	\label{fig:dcGeometry}
 \end{figure}
 
-
 \subsubsection{Process ID}
-The wire number is calculated using the formula $n_i = y/\delta y$, where $y$ is the
-distance from the center of the DC layer trapezoid volume projected along its vertical axis and $\delta Y$
-is the distance between each wire.
-The wire sagging due to gravity and mechanical deflections of the wire end-plates due to the tension
-load are not taken into account.
+
+The wire number is calculated using the formula $n_i = y/\delta y$, where $y$ is the distance from the center of the
+DC layer trapezoid volume projected along its vertical axis and $\delta Y$ is the distance between each wire. The wire
+sagging due to gravity and mechanical deflections of the wire endplates due to the tension load are not taken into account.
 
 \subsubsection{Digitization}
 
 First, the distance of closest approach of the passing track to the hit wire ($DOCA$) is computed for the hit in each layer.
-At each Geant4 step, the distance of the track from the wire is calculated.
-The $DOCA$ is extracted among the points with energy deposited larger than 50~eV,
-for which the sum of the step time + $DOCA$/DV (where DV is the drift velocity) is minimal.
+At each Geant4 step, the distance of the track from the wire is calculated. The $DOCA$ is extracted among the points
+with energy deposited larger than 50~eV, for which the sum of the step time + $DOCA$/drift velocity is minimal.
 
-An initial time $T_i$ is calculated with a time to distance function that is the inverse of
-what is determined from calibration and used in reconstruction to go from TDC to $DOCA$.
-The function takes into account:
+An initial time $T_i$ is calculated with a time-to-distance function that is the inverse of what is determined from
+calibration and used in reconstruction to go from TDC to $DOCA$. The function takes into account:
 
 \begin{itemize}
 	\item the distance from the wire, in cm;
 	\item the cell size in each superlayer;
 	\item the polar angle of the track;
-	\item magnitude of the torus field
+	\item magnitude of the torus field.
 \end{itemize}
 
-A time walk correction function $T_w$ is applied to $T_i$ that includes discrete ionization effects based on the following input:
+A time-walk correction function $T_w$ is applied to $T_i$ that includes discrete ionization effects based on the
+following input:
 
 \begin{itemize}
 	\item the distance from the wire, in cm;
@@ -61,13 +55,12 @@ A time walk correction function $T_w$ is applied to $T_i$ that includes discrete
 	\item an overall parameter to adjust to data at small distances from the wire.
 \end{itemize}
 
-\noindent The resulting $T_w$ is then used in a Landau-function to mimic the detector response function.
+\noindent The resulting $T_w$ is then used in a Landau function to mimic the detector response function.
 
-An intrinsic random time walk correction $\sigma_{TW}$ due to multiple scattering is calculated and the time is smeared with
-a Gaussian function using $\sigma_{TW}$ as the resolution.
-A random number is thrown (between 0 and 1) and if it is above the efficiency function, calculated based on $DOCA$,
-the hit is rejected.
-Finally, the timing is smeared using the calibrated residual versus $DOCA$ function (see \F{dcResolution}).
+An intrinsic random time-walk correction $\sigma_{TW}$ due to multiple scattering is calculated and the time is smeared
+with a Gaussian function using $\sigma_{TW}$ as the resolution. A random number is thrown (between 0 and 1) and if it is
+above the efficiency function calculated based on $DOCA$, the hit is rejected. Finally, the timing is smeared using the
+calibrated residual vs. $DOCA$ function (see \F{dcResolution}).
 
 \begin{figure}
 	\centering
@@ -102,35 +95,33 @@ The digitized output bank variables are summarized in Table \ref{tab:dcBank}.
 
 
 The simulation time window of the DC is set to 500~ns: all Geant4 steps within the same cell and time window are
-collected in one hit.
-The actual readout electronics time window is set to 250, 500, and 750~ns for Regions 1, 2, and 3, respectively.
-
+collected in one hit. The actual readout electronics time windows are set to 250, 500, and 750~ns for Regions 1, 2, and
+3, respectively.
 
 \subsubsection{Background Rates}
 
 A detailed study of the background rates coming from beam interacting with the target was done to ensure that
-the DC occupancy stays within limits that do not affect the track reconstruction efficiency, typically below $5\%$.
+the DC occupancy stays within limits that do not affect the track reconstruction efficiency, typically below 5\%.
 
-Given the operating luminosity L=\cLuminosity and the liquid-hydrogen target length of 5 cm, the beam electron rate
-is R=4.7 $\times$ 10$^{11}$ Hz. This corresponds to around 124,000 electrons in the DC 250 ns time window of Region 1.
+Given the operating luminosity L=\cLuminosity and the liquid-hydrogen target length of 5~cm, the beam electron rate
+is R=4.7 $\times$ 10$^{11}$ Hz. This corresponds to around 124,000 electrons in the DC 250~ns time window of Region 1.
 
 Various analyses \cite{targetStudy, clas12Beamline, clas12Background}, were performed using 124,000 electrons/event
-to study the DC occupancy response to variations of hardware position and beamline configurations.
-The rates were scaled in Region 2 and 3 to take into account the difference between the real and simulated time window.
-The results are summarized in \F{dcOccupancy}. The highest DC occupancy is in Region 1.
-The source is mostly electromagnetic background from the target and beamline elements.
-Regions 2 and 3 are shielded against leptons by the torus magnetic field.
-Region 3 is exposed to radiation coming from the interactions of the broadened beam
-(due to interactions in the target) with the torus components (especially the most downstream elements).
-In general, the occupancy in the DC affects the track reconstruction efficiency. A value of 3$\%$ occupancy in Region 1
-is considered an optimal compromise between luminosity and reconstruction efficiency \cite{recon-nim}.
+to study the DC occupancy response to variations of hardware position and beamline configurations. The rates were scaled
+in Region~2 and 3 to take into account the difference between the real and simulated time window. The results are
+summarized in \F{dcOccupancy}. The highest DC occupancy is in Region~1. The source is mostly electromagnetic background
+from the target and beamline elements. Regions~2 and 3 are shielded against leptons by the torus magnetic field.
+Region~3 is exposed to radiation coming from the interactions of the broadened beam (due to interactions in the target)
+with the torus components (especially the most downstream elements). In general, the occupancy in the DC affects the
+track reconstruction efficiency. A value of 3\% occupancy in Region~1 is considered an optimal compromise between
+luminosity and reconstruction efficiency~\cite{recon-nim}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/dcOccupancy.png}
-	\caption{Results for DC rates for electrons out-bending in the torus field.
-		     Top: the occupancy is below $3\%$ for Region 1 and $1.2\%$ for Region 3. Bottom: layer
-		     versus wire hit distribution. Results for the electron in-bending polarity shows very similar distributions.}
+	\caption{Results for DC rates for electrons outbending in the torus field. Top: the occupancy is below 3\% for
+          Region~1 and 1.2\% for Region~3. Bottom: layer vs. wire hit distribution. Results for the electron inbending
+          polarity shows very similar distributions.}
 	\label{fig:dcOccupancy}
 \end{figure}
 

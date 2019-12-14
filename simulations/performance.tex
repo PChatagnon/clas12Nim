@@ -1,17 +1,19 @@
 \section{Performance}
 
-The performance of the CLAS12 simulations is measured by comparing the predicted background rates from beam interactions
-in the target with the actual experimental rates. The benchmarks are also quantified for each detector geometry and digitization routine.
+The performance of the CLAS12 simulations is measured by comparing the predicted background rates from beam
+interactions in the target with the actual experimental rates. The benchmarks are also quantified for each detector
+geometry and digitization routine.
 
 \subsection{Comparison of Rates with Data}
-On December 17, 2017, the nominal luminosity of \cLuminosity
-(75 nA on a 5-cm long liquid-hydrogen target) was achieved in CLAS12 for the first time.
-The rates in each of the CLAS12 detectors were measured.
 
-The drift chamber hit occupancy was compared for both the FTOn and FTOff configurations. The integrated occupancy
-in Regions 1, 2, and 3 are summarized in Tables \ref{tab:ftOnComparison} and \ref{tab:ftOffComparison}. The
-DC readout time windows of the experiment at the time were different than what was in the simulation, so the data has been scaled
-accordingly. The predicted rates agree quite well with the measured ones.
+On December 17, 2017, the nominal luminosity of 1$\times$10$^{35}$~cm$^{-2}$s$^{-1}$ (75~nA on a 5-cm long
+liquid-hydrogen target) was achieved in CLAS12 for the first time. The rates in each of the CLAS12 detectors were
+measured.
+
+The drift chamber hit occupancy was compared for both the FT-ON and FT-OFF configurations. The integrated occupancy
+in Regions 1, 2, and 3 are summarized in Tables \ref{tab:ftOnComparison} and \ref{tab:ftOffComparison}. The DC
+readout time windows of the experiment at the time were different than what was in the simulation, so the data has
+been scaled accordingly. The predicted rates agree quite well with the measured ones.
 
 \begin{table}[h]
 	\begin{center}
@@ -19,13 +21,15 @@ accordingly. The predicted rates agree quite well with the measured ones.
 			\hline \hline
 			Region & Data (re-scaled) &  GEMC \\
 			\hline
-			1 &  $2.8\%$  & $2.7\%$ \\
-			2 &  $0.6\%$  & $0.8\%$ \\
-			3 &  $1.5\%$  & $1.2\%$ \\
+			1 &  2.8\%  & 2.7\% \\
+			2 &  0.6\%  & 0.8\% \\
+			3 &  1.5\%  & 1.2\% \\
 		\hline \hline
 		\end{tabular}
 	\end{center}
-	\caption{Drift chamber hit occupancy comparison between simulation and data for the FTOn configuration at full luminosity.}\label{tab:ftOnComparison}
+	\caption{Drift chamber hit occupancy comparison between simulation and data for the FT-ON configuration at full
+          luminosity.}
+        \label{tab:ftOnComparison}
 \end{table}
 
 \begin{table}[h]
@@ -34,59 +38,40 @@ accordingly. The predicted rates agree quite well with the measured ones.
 			\hline \hline
 			Region & Data (re-scaled) &  GEMC \\
 			\hline
-			1 &  $1.7\%$  & $1.1\%$ \\
-			2 &  $0.3\%$  & $0.4\%$ \\
-			3 &  $0.9\%$  & $0.7\%$ \\
+			1 &  1.7\%  & 1.1\% \\
+			2 &  0.3\%  & 0.4\% \\
+			3 &  0.9\%  & 0.7\% \\
 		\hline \hline
 		\end{tabular}
 	\end{center}
-	\caption{Drift chambers hit occupancy comparison between simulation and data for the FTOff configuration at full luminosity.}\label{tab:ftOffComparison}
+	\caption{Drift chambers hit occupancy comparison between simulation and data for the FT-OFF configuration at full
+          luminosity.}
+        \label{tab:ftOffComparison}
 \end{table}
-
-
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/ftOnGemcDCRates.png}
-%	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/ftOnDataDCRates.png}
-%	\caption{Distribution of background events in the Drift Chamber Region 1 for the FT On configuration.
-%             Top: GEMC. Bottom: data.}
-%	\label{fig:ftOnComparison}
-%\end{figure}
-
-
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/ftOffGemcDCRates.png}
-%	\includegraphics[width=0.99\columnwidth,keepaspectratio]{img/ftOffDataDCRates.png}
-%	\caption{Distribution of background events in the Drift Chamber Region 1 for the FT Off configuration.
-%             Top: GEMC. Bottom: data.}
-%	\label{fig:ftOffComparison}
-%\end{figure}
 
 Similar agreements were found with the rates in the other CLAS12 detectors. In particular:
 
 \begin{itemize}
-	\item FTOF: good agreement with data for the PMT currents \cite{ftof-nim};
+	\item FTOF: good agreement with data for the PMT currents~\cite{ftof-nim};
 	\item CTOF good agreement with data for the upstream PMT counter rates, while the downstream counter rates
-		  are about a factor of three lower in the simulation than they are in the data, probably due to the simulation
-          not taking into account the light signals produced in the light guides \cite{ctof-nim};
-	\item FT: good agreement with data for PMT currents and radiation doses \cite{ft-nim}.
+	  are about a factor of three lower in the simulation than they are in the data, probably due to the simulation
+          not taking into account the Cherenkov light produced in the light guides~\cite{ctof-nim};
+	\item FT: good agreement with data for PMT currents and radiation doses~\cite{ft-nim}.
 \end{itemize}
 
 
 \subsection{Benchmarks}
 
 The GEMC event simulation rate has been measured for single and multiple tracks. The numbers reported here
-refer to averages over several 2017 laptops, desktops, and computing farm nodes, and refer to running GEMC in single-threaded mode.
-The full CLAS12 geometry has been used, with a Runge-Kutta field integration algorithm
-and linear interpolation for both the solenoid and the torus fields.
-Single meson tracks in the forward region are simulated with an event rate of about 10 Hz.
-Electron rates are about half as fast due to shower simulations in the EC and PCAL calorimeters and
-Cherenkov photon production in both the HTCC and the LTCC, for an average of 5 Hz.
+refer to averages over several 2017 laptops, desktops, and computing farm nodes, and refer to running GEMC in
+single-threaded mode. The full CLAS12 geometry has been used, with a Runge-Kutta field integration algorithm
+and linear interpolation for both the solenoid and the torus fields. Single meson tracks in the forward region are
+simulated with an event rate of about 10~Hz. The electron simulation takes about twice as long due to the shower
+simulations in the EC and PCAL calorimeters and Cherenkov photon production in both the HTCC and the LTCC, for
+an average rate of about 5~Hz.
 
 A quantitative study of the event rate for 3 particles (2 in the Forward Detector, one in the Central Detector)
-details the time spent in each detector geometry and digitization and in each magnetic field.
-The particles generated are:
+details the time spent in each detector geometry, digitization, and magnetic field. The particles generated are:
 
 \begin{itemize}
 	\item one 7 GeV electron between polar angles 15\mdeg \ and 25\mdeg;
@@ -94,14 +79,13 @@ The particles generated are:
 	\item one 2 GeV proton at $\theta=$90\mdeg.
 \end{itemize}
 
-The results are shown in Table \ref{tab:benchmarks}. The final rate for the 3 particles in the
-complete CLAS12 setup is 1.7 Hz.
+The results are shown in Table~\ref{tab:benchmarks}. The final rate for the 3 particles in the complete CLAS12 setup
+is 1.7~Hz.
 
 \begin{table}[h]
 	\begin{center}
-		\begin{tabular}{ c | c | c | c }
-			 \hline \hline
-System	 & event rate (ms)   &  $\%$ of total\\
+		\begin{tabular}{ |c | c | c | c |} \hline \hline
+System	 & event rate (ms)   &  \% of total\\
 			\hline
 Target   &  1.2   & 0.20  \\
 SVT      &  0.9   & 0.16  \\
@@ -117,27 +101,21 @@ RICH     &  23.6  & 4.01  \\
 LTCC     &  27.6  & 4.69  \\
 FTOF     &  11.3  & 1.02  \\
 PCAL     &  186.2 & 31.67 \\
-EC       &  152.4 & 25.91 \\
-		\hline
-CLAS12   &  588.1 & 100 \\
-		\hline \hline
-		\end{tabular}
+EC       &  152.4 & 25.91 \\ \hline
+CLAS12   &  588.1 & 100 \\ \hline \hline
+	\end{tabular}
 	\end{center}
-	\caption{GEMC simulation benchmarks in each CLAS12 detector and magnet.
-             The time spent (by swimming and digitization)
-             within each system by 3 particles
-             (2 in the Forward Detector, one in the Central Detector) is tabulated.
-             The calorimeters are responsible for more than
-             half the computing time, due to shower simulations.
-             Swimming in the magnetic fields accounts for about 13.5$\%$ of the total CPU time.
-			 The overall rate for the full CLAS12 detector is 1.7 Hz.
-}
+	\caption{GEMC simulation benchmarks in each CLAS12 detector and magnet. The time spent (by swimming and
+          digitization) within each system by 3 particles (2 in the Forward Detector, one in the Central Detector) is
+          tabulated. The calorimeters are responsible for more than half the computing time, due to shower simulations.
+          Swimming in the magnetic fields accounts for about 13.5\% of the total CPU time. The overall rate for the full
+          CLAS12 detector is 1.7~Hz.}
 \label{tab:benchmarks}
 \end{table}
 
-\noindent Simulations that include the complete beam-target interactions using the nominal luminosity
-of \cLuminosity\ are made using 124,000 electrons per event. In this case the time to complete one event varies
-between one and two minutes depending on the CPU type and available memory.
+\noindent Simulations that include the complete beam-target interactions using the nominal luminosity of \cLuminosity\
+are made using 124,000 electrons per event. In this case the time to complete one event varies between one and two
+minutes depending on the CPU type and available memory.
 
 
 
