@@ -759,9 +759,10 @@ shielding and the vacuum
 pipe to minimize interaction of these electrons with high-$Z$ material. The availability of a realistic simulation
 package was essential for the optimal design of the CLAS12 integrated detector concept. The strong solenoid
 field is essential in channeling the scattered M{\o}ller electrons through the beam enclosure to avoid interactions
-with the beamline materials. Figure~\ref{gemc-event} shows a single electron track event at the full
-luminosity in a time window of 250~ns, corresponding to the time window in the R1 drift chambers used in the event 
-reconstruction. 
+with the beamline materials. Figure~\ref{gemc-event} shows a single randomly triggered event at the 50\% of full 
+luminosity and in a time window of 250~ns. This corresponds to the time window in the R1 drift chambers used in the event 
+reconstruction. The main conclusion is that only when both magnets are energized can the detector be operated with 
+acceptable background levels (graph on bottom left).  
 Additionally, a realistic simulation package is essential for the normalization of cross sections, especially to take
 into account the detector occupancies for data taking at luminosities near or above the maximum design luminosity
 where the track reconstruction efficiency can be significantly affected by accidentals. In order to quantitatively
@@ -784,10 +785,13 @@ of real tracks for different data runs. See Ref.~\cite{GEMC} for details on the 
   different magnetic field configurations and at 50\% of design luminosity. Top left: Solenoid field is OFF and
   torus field is OFF. Top right: Solenoid field is OFF and torus field is ON. Bottom right: Rotated view of top right.
   Bottom left: Solenoid field is ON and torus field is ON. Color code: red lines are
-  primary electrons; red circles are hits in the detectors; blue lines are photons, including Cherenkov light..}
+  primary electrons; red circles are hits in the detectors; blue lines are photons, including the Cherenkov light, 
+  which is cearly visible as the narrow light bundles just at the downstream end of the solenoid magnet, created by the 
+  M\"oller electrons in the HTCC when the solenoid magnet is OFF.  }
   
 \label{gemc-event}
 \end{figure*}
+
 \begin{figure*}[htbp!]
 \centerline{\includegraphics[angle=90,width=1.5\columnwidth]{clas12-daq-1.pdf}}
 \caption{(Color Online) Schematic diagram of the CLAS12 data acquisition and trigger system.}
@@ -1511,7 +1515,7 @@ optimization studies.
 Capability &  Quantity & Status\\
 &&\\ \hline
 Coverage&Tracks (FD) & $5^\circ < \theta < 35^\circ $ \\
-&Tracks (CD)& $35^\circ < \theta < 125^\circ$  \\
+\& Efficiency &Tracks (CD)& $35^\circ < \theta < 125^\circ$  \\
 &Momentum (FD \& CD) & $p > 0.2$~GeV  \\
 &Photon angle (FD)& $5^\circ < \theta < 35^\circ$ \\  
 &Photon angle (FT)& $2.5^\circ < \theta < 4.5^\circ$ \\  
