@@ -200,8 +200,8 @@ time-of-flight scintillation counters (brown), and electromagnetic calorimeters 
 torus, the FT is installed to detect electrons and photons at polar angles $2^\circ \le \theta \le 5^\circ$. The Central
 Detector (CD) consists of the Silicon Vertex Tracker (hidden), which is surrounded by a Barrel Micromesh Tracker
 (hidden), the Central Time-of-Flight system, and the Central Neutron Detector (PMTs in blue). At the upstream end,
-a temporarily installed Back Angle Neutron Detector (BAND) (red) is also visible. In the operational configuration,
-the entire CLAS12 detector extends for 13~m along the beamline.} 
+a Back Angle Neutron Detector (BAND) (red) is installed, which is used for backward angle neutron detection. 
+In the operational configuration. the entire CLAS12 detector extends for 13~m along the beamline.} 
 \label{clas12}
 \end{figure*}
 
@@ -712,6 +712,22 @@ charged particle identification in the CLAS12 Central Detector. Details of the C
 Ref.~\cite{ctof-nim}. Figure~\ref{ctof} shows the CTOF system from the design model and Fig.~\ref{ctof-cnd}
 shows the upstream end of the CTOF installed inside the solenoid.
 
+\subsection{Central Neutron Detector (CND)}
+
+The CLAS12 CD is also equipped with the CND positioned radially outward of the CTOF that allows the detection
+of neutrons in the momentum range from 0.2 to 1.0~GeV by measurement of their time-of-flight from the target
+and the energy deposition in the scintillator layers. The detector is made of three layers of scintillator paddles
+(48 paddles per layer), coupled two-by-two at the downstream end with semi-circular light guides and read out at
+the upstream end by PMTs placed outside of the high magnetic field region of the solenoid. The scintillators are
+connected to 1.5-m-long bent light guides. Figure~\ref{ctof-cnd} shows the upstream readout end of the
+CND installed in the solenoid. Details of the CND are described in Ref.~\cite{cnd-nim}.
+
+
+\subsection{Backward angle neutron detector (BAND)}
+Neutron detection at back angles is accomplished by the Back Angle Neutron Detector (BAND), which is 
+positioned 3 m upstream of the CLAS12 target to detect backward neutrons with momenta between 0.25 and 0.7~GeV. 
+It consists of 18 rows and 5 layers scintillator bars with PMT readout on both ends to measure time-of-flight from the target. 
+There is an additional 1~cm layer for vetoing charged particles. The detector covers an angular range from 155 - 175 degrees with a design efficiency of 35\% and momentum resolution of about 1.5\%.  Details to be provided in Ref.~\cite{BAND}.
 
 \section{Hall B Beamline} 
 
@@ -830,23 +846,13 @@ electron beam.
 
 \section{Data Acquisition and Trigger System} 
 \begin{figure}[t!]
-\centerline{\includegraphics[width=0.95\columnwidth]{CLAS12-triggers.png}}
+\centerline{\includegraphics[width=1.0\columnwidth]{CLAS12-triggers.png}}
 \caption{CLAS12 trigger control screen during specific data run with a total of 17 active triggers operating at 95.4\% L.T.  
 Near half (48.7\%) of all
 triggers are from single electrons detected in one of the 6 sectors. Over a quarter (27.81\%) of all triggers required an electron in 
 the FT with additional two charged hits detected in the FTOF and in the PCAL. Several others were taking data at the 5\% level and require charged tracks in FTOF-PCAL-ECAL in opposite sectors. Several other triggers are heavily pre-scaled. }
 \label{CLAS12-triggers}
 \end{figure}
-\subsection{Central Neutron Detector (CND)}
-
-The CLAS12 CD is also equipped with the CND positioned radially outward of the CTOF that allows the detection
-of neutrons in the momentum range from 0.2 to 1.0~GeV by measurement of their time-of-flight from the target
-and the energy deposition in the scintillator layers. The detector is made of three layers of scintillator paddles
-(48 paddles per layer), coupled two-by-two at the downstream end with semi-circular light guides and read out at
-the upstream end by PMTs placed outside of the high magnetic field region of the solenoid. The scintillators are
-connected to 1.5-m-long bent light guides. Figure~\ref{ctof-cnd} shows the upstream readout end of the
-CND installed in the solenoid. Details of the CND are described in Ref.~\cite{cnd-nim}.
-
 
 \subsection {CLAS12 Data Flow and Monitoring} 
 
@@ -938,7 +944,6 @@ Right: Electron vertex in the FD vs. azimuthal angle. The vertical size of the v
 \end{figure*}
 
 
-
 \subsection{Event Reconstruction} 
 
 Event reconstruction in the CLAS12 FD consists of the identification of charged and neutral particles along with the 
@@ -966,19 +971,7 @@ reconstructed in the FD tracking system (from data where the FMT was not install
 are independent of each other, they have to be independently aligned and calibrated. The reconstructed 
 vertex is independent of the sector and also independent of the electron momentum, is an indication that the 
 tracking detectors are well aligned.  
-\begin{figure*}[th!]
-\centerline{\includegraphics[width=0.95\columnwidth]{e_HTCCnphe.png}
-%{\includegraphics[width=0.96\columnwidth]{htcc-eff.png}}
-\hspace{1cm}\includegraphics[width=0.95\columnwidth]{htcc-accept.jpg}}
-\caption{(Color online) Distribution map of the number of photoelectrons collected in polar and azimuthal angle of the HTCC. 
-The graph is based on measurements with a trigger threshold of 2 photoelectrons.
-The averaged electron detection efficiency is estimated at greater than 98\% in the full phase space covered by the HTCC. 
-In localized areas, in particular at interfaces of different mirror facets or between mirror sectors, the efficiencies could be as low as 
-94\%. This map enables bin by bin corrections for absolute normalization. Right panel: Distribution of electrons at the HTCC 
-location in polar and azimuthal angle. The gaps between sectors are
-  due the scattered electrons being lost in the torus coils and not reconstructed. 
-\label{htcc-performance} }
-\end{figure*}
+
 Neutral particles are detected in either the calorimeters or in the FTOF (or both). The reconstruction begins by
 finding isolated clusters of energy, and determining the spatial location, deposited energy, and the time of the
 cluster. Neutral particle candidates are identified as clusters in the outer detectors (FTOF, PCAL, EC) that do
@@ -988,6 +981,19 @@ from their flight time as determined by the timing signal in the calorimeters an
 FTOF counter. In either case, the angle of the neutral particle trajectory is determined from the position of the
 cluster at a depth in the ECAL that minimizes parallax effects associated with tracks that are not normal to the
 face of the ECAL (see Ref.~\cite{ECAL} for details).
+\begin{figure*}[t!]
+\centerline{\includegraphics[width=1.0\columnwidth]{e_HTCCnphe.png}
+%{\includegraphics[width=0.96\columnwidth]{htcc-eff.png}}
+\hspace{0.5cm}\includegraphics[width=1.0\columnwidth]{htcc-accept.jpg}}
+\caption{(Color online) Distribution map of the number of photoelectrons collected in polar and azimuthal angle of the HTCC. 
+The graph is based on measurements with a trigger threshold of 2 photoelectrons.
+The averaged electron detection efficiency is estimated at greater than 99\% in the full phase space covered by the HTCC. 
+In localized areas, in particular at interfaces of different mirror facets or between mirror sectors, the efficiencies could be as low as 
+94\%. This map enables bin by bin corrections for absolute normalization. Right panel: Distribution of electrons at the HTCC 
+location in polar and azimuthal angle. The gaps between sectors are
+  due the scattered electrons being lost in the torus coils and not reconstructed. }
+\label{htcc-performance} 
+\end{figure*}
 
 For all events, precise determination of the interaction time or event start time is required. For events where the
 scattered electron is detected, the event start time is derived from the arrival time of the electron at the FTOF
@@ -1013,9 +1019,9 @@ full details on the CLAS12 offline reconstruction software architecture and desi
 
 
 
-\begin{figure*}[ht!]
-\centerline{\includegraphics[width=0.95\columnwidth]{e-outbending.png}
-\hspace{1cm}\includegraphics[width=0.95\columnwidth]{e-inbending.png}}
+\begin{figure*}[t!]
+\centerline{\includegraphics[width=1.0\columnwidth]{e-outbending.png}
+\hspace{0.5cm}\includegraphics[width=1.0\columnwidth]{e-inbending.png}}
 \caption{(Color online) Left: Distribution of electron track $x$ and $y$ coordinates propagated to the ECAL front face (as seen from
   the target). The few empty strips are due to hardware issues. For these data, electrons are bent away from the
   beamline (outbending). Right: Distribution of electron track $x$ and $y$ coordinates propagated to the ECAL front face 
@@ -1236,6 +1242,8 @@ has some angle and momentum dependence.  }
 \label{CND-neutron-efficiency}
 \end{figure} 
 
+
+
 \section{Electron Beam Operation} 
 During beam operation the status of the beam line diagnostics and other critical components and most of the 
 detector components are continuously monitored. Some of the beamline elements are used to warn of beam 
@@ -1371,13 +1379,15 @@ Figure~\ref{rich-event} shows the RICH multi-anode photomultiplier array and a s
 track with the Cherenkov light detected in the MaPMT array.  The performance in event reconstruction is
 illustrated in Fig.~\ref{rich_rec} for positively charged particles. 
 
-\begin{figure}[ht!]
-\centerline{\includegraphics[width=1.0\columnwidth]{rich-event.png}}
-\caption{(Color online) Top: Photograph and detector response of the RICH MaPMT array during beam operation. Bottom: One
-  event with the ring of Cherenkov photons (left) and overlaid with expected rings from a pion, kaon, and proton
-  at the same momentum. The radius of the Cherenkov ring is consistent with that of a pion.}
+\begin{figure*}[ht!]
+\centerline{\includegraphics[width=0.625\columnwidth]{rich1.png} 
+\includegraphics[width=0.65\columnwidth]{rich2.png}
+\includegraphics[width=0.64\columnwidth]{rich3.png} }
+\caption{(Color online) Left: Photograph and detector response of the RICH MaPMT array during beam operation. Middle: One
+  event with the ring of Cherenkov photons. Right: same event overlaid with expected rings from a pion, kaon, and proton
+  at the same momentum. The radius of the Cherenkov ring is consistent with the outermost circle, which corresponds to the pion.}
 \label{rich-event}
-\end{figure}
+\end{figure*}
 \begin{figure}[ht!]
 \centerline{\includegraphics[width=1.0\columnwidth]{mass_min3.pdf}}
 \caption{(Color online) Charged particle identification in the RICH detector showing the mass squared vs. momentum for positively
@@ -1524,7 +1534,9 @@ Coverage&Tracks (FD) & $5^\circ < \theta < 35^\circ $ \\
 &Neutron detection (FD) & $5^\circ < \theta < 35^\circ $ \\
 &Efficiency& $\le  75\%$ \\  
 &Neutron detection (CD) &  $ 35^\circ < \theta < 125^\circ$ \\ 
-&Efficiency& $\approx 10\%$ \\ \hline
+&Efficiency& $10\%$ \\ 
+&Neutron Detection (BAND) & $155^\circ < \theta < 175^\circ$\\
+&Efficiency & 35\% \\\hline
 Resolution & Momentum (FD)& $\sigma_p/p = 0.5-1.5\%$ \\
 & Momentum (CD) & $\sigma_p/p  < 5 \%$\\
  & Pol. angles (FD) & $ \sigma_\theta = \rm  1- 2$~mrad  \\
@@ -1545,9 +1557,10 @@ Magnetic field & Solenoid & $B_0 = 5$~T\\
 %\vfil\eject
 %\vspace{0.3cm}
 
+\vspace{0.3cm}
 \noindent{\bf Acknowledgments}
-
-We like to thank Elton Smith for a critical reading of the manuscript and for many editorial suggestions. 
+\vspace{0.3cm}
+We are grateful to Elton Smith for a critical reading of the manuscript and for many editorial suggestions. 
 \vspace{0.3cm}
 
 We also like to acknowledge the outstanding efforts of the staff of the Accelerator and the Nuclear Physics
@@ -1689,6 +1702,7 @@ and Meth. A, (2020). (see this issue)
 \bibitem{rg-details}
 CLAS12 Run Groups, https://www.jlab.org/Hall-B/clas12-web/Hall\_B\_experiment\_run\_groups.pdf
 
+\bibitem{BAND} NIM article in preparation. 
 
 \end{thebibliography}
 
