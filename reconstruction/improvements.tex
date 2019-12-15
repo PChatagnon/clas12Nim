@@ -70,13 +70,13 @@ the hit times in FTOF for tracks that go through both forward counter hodoscopes
 Section~\ref{sec:tof-cluster}. A quantitative estimate of the timing resolution improvements and a validation of
 the clustering algorithm are currently ongoing using on Monte Carlo simulations.
 
-\subsection{Improvements to the Event Builder}
+\subsection{Improvements to the Event Builder}\label{sec:eb:improvements}
 
-The matching of tracks to detector responses, either hits or clusters, is currently based on the distance of closest
-approach between the tracks and the response coordinates. Improvements to this matching can be obtained using
-track trajectories, i.e. intersections of the track with the relevant detector planes where the responses are reported.
-The use of trajectories will reduce the uncertainty on the path length determination that relies on the response
-coordinates. The use of timing information in the matching will reduce the effect of accidentals in high rate detectors
+The matching of tracks to detector responses is currently based on the distance of closest
+approach between the tracks and the response coordinates. Improvements to this matching may be obtained using
+track trajectories, i.e. intersections of the track with the relevant detector planes where the responses are reported,
+potentially reducing the uncertainty on the path length determination that relies on the response
+coordinates.  Additionally, the use of timing information in matching will reduce the effect of accidentals in high rate detectors
 such as the HTCC.
 
 In the future, the particle identification scheme will be improved by exploiting additional detector information. This
