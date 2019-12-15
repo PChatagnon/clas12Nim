@@ -216,11 +216,10 @@ In the operational configuration. the entire CLAS12 detector extends for 13~m al
 
 
 \begin{figure}[th!]
-\centerline{\includegraphics[width=0.90\columnwidth]{clas12_desired.png}}
-\caption{The ideal shape and dimensions of one of the torus magnet coils. All six coils are nominally identical to each
-other, and are tilted forward at a $22^\circ$ angle relative to the vertical. The bore at the outer two corners
-provide coil-to-coil connections. The beamline is indicated as the horizontal solid line. The point where all lines cross
-is the nominal position of the production target. All dimensions are in millimeters. }
+\centerline{\includegraphics[width=1.0\columnwidth]{Torus-coil.png}}
+\caption{A Torus magnet coil (blue) in its vacuum jacket. All six coils are nominally identical to each
+other, and are tilted forward at a $22^\circ$ angle relative to the vertical, and are symmetrically arranged in azimuth. 
+The height of the coil package is 0.3m. The entire coil spans about 2 meters by 4 meters.  }
 \label{coil-shape}
 \end{figure}
 
@@ -387,8 +386,8 @@ of 78~cm diameter where all the central detectors are placed.  For details on th
 solenoid magnet, see Ref.~\cite{clas12-magnets}.
 
 The distribution of the absolute magnetic field along lines of constant polar angle seen from the target position is
-shown in Fig.~\ref{solenoid-torus}. Both the torus and solenoid magnetic fields are included. The stray field of the
-solenoid magnet and of the torus magnet alone are shown in Fig.~\ref{stray-field}.  
+shown in Fig.~\ref{solenoid-torus}. Both the torus and solenoid magnetic fields are included. The field distributions 
+of the solenoid and torus magnets are shown in Fig.~\ref{stray-field}.  
 
 
 
@@ -677,7 +676,7 @@ construction, and performance of the SVT.
 \end{figure} 
 The BMT contains 3 layers of strips along the beamline and 3 layers of circular readout strips around the beamline,
 with a total number of 15,000 readout elements. The BMT provides important improvements in momentum resolution
-and in tracking efficiency. Each layer is arranged azimuthally in 3 sectors of 120$^\circ$ azimuthal coverage. The
+and in tracking efficiency. Each layer is arranged azimuthally in 3 segments of 120$^\circ$ azimuthal coverage each. The
 system operates at the full design luminosity of $10^{35}$~cm$^{-2}$s$^{-1}$.
 
 Another component of the CVT is the Forward Micromegas Tracker (FMT), consisting of 6 layers with 6,000 readout
@@ -691,12 +690,13 @@ Ref.~\cite{BMT} for details on the BMT and on the FMT.\footnote{The FMT tracker 
 
 \begin{figure*}[t!]
 \centerline{\includegraphics[width=2.0\columnwidth]{beamline-1.png}}
-%\centerline{\includegraphics[width=1.8\columnwidth]{beamline-3.png}}
-\caption{(Color Online) Hall~B beamline upstream of the target, showing the tagger magnet (red) to the left, which is energized
+\centerline{\includegraphics[width=1.3\columnwidth]{beamline-3.png}}
+\caption{(Color Online) Top: Hall~B beamline upstream of the target, showing the tagger magnet (red) to the left, which is energized
   during beam tuning and during polarization measurements. The doublet seen downstream of the tagger is a pair
   of quadrupoles. The BPMs are used for beam position and beam current measurements. The
   main element on the right is the solenoid magnet nearly fully encapsulated by the HTCC (yellow) . Several of the torus
-  magnet coils are visible at the far right.}
+  magnet coils are visible at the far right. Bottom: The part of the beamline that extends from the downstream end of CLAS12 
+  to the Faraday cup, a total absorbing device that is used to integrates the beam current to get the totally accumulated charge.}
 \label{beamline}
 \end{figure*}
 \subsection{Central Time-of-Flight (CTOF)}
@@ -733,8 +733,8 @@ There is an additional 1~cm layer for vetoing charged particles. The detector co
 
 The Hall~B beamline has two sections, the 2C line, from the beam switch yard (BSY) to the Hall proper, and the 2H
 line, from the upstream end of the experimental Hall to the beam dump (or Faraday cup) in the downstream tunnel.
-Figure~\ref{beamline} shows the portion of the 2H line from the tagger dump magnet to the entrance to CLAS12 and
-the last portion of the 2H line downstream of CLAS12 leading to the Faraday cup.. The beamline instrumentation
+Figure~\ref{beamline} shows the portion of the 2H line from the tagger dump magnet to the entrance to CLAS12. There 
+is another portion of the 2H line downstream of CLAS12 leading to the Faraday cup, which is not shown. The beamline instrumentation
 consists of beam optics, beam position and beam current monitors, beam viewers, collimators,  shielding, beam
 profile scanners, and beam halo monitors. Devices that control the beam direction, its profile, and  measure critical
 parameters, are under the accelerator operations control. Hall~B operators control collimators, halo monitors,
@@ -1224,6 +1224,13 @@ the CTOF is efficiently achieved by using the CVT tracker to veto against false 
 Figure~\ref{CND-neutrals} shows the velocity vs. the energy deposition of charged and neutral particles in the
 CND. The measured neutron detection efficiency is shown in Fig.~\ref{CND-neutron-efficiency}.
 
+In the far backward angle, the BAND detector provides neutron identification with detection efficiencies up to 35\%. As there 
+are no tracking capabilities in the very backward direction, the separation of charged particles is achieved by a veto counter,
+corresponding to a 1~cm thick scintillation counter in front of the BAND. The separation of neutrons and photons is achieved 
+by the timing information, which is shown in Fig.~\ref{BAND-performance}.   
+
+  
+
 \begin{figure}[t!]
 \centerline{\includegraphics[width=1.\columnwidth]{CND-BetaE.pdf}}
 \centerline{\includegraphics[width=1.\columnwidth]{CND-BetaENeutral.pdf}}
@@ -1233,8 +1240,8 @@ neutral particles; no charged tracks are correlated with the energy deposited in
 \label{CND-neutrals}
 \end{figure} 
 
-\begin{figure}[htbp!]
-\centerline{\includegraphics[width=0.9\columnwidth]{cnd-neutron-efficiency.png}}
+\begin{figure}[th!]
+\centerline{\includegraphics[width=1.0\columnwidth]{cnd-neutron-efficiency.png}}
 \caption{(Color online) The neutron detection efficiency in the CND vs. momentum for different polar angles.The  detection efficiency 
 has been measured using the reaction $e p \to e^\prime \pi^+ n$, where the neutron kinematics is given by the other 
 detected particles. The ratio of observed neutron hits in CND and predicted neutron hits in CND gives the detection efficiency. It 
@@ -1242,6 +1249,13 @@ has some angle and momentum dependence.  }
 \label{CND-neutron-efficiency}
 \end{figure} 
 
+\begin{figure}[th!]
+\centerline{\includegraphics[width=1.05\columnwidth]{BAND-performance.png}}
+\caption{(Color online) BAND response to electron-triggered events emerging from a nuclear target at 
+very backward polar angles. Photons and neutron sitting on accidental background events, are well 
+seprataed by timing information. } 
+\label{BAND-performance}
+\end{figure} 
 
 
 \section{Electron Beam Operation} 
@@ -1251,24 +1265,25 @@ conditions that may negatively impact detector operation and are used as a fast 
 
 
 \begin{figure}[t!]
-\centerline{\includegraphics[width=0.85\columnwidth]{e_R1_phi_pub.png}}
-\caption{Yields of inbending electrons in azimuthal angle (in deg.) for different bins in polar
-  angle. Top: Left: $\theta = 7^\circ-9^\circ$. Right: $\theta = 13^\circ-15^\circ$. Bottom: Left: $\theta = 23^\circ-25^\circ$,
-  Right: $\theta = 33^\circ-35^\circ$. The
-  reduced acceptance at small polar angles is due to the cryostat of the torus coils, which are attached to 
-  the cold central stainless steel hub at small angles, limits the geometrical acceptance to less than 
-  50\% in azimuthal angle, see Fig.~\ref{coil-mount}. Vertical axes are in arbitrary units, and not corrected for 
-  acceptances.  }
+\centerline{\includegraphics[width=1.0\columnwidth]{e1_R1_phi-out-in.png}}
+\caption{Yields of electrons in azimuthal angle (in deg.) for two bins in polar
+  angle. Top: Outbending electrons, Bottom: Inbending electrons. 
+  Left: $\theta = 7^\circ-9^\circ$. Right: $\theta = 25^\circ-27^\circ$.  The
+  reduced $\phi$ acceptance at small polar angles is due to the Torus coils blocking part of the $\phi$ 
+  coverage, as is seen in Fig.~\ref{coil-mount}).
+  In addition, for inbending electrons the acceptance is further reduced for as those electrons bend 
+  towards the beamline, where the forward detectors have smaller extension in azimuth. 
+  (Vertical axes are in arbitrary, linear units. }
 \label{e-accept-in}
 \end{figure}
 
-\begin{figure}[t!]
-\centerline{\includegraphics[width=0.85\columnwidth]{e_R1_phi_pub-out.png}}
-\caption{Same as in Fig.~\ref{e-accept-in} but for outbending electrons. Top: Left: $\theta = 5^\circ-7^\circ$, Right: $\theta = 11^\circ-13^\circ$. Bottom: Left: $\theta = 15^\circ-17^\circ$. Right: $\theta = 25^\circ-27^\circ$. At small polar angles the acceptance in azimuth is much larger than for inbending electrons
-  and sets in at smaller polar angles.
-  Vertical axes are in arbitrary units, and not corrected for  acceptances.  }
-\label{e-accept-out}
-\end{figure}
+%\begin{figure}[t!]
+%\centerline{\includegraphics[width=0.85\columnwidth]{e_R1_phi_pub-out.png}}
+%\caption{Same as in Fig.~\ref{e-accept-in} but for outbending electrons. Top: Left: $\theta = 5^\circ-7^\circ$, Right: $\theta = 11^\circ-13^\circ$. Bottom: Left: $\theta = 15^\circ-17^\circ$. Right: $\theta = 25^\circ-27^\circ$. At small polar angles the acceptance in azimuth is much larger than for inbending electrons
+%  and sets in at smaller polar angles.
+ % Vertical axes are in arbitrary units, and not corrected for  acceptances.  }
+%\label{e-accept-out}
+%\end{figure}
 
 \subsection{Forward Detector Reconstruction} 
 
@@ -1419,10 +1434,10 @@ Clockwise bending tracks in the solenoid magnetic field are from positively char
 \end{figure}
 
 \begin{figure}[t!]
-\centerline{\includegraphics[width=1.0\columnwidth]{CND-betaP.pdf}}
-\centerline{\includegraphics[width=1.0\columnwidth]{CND-z.pdf}}
+\centerline{\includegraphics[width=1.1\columnwidth]{CND-betaP.pdf}}
+\centerline{\includegraphics[width=1.1\columnwidth]{CND-z.pdf}}
 \caption{(Color online) CND response to charged particles. Upper graph shows beta versus particle momentum for positive tracks. 
-Bottom graph shows correlation of the hit position of charged tracks measured in the CVT and the hit position measured 
+The green solid line indicates the nominal relation for pions. The blue solid line indicates the nominal relation for protons. Bottom graph shows correlation of the hit position of charged tracks measured in the CVT and the hit position measured 
 in the CND using the timing information.}
 \label{cnd-performance}
 \end{figure}
@@ -1559,7 +1574,9 @@ Magnetic field & Solenoid & $B_0 = 5$~T\\
 
 \vspace{0.3cm}
 \noindent{\bf Acknowledgments}
+
 \vspace{0.3cm}
+
 We are grateful to Elton Smith for a critical reading of the manuscript and for many editorial suggestions. 
 \vspace{0.3cm}
 
