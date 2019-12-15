@@ -234,30 +234,6 @@ with the momentum transfer.
 \label{clas12-magnets}
 \end{figure*}
 
-\begin{figure}[th!]
-\centerline{\includegraphics[width=1.0\columnwidth]{Torus-coil.png}}
-\caption{A torus magnet coil (blue) in its vacuum jacket. All six coils are nominally identical to each other, and are
-  tilted forward at a $22^\circ$ angle relative to the vertical, and are symmetrically arranged in azimuth. The height
-  of the coil package is 0.3~m and the entire coil spans about 2~m $\times$ 4~m.}
-\label{coil-shape}
-\end{figure}
-
-\begin{figure}[th!]
-\centerline{\includegraphics[width=1.00\columnwidth]{torus-hub-2.png}}
-\caption{The six torus coils are mounted on the cold central stainless-steel hub that bears the centripetal force. The
-dark-shaded areas indicate the location of the superconducting coils, surrounded by the cryostat and vacuum jacket.}
-\label{coil-mount}
-\end{figure}
-
-\begin{figure}[th!]
-\centerline{\includegraphics[width=1.0\columnwidth]{Solenoid.pdf}}
-\caption{Cut view of the upper half of the solenoid coils with the four $2 \times 2$ main coils on the inside, and the
-  shield coil (5) on the outside. The shield coil provides effective compensation for the magnetic field sensitive
-  photomultiplier tubes that are located just outside of the magnet cryostat (not shown). The nominal field in the
-  center of the magnet is 5~T.}
-\label{solenoid-coils}
-\end{figure}
-
 \section{The JLab Facility at 12~GeV}
 \label{jlab}
 
@@ -289,19 +265,6 @@ linac were added to achieve the highest beam energy of 12~GeV for Hall~D. This h
 exclusively for Hall~D, while the other three halls may receive beams at the same beam energy or at different beam
 energies simultaneously, with up to a factor of $10^5$ differences in current from 1~nA to 100~$\mu$A.
 
-\begin{figure*}[h!]
-\centerline{\includegraphics[width=1.8\columnwidth]{Magnets-currents.png}}
-\caption{Energization of the torus magnet (left) and the solenoid magnet (right) to full current.}
-\label{Magnet-currents1}
-\end{figure*}
-
-\begin{figure}[h!]
-\centerline{\includegraphics[width=0.95\columnwidth]{Solenoid-current.png}}
-\caption{The excitation line of the solenoid to full current.The nominal field in the center of the solenoid magnet
-  is 5.0~T.}
-\label{Magnet-currents2}
-\end{figure}
-
 Major new detectors and other experimental equipment have been installed in Halls~B, C, and D that support a broad
 science program addressing fundamental issues in nuclear and hadronic physics. In Hall~D, a large hermetic detector
 with a solenoid magnet at its core has been in operation since 2015. It incorporates tracking capabilities and photon
@@ -316,6 +279,15 @@ existing high resolution spectrometer pair HRS$^2$, and other large installation
 Complementing the new equipment is the highly spin-polarized electron gun, high-power cryogenic targets, and
 several spin-polarized targets using NH$_3$, ND$_3$, HD, $^3$He, and $^7$Li as target materials to support a
 broad range of polarization measurements.   
+
+\begin{figure}[htbp!]
+\centerline{\includegraphics[width=0.7\columnwidth]{magfield.png}}
+\caption{Combined solenoid and torus magnetic fields, showing the magnetic field component perpendicular to the
+  radial distance from the solenoid center. Only the transverse components act on the charged tracks. At small polar
+  angles the particle deflecting component is small in the solenoid field, while it is largest in the torus magnet. For
+  large polar angle the transverse component is large in the solenoid field and small in the torus field volume.} 
+\label{solenoid-torus}
+\end{figure}
 
 \section{The CLAS12 Superconducting Magnets}
 
@@ -333,20 +305,10 @@ The distribution of the absolute magnetic field along lines of constant polar an
 shown in Fig.~\ref{solenoid-torus}. Both the torus and solenoid magnetic fields are included. The field distributions 
 of the solenoid and torus magnets are shown in Fig.~\ref{stray-field}.  
 
-\begin{figure}[htbp!]
-\centerline{\includegraphics[width=0.7\columnwidth]{magfield.png}}
-\caption{Combined solenoid and torus magnetic fields, showing the magnetic field component perpendicular to the
-  radial distance from the solenoid center. Only the transverse components act on the charged tracks. At small polar
-  angles the particle deflecting component is small in the solenoid field, while it is largest in the torus magnet. For
-  large polar angle the transverse component is large in the solenoid field and small in the torus field volume.} 
-\label{solenoid-torus}
-\end{figure}
-
 \begin{figure}[th!]
-\vspace{0.5cm}
 \centerline{\includegraphics[width=0.9\columnwidth]{magfield-2.png}}
-\caption{Combined solenoid and torus magnetic fields. The color code shows the total magnetic field of both
-  the solenoid and torus at full current. The open boxes indicate the locations and dimensions of the active detector
+\caption{Combined solenoid and torus magnetic fields. The color code shows the total magnetic field of both the
+  solenoid and torus at full current. The open boxes indicate the locations and dimensions of the active detector
   elements.}
 \label{stray-field}
 \end{figure}
@@ -372,6 +334,43 @@ the magnet assembly and coil positions. The $\int \!\! B dl$ at the nominal curr
 at $40^\circ$. The inductance of the magnet is 2.0~H and the stored energy 14.2~MJ. The magnet has liquid-N$_2$
 cooled heat shields. After assembly and cool down, the magnet reached full field immediately. For details on the
 design and operation of the torus magnet, see Ref.~\cite{clas12-magnets}.
+
+\begin{figure}[th!]
+\centerline{\includegraphics[width=1.0\columnwidth]{Torus-coil.png}}
+\caption{A torus magnet coil (blue) in its vacuum jacket. All six coils are nominally identical to each other, and are
+  tilted forward at a $22^\circ$ angle relative to the vertical, and are symmetrically arranged in azimuth. The height
+  of the coil package is 0.3~m and the entire coil spans about 2~m $\times$ 4~m.}
+\label{coil-shape}
+\end{figure}
+
+\begin{figure}[th!]
+\centerline{\includegraphics[width=1.00\columnwidth]{torus-hub-2.png}}
+\caption{The six torus coils are mounted on the cold central stainless-steel hub that bears the centripetal force. The
+dark-shaded areas indicate the location of the superconducting coils, surrounded by the cryostat and vacuum jacket.}
+\label{coil-mount}
+\end{figure}
+
+\begin{figure}[th!]
+\centerline{\includegraphics[width=1.0\columnwidth]{Solenoid.pdf}}
+\caption{Cut view of the upper half of the solenoid coils with the four $2 \times 2$ main coils on the inside, and the
+  shield coil (5) on the outside. The shield coil provides effective compensation for the magnetic field sensitive
+  photomultiplier tubes that are located just outside of the magnet cryostat (not shown). The nominal field in the
+  center of the magnet is 5~T.}
+\label{solenoid-coils}
+\end{figure}
+
+\begin{figure*}[h!]
+\centerline{\includegraphics[width=1.8\columnwidth]{Magnets-currents.png}}
+\caption{Energization of the torus magnet (left) and the solenoid magnet (right) to full current.}
+\label{Magnet-currents1}
+\end{figure*}
+
+\begin{figure}[h!]
+\centerline{\includegraphics[width=0.95\columnwidth]{Solenoid-current.png}}
+\caption{The excitation line of the solenoid to full current.The nominal field in the center of the solenoid magnet
+  is 5.0~T.}
+\label{Magnet-currents2}
+\end{figure}
 
 \subsection{The Solenoid Magnet}
 
